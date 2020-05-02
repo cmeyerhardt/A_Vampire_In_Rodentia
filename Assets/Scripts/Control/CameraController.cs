@@ -7,7 +7,8 @@ public class CameraController : MonoBehaviour
     [Header("Camera Zoom")]
     [SerializeField] float minCameraDist = 4f;
     [SerializeField] float maxCameraDist = 20f;
-    [SerializeField] float currentCameraDist;
+
+    float currentCameraDist;
 
     Camera m_camera = null;
 
