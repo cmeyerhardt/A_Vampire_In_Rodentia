@@ -109,24 +109,6 @@ MonoBehaviour:
   turnSpeed: 30
   feedingDuration: 3
   feedingState: {fileID: 305679111}
---- !u!114 &702115757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6572946765064720827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aafffaac236ce8d409f55330b2bc5c90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stamina: 1
-  maxStamina: 30
-  staminaChangePerSec: -1
-  food: {fileID: 0}
-  floatingText: {fileID: 5527010217521521155, guid: 449e9e65bd69d024ea51d8c0273162ca,
-    type: 3}
 --- !u!114 &1586852719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,8 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
-  walkingSpeed: 10
-  sneakingSpeed: 10
+  walkingSpeed: 5.3
+  sneakingSpeed: 1.9
   navMeshAgent: {fileID: 6512909222230526851}
 --- !u!1 &8171989936065200563
 GameObject:
@@ -286,7 +268,7 @@ PrefabInstance:
     - target: {fileID: 96066719563335745, guid: f81391574d6fa1644ac8bd4bfbc65a52,
         type: 3}
       propertyPath: m_Name
-      value: CharacterCameraChild Variant
+      value: CharacterCameraChild
       objectReference: {fileID: 0}
     - target: {fileID: 7079263957206992894, guid: f81391574d6fa1644ac8bd4bfbc65a52,
         type: 3}
