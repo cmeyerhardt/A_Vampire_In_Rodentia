@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraZoomDistance : MonoBehaviour
 {
-    [Header("Camera Zoom")]
+    [Header("Change camera distance by scrolling mouse wheel")]
     [SerializeField] float minCameraDist = 4f;
-    [SerializeField] float maxCameraDist = 20f;
-
+    [SerializeField] float maxCameraDist = 10f;
     float currentCameraDist;
 
     Camera m_camera = null;
@@ -19,9 +18,10 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        if(Input.mouseScrollDelta.y > 0f)
+        if(Input.mouseScrollDelta.y > 0f) //zoom in
         {
             float newZ = m_camera.transform.localPosition.z + 1f;
+
             if (Mathf.Abs(newZ) > minCameraDist)
             {
                 m_camera.transform.localPosition = new Vector3(m_camera.transform.localPosition.x, m_camera.transform.localPosition.y, newZ);
@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
             }
         }
 
-        if (Input.mouseScrollDelta.y < 0f)
+        else if (Input.mouseScrollDelta.y < 0f) //zoom out
         {
             float newZ = m_camera.transform.localPosition.z - 1f;
             if (Mathf.Abs(newZ) < maxCameraDist)
@@ -38,5 +38,6 @@ public class CameraController : MonoBehaviour
                 currentCameraDist = (transform.position - m_camera.transform.position).magnitude;
             }
         }
+        m_camera.transform.LookAt(transform.position);
     }
 }
