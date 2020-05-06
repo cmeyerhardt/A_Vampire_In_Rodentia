@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraChangeAngle : MonoBehaviour
 {
+    [Header("Rotate an object around its pivot via mouse input")]
+
     [SerializeField] [Range(750f, 2000f)] float panSpeed = 1000f;
     public bool allowXRotation = true;
     public bool allowYRotation = true;
@@ -15,7 +15,7 @@ public class CameraChangeAngle : MonoBehaviour
             float x = 0f;
             float y = 0f;
 
-            if (allowXRotation)
+            if(allowXRotation)
             {
                 x = -Input.GetAxis("Mouse Y") * panSpeed * Time.deltaTime;
             }
