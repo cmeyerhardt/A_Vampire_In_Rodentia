@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3489665675165905928}
   - component: {fileID: 3489665675165135912}
   - component: {fileID: 3489665675164006120}
+  - component: {fileID: 2892078385831038910}
   m_Layer: 0
   m_Name: StoneWallA
   m_TagString: Untagged
@@ -77,3 +78,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2892078385831038910
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3489665675166001192}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: caa3ee869cc71a7429908ba25b9c3204, type: 3}

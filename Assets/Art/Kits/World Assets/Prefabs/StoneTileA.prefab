@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8260824463976368335}
   - component: {fileID: 8260824463975598319}
   - component: {fileID: 8260824463974468143}
+  - component: {fileID: 4298822868884874921}
   m_Layer: 0
   m_Name: StoneTileA
   m_TagString: Untagged
@@ -77,3 +78,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4298822868884874921
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260824463976469743}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 5642021389ed09e4fb94875613d8bce1, type: 3}
