@@ -13,6 +13,10 @@ public class FloatingText : MonoBehaviour
         {
             text.color = (Color)color;
         }
+        else
+        {
+            text.color = Color.white;
+        }
         text.text = message;
     }
 
