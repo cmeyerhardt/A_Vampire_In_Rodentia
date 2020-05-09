@@ -457,6 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCameraDist: 0
   maxCameraDist: 15
+  correctCameraTether: 1
   correctionSpeed: 10
 --- !u!114 &2534372545498250292
 MonoBehaviour:
@@ -724,7 +725,7 @@ MonoBehaviour:
   maxJumpsAllowed: 2
   cameraPivot: {fileID: 4952480184832840665}
   objectToSteer: {fileID: 7610431569901271301}
-  textSpawner: {fileID: 0}
+  textSpawner: {fileID: 3976991554880438671}
 --- !u!114 &1106162194
 MonoBehaviour:
   m_ObjectHideFlags: 0

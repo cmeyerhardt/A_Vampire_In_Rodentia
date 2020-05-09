@@ -5,17 +5,18 @@ using UnityEngine;
 
 public class CameraZoomDistance : MonoBehaviour
 {
-    [Header("Change camera distance by scrolling mouse wheel")]
+    [Header("Zoom camera by scrolling mouse wheel")]
     [SerializeField] float minCameraDist = 4f;
     [SerializeField] float maxCameraDist = 10f;
+    [Header("Will the camera correct on collider intersection?")]
+    public bool correctCameraTether = true;
     [SerializeField] [Range(.1f, 50f)]float correctionSpeed = 10f;
 
-    // Cache Data
+    // Cache 
     float zoomDistance = 0f;
     float currentZoom = 0f;
     float newZ;
     
-    // Cache Reference
     Ray ray;
     Camera m_camera = null;
 
@@ -87,52 +88,55 @@ public class CameraZoomDistance : MonoBehaviour
 
     void LateUpdate()
     {
-        //cast a ray toward the camera
-        ray = new Ray(transform.position, (m_camera.transform.position - transform.position).normalized);
-
-        RaycastHit[] hits = Physics.RaycastAll(ray, zoomDistance);
-
-        //Sort hits by distance and change the camer's position so nothing obstructive blocks the camera's view of the player
-        if (hits.Length > 0)
+        if(correctCameraTether)
         {
-            // Sory hits by distance
-            List<RaycastHit> hitList = SetHitList(hits);
+            //cast a ray toward the camera
+            ray = new Ray(transform.position, (m_camera.transform.position - transform.position).normalized);
 
-            if (hitList.Count > 0)
+            RaycastHit[] hits = Physics.RaycastAll(ray, zoomDistance);
+
+            //Sort hits by distance and change the camer's position so nothing obstructive blocks the camera's view of the player
+            if (hits.Length > 0)
             {
-                // If the closest object the raycast hit is the camera
-                if (hitList[0].transform.gameObject == m_camera.gameObject)
+                // Sory hits by distance
+                List<RaycastHit> hitList = SetHitList(hits);
+
+                if (hitList.Count > 0)
                 {
-                    // If the camera's distance is not at the desired zoom distance
-                    if (currentZoom < zoomDistance)
+                    // If the closest object the raycast hit is the camera
+                    if (hitList[0].transform.gameObject == m_camera.gameObject)
                     {
-                        // if camera is the only thing hit
-                        if (hitList.Count == 1)
-                        { 
-                            // move camera back to zoomDistance
-                            m_camera.transform.localPosition = 
-                                Vector3.Lerp(m_camera.transform.localPosition, 
-                                    new Vector3(m_camera.transform.localPosition.x, m_camera.transform.localPosition.y, -zoomDistance), 
-                                    correctionSpeed * Time.deltaTime);
-                        }
-                        // or if the camera is closer than the next thing hit
-                        else if (hitList[0].distance < hitList[1].distance - 1f)
+                        // If the camera's distance is not at the desired zoom distance
+                        if (currentZoom < zoomDistance)
                         {
-                            //todo - move camera back to the next closest object
-                            m_camera.transform.localPosition = 
-                                Vector3.Lerp(m_camera.transform.localPosition, 
-                                    new Vector3(m_camera.transform.localPosition.x, m_camera.transform.localPosition.y, -hitList[1].distance),
-                                    correctionSpeed * Time.deltaTime);
+                            // if camera is the only thing hit
+                            if (hitList.Count == 1)
+                            {
+                                // move camera back to zoomDistance
+                                m_camera.transform.localPosition =
+                                    Vector3.Lerp(m_camera.transform.localPosition,
+                                        new Vector3(m_camera.transform.localPosition.x, m_camera.transform.localPosition.y, -zoomDistance),
+                                        correctionSpeed * Time.deltaTime);
+                            }
+                            // or if the camera is closer than the next thing hit
+                            else if (hitList[0].distance < hitList[1].distance - 1f)
+                            {
+                                //todo - move camera back to the next closest object
+                                m_camera.transform.localPosition =
+                                    Vector3.Lerp(m_camera.transform.localPosition,
+                                        new Vector3(m_camera.transform.localPosition.x, m_camera.transform.localPosition.y, -hitList[1].distance),
+                                        correctionSpeed * Time.deltaTime);
+                            }
                         }
                     }
-                }
-                else
-                {
-                    // change the camera's position to that of the closest hit
-                    if (hitList[0].transform.gameObject != m_camera.gameObject)
+                    else
                     {
-                        //todo -- camera clips with floor tiles
-                        m_camera.transform.position = Vector3.Lerp(m_camera.transform.position, hitList[0].point, 2f * correctionSpeed * Time.deltaTime);
+                        // change the camera's position to that of the closest hit
+                        if (hitList[0].transform.gameObject != m_camera.gameObject)
+                        {
+                            //todo -- camera clips with floor tiles
+                            m_camera.transform.position = Vector3.Lerp(m_camera.transform.position, hitList[0].point, 2f * correctionSpeed * Time.deltaTime);
+                        }
                     }
                 }
             }
@@ -147,18 +151,7 @@ public class CameraZoomDistance : MonoBehaviour
         Gizmos.DrawRay(ray);
     }
 
-    public string ToString(float[] a)
-    {
-        string s = "";
-
-        foreach (float b in a)
-        {
-            s += b + ", ";
-        }
-        return s;
-    }
-
-    public string ToString(RaycastHit[] hits)
+    public string PrintRaycastHits(RaycastHit[] hits)
     {
         string s = "";
         foreach (RaycastHit hit in hits)

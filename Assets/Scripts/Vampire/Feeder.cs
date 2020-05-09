@@ -31,7 +31,7 @@ public class Feeder : MonoBehaviour
     
     public void AssignVictim(FeedingVictim victim)
     {
-        textSpawner.SpawnText("Feeding", Color.red);
+
         currentVictim = victim;
         //Feeding Animation
     }
@@ -44,7 +44,7 @@ public class Feeder : MonoBehaviour
 
     public void CancelFeeding()
     {
-        textSpawner.SpawnText("Cancel Feeding", Color.yellow);
+        textSpawner.SpawnText("-Cancel Feeding-", Color.yellow);
         currentVictim.CancelBeingFedOn();
         currentVictim = null;
         feedCounter = 0f;

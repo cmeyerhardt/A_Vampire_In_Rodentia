@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum PlayerState { Idle, Walking, Jumping, Feeding }
+public enum PlayerState { Idle, Walking, Jumping, Feeding, CommenceFeeding, Hiding }
 
 public class PlayerController : MonoBehaviour
 {
@@ -65,6 +66,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // Player cannot control character while "latching on" to NPC
+        if(playerState == PlayerState.CommenceFeeding) { return; }
+
         ProcessMovementInput(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
         
         if (Input.GetMouseButtonDown(0))
@@ -80,7 +84,7 @@ public class PlayerController : MonoBehaviour
                 {
                     if(IsInRange(victim.transform, feeder.GetFeedingDistance()))
                     {
-                        CommenceFeeding(victim);
+                        StartCoroutine(CommenceFeeding(victim));
                     }
                     else
                     {
@@ -92,21 +96,59 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void CommenceFeeding(FeedingVictim victim)
+    /***********************
+    * STATE
+    ***********************/
+
+    private IEnumerator CommenceFeeding(FeedingVictim victim)
     {
+        ChangeState(PlayerState.CommenceFeeding);
+
+        // Wait for Movement input to ramp down
+        while(Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f)
+        {
+            yield return null;
+        }
         navMeshAgent.isStopped = true;
-        // Change State
-        playerState = PlayerState.Feeding;
+        
         currentVictim = victim;
 
         victim.BeginFedOn();
         feeder.AssignVictim(currentVictim.transform.GetComponent<FeedingVictim>());
+
+        ChangeState(PlayerState.Feeding);
     }
 
-    private bool IsInRange(Transform checkRange, float range)
+    private void ChangeState(PlayerState newState)
     {
-        return Vector3.Distance(transform.position, checkRange.position) < range;
+        playerState = newState;
+        switch(playerState)
+        {
+            case PlayerState.Idle:
+                textSpawner.SpawnText("*Idle*", Color.green);
+                break;
+            case PlayerState.CommenceFeeding:
+                textSpawner.SpawnText("*CommenceFeeding*", Color.yellow);
+                break;
+            case PlayerState.Feeding:
+                textSpawner.SpawnText("*Feeding*", Color.red);
+                break;
+            case PlayerState.Hiding:
+                textSpawner.SpawnText("*Hiding*", Color.magenta);
+                break;
+        }
     }
+
+    private void Die()
+    {
+        textSpawner.SpawnText("I'm BLLUUUHHH.. dead", Color.red);
+    }
+
+
+
+    /***********************
+    * MOVEMENT
+    ***********************/
 
     private void ProcessMovementInput(float verticalMag, float horizontalMag)
     {
@@ -189,7 +231,14 @@ public class PlayerController : MonoBehaviour
         return _cameraForward * verticalMag + _cameraRight * horizontalMag;
     }
 
-    //! Jumping
+    private bool IsInRange(Transform checkRange, float range)
+    {
+        return Vector3.Distance(transform.position, checkRange.position) < range;
+    }
+
+    /***********************
+     * JUMPING
+     ***********************/
     private void Jump(float jumpScalar)
     {
         jumpCounter++;
@@ -239,10 +288,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    private void Die()
-    {
-        textSpawner.SpawnText("I'm BLLUUUHHH.. dead", Color.red);
-    }
-
 }

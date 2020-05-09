@@ -18,17 +18,20 @@ public class AIController : MonoBehaviour
     [SerializeField] PatrolPath patrolPath = null;
     [SerializeField] PatrollingType patrolType = PatrollingType.Sequential;
     [SerializeField] float patrolSpeedFraction = .5f;
-    //[SerializeField] float patrolPauseDuration = 0f;
-    //float patrolWaitTime = 0f;
-    //float currentWaitTime = 0f;
+
     int currentPathIndex;
     Vector3 nextPosition;
     float pathTolerance = 2f;
-    Vector3 postLocation = new Vector3();
+
+    //[SerializeField] float patrolPauseDuration = 0f;
+    //float patrolWaitTime = 0f;
+    //float currentWaitTime = 0f;
 
     [Header("Sight")]
     [SerializeField] Sight sight = null;
     [SerializeField] float sightRange = 10f;
+
+    //todo -- Hearing
 
     [Header("Debug")]
     public bool debugSeePlayer = false;
@@ -40,8 +43,9 @@ public class AIController : MonoBehaviour
     [SerializeField] Color patrollingColor = Color.cyan;
     [SerializeField] Color incapacitateColor = Color.blue;
     [SerializeField] Color deathColor = Color.black;
-    
+
     // Cache
+    Vector3 postLocation = new Vector3();
     PlayerController player = null;
     MovementNavMesh movement = null;
     FeedingVictim victim = null;
@@ -113,13 +117,18 @@ public class AIController : MonoBehaviour
 
     private void AlertBehaviour()
     {
-        print("Alert");
+        if(!IsInRange(movement.navMeshAgent.stoppingDistance))
+        {
+            movement.MoveTo(player.transform.position, 1f);
+        }
+        else
+        {
+            print("Gotcha!");
+        }
     }
 
     private void SuspiciousBehaviour()
     {
-        print("Suspicious");
-
         suspicionWaitTime += Time.deltaTime;
         if (suspicionWaitTime > suspiciousWaitDuration)
         {
@@ -175,8 +184,6 @@ public class AIController : MonoBehaviour
             print("There was an unexpected value associated with PatrolType: " + patrolType);
         }
 
-        //print("currentPathIndex is now " + currentPathIndex);
-
         nextPosition = patrolPath.GetWaypoint(currentPathIndex);
     }
 
@@ -192,6 +199,7 @@ public class AIController : MonoBehaviour
     {
         if(currentlyBeingFedOn)
         {
+            //todo -- calculate change the NPC will resist the feed
             ChangeState(NPCState.Incapacitated, "I'm being fed on");
         }
         else
@@ -336,6 +344,9 @@ public class AIController : MonoBehaviour
             Gizmos.color = idleColor;
         }
         Gizmos.DrawWireSphere(transform.position, sightRange);
+
+        Gizmos.color = postingColor;
+        Gizmos.DrawSphere(postLocation, .3f);
         //Gizmos.DrawWireMesh(sight.sightMesh.sharedMesh, sight.sightMesh.transform.position, transform.forward, new Vector3 sightRange);
     }
 }

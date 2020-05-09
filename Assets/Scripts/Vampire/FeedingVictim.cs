@@ -29,11 +29,6 @@ public class FeedingVictim : MonoBehaviour
 
     public void CancelBeingFedOn()
     {
-        Invoke("ReleaseState", recoveryDelay);
-    }
-
-    private void ReleaseState()
-    {
         fedOnEvent.Invoke(false);
     }
 }
