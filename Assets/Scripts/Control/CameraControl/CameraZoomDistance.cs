@@ -28,7 +28,7 @@ public class CameraZoomDistance : MonoBehaviour
     private void Start()
     {
         zoomDistance = (m_camera.transform.position - transform.position).magnitude;
-        newZ = m_camera.transform.localPosition.z;
+        newZ = -m_camera.transform.localPosition.z;
     }
 
     void Update()
