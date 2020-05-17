@@ -38,7 +38,8 @@ public class WindowManager : MonoBehaviour
 
     public void OpenWindow(GameObject toOpen)
     {
-        if (toOpen = escapeKeyMenu)
+        print(toOpen);
+        if (toOpen == escapeKeyMenu)
         {
             CloseAllWindows();
         }

@@ -41,16 +41,16 @@ public class Detector : LineOfSight
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        if(canSeePlayer)
-        {
-            Gizmos.color = Color.red;
-        }
-        else
-        {
-            Gizmos.color = Color.yellow;
-        }
-        Gizmos.DrawSphere(transform.position + (4.5f * Vector3.up), .4f);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    if(canSeePlayer)
+    //    {
+    //        Gizmos.color = Color.red;
+    //    }
+    //    else
+    //    {
+    //        Gizmos.color = Color.yellow;
+    //    }
+    //    Gizmos.DrawSphere(transform.position + (4.5f * Vector3.up), .4f);
+    //}
 }
