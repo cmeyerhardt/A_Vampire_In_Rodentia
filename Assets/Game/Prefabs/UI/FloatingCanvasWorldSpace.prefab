@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1795125416575496223}
   - component: {fileID: 4704499273199981}
   - component: {fileID: 5527010217521521155}
+  - component: {fileID: 9215634731748025354}
   m_Layer: 0
-  m_Name: FloatingCanvas
+  m_Name: FloatingCanvasWorldSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,6 +66,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1883998397807943639}
+--- !u!114 &9215634731748025354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656119879856996753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15efd01579d2e0a4ca68643d9d5883a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7526504607650221418
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,7 +91,6 @@ GameObject:
   - component: {fileID: 7015601233033789203}
   - component: {fileID: 3452543996526188862}
   - component: {fileID: 8567718753020965607}
-  - component: {fileID: 720175244414041017}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -178,18 +190,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &720175244414041017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7526504607650221418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15efd01579d2e0a4ca68643d9d5883a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8126503369731646583
 GameObject:
   m_ObjectHideFlags: 0

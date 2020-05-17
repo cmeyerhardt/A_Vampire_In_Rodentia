@@ -235,4 +235,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resize: {fileID: 6787034436351189615}
+  showHide: {fileID: 0}
   bar: {fileID: 1268854732612550406}

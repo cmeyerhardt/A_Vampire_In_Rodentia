@@ -8,4 +8,5 @@ public class ValueBarDisplay : MonoBehaviour
     {
         resize.localScale = new Vector3(Mathf.Clamp(percentage, 0f, 1f), resize.transform.localScale.y, 0f);
     }
+
 }

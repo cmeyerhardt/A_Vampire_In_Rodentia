@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &614823908096426585
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238969804815366162, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_Name
+      value: Guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[1].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[2]
+      value: Patrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
+      value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
+      value: GoToLocation:Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: availableBehaviours
+      value: Attack, GoToLocation, GoToObject, Patrol, Pickup, Siren, Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[0]
+      value: PickUp:Torch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[1]
+      value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013415846929125376, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: attackRange
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013415846929125376, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: attackDamage
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40e40cafc4a80154898da6c6d16f7d20, type: 3}

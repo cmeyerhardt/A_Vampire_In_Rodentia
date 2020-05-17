@@ -6,24 +6,23 @@ public class PatrolPath : MonoBehaviour
 {
     [Header("Child objects are used as waypoints in a patrol path.")]
     [SerializeField] Color gizmosColor = Color.white;
-    int i;
 
     private void OnDrawGizmos()
     {
-        for (i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
             int j = GetNextIndex(i);
 
             Gizmos.color = gizmosColor;
-            Gizmos.DrawSphere(GetWaypoint(i), .2f);
-            Gizmos.DrawLine(GetWaypoint(i), GetWaypoint(j));
+            Gizmos.DrawSphere(GetWaypointPosition(i), .2f);
+            Gizmos.DrawLine(GetWaypointPosition(i), GetWaypointPosition(j));
         }
     }
 
-    public int GetCurrentIndex()
-    {
-        return i;
-    }
+    //public int GetCurrentIndex()
+    //{
+    //    return i;
+    //}
 
     public int GetNextIndex(int i)
     {
@@ -39,7 +38,7 @@ public class PatrolPath : MonoBehaviour
         return Random.Range(0, transform.childCount - 1);
     }
 
-    public Vector3 GetWaypoint(int i)
+    public Vector3 GetWaypointPosition(int i)
     {
         if (i == transform.childCount)
         {
@@ -55,5 +54,10 @@ public class PatrolPath : MonoBehaviour
             i = 0;
         }
         return transform.GetChild(i).position;
+    }
+
+    public Transform GetWaypoint(int i)
+    {
+        return transform.GetChild(i);
     }
 }
