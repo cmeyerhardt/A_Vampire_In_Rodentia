@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guard (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5015459794981734869, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: navMeshDistanceBuffer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62eff3477e2d5ba43a1bbb73eed200a5, type: 3}
 --- !u!4 &139594110 stripped
@@ -1021,7 +1026,7 @@ PrefabInstance:
     - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
-      value: Wait:2
+      value: Wait:1
       objectReference: {fileID: 0}
     - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
@@ -1058,6 +1063,11 @@ PrefabInstance:
       propertyPath: behaviourPresets.Array.data[2].module
       value: 
       objectReference: {fileID: 772293219}
+    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
+        type: 3}
+      propertyPath: navMeshDistanceBuffer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6997462378692847474, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2400,6 +2410,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: navMeshDistanceBuffer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5759792092228257692, guid: 0838293017f52314daca08af79839794,
         type: 3}
       propertyPath: m_Name
@@ -3224,6 +3239,11 @@ PrefabInstance:
       propertyPath: behaviourPresets.Array.data[2].module
       value: 
       objectReference: {fileID: 2076517546}
+    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
+        type: 3}
+      propertyPath: navMeshDistanceBuffer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6997462378692847474, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3368,32 +3388,6 @@ MonoBehaviour:
   range: 0
   distanceToReference: 0
   maxSeekDistance: 60
---- !u!114 &2076517545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076517542}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d5169b428d9585469b3a62c746e5f56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ai: {fileID: 0}
-  tasks: []
-  objectReference: {fileID: 0}
-  objectName: 
-  range: 0
-  distanceToReference: 0
-  arrivedAtObject: 0
-  bed: {fileID: 1836152754}
-  sleepTime: 20
-  wakeUpTime: 60
-  wentToSleep: 0
-  sleeping: 0
-  hasWokenUp: 0
-  zzzCounter: 2
 --- !u!114 &2076517546
 MonoBehaviour:
   m_ObjectHideFlags: 0
