@@ -13,3 +13,6 @@ public class MessageColorEvent : UnityEvent<string, Color> { }
 [System.Serializable]
 public class FloatColorEvent : UnityEvent<float, Color> { }
 
+[System.Serializable]
+public class TimeEvent : UnityEvent<TimeSegment> { }
+

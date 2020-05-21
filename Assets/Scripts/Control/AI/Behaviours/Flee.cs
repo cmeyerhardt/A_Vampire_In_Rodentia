@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Flee : AIBehaviour
 {
-    [Header("Fleeing Behaviour")]
+    [Header("Flee--")]
     [SerializeField] float fleeDistance = 40f;
     float fleeTime = 0f;
     float maxFleeDuration = 40f;
@@ -15,13 +15,13 @@ public class Flee : AIBehaviour
     new void Awake()
     {
         base.Awake();
-        
     }
 
     new void OnEnable()
     {
         base.OnEnable();
         player = ai.player;
+        fleeTime = 0f;
     }
 
     new void Start()
@@ -31,13 +31,14 @@ public class Flee : AIBehaviour
 
     new void Update()
     {
+        fleeTime += Time.deltaTime;
         if ((player.transform.position - transform.position).magnitude > fleeDistance)
         {
             doneEvent.Invoke(this);
         }
         else
         {
-            if ((fleeDestination - transform.position).magnitude < ai.navMeshAgent.stoppingDistance)
+            if (fleeTime >= maxFleeDuration || (fleeDestination - transform.position).magnitude < ai.navMeshAgent.stoppingDistance)
             {
                 ai.MoveToDestination(FindNewRandomFleeDestination(), 1.2f);
             }

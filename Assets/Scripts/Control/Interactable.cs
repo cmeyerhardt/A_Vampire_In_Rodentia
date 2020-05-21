@@ -10,8 +10,8 @@ public class Interactable : MonoBehaviour, IRaycast
     [HideInInspector] public Transform useTransform;
 
     // Cache
-    Vector3 entryLocation = new Vector3();
-    Quaternion entry;
+    public Vector3 entryLocation = new Vector3();
+    public Quaternion entry;
     Color debugColor = Color.magenta;
 
     public virtual void Awake()
@@ -47,7 +47,7 @@ public class Interactable : MonoBehaviour, IRaycast
 
     public virtual void Interact(Character occupant)
     {
-        print(gameObject.name + " now interacting with " + occupant.name);
+        //print(gameObject.name + " now interacting with " + occupant.name);
         occupied = true;
         this.occupant = occupant;
         occupant.navMeshAgent.enabled = false;
@@ -64,7 +64,7 @@ public class Interactable : MonoBehaviour, IRaycast
 
     public virtual void CancelInteract()
     {
-        print("Canceling " + name + " interact with " + occupant);
+        //print("Canceling " + name + " interact with " + occupant);
         occupant.transform.parent = null;
 
 

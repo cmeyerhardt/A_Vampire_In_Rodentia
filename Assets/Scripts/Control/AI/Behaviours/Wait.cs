@@ -2,6 +2,7 @@
 
 public class Wait : AIBehaviour
 {
+    [Header("Wait--")]
     [SerializeField] public float duration = 3f;
     [SerializeField] public bool waitIndefinitly = false;
 

@@ -16,8 +16,7 @@ public class CameraZoomDistance : MonoBehaviour
     float zoomDistance = 0f;
     float currentZoom = 0f;
     float newZ;
-    
-    Ray ray;
+
     Camera m_camera = null;
 
     private void Awake()
@@ -91,7 +90,7 @@ public class CameraZoomDistance : MonoBehaviour
         if(correctCameraTether)
         {
             //cast a ray toward the camera
-            ray = new Ray(transform.position, (m_camera.transform.position - transform.position).normalized);
+            Ray ray = new Ray(transform.position, (m_camera.transform.position - transform.position).normalized);
 
             RaycastHit[] hits = Physics.RaycastAll(ray, zoomDistance);
 
@@ -132,23 +131,15 @@ public class CameraZoomDistance : MonoBehaviour
                     else
                     {
                         // change the camera's position to that of the closest hit
-                        if (hitList[0].transform.gameObject != m_camera.gameObject)
+                        if (hitList[0].transform.gameObject != m_camera.gameObject && hitList[0].transform.gameObject.tag != "Player") 
                         {
-                            //todo -- camera clips with floor tiles
+                            //print("Correcting camera to raycast hit: " + hitList[0].transform.gameObject);
                             m_camera.transform.position = Vector3.Lerp(m_camera.transform.position, hitList[0].point, 2f * correctionSpeed * Time.deltaTime);
                         }
                     }
                 }
             }
         }
-    }
-
-
-    // Debug
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(ray);
     }
 
     public string PrintRaycastHits(RaycastHit[] hits)

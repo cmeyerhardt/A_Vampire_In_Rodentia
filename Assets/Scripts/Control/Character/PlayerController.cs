@@ -29,7 +29,7 @@ public class PlayerController : Character
     [SerializeField] float stunDuration = 3f;
 
     public bool allowKeyBoardTurn = true;
-    [SerializeField] [Range(45f, 270f)] float turnSpeed = 100f;
+
     //public bool allowFlying = true;
     //[SerializeField] [Range(10f, 30f)] float flyingSpeed = 10f;
     
@@ -58,6 +58,7 @@ public class PlayerController : Character
     private new void Awake()
     {
         base.Awake();
+        GetComponent<MovementTransform>().enabled = false;
         cameraPivot = transform.Find("CameraPivot");
         feeder = GetComponent<Feeder>();
         health = GetComponent<Health>();
@@ -65,7 +66,7 @@ public class PlayerController : Character
         currentUpForce = diminishedUpForce;
         currentJumpsAllowed = maxJumpsAllowed;
         jumpCounter = 0;
-        ResetState();
+        //ResetState();
 
         //SetCursor(CursorType.None);
     }
@@ -186,7 +187,7 @@ public class PlayerController : Character
     {
         if (playerState != PlayerState.Feeding && victim != null && !victim.GetComponent<Character>().isDead)
         {
-            if (IsInRange(victim.transform.position, navMeshAgent.stoppingDistance + navMeshDistanceBuffer))
+            if (IsInRange(victim.transform.position, GetStoppingDistance()))
             {
                 StartCoroutine(CommenceFeeding(victim));
                 return true;
@@ -202,7 +203,7 @@ public class PlayerController : Character
 
     public IEnumerator CommenceFeeding(FeedingVictim victim)
     {
-        ChangeState(PlayerState.CommenceFeeding);
+        playerState = PlayerState.CommenceFeeding;
 
         navMeshAgent.isStopped = true;
         currentVictim = victim;
@@ -218,13 +219,13 @@ public class PlayerController : Character
             }
             feeder.AssignVictim(currentVictim);
             currentVictim.GetComponent<Character>().Stun(-1);
-            ChangeState(PlayerState.Feeding);
+            playerState = PlayerState.Feeding;
         }
         else
         {
             textSpawner.SpawnText("Failed to Feed");
             //todo -- NPC becomes alert/flees?
-            ChangeState(PlayerState.Idle);
+            playerState = PlayerState.Idle;
         }
     }
 
@@ -302,11 +303,11 @@ public class PlayerController : Character
                 //todo should not have to break this up into conditions. find a way to limit velocity while in air
                 if (rigidBody.velocity.y > 0) // going up
                 {
-                    rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity + direction * airForward * Time.deltaTime, baseSprintSpeed);
+                    rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity + direction * airForward * Time.deltaTime, sprintSpeed);
                 }
                 else // going down
                 {
-                    rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity + direction * Time.deltaTime, walkingSpeed);
+                    rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity + direction * Time.deltaTime, baseMovementSpeed);
                 }
             }
             else // ground controls
@@ -315,13 +316,8 @@ public class PlayerController : Character
                 float movementSpeed = baseMovementSpeed;
                 if(Input.GetKey(sprintingKey))
                 {
-                    movementSpeed = baseSprintSpeed;
+                    movementSpeed = sprintSpeed;
                 }
-                if (Input.GetKey(dashKey))
-                {
-                    movementSpeed = dashSpeed;
-                }
-                //movementSpeed = Mathf.Min(maxSpeed, movementSpeed + currentSpeedModifier);
 
                 // The player model object turns toward the direction of movement
                 model.forward = Vector3.Slerp(model.transform.forward, direction, turnSpeed * Time.deltaTime);
@@ -347,7 +343,7 @@ public class PlayerController : Character
         }
     }
 
-    private Vector3 DetermineDirectionOfMovement(float verticalMag, float horizontalMag)
+    public Vector3 DetermineDirectionOfMovement(float verticalMag, float horizontalMag)
     {
         // Camera's directional vectors:
         Vector3 _cameraForward = cameraPivot.forward;
@@ -398,7 +394,7 @@ public class PlayerController : Character
             {
                 jump = false;
                 lastCollisionPoint = transform.position;
-
+                GetComponent<MovementTransform>().enabled = false;
                 print(collision.gameObject.name + " Static: " + collision.gameObject.isStatic);
                 print("Collided with ground");
 
@@ -412,6 +408,7 @@ public class PlayerController : Character
             {
                 if (!collision.collider.isTrigger)
                 {
+                    GetComponent<MovementTransform>().enabled = true;
                     print("Landed on object that is not navmesh/static");
                 }
             }

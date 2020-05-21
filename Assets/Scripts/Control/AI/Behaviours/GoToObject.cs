@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GoToObject : AIBehaviour
 {
+    [Header("Go To Object--")]
     [SerializeField] public GameObject objectReference = null;
     [SerializeField] public string objectName;
     public float range = 0f;
@@ -17,13 +18,60 @@ public class GoToObject : AIBehaviour
         base.Awake();
     }
 
-    // Start is called before the first frame update
+    public new void OnEnable()
+    {
+        base.OnEnable();
+        arrivedAtObject = false;
+
+        range = Mathf.Max(ai.GetStoppingDistance(), range);
+
+        if (objectReference == null && objectName != null && objectName.Length > 0)
+        {
+            objectReference = GameObject.Find(objectName);
+        }
+        if (objectReference != null)
+        {
+            ai.MoveToDestination(objectReference.transform.position, .75f);
+        }
+
+        //if (TryGetReference(out objectReference))
+        //{
+        //    if (objectReference != null)
+        //    {
+        //        ai.MoveToDestination(objectReference.transform.position, .75f);
+        //    }
+        //}
+    }
+
     public new void Start()
     {
         base.Start();
 
         taskDone.AddListener(TaskDone);
         tasks.Add("GoToObject");
+    }
+    
+    public new void Update()
+    {
+        base.Update();
+        if (ai == null) { return; }
+
+        if (objectReference != null)
+        {
+            //distanceToReference = 
+            //    Mathf.Min((transform.position - objectReference.transform.position).magnitude
+            //    , (ai.head.position - objectReference.transform.position).magnitude);
+
+            if (ai.IsInRange(objectReference.transform.position)/*distanceToReference < range*/ && !arrivedAtObject)
+            {
+                //ai.StopMoving();
+                //Debug.Log("ArrivedAtObject");
+                arrivedAtObject = true;
+                tasks.Remove("GoToObject");
+                taskDone.Invoke("GoToObject");
+            }
+        }
+
     }
 
     public override void TaskDone(string task = null)
@@ -39,27 +87,9 @@ public class GoToObject : AIBehaviour
             //    e.Invoke("Done");
             //}
         }
-    }
-
-    public new void Update()
-    {
-        base.Update();
-        if (ai == null) { return; }
-
-        if (objectReference != null)
+        else
         {
-            distanceToReference = 
-                Mathf.Min((transform.position - objectReference.transform.position).magnitude
-                , (ai.head.position - objectReference.transform.position).magnitude);
-
-            if (distanceToReference < range && !arrivedAtObject)
-            {
-                //ai.StopMoving();
-                //Debug.Log("ArrivedAtObject");
-                arrivedAtObject = true;
-                tasks.Remove("GoToObject");
-                taskDone.Invoke("GoToObject");
-            }
+            print(tasks[0]);
         }
     }
 
@@ -88,78 +118,42 @@ public class GoToObject : AIBehaviour
         return false;
     }
 
-    public new void OnEnable()
-    {
-        base.OnEnable();
-        arrivedAtObject = false;
 
-        range = Mathf.Max(ai.navMeshAgent.stoppingDistance + ai.navMeshDistanceBuffer, range);
-
-        if(objectReference == null && objectName != null && objectName.Length > 0)
-        {
-            objectReference = GameObject.Find(objectName);
-        }
-        if (objectReference != null)
-        {
-            ai.MoveToDestination(objectReference.transform.position, .75f);
-        }
-
-        //if (TryGetReference(out objectReference))
-        //{
-        //    if (objectReference != null)
-        //    {
-        //        ai.MoveToDestination(objectReference.transform.position, .75f);
-        //    }
-        //}
-    }
 }
 
 
 public class PickUpObject : GoToObject
 {
+    //[Header("Pick Up Object--")]
     private new void Awake()
     {
         base.Awake();
     }
 
+    public new void OnEnable()
+    {
+        base.OnEnable();
+    }
+
     public new void Start()
     {
         base.Start();
-
-        tasks.Add("PickUp");
+        tasks.Add("PickUpObject");
     }
-
-    private void PickUp()
-    {
-        if (objectReference == null) { return; }
-
-        if (distanceToReference < range /*& object not owned by another unit already*/)
-        {
-            Debug.Log("Picking up object: " + objectReference.name);
-            objectReference.transform.rotation = transform.rotation;
-            objectReference.transform.parent = transform;
-        }
-    }
-
-    public override void TaskDone(string task = null)
-    {
-        if (task == "GoToObject")
-        {
-            PickUp();
-            tasks.Remove("PickUpObject");
-        }
-
-        base.TaskDone();
-    }
-
+    
     public new void Update()
     {
         base.Update();
         if (ai == null) { return; }
     }
 
-    public new void OnEnable()
+    public override void TaskDone(string task = null)
     {
-        base.OnEnable();
+        if (task == "GoToObject")
+        {
+            ai.PickUpObject(objectReference);
+            tasks.Remove("PickUpObject");
+        }
+        base.TaskDone();
     }
 }

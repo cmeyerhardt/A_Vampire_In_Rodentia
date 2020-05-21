@@ -4,21 +4,17 @@ using UnityEngine;
 public class WindowManager : MonoBehaviour
 {
     //todo -- make this a Stack?
-    [SerializeField] List<GameObject> openWindows = new List<GameObject>();
-    [SerializeField] GameObject escapeKeyMenu = null;
+    [SerializeField] List<Window> openWindows = new List<Window>();
+    [SerializeField] Window escapeKeyMenu = null;
 
     private void Awake()
     {
-        //foreach(Transform child in transform)
-        //{
-        //    openWindows.Add(child.gameObject);
-        //}
+
     }
 
     void Start()
     {
-        //exitConfirmation = transform.Find("ExitConfirmation").gameObject;
-        //CloseAllWindows();
+
     }
 
     void Update()
@@ -36,9 +32,10 @@ public class WindowManager : MonoBehaviour
         }
     }
 
-    public void OpenWindow(GameObject toOpen)
+    public void OpenWindow(Window toOpen)
     {
-        print(toOpen);
+        //print(toOpen);
+        if(toOpen == null) { return; }
         if (toOpen == escapeKeyMenu)
         {
             CloseAllWindows();
@@ -49,11 +46,13 @@ public class WindowManager : MonoBehaviour
             openWindows.Add(toOpen);
         }
 
-        toOpen.SetActive(true);
+        toOpen.gameObject.SetActive(true);
+        toOpen.openWindowEvent.Invoke();
     }
 
-    public void CloseWindow(GameObject toClose)
+    public void CloseWindow(Window toClose)
     {
+        if (toClose == null) { return; }
         if (openWindows.Contains(toClose))
         {
             openWindows.Remove(toClose);
@@ -62,7 +61,8 @@ public class WindowManager : MonoBehaviour
         {
             Debug.LogFormat("{0} window attempted to close while not contained in openWindows.", toClose);
         }
-        toClose.SetActive(false);
+        toClose.gameObject.SetActive(false);
+        toClose.closeWindowEvent.Invoke();
     }
 
     public void CloseAllWindows()

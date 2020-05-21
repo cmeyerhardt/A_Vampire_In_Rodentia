@@ -8,19 +8,14 @@ public class Character : MonoBehaviour, IStamina
     public bool isStunned = false;
 
     public Interactable currentInteractiable = null;
-
+    [SerializeField] public GameObject objectInHand = null;
     [Header("Movement")]
     [SerializeField] [Range(0f, 20f)]  public float baseMovementSpeed = 5f;
-    [SerializeField] [Range(10f, 20f)] public float maxSpeed = 20f;
-    [SerializeField] [Range(0f, 20f)]  public float walkingSpeed = 7f;
-    [SerializeField] [Range(0f, 20f)]  public float baseSprintSpeed = 10f;
+    //[SerializeField] [Range(0f, 20f)]  public float walkingSpeed = 7f;
+    [SerializeField] [Range(0f, 20f)]  public float sprintSpeed = 10f;
     [SerializeField] [Range(10f, 30f)] public float dashSpeed = 20f;
-
-    float speedModifier = 1f;
-    [HideInInspector] public float currentSpeedModifier;
-    float staminaModifier = 0f;
-    float staminaLossBase = 5f;
-    [SerializeField] public float navMeshDistanceBuffer = 3f;
+    [SerializeField] [Range(45f, 270f)] public float turnSpeed = 100f;
+    float navMeshDistanceBuffer = 1f;
 
     [HideInInspector] public FloatingTextSpawner textSpawner = null;
     [HideInInspector] public NavMeshAgent navMeshAgent = null;
@@ -31,6 +26,8 @@ public class Character : MonoBehaviour, IStamina
     [HideInInspector] public Transform model = null;
     
     [SerializeField] public Transform head = null;
+    [SerializeField] public Transform hand = null;
+
 
     public virtual void Awake()
     {
@@ -51,27 +48,6 @@ public class Character : MonoBehaviour, IStamina
     public virtual void Update()
     {
         if(isDead) { return; }
-
-        float staminaPerc = stamina.GetStaminaPerc();
-        float difference = 0f;
-        if (staminaPerc > .5f)
-        {
-            difference = staminaPerc - .5f;
-        }
-        else if (staminaPerc < .5f)
-        {
-            difference = .5f - staminaPerc;
-        }
-        currentSpeedModifier = speedModifier * (1f + difference);
-
-        if (difference > 0f)
-        {
-            staminaModifier = -staminaLossBase * (1f + difference);
-        }
-        else
-        {
-            staminaModifier = -staminaLossBase;
-        }
     }
 
     public void Die()
@@ -102,7 +78,7 @@ public class Character : MonoBehaviour, IStamina
 
     public virtual float GetDeltaModifier()
     {
-        return staminaModifier;
+        return 0f;
     }
 
     public void MoveToDestination(Vector3 destination, float speedFraction)
@@ -130,8 +106,82 @@ public class Character : MonoBehaviour, IStamina
         }
     }
 
+    // Check a position against a given range
     public bool IsInRange(Vector3 target, float range)
     {
-        return Vector3.Distance(transform.position, target) <= range;
+        //check distance in relation to feet and head
+        return ((transform.position - target).magnitude <= range || (head.position - target).magnitude <= range);
+        //return Vector3.Distance(transform.position, target) <= range;
+    }
+
+    // Use this method if the range to check is the units stopping distance
+    public bool IsInRange(Vector3 target)
+    {
+        return Mathf.Min((transform.position - target).magnitude, (head.position - target).magnitude) <= GetStoppingDistance();
+    }
+
+
+    public float GetStoppingDistance()
+    {
+        return navMeshAgent.stoppingDistance + navMeshDistanceBuffer;
+    }
+
+    public void DropObject()
+    {
+        if(objectInHand != null)
+        {
+            print("Dropping " + objectInHand);
+            objectInHand.transform.parent = null;
+            Rigidbody droppedObject = objectInHand.AddComponent<Rigidbody>();
+            droppedObject.useGravity = true;
+            droppedObject.isKinematic = false;
+        }
+
+        objectInHand = null;
+    }
+
+
+    public bool PickUpObject(GameObject objectToPickUp)
+    {
+        if (objectInHand == null)
+        {
+            if (IsInRange(objectToPickUp.transform.position, GetStoppingDistance()) /*& object not owned by another unit already*/)
+            {
+                objectInHand = objectToPickUp;
+                objectInHand.transform.position = hand.position;
+                objectInHand.transform.rotation = transform.rotation;
+                objectInHand.transform.parent = transform;
+                return true;
+            }
+            else
+            {
+                print("Not in range of pickup object");
+            }
+        }
+        else
+        {
+            print("Already have an object");
+        }
+        return false;
+    }
+
+    public void CancelInteract()
+    {
+        //print("Canceling " + name + " interact with " + occupant);
+        transform.parent = null;
+
+        if (currentInteractiable != null)
+        {
+            transform.position = currentInteractiable.entryLocation;
+            model.transform.rotation = currentInteractiable.entry;
+            currentInteractiable.occupied = false;
+        }
+
+        currentInteractiable = null;
+
+        //change animation to standing
+
+        navMeshAgent.enabled = true;
+        
     }
 }

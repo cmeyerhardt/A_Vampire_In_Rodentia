@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Siren : GoToObject
 {
+    [Header("Siren--")]
     [SerializeField] float maxSeekDistance = 40f;
     Protector protector = null;
 
     private new void OnEnable()
     {
-
         Protector[] protectors = FindObjectsOfType<Protector>();
 
         if(protectors.Length > 0)
@@ -42,7 +42,7 @@ public class Siren : GoToObject
     public new void Update()
     {
         base.Update();
-        if(ai.IsInRange(protector.transform.position, range))
+        if(ai.IsInRange(protector.transform.position))
         {
             protector.currentState = NPCState.Alert;
             doneEvent.Invoke(this);

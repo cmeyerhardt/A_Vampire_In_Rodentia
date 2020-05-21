@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class SceneWaypoints : MonoBehaviour
 {
+    //Dictionary<string, GameObject> waypoints = new Dictionary<string, GameObject>();
+
     public Transform[] GetWaypoints(string waypointsName)
     {
         Transform[] waypoints = transform.Find(waypointsName).GetComponentsInChildren<Transform>();
-        int i = 0;
-        foreach(Transform waypoint in waypoints)
-        {
-            if(waypoint != null)
-            {
-                waypoints[i] = waypoint;
-                i++;
-            }
-        }
+
         return waypoints;
     }
+
+    
 }

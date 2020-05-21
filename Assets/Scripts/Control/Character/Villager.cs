@@ -40,17 +40,17 @@ public class Villager : AIController
             MoveToDestination(bed.transform.position, 1f);
         }
 
-        if (IsInRange(bed.transform.position, navMeshAgent.stoppingDistance + navMeshDistanceBuffer))
+        if (IsInRange(bed.transform.position, GetStoppingDistance()))
         {
             //print("At my bed");
             bed.Interact(this);
             inBed = true;
         }
-        else
-        {
-            //print("Not in range yet");
-            MoveToDestination(bed.transform.position, 1f);
-        }
+        //else
+        //{
+        //    //print("Not in range yet");
+        //    MoveToDestination(bed.transform.position, 1f);
+        //}
 
         if (inBed)
         {
@@ -65,6 +65,7 @@ public class Villager : AIController
             }
         }
 
+        //todo -- put in sleep on disable
         if(Time.time >= wakeTime && inBed)
         {
             inBed = false;
@@ -94,6 +95,7 @@ public class Villager : AIController
             {
                 UpdateStateList(NPCState.Default, baseDefault);
                 stateMap[NPCState.Default] = baseDefault;
+                lastState = NPCState.None;
             }
         }
 

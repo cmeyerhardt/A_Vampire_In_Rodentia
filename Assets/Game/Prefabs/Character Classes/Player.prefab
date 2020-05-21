@@ -285,25 +285,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   isStunned: 0
-  currentSpeedModifier: 0
   currentInteractiable: {fileID: 0}
+  objectInHand: {fileID: 0}
   baseMovementSpeed: 5
-  maxSpeed: 20
-  speedModifier: 1
-  walkingSpeed: 7
-  baseSprintSpeed: 10
+  sprintSpeed: 10
   dashSpeed: 20
-  staminaModifier: 0
-  staminaLossBase: 5
-  navMeshDistanceBuffer: 0
+  turnSpeed: 100
   textSpawner: {fileID: 1655876966581177603}
   navMeshAgent: {fileID: 0}
   rigidBody: {fileID: 0}
   indicator: {fileID: 0}
   animator: {fileID: 0}
   stamina: {fileID: 0}
-  head: {fileID: 5674444961656936033}
   model: {fileID: 0}
+  head: {fileID: 5674444961656936033}
+  hand: {fileID: 0}
   playerState: 0
   isHidden: 0
   sprintingKey: 304
@@ -313,12 +309,23 @@ MonoBehaviour:
   stunRange: 3
   stunDuration: 3
   allowKeyBoardTurn: 1
-  turnSpeed: 100
   jumpForce: 250
   airForward: 25
   maxJumpsAllowed: 2
   diminishedUpForce: 0.85
   feeder: {fileID: 0}
+--- !u!114 &4854193863790158348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5164696215061022484}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64267f2c595e574c9bb98c7a8da4a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6371410896171412771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,7 +498,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2650222127965767851}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &7967295779256763854
 Light:
@@ -902,6 +909,11 @@ PrefabInstance:
       propertyPath: staminaDepletedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1559720927350191167, guid: f81391574d6fa1644ac8bd4bfbc65a52,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3482243950476138865, guid: f81391574d6fa1644ac8bd4bfbc65a52,
         type: 3}
       propertyPath: m_IsActive
@@ -915,7 +927,7 @@ PrefabInstance:
     - target: {fileID: 4661540069120724009, guid: f81391574d6fa1644ac8bd4bfbc65a52,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4663482210200506447, guid: f81391574d6fa1644ac8bd4bfbc65a52,
         type: 3}

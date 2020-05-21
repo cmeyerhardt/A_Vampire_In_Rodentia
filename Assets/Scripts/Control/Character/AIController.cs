@@ -19,7 +19,7 @@ public class BehaviourSequence
     public NPCState state;
     public string[] sequence;
 }
-//todo - give waitTimes before changing state random variation of +-2s
+//todo - give de-escalation wait times random variation of +-2s ?
 public class AIController : Character
 {
     [Header("State")]
@@ -36,10 +36,6 @@ public class AIController : Character
     private bool deEscalating;
 
     //[SerializeField] float waitTimeVariation = 2f;
-
-    //[Header("Posting")]
-    //[SerializeField] Vector3 postLocation = new Vector3();
-    //[SerializeField] float totalPostTime = 20f;
 
     //[SerializeField] public string[] defaultBehaviourSequence = null;
     //[SerializeField] public string[] alertBehaviourSequence = null;
@@ -71,12 +67,13 @@ public class AIController : Character
             stateMap.Add(b.state, b.sequence);
         }
         //SetStatePresets();
+        SetBehaviourPresets();
     }
 
     public override void Start()
     {
         base.Start();
-        SetBehaviourPresets();
+        
     }
     private void SetBehaviourPresets()
     {
@@ -134,6 +131,8 @@ public class AIController : Character
         {
             StartCurrentBehaviour();
         }
+
+        // Loop state behaviours here
     }
 
     private AIBehaviour ParseBehaviourString(string s)
@@ -170,19 +169,20 @@ public class AIController : Character
                 }
                 return bgtl;
 
-            case "Patrol":
-                Patrol p = gameObject.AddComponent<Patrol>();
-                p.ai = this;
-                p.enabled = false;
-                if(words[1].Contains(","))
-                {
-                    p.SetWaypoints(words[1].Split(','));
-                }
-                else
-                {
-                    p.SetWaypoints(FindObjectOfType<SceneWaypoints>().GetWaypoints(words[1]));
-                }
-                return p;
+            //case "Patrol":
+            //    Patrol p = gameObject.AddComponent<Patrol>();
+            //    //    p.ai = this;
+            //    //    p.enabled = false;
+            //    //    //if(words[1].Contains(","))
+            //    //    //{
+            //    //        p.SetWaypoints(words[1].Split(','));
+            //    //    //}
+            //    //    //else
+            //    //    //{
+            //    p.patrolRouteWaypoints = FindObjectOfType<SceneWaypoints>().GetWaypoints(words[1]);
+            ////    //    p.SetWaypoints(FindObjectOfType<SceneWaypoints>().GetWaypoints(words[1]));
+            ////    //}
+            //    return p;
             case "PickUp":
             case "PickUpObject":
                 PickUpObject u = gameObject.AddComponent<PickUpObject>();
@@ -209,39 +209,39 @@ public class AIController : Character
                     }
                 }
                 return bw;
-            case "Wander":
-                Wander w = gameObject.AddComponent<Wander>();
-                w.ai = this;
-                w.enabled = false;
-                GameObject g;
-                // If no specific region is given, find the first one
-                if (words.Length < 2 || string.IsNullOrEmpty(words[1]))
-                {
-                    // todo: change to FindObjectsOfType and get the closest
-                    WanderRegion potentialRegion = FindObjectOfType<WanderRegion>();
-                    if (potentialRegion != null)
-                    {
-                        w.wanderRegion = potentialRegion;
-                        if (w.wanderRegion != null)
-                        {
-                            return w;
-                        }
-                    }
-                }
-                // If a specific region is given, find a region with that name
-                else
-                {
-                    g = GameObject.Find(words[1]);
-                    if (g != null)
-                    {
-                        w.wanderRegion = g.GetComponent<WanderRegion>();
-                        if (w.wanderRegion != null)
-                        {
-                            return w;
-                        }
-                    }
-                }
-                return null;
+            //case "Wander":
+            //    Wander w = gameObject.AddComponent<Wander>();
+            //    w.ai = this;
+            //    w.enabled = false;
+            //    GameObject g;
+            //    // If no specific region is given, find the first one
+            //    if (words.Length < 2 || string.IsNullOrEmpty(words[1]))
+            //    {
+            //        // todo: change to FindObjectsOfType and get the closest
+            //        WanderRegion potentialRegion = FindObjectOfType<WanderRegion>();
+            //        if (potentialRegion != null)
+            //        {
+            //            w.wanderRegion = potentialRegion;
+            //            if (w.wanderRegion != null)
+            //            {
+            //                return w;
+            //            }
+            //        }
+            //    }
+            //    // If a specific region is given, find a region with that name
+            //    else
+            //    {
+            //        g = GameObject.Find(words[1]);
+            //        if (g != null)
+            //        {
+            //            w.wanderRegion = g.GetComponent<WanderRegion>();
+            //            if (w.wanderRegion != null)
+            //            {
+            //                return w;
+            //            }
+            //        }
+            //    }
+            //    return null;
             case "Idle":
             default:
                 return null;
@@ -257,7 +257,6 @@ public class AIController : Character
             aIBehaviour.enabled = false;
             aIBehaviour.doneEvent.RemoveAllListeners();
             aIBehaviour = null;
-
         }
 
         if (b != null)
@@ -267,10 +266,10 @@ public class AIController : Character
             b.doneEvent.RemoveAllListeners();
             //b.taskDone.RemoveAllListeners();
 
-        //todo -- only destroy if it was added in runtime
+
             //if (!behaviourMap.ContainsValue(aIBehaviour))
             //{
-            //    Destroy(aIBehaviour);
+            //                    //Destroy(aIBehaviour);
             //}
         }
 
@@ -297,15 +296,24 @@ public class AIController : Character
             Debug.Log(gameObject.name + " de-escalating in " + deEscalationWaitTime + " seconds.");
             Invoke("DeEscalateState", deEscalationWaitTime);
         }
+        else
+        {
+            DeEscalateState();
+        }
     }
 
-
-
-
-
-
-
-
+    private bool DetermineIfRemoveComponent(AIBehaviour b)
+    {
+        foreach (BehaviourNode predefinedBehaviour in behaviourPresets)
+        {
+            if (predefinedBehaviour.module == b)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    
 
     /***********************
     * STATE
@@ -348,7 +356,7 @@ public class AIController : Character
                     break;
                 case NPCState.Default:
                     //head.forward = model.forward;
-                    indicator.Recolor(Color.cyan);
+                    indicator.Recolor(Color.green);
                     break;
             }
             SetBehaviourSequence(stateMap[currentState]);
@@ -391,6 +399,7 @@ public class AIController : Character
     {
         if (behaviourMap.ContainsKey(currentBehaviour) && behaviourMap[currentBehaviour] != null)
         {
+            CancelInteract();
             behaviourMap[currentBehaviour].doneEvent.AddListener(BehaviourDone);
             behaviourMap[currentBehaviour].ai = this;
             behaviourMap[currentBehaviour].enabled = true;
@@ -402,6 +411,8 @@ public class AIController : Character
             AIBehaviour a = ParseBehaviourString(currentBehaviour);
             if (a != null)
             {
+                CancelInteract();
+                DropObject();
                 a.doneEvent.AddListener(BehaviourDone);
                 a.ai = this;
                 a.enabled = true;
@@ -518,4 +529,5 @@ public class AIController : Character
         }
         return outList;
     }
+
 }

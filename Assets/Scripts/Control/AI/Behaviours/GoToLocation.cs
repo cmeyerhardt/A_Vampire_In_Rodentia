@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GoToLocation : AIBehaviour
 {
+    [Header("Go To Location--")]
     private Vector3? nullableLocation = null;
     public Vector3 location = new Vector3();
     [SerializeField] public string locationString; //(x,y,z)
@@ -20,7 +21,7 @@ public class GoToLocation : AIBehaviour
     {
         base.OnEnable();
 
-        range = Mathf.Max(ai.navMeshAgent.stoppingDistance + ai.navMeshDistanceBuffer, range);
+        range = Mathf.Max(ai.GetStoppingDistance(), range);
 
         if (nullableLocation == null)
         {

@@ -204,38 +204,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   isStunned: 0
-  currentSpeedModifier: 0
   currentInteractiable: {fileID: 0}
+  objectInHand: {fileID: 0}
   baseMovementSpeed: 5
-  maxSpeed: 20
-  speedModifier: 1
   walkingSpeed: 7
-  baseSprintSpeed: 10
+  sprintSpeed: 10
   dashSpeed: 20
-  staminaModifier: 0
-  staminaLossBase: 5
-  navMeshDistanceBuffer: 0
   textSpawner: {fileID: 0}
   navMeshAgent: {fileID: 0}
   rigidBody: {fileID: 0}
   indicator: {fileID: 0}
   animator: {fileID: 0}
   stamina: {fileID: 0}
-  head: {fileID: 9211518523048860850}
   model: {fileID: 0}
+  head: {fileID: 9211518523048860850}
+  hand: {fileID: 6648718779712291948}
   canSeePlayer: 0
   currentState: 0
   lastState: 0
   aIBehaviour: {fileID: 0}
   currentBehaviour: 
   lastBehaviour: 
-  behaviourPresets:
-  - behaviour: Idle
-    module: {fileID: 8526454386560524895}
-  - behaviour: Attack
-    module: {fileID: 9013415846929125376}
-  - behaviour: Patrol
-    module: {fileID: 8526454386560524895}
+  deEscalationWaitTime: 6
+  availableBehaviours: Attack, Patrol, Sleep
   stateSequences:
   - state: 1
     sequence:
@@ -249,7 +240,13 @@ MonoBehaviour:
   - state: 3
     sequence:
     - Attack
-  deEscalationWaitTime: 6
+  behaviourPresets:
+  - behaviour: Idle
+    module: {fileID: 8526454386560524895}
+  - behaviour: Attack
+    module: {fileID: 9013415846929125376}
+  - behaviour: Patrol
+    module: {fileID: 8526454386560524895}
   player: {fileID: 0}
   playerHead: {fileID: 0}
 --- !u!114 &9013415846929125376
@@ -265,7 +262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ai: {fileID: 0}
-  exitTime: 0
   tasks: []
   maxChaseDistance: 40
   attackRange: 3
@@ -275,9 +271,6 @@ MonoBehaviour:
   stunInterval: 15
   stunDuration: 3
   startLocation: {x: 0, y: 0, z: 0}
-  globalCooldown: Infinity
-  attackCounter: Infinity
-  stunCounter: Infinity
 --- !u!1 &5344848995254111241
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +451,12 @@ PrefabInstance:
     - target: {fileID: 926728164076872530, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: m_Name
-      value: Offensive NPC Variant
+      value: Protector Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741793121749622572, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5262992108995916048, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
@@ -550,6 +548,12 @@ MonoBehaviour:
 --- !u!4 &9121519261203538042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4251059871065652026, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 4929446104298330944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6648718779712291948 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1741793121749622572, guid: d237c9cb145cff247b42b9b8eb6c28e5,
     type: 3}
   m_PrefabInstance: {fileID: 4929446104298330944}
   m_PrefabAsset: {fileID: 0}

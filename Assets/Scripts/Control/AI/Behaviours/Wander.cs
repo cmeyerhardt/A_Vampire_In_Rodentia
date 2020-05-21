@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Wander : AIBehaviour
 {
-    [Header("State")]
+    [Header("Wander--")]
     [SerializeField] public WanderRegion wanderRegion = null;
+    [Header("State")]
     public GameObject wanderTarget = null;
     public bool movingToRegion = false;
 

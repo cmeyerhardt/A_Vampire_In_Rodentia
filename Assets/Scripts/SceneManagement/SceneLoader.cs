@@ -7,13 +7,7 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] CanvasFade loadingScreen = null;
     [SerializeField] int sceneToLoadOnPlay = 1;
-    public void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            Play();
-        }
-    }
+
 
     public void ExitGame()
     {
@@ -22,10 +16,15 @@ public class SceneLoader : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(sceneToLoadOnPlay);
+        StartCoroutine(LoadSceneByIndex(sceneToLoadOnPlay));
+    }
+
+    public void ReturnToMenu()
+    {
+        StartCoroutine(LoadSceneByIndex(0));
     }
     
-    public IEnumerator LoadScene(int buildIndex)
+    public IEnumerator LoadSceneByIndex(int buildIndex)
     {
         loadingScreen.SetCanvasState(CanvasState.FadeIn);
 
@@ -35,16 +34,21 @@ public class SceneLoader : MonoBehaviour
 
         //loading stuff
 
+        //SceneManager.UnloadSceneAsync(currentBuildIndex);
         yield return SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(buildIndex));
-
-        SceneManager.UnloadSceneAsync(currentBuildIndex);
-
+        
         loadingScreen.SetCanvasState(CanvasState.FadeOut);
         while(loadingScreen.canvasState != CanvasState.Idle)
         {
             yield return null;
         }
-        print("Loading Complete");
+        print(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void NextLevel()
+    {
+        //todo -- load correct scene with correct save data
+        Play();
     }
 
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7079263957206992894}
   - component: {fileID: 526230999963827639}
+  - component: {fileID: 2988294551535270087}
   - component: {fileID: 5347373650055997974}
   - component: {fileID: 2818092554818381998}
   - component: {fileID: 1612288633}
@@ -52,6 +53,19 @@ CapsuleCollider:
   m_Height: 3.1699667
   m_Direction: 1
   m_Center: {x: 0.011163831, y: 1.587357, z: 0}
+--- !u!65 &2988294551535270087
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96066719563335745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 1, z: 1.3}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!54 &5347373650055997974
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -156,25 +170,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   isStunned: 0
-  currentSpeedModifier: 0
   currentInteractiable: {fileID: 0}
+  objectInHand: {fileID: 0}
   baseMovementSpeed: 5
-  maxSpeed: 20
-  speedModifier: 1
-  walkingSpeed: 7
-  baseSprintSpeed: 10
+  sprintSpeed: 10
   dashSpeed: 20
-  staminaModifier: 0
-  staminaLossBase: 5
-  navMeshDistanceBuffer: 0
+  turnSpeed: 100
   textSpawner: {fileID: 0}
   navMeshAgent: {fileID: 0}
   rigidBody: {fileID: 0}
   indicator: {fileID: 0}
   animator: {fileID: 0}
   stamina: {fileID: 0}
-  head: {fileID: 0}
   model: {fileID: 3996916198836047913}
+  head: {fileID: 0}
+  hand: {fileID: 1559720927350191167}
 --- !u!1 &676923356332044796
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,8 +244,39 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1559720927350191167}
   m_Father: {fileID: 7079263957206992894}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5820303573427260379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1559720927350191167}
+  m_Layer: 0
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1559720927350191167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5820303573427260379}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.269, y: 1.832, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3996916198836047913}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7141462339570485254

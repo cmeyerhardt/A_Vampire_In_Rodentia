@@ -19,11 +19,6 @@ public class PatrolPath : MonoBehaviour
         }
     }
 
-    //public int GetCurrentIndex()
-    //{
-    //    return i;
-    //}
-
     public int GetNextIndex(int i)
     {
         if (i + 1 == transform.childCount)
@@ -47,7 +42,7 @@ public class PatrolPath : MonoBehaviour
         return transform.GetChild(i).position;
     }
 
-    public Vector3 GetNextWaypoint(int i)
+    public Vector3 GetNextWaypointPosition(int i)
     {
         if (i + 1 == transform.childCount)
         {
@@ -56,8 +51,13 @@ public class PatrolPath : MonoBehaviour
         return transform.GetChild(i).position;
     }
 
-    public Transform GetWaypoint(int i)
+    public Transform GetWaypointTransform(int i)
     {
         return transform.GetChild(i);
+    }
+
+    public Waypoint GetWaypoint(int i)
+    {
+        return transform.GetChild(i).GetComponent<Waypoint>();
     }
 }

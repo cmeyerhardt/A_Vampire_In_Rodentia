@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Attack : AIBehaviour
 {
+    [Header("Attack--")]
     [SerializeField] float maxChaseDistance = 40f;
     [Header("Attack")]
     [SerializeField] float attackRange = 4f; //melee ~3.5f
