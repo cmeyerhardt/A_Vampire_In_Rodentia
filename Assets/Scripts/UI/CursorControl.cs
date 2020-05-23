@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public enum CursorType { None, UI, Victim, Guard, Hide, PlayerDead };
+public enum CursorType { None, UI, Victim, Guard, Hide, PlayerDead, PickUp };
 
 [System.Serializable]
 public class CursorMapping

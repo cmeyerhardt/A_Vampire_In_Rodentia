@@ -25,7 +25,7 @@ public class FloatingTextSpawner : MonoBehaviour
 
     public void SpawnText(string message, Color? color = null, bool randomPosition = false)
     {
-        if(!wait)
+        //if(!wait)
         {
             wait = true;
             lastSpawn = Time.deltaTime;
@@ -46,10 +46,10 @@ public class FloatingTextSpawner : MonoBehaviour
             FloatingText _newText = Instantiate(floatingText, _position, Quaternion.identity, transform);
             _newText.GenerateText(message, color);
         }
-        else
-        {
-            StartCoroutine(WaitDelay(message, color, randomPosition));
-        }
+        //else
+        //{
+        //    StartCoroutine(WaitDelay(message, color, randomPosition));
+        //}
     }
 
     private IEnumerator WaitDelay(string message, Color? color = null, bool randomPosition = false)

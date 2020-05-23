@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class FeedingVictim : MonoBehaviour, IRaycast
 {
     [HideInInspector] public BoolEvent fedOnEvent;
-    [HideInInspector] public FloatEvent feedEvent;
+    [HideInInspector] public FloatEvent feedingOn;
     [HideInInspector] public BoolEvent resistEvent;
     
     //[SerializeField] float recoveryDelay = 3f;
@@ -14,7 +14,8 @@ public class FeedingVictim : MonoBehaviour, IRaycast
 
     private void Awake()
     {
-        feedEvent.AddListener(GetComponent<Health>().ModifyHealth);
+        feedingOn.AddListener(GetComponent<Health>().ModifyHealth);
+        feedingOn.AddListener(GetComponent<Villager>().ChangeFurColor);
     }
 
     public float GetFedValue()
@@ -24,7 +25,7 @@ public class FeedingVictim : MonoBehaviour, IRaycast
 
     public void FeedOn()
     {
-        feedEvent.Invoke(-healthLossOnFeed);
+        feedingOn.Invoke(-GetFedValue());
     }
 
     public void BeginFeeding(out bool succeeded)

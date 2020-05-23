@@ -149,7 +149,7 @@ public class PickUpObject : GoToObject
 
     public override void TaskDone(string task = null)
     {
-        if (task == "GoToObject")
+        if (task == "GoToObject" && objectReference.GetComponent<PickUp>() != null)
         {
             ai.PickUpObject(objectReference);
             tasks.Remove("PickUpObject");

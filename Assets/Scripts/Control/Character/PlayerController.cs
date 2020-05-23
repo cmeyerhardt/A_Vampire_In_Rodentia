@@ -13,8 +13,12 @@ public enum PlayerState { Idle, /*Walking, Jumping,*/Dashing, Feeding, CommenceF
 //    public Texture2D texture = null;
 //    [HideInInspector] public Vector2 hotspot = Vector2.zero;
 //}
+
+
 public class PlayerController : Character
 {
+    public FloatEvent makeSoundEvent = new FloatEvent();
+
     [Header("Player--")]
     public PlayerState playerState = PlayerState.Idle;
     public bool isHidden = false;
@@ -22,16 +26,9 @@ public class PlayerController : Character
     [Header("Input")]
     [SerializeField] KeyCode sprintingKey = KeyCode.LeftShift;
     [SerializeField] KeyCode dashKey = KeyCode.Alpha1;
-    //[SerializeField] KeyCode stunKey = KeyCode.Alpha2;
-    [SerializeField] float dashCost = 30f;
-    [SerializeField] float stunCost = 30f;
-    [SerializeField] float stunRange = 3f;
-    [SerializeField] float stunDuration = 3f;
-
-    public bool allowKeyBoardTurn = true;
-
     //public bool allowFlying = true;
     //[SerializeField] [Range(10f, 30f)] float flyingSpeed = 10f;
+    public bool allowKeyBoardTurn = true;
     
     [Header("Jumping")]
     [SerializeField] [Range(1f, 500f)] float jumpForce = 250f;
@@ -43,17 +40,35 @@ public class PlayerController : Character
     float currentUpForce;
     float currentJumpsAllowed = 0;
 
-    //[Header("Cursor")]
-    //[SerializeField] CursorMapping[] cursorMappings = null;
+    [Header("Stunning")]
+    [SerializeField] float stunRange = 3f;
+    [SerializeField] float stunDuration = 3f;
+
+    [Header("Noise")]
+    [SerializeField] float sprintingNoiseLevel = 3f;
+    [SerializeField] float walkingNoiseLevel = 0.1f;
+    //[SerializeField] GameObject soundEffectFX = null;
+
+
+    [Header("Stamina Drain")]
+    public float walkStaminaDrain = 0f;
+    public float sprintStaminaDrain = 4f;
+    public float blinkStaminaDrain = 6f;
+    [SerializeField] float dashCost = 30f;
+    [SerializeField] float stunCost = 30f;
+
+
 
     // Cache
     Transform cameraPivot = null;
     Vector3 lastCollisionPoint = Vector3.zero;
     Vector3 direction = new Vector3();
     FeedingVictim currentVictim = null;
-
     [HideInInspector] public Feeder feeder = null;
     Health health = null;
+
+    //[Header("Cursor")]
+    //[SerializeField] CursorMapping[] cursorMappings = null;
 
     private new void Awake()
     {
@@ -68,8 +83,14 @@ public class PlayerController : Character
         jumpCounter = 0;
         //ResetState();
 
+        //makeSoundEvent.AddListener(MakeSoundEffect);
         //SetCursor(CursorType.None);
     }
+
+    //private void MakeSoundEffect(float intensity)
+    //{
+    //    Destroy(Instantiate(soundEffectFX, transform.position, Quaternion.identity, null), .2f);
+    //}
 
     private new void Start()
     {
@@ -98,16 +119,22 @@ public class PlayerController : Character
                 //Dash forward
                 StartCoroutine(Dash());
             }
-            else
-            {
-                textSpawner.SpawnText("Too Tired!", Color.green);
-            }
+            //else
+            //{
+            //    textSpawner.SpawnText("Too Tired!", Color.green);
+            //}
         }
 
         //ProcessRaycast();
-
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if(objectInHand != null)
+            {
+                DropObject();
+            }
+        }
 #if UNITY_EDITOR
-        if(Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             Debug.Log("Debug: Last Collision Point");
             navMeshAgent.enabled = false;
@@ -123,7 +150,23 @@ public class PlayerController : Character
         textSpawner.SpawnText("Dashing!", Color.green);
         stamina.ModifyStamina(-dashCost);
 
-        MoveInDirection(transform.forward, dashSpeed);
+        NavMeshHit hit;
+        NavMesh.Raycast(transform.position, transform.position + 5f * transform.forward, out hit, 1);
+
+        navMeshAgent.velocity = DetermineDirectionOfMovement(10f, 0f);// (new Vector3(0f, 0f, 2f);
+        //navMeshAgent.SetDestination(hit.position);
+
+        //float moveSpeed = navMeshAgent.speed;
+        //navMeshAgent.speed = 50f;
+        //navMeshAgent.SetDestination(transform.position + transform.forward * 5);
+        //while ((transform.position - navMeshAgent.destination).magnitude > navMeshAgent.stoppingDistance)
+        //{
+        //    yield return null;
+        //}
+        //navMeshAgent.speed = moveSpeed;
+
+        //navMeshAgent.Warp(transform.position + transform.forward * 10);
+
 
         yield return new WaitForSeconds(2f);
         playerState = PlayerState.Idle;
@@ -217,8 +260,8 @@ public class PlayerController : Character
             {
                 yield return null;
             }
-            feeder.AssignVictim(currentVictim);
             currentVictim.GetComponent<Character>().Stun(-1);
+            feeder.AssignVictim(currentVictim);
             playerState = PlayerState.Feeding;
         }
         else
@@ -230,7 +273,7 @@ public class PlayerController : Character
     }
 
     /***********************
-    * FEEDING
+    * STATE
     ***********************/
 
     private void ChangeState(PlayerState newState)
@@ -312,10 +355,14 @@ public class PlayerController : Character
             }
             else // ground controls
             {
+                float staminaCost = walkStaminaDrain;
                 // Determine how fast the player moves: running, walking speed
                 float movementSpeed = baseMovementSpeed;
+                float noiseLevel = walkingNoiseLevel;
                 if(Input.GetKey(sprintingKey))
                 {
+                    noiseLevel = sprintingNoiseLevel;
+                    staminaCost = sprintStaminaDrain;
                     movementSpeed = sprintSpeed;
                 }
 
@@ -324,7 +371,8 @@ public class PlayerController : Character
 
                 // The object moves via navmesh in the direction of movement
                 navMeshAgent.Move(direction * movementSpeed * Time.deltaTime);
-
+                stamina.ModifyStaminaShowOnIncrement(-staminaCost * Time.deltaTime);
+                makeSoundEvent.Invoke(noiseLevel);
                 //Update animator
                 //animator.SetFloat("ForwardSpeed", movementSpeed);
             }

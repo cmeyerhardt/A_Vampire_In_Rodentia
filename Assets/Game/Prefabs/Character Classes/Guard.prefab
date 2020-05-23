@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8091798866190132027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4628790373438011979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad47372167affe54a8241bb900e9965a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ai: {fileID: 0}
+  tasks: []
+  currentDestination: {fileID: 0}
+  currentWaitTime: 0
+  currentBundle:
+    waypoint: {fileID: 0}
+    waitTime: 0
+  arrived: 0
+  gizmosColor: {r: 1, g: 1, b: 1, a: 1}
+  patrolRouteWaypoints2:
+  - waypoint: {fileID: 0}
+    waitTime: 0
+  - waypoint: {fileID: 0}
+    waitTime: 0
+  patrolSpeedFraction: 0.5
+  numLoops: 1
 --- !u!1001 &614823908096426585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119,3 +147,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40e40cafc4a80154898da6c6d16f7d20, type: 3}
+--- !u!1 &4628790373438011979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5238969804815366162, guid: 40e40cafc4a80154898da6c6d16f7d20,
+    type: 3}
+  m_PrefabInstance: {fileID: 614823908096426585}
+  m_PrefabAsset: {fileID: 0}

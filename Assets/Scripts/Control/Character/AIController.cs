@@ -22,18 +22,17 @@ public class BehaviourSequence
 //todo - give de-escalation wait times random variation of +-2s ?
 public class AIController : Character
 {
+
     [Header("State")]
     [Header("NPC--")]
     public bool canSeePlayer = false;
+        //public Vector3 lastSeenPlayerLocation = new Vector3();
+        //public float timeSinceLastSawPlayer = 0f;
     public NPCState currentState = NPCState.Default;
     public NPCState lastState = NPCState.Default;
-
     public AIBehaviour aIBehaviour = null;
-    [HideInInspector]public string currentBehaviour = "";
+    public string currentBehaviour = "";
     [HideInInspector]public string lastBehaviour = "";
-
-    [SerializeField] float deEscalationWaitTime = 6f;
-    private bool deEscalating;
 
     //[SerializeField] float waitTimeVariation = 2f;
 
@@ -54,12 +53,24 @@ public class AIController : Character
     // Cache
     [HideInInspector] public PlayerController player = null;
     [HideInInspector] public Transform playerHead = null;
+    Vector3 tetherPoint = new Vector3();
+
+    [HideInInspector] public Detector detector = null;
+
 
     public override void Awake()
     {
         base.Awake();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        playerHead = player.head;
+        detector = GetComponent<Detector>();
+        tetherPoint = transform.position;
+
+        // todo: protect against null references
+        player = FindObjectOfType<PlayerController>();
+        if (player != null)
+        {
+            playerHead = player.head;
+            
+        }
 
         // Set State Presets
         foreach (BehaviourSequence b in stateSequences)
@@ -69,6 +80,8 @@ public class AIController : Character
         //SetStatePresets();
         SetBehaviourPresets();
     }
+
+    
 
     public override void Start()
     {
@@ -80,6 +93,7 @@ public class AIController : Character
         foreach (BehaviourNode n in behaviourPresets)
         //for(int i = 0; i < behaviorNodes.Count; i++)
         {
+            //print(gameObject + " adding behaviour: " + n.behaviour);
             if (n.module != null)
             {
                 n.module.enabled = false;
@@ -87,6 +101,7 @@ public class AIController : Character
             }
             else
             {
+                //print(gameObject + " creating new behaviour: " + n.behaviour);
                 string tempBehaviour = n.behaviour.Split(':')[0];
                 int c = 1;
                 while (behaviourMap.ContainsKey(tempBehaviour + "" + c))
@@ -103,28 +118,26 @@ public class AIController : Character
 
     public override void Update()
     {
-
         if (isDead) { return; }
         if (isStunned) { return; }
-
-        //todo -- achieve this without turning the head toward unnatural angles
-        if (canSeePlayer)
-        {
-            head.LookAt(playerHead);
-        }
-
+        
         base.Update();
 
         if (currentState != lastState)
         {
             // If going to change state while waiting to de-escalate, cancel the de-escalation before changing the state
-            if (deEscalating)
-            {
-                print(gameObject.name + " cancel de-escalation");
-                deEscalating = false;
-                CancelInvoke("DeEscalateState");
-            }
+            //if (deEscalating)
+            //{
+            //    print(gameObject.name + " cancel de-escalation");
+            //    deEscalating = false;
+            //    CancelInvoke("DeEscalateState");
+            //}
             SetState();
+        }
+
+        if(currentState != NPCState.Alert && canSeePlayer)
+        {
+            currentState = NPCState.Alert;
         }
 
         if (currentBehaviour != lastBehaviour)
@@ -264,20 +277,13 @@ public class AIController : Character
             //Debug.Log(gameObject.name + " " + b.GetType() + " done.");
             b.enabled = false;
             b.doneEvent.RemoveAllListeners();
-            //b.taskDone.RemoveAllListeners();
-
-
-            //if (!behaviourMap.ContainsValue(aIBehaviour))
-            //{
-            //                    //Destroy(aIBehaviour);
-            //}
         }
 
         if (currentBehaviour == "Attack" && currentBehaviourSequence.Count == 0)
         {
             //Debug.Log("Need to go back");
             Attack a = (Attack)b;
-            currentBehaviourSequence.Enqueue("GoToLocation:" + a.startLocation);
+            currentBehaviourSequence.Enqueue("GoToLocation:" + tetherPoint);
         }
 
         if(!behaviourMap.ContainsKey(currentBehaviour) && b != null)
@@ -290,12 +296,12 @@ public class AIController : Character
             currentBehaviour = currentBehaviourSequence.Dequeue();
         }
         // When no more behaviours for the current behaviour sequence, de-escalate state
-        else if(currentState != NPCState.Default)
-        {
-            deEscalating = true;
-            Debug.Log(gameObject.name + " de-escalating in " + deEscalationWaitTime + " seconds.");
-            Invoke("DeEscalateState", deEscalationWaitTime);
-        }
+        //else if(currentState != NPCState.Default)
+        //{
+        //    deEscalating = true;
+        //    Debug.Log(gameObject.name + " de-escalating in " + deEscalationWaitTime + " seconds.");
+        //    Invoke("DeEscalateState", deEscalationWaitTime);
+        //}
         else
         {
             DeEscalateState();
@@ -328,9 +334,12 @@ public class AIController : Character
 
     public override void UnStun()
     {
-        currentState = lastState;
-        lastState = NPCState.Incapacitated;
-        base.UnStun();
+        if(currentState == NPCState.Incapacitated)
+        {
+            currentState = lastState;
+            lastState = NPCState.Incapacitated;
+            base.UnStun();
+        }
     }
 
     private void SetState()
@@ -338,8 +347,32 @@ public class AIController : Character
         StopMoving();
         if (aIBehaviour != null)
         {
-            aIBehaviour.doneEvent.Invoke(aIBehaviour);
+            print("aIBehaviour now done" + aIBehaviour);
+            //aIBehaviour.doneEvent.Invoke(aIBehaviour);
+            aIBehaviour.enabled = false;
+            aIBehaviour = null;
         }
+
+        if (lastState == NPCState.Default || lastState == NPCState.None)
+        {
+            if (behaviourMap.ContainsKey("Return"))
+            {
+                //Debug.Log("trying to set return location");
+                if (((GoToLocation)behaviourMap["Return"]).nullableLocation == null) //todo: keep this? prevents re-assigning "Return" location if it has already been assigned. effectively makes a permanent "Home" location
+                {
+                    //Debug.Log("Setting return location " + transform.position);
+                    ((GoToLocation)behaviourMap["Return"]).nullableLocation = transform.position;
+                }
+            }
+        }
+
+        if (behaviourMap.ContainsKey("GoToPlayer"))
+        {
+            Debug.Log("Setting player location " + player.transform.position);
+            ((GoToLocation)behaviourMap["GoToPlayer"]).nullableLocation = player.transform.position;
+        }
+
+        
 
         if (stateMap.ContainsKey(currentState))
         {
@@ -348,15 +381,12 @@ public class AIController : Character
             switch (currentState)
             {
                 case NPCState.Alert:
-                    indicator.Recolor(Color.red);
+                    textSpawner.SpawnText("!", Color.red);
                     break;
                 case NPCState.Suspicious:
-                    //head.forward = model.forward;
-                    indicator.Recolor(Color.yellow);
+                    textSpawner.SpawnText("?", Color.yellow);
                     break;
                 case NPCState.Default:
-                    //head.forward = model.forward;
-                    indicator.Recolor(Color.green);
                     break;
             }
             SetBehaviourSequence(stateMap[currentState]);
@@ -365,19 +395,17 @@ public class AIController : Character
 
     private void DeEscalateState()
     {
-        deEscalating = false;
         switch (currentState)
         {
             case NPCState.Alert:
-                Debug.Log("Alert -> Suspicious");
+                textSpawner.SpawnText("I thought I saw something", Color.yellow);
                 currentState = NPCState.Suspicious;
                 break;
             case NPCState.Suspicious:
-                Debug.Log("Suspicious -> Default");
+                textSpawner.SpawnText("I guess it was nothing", Color.green);
                 currentState = NPCState.Default;
                 break;
             default:
-                Debug.Log("Entering Default State");
                 if (lastState == NPCState.Default)
                 {
                     lastState = NPCState.None;
@@ -385,10 +413,7 @@ public class AIController : Character
                 currentState = NPCState.Default;
                 break;
         }
-        deEscalating = false;
     }
-
-
 
 
     /***********************
@@ -412,7 +437,7 @@ public class AIController : Character
             if (a != null)
             {
                 CancelInteract();
-                DropObject();
+
                 a.doneEvent.AddListener(BehaviourDone);
                 a.ai = this;
                 a.enabled = true;
@@ -453,31 +478,55 @@ public class AIController : Character
     }
 
 
-
-
-
     /***********************
     * EVENT DRIVEN
     ***********************/
-    public void PlayerSighted(bool sighted)
+    public void PlayerSighted(bool alerted)
     {
-        if (canSeePlayer && currentState != NPCState.Alert ||sighted && !canSeePlayer)
+        if (/*currentState != NPCState.Alert &&*/ alerted && !canSeePlayer)
         {
             canSeePlayer = true;
-            head.LookAt(playerHead.transform);
-            
-            textSpawner.SpawnText("A Vampire!!", Color.red);
+            textSpawner.SpawnText("A Vampire!", Color.red);
             currentState = NPCState.Alert;
-
+            DropObject();
         }
-        else if (!sighted && canSeePlayer)
+        //else if (currentState == NPCState.Alert && alerted)
+        //{
+        //    timeSinceLastSawPlayer = 0f;
+        //}
+        else if (canSeePlayer && !alerted)
         {
+            
+            //lastSeenPlayerLocation = player.transform.position;
+            if (behaviourMap.ContainsKey("GoToPlayer"))
+            {
+                Debug.Log("Setting player location " + player.transform.position);
+                ((GoToLocation)behaviourMap["GoToPlayer"]).nullableLocation = player.transform.position;
+            }
             canSeePlayer = false;
-            //head.forward = model.forward;
-
+            DeEscalateState();
+            //MoveToDestination(lastSeenPlayerLocation, 1f);
+            print("cannot see player");
             textSpawner.SpawnText("Where'd it go?", Color.yellow);
-
         }
+
+    }
+
+    public virtual void PlayerHeard(bool heard)
+    {
+        Debug.Log(gameObject + " heard the player.");
+        
+        //switch(currentState)
+        //{
+        //    case NPCState.Default:
+        //        currentState = NPCState.Suspicious;
+        //        break;
+        //    case NPCState.Suspicious:
+        //        lastState = NPCState.None;
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
 
     /****************

@@ -1,5 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1078132545824504115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2150565189391299144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8ba87a7858da245ab45c70a123f9ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ai: {fileID: 0}
+  tasks: []
+  objectReference: {fileID: 0}
+  objectName: 
+  range: 0
+  distanceToReference: 0
+  maxSeekDistance: 40
+  sirenNoiseLevel: 10
 --- !u!114 &5349137765108108045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +35,7 @@ MonoBehaviour:
   fedOnEvent:
     m_PersistentCalls:
       m_Calls: []
-  feedEvent:
+  feedingOn:
     m_PersistentCalls:
       m_Calls: []
   resistEvent:
@@ -46,19 +66,18 @@ MonoBehaviour:
   textSpawner: {fileID: 0}
   navMeshAgent: {fileID: 0}
   rigidBody: {fileID: 0}
-  indicator: {fileID: 0}
   animator: {fileID: 0}
   stamina: {fileID: 0}
   model: {fileID: 0}
   head: {fileID: 3280425120394951437}
-  hand: {fileID: 0}
+  hand: {fileID: 3280425120394951479}
+  hitBox: {fileID: 0}
   canSeePlayer: 0
   currentState: 0
   lastState: 0
   aIBehaviour: {fileID: 0}
   currentBehaviour: 
   lastBehaviour: 
-  deEscalationWaitTime: 6
   availableBehaviours: GoToLocation, GoToObject, Patrol, Siren, Sleep, Wait, Wander
   stateSequences: []
   behaviourPresets:
@@ -68,11 +87,18 @@ MonoBehaviour:
     module: {fileID: 0}
   player: {fileID: 0}
   playerHead: {fileID: 0}
-  sleepingBehavioursSet: 0
+  detector: {fileID: 0}
+  bed: {fileID: 0}
   sleepTime: 5
   wakeTime: 20
-  bed: {fileID: 0}
+  sleepingBehavioursSet: 0
   baseDefault: []
+  skinnedMeshRend: {fileID: 3280425120400648803}
+  mouseFurColor: {r: 1, g: 0.73, b: 0, a: 1}
+  randomizeMouseShirtColor: 1
+  randomizeRed: 1
+  randomizeGreen: 1
+  randomizeBlue: 1
 --- !u!114 &7029019338965501878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,31 +127,23 @@ MonoBehaviour:
         m_CallState: 2
   deathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6467423296068981850}
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isDead: 0
   currentHealth: 100
   maxHealth: 100
   displayColor: {r: 1, g: 0, b: 0, a: 1}
   textSpawner: {fileID: 5516385277082073183}
---- !u!114 &1078132545824504115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2150565189391299144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b8ba87a7858da245ab45c70a123f9ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ai: {fileID: 0}
-  tasks: []
-  objectReference: {fileID: 0}
-  objectName: 
-  range: 0
-  distanceToReference: 0
-  maxSeekDistance: 40
 --- !u!1001 &1226159972738126106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153,6 +171,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.26
       objectReference: {fileID: 0}
+    - target: {fileID: 643471277907338375, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: fromTransform
+      value: 
+      objectReference: {fileID: 3280425120394951521}
     - target: {fileID: 926728164076872530, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: m_Name
@@ -361,6 +384,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4110782995144900451}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &3280425120394951521 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1480002155933549570, guid: 8e4a2a5ba546d3c49a15ff4fb6c27f6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4110782995144900451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3280425120394951479 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1480002155933549652, guid: 8e4a2a5ba546d3c49a15ff4fb6c27f6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4110782995144900451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &3280425120400648803 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1480002155945153792, guid: 8e4a2a5ba546d3c49a15ff4fb6c27f6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4110782995144900451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4191007141516178766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -376,7 +417,7 @@ PrefabInstance:
     - target: {fileID: 1874812680642494341, guid: 3e7831b8dcd34b14799070d0edb3d003,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.0369997
+      value: 4.05
       objectReference: {fileID: 0}
     - target: {fileID: 1874812680642494341, guid: 3e7831b8dcd34b14799070d0edb3d003,
         type: 3}

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class Character : MonoBehaviour, IStamina
+public class Character : MonoBehaviour
 {
     [Header("Character--")]
     public bool isDead = false;
@@ -9,29 +9,31 @@ public class Character : MonoBehaviour, IStamina
 
     public Interactable currentInteractiable = null;
     [SerializeField] public GameObject objectInHand = null;
+
     [Header("Movement")]
     [SerializeField] [Range(0f, 20f)]  public float baseMovementSpeed = 5f;
-    //[SerializeField] [Range(0f, 20f)]  public float walkingSpeed = 7f;
     [SerializeField] [Range(0f, 20f)]  public float sprintSpeed = 10f;
-    [SerializeField] [Range(10f, 30f)] public float dashSpeed = 20f;
+    [SerializeField] [Range(10f, 3000f)] public float dashSpeed = 20f;
     [SerializeField] [Range(45f, 270f)] public float turnSpeed = 100f;
-    float navMeshDistanceBuffer = 1f;
+    [SerializeField] [Range(0f, 270f)] public float staminaDrainedWhenStunned = 10f;
+    [SerializeField] [Range(0f, 1f)] public float stunResistChance = .1f;
+    [SerializeField] [Range(0f, 1f)] public float stunDurationReduction = .1f;
+    float navMeshDistanceBuffer = 2f;
 
     [HideInInspector] public FloatingTextSpawner textSpawner = null;
     [HideInInspector] public NavMeshAgent navMeshAgent = null;
     [HideInInspector] public Rigidbody rigidBody = null;
-    [HideInInspector] public Colorizer indicator = null;
     [HideInInspector] public Animator animator = null;
     [HideInInspector] public Stamina stamina = null;
-    [HideInInspector] public Transform model = null;
     
+    [Header("Transform Eeferences")]
+    [HideInInspector] public Transform model = null;
     [SerializeField] public Transform head = null;
     [SerializeField] public Transform hand = null;
-
+    [SerializeField] public Collider hitBox = null;
 
     public virtual void Awake()
     {
-        indicator = GetComponentInChildren<Colorizer>();
         textSpawner = GetComponentInChildren<FloatingTextSpawner>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         rigidBody = GetComponent<Rigidbody>();
@@ -42,7 +44,6 @@ public class Character : MonoBehaviour, IStamina
 
     public virtual void Start()
     {
-        
     }
 
     public virtual void Update()
@@ -54,20 +55,29 @@ public class Character : MonoBehaviour, IStamina
     {
         isDead = true;
         navMeshAgent.enabled = false;
-        model.rotation = Quaternion.Euler(0f, 0f, -90f);
+        model.rotation = Quaternion.Euler(-90f, 0f, 0f);
     }
 
     public virtual void Stun(float duration)
     {
-        //todo -- when stunned, preserve last state/behaviour and disable currentbehaviour script
-        //todo -- is stun duration fixed or dependant on other variables?
-        isStunned = true;
-        stamina.ModifyStamina(-1f);
-        textSpawner.SpawnText("Stunned", Color.blue);
-        if(duration > 0)
+        if (Random.Range(0f, 1f) <= stunResistChance)
         {
-            Invoke("UnStun", duration);
+            isStunned = true;
+            stamina.ModifyStamina(staminaDrainedWhenStunned);
+            textSpawner.SpawnText("Stunned", Color.blue);
+
+            float _duration = Mathf.Clamp(duration * (1 - stunDurationReduction), 0f, duration);
+
+            if (_duration > 0)
+            {
+                Invoke("UnStun", _duration);
+            }
         }
+        else
+        {
+            UnStun();
+        }
+
     }
 
     public virtual void UnStun()
@@ -132,11 +142,13 @@ public class Character : MonoBehaviour, IStamina
         {
             print("Dropping " + objectInHand);
             objectInHand.transform.parent = null;
-            Rigidbody droppedObject = objectInHand.AddComponent<Rigidbody>();
-            droppedObject.useGravity = true;
-            droppedObject.isKinematic = false;
+            Rigidbody droppedObject = objectInHand.GetComponent<Rigidbody>();
+            if(droppedObject != null)
+            {
+                droppedObject.useGravity = true;
+                droppedObject.isKinematic = false;
+            }
         }
-
         objectInHand = null;
     }
 
@@ -150,7 +162,7 @@ public class Character : MonoBehaviour, IStamina
                 objectInHand = objectToPickUp;
                 objectInHand.transform.position = hand.position;
                 objectInHand.transform.rotation = transform.rotation;
-                objectInHand.transform.parent = transform;
+                objectInHand.transform.parent = hand;
                 return true;
             }
             else

@@ -7,9 +7,13 @@ public class Siren : GoToObject
     [Header("Siren--")]
     [SerializeField] float maxSeekDistance = 40f;
     Protector protector = null;
+    Vector3 playerPosition = new Vector3();
+    [SerializeField] float sirenNoiseLevel = 10f;
 
     private new void OnEnable()
     {
+        playerPosition = ai.player.transform.position;
+        ai.player.makeSoundEvent.Invoke(sirenNoiseLevel);
         Protector[] protectors = FindObjectsOfType<Protector>();
 
         if(protectors.Length > 0)
@@ -44,7 +48,11 @@ public class Siren : GoToObject
         base.Update();
         if(ai.IsInRange(protector.transform.position))
         {
-            protector.currentState = NPCState.Alert;
+            if(protector.behaviourMap.ContainsKey("GoToPlayer"))
+            {
+                ((GoToLocation)protector.behaviourMap["GoToPlayer"]).nullableLocation = playerPosition;
+            }
+            protector.currentState = NPCState.Suspicious;
             doneEvent.Invoke(this);
         }
     }

@@ -2,75 +2,121 @@
 
 public class Villager : AIController 
 {
+    [Header("Sleeping")]
     [Header("Villager--")]
-    public bool sleepingBehavioursSet = false;
-
+    [SerializeField] public Bed bed;
     public float sleepTime = 5f;
     public float wakeTime = 20f;
-    [SerializeField] public Bed bed;
+
     [Header("Behaviours")]
+    public bool sleepingBehavioursSet = false;
     public string[] baseDefault = null;
-    float zzzCounter = 2f;
-    bool inBed = false;
-    bool goingToSleep = false;
+
+    [Header("Mouse Color")]
+    [SerializeField] SkinnedMeshRenderer skinnedMeshRend = null;
+    [SerializeField] Color mouseFurColor = new Color();
+    [SerializeField] Color mouseShirtColor = new Color();
+    [SerializeField] bool randomizeMouseShirtColor = true;
+    [SerializeField] bool randomizeRed = true;
+    [SerializeField] bool randomizeGreen = true;
+    [SerializeField] bool randomizeBlue = true;
+    Material shirtMaterial = null;
+    Material furMaterial = null;
+
+
     //Cache
     FeedingVictim victim = null;
-    
+    Health health = null;
     public override void Awake()
     {
         base.Awake();
         victim = GetComponent<FeedingVictim>();
+        health = GetComponent<Health>();
+        Material[] materials = skinnedMeshRend.materials;
+        if(materials != null && materials.Length > 0)
+        {
+            furMaterial = materials[0];
+            ChangeFurColor(0);
+            shirtMaterial = materials[1];
+            if (shirtMaterial != null)
+            {
+                if (randomizeMouseShirtColor || mouseShirtColor.a == 0f)
+                {
+                    Color randomShirtColor = new Color(randomizeRed ? Random.Range(0f, 1f) : 0f, randomizeGreen ? Random.Range(0f, 1f) : 0f, randomizeBlue ? Random.Range(0f, 1f) : 0f);
+                    shirtMaterial.SetColor("_Color", randomShirtColor);
+                }
+                else if(!randomizeMouseShirtColor && mouseShirtColor.a > 0f)
+                {
+                    shirtMaterial.SetColor("_Color", (Color)mouseShirtColor);
+                }
+            }
+        }
+    }
+
+    public void ChangeFurColor(float change)
+    {
+        if (furMaterial != null)
+        {
+            furMaterial.SetColor("_Color", mouseFurColor + (Color.white - mouseFurColor) * (1 - health.GetHealthPerc()));
+        }
     }
 
     public override void Start()
     {
         base.Start();
+        if(bed != null && behaviourMap.ContainsKey("Sleep"))
+        { 
+            if (((Sleep)behaviourMap["Sleep"]).bed == null)
+            {
+                ((Sleep)behaviourMap["Sleep"]).bed = bed;
+            }
+        }
     }
 
     public new void Update()
     {
         base.Update();
 
-        if (bed == null) { return; }
+        //if (bed == null) { return; }
         if (currentState != NPCState.Default) { return; }
 
-        if (Time.time >= sleepTime && Time.time < wakeTime && !goingToSleep)
-        {
-            goingToSleep = true;
-            MoveToDestination(bed.transform.position, 1f);
-        }
-
-        if (IsInRange(bed.transform.position, GetStoppingDistance()))
-        {
-            //print("At my bed");
-            bed.Interact(this);
-            inBed = true;
-        }
-        //else
+        //if (Time.time >= sleepTime && Time.time < wakeTime && !goingToSleep)
         //{
-        //    //print("Not in range yet");
+        //    goingToSleep = true;
         //    MoveToDestination(bed.transform.position, 1f);
         //}
 
-        if (inBed)
-        {
-            if (zzzCounter > 0f)
-            {
-                zzzCounter -= Time.deltaTime;
-            }
-            else
-            {
-                textSpawner.SpawnText("Zzz..", Color.yellow);
-                zzzCounter = 4f;
-            }
-        }
+        //if (IsInRange(bed.transform.position, GetStoppingDistance()))
+        //{
+        //    //print("At my bed");
+        //    bed.Interact(this);
+        //    inBed = true;
+        //}
+        ////else
+        ////{
+        ////    //print("Not in range yet");
+        ////    MoveToDestination(bed.transform.position, 1f);
+        ////}
 
-        //todo -- put in sleep on disable
-        if(Time.time >= wakeTime && inBed)
-        {
-            inBed = false;
-            bed.CancelInteract();
-        }
+        //if (inBed)
+        //{
+        //    if (zzzCounter > 0f)
+        //    {
+        //        zzzCounter -= Time.deltaTime;
+        //    }
+        //    else
+        //    {
+        //        textSpawner.SpawnText("Zzz..", Color.yellow);
+        //        zzzCounter = 4f;
+        //    }
+        //}
+
+        ////todo -- put in sleep on disable
+        //if(Time.time >= wakeTime && inBed)
+        //{
+        //    inBed = false;
+        //    bed.CancelInteract();
+        //}
 
         if (Time.time >= sleepTime && Time.time < wakeTime && !sleepingBehavioursSet)
         {
@@ -79,7 +125,7 @@ public class Villager : AIController
             if (stateMap.ContainsKey(NPCState.Default))
             {
                 baseDefault = stateMap[NPCState.Default];
-                string[] s = { "GoToObject:Torch", "Wait" };
+                string[] s = { "Sleep" };
                 UpdateStateList(NPCState.Default, s);
                 stateMap[NPCState.Default] = s;
             }
@@ -120,6 +166,20 @@ public class Villager : AIController
                 s.sequence = sequence;
                 break;
             }
+        }
+    }
+    public override void PlayerHeard(bool heard)
+    {
+        base.PlayerHeard(heard);
+        switch (currentState)
+        {
+            case NPCState.Default:
+                currentState = NPCState.Suspicious;
+                break;
+            case NPCState.Suspicious:
+                break;
+            default:
+                break;
         }
     }
 

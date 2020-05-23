@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   distance: 0
-  fromTransform: {fileID: 0}
+  fromTransform: {fileID: 4251059871065652026}
   canSeePlayer: 0
   sightRange: 20
+  hearingThreshold: 20
   playerDetectedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -37,31 +38,30 @@ MonoBehaviour:
   currentInteractiable: {fileID: 0}
   objectInHand: {fileID: 0}
   baseMovementSpeed: 5
-  walkingSpeed: 7
   sprintSpeed: 10
   dashSpeed: 20
   turnSpeed: 100
   textSpawner: {fileID: 6740220481580837189}
   navMeshAgent: {fileID: 0}
   rigidBody: {fileID: 0}
-  indicator: {fileID: 0}
   animator: {fileID: 0}
   stamina: {fileID: 0}
   model: {fileID: 0}
   head: {fileID: 0}
   hand: {fileID: 0}
+  hitBox: {fileID: 0}
   canSeePlayer: 0
   currentState: 1
   lastState: 1
   aIBehaviour: {fileID: 0}
   currentBehaviour: 
   lastBehaviour: 
-  deEscalationWaitTime: 0
   availableBehaviours: Attack, Patrol, Sleep
   stateSequences: []
   behaviourPresets: []
   player: {fileID: 0}
   playerHead: {fileID: 0}
+  detector: {fileID: 0}
 --- !u!1 &5262992108995916048
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,3 +262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0856acb528d68a04ab2ca9418c35a9f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &4251059871065652026 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3996916198836047913, guid: f81391574d6fa1644ac8bd4bfbc65a52,
+    type: 3}
+  m_PrefabInstance: {fileID: 975357483976076051}
+  m_PrefabAsset: {fileID: 0}

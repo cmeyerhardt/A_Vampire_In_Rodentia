@@ -6,12 +6,17 @@ public class Feeder : MonoBehaviour
     [SerializeField] [Tooltip("sec.")][Range(0f,10f)]float feedIntervalWhileLatched = 2f;
     [SerializeField] [Tooltip("sec.")][Range(0f,10f)]float timeToWaitToAvoidInturruption = 1f;
     [SerializeField] [Range(0f,10f)]float feedInturruptionCost = 1f;
-    [SerializeField] [Range(0f,1f)] float healthModRatio = .5f;
+    [SerializeField] [Range(0f,1f)] float healthGainRatio = .5f;
+    [SerializeField] [Range(0f,1f)] float rangeToBreakFeeding = 5f;
+    bool feeding = false;
 
     // Cache
     float feedCounter = 0f;
     float totalTimeFeeding = 0f;
+
     FeedingVictim currentVictim = null;
+    Health victimHealth = null;
+
     Health health = null;
     Stamina stamina = null;
 
@@ -31,56 +36,71 @@ public class Feeder : MonoBehaviour
 
     private void Update()
     {
-        if(currentVictim != null)
+        if(feeding)
         {
-            if (feedCounter >= feedIntervalWhileLatched)
+            if (currentVictim != null)
             {
-                feedCounter = 0f;
-                Feed();
+                if (Vector3.Distance(transform.position, currentVictim.transform.position) <= rangeToBreakFeeding && !victimHealth.isDead)
+                {
+                    feedCounter += Time.deltaTime;
+                    totalTimeFeeding += Time.deltaTime;
+                    if (feedCounter >= feedIntervalWhileLatched)
+                    {
+                        feedCounter = 0f;
+                        Feed(currentVictim.GetFedValue());
+                    }
+                }
+                else
+                {
+                    CancelFeeding();
+                }
+
             }
-            feedCounter += Time.deltaTime;
-            totalTimeFeeding += Time.deltaTime;
+            else
+            {
+                CancelFeeding();
+            }
         }
+
     }
     
     public void AssignVictim(FeedingVictim victim)
     {
         currentVictim = victim;
+        victimHealth = currentVictim.GetComponent<Health>();
+        totalTimeFeeding = 0f;
+        feeding = true;
         //Trigger Feeding Animation
     }
 
-    private void Feed()
+    private void Feed(float value)
     {
-        if(!currentVictim.GetComponent<Health>().isDead)
-        {
-            //feedEvent.Invoke(currentVictim.GetFedValue());
-            currentVictim.FeedOn();
-            health.ModifyHealth(currentVictim.GetFedValue() * healthModRatio);
-            stamina.ModifyStamina(currentVictim.GetFedValue());
-        }
-        else
-        {
-            CancelFeeding();
-        }
+        currentVictim.FeedOn();
+        health.ModifyHealth(value * healthGainRatio);
+        stamina.ModifyStamina(value);
     }
 
     public void CancelFeeding()
     {
-        //Check if cancel early
-        if (totalTimeFeeding < timeToWaitToAvoidInturruption)
+        if(feeding)
         {
-            textSpawner.SpawnText("Penalty", new Color(1f, .5f, 0f));
-            stamina.ModifyStamina(-feedInturruptionCost);
-            //feedEvent.Invoke(-feedInturruptionCost);
+            //Check if cancel early
+            if (totalTimeFeeding < timeToWaitToAvoidInturruption)
+            {
+                textSpawner.SpawnText("Penalty", new Color(1f, .5f, 0f));
+                stamina.ModifyStamina(-feedInturruptionCost);
+            }
+
+            if (currentVictim != null)
+            {
+                currentVictim.CancelBeingFedOn();
+            }
+
+            currentVictim = null;
+            GetComponent<PlayerController>().playerState = PlayerState.Idle;
         }
 
-        if (currentVictim != null)
-        {
-            currentVictim.CancelBeingFedOn();
-        }
-        
-        currentVictim = null;
-
+        feeding = false;
         feedCounter = 0f;
         totalTimeFeeding = 0f;
     }

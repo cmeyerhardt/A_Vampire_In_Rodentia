@@ -7,8 +7,8 @@ using UnityEngine;
 // can be used for: alarms, illumination
 public class LineOfSight : MonoBehaviour
 {
-    public PlayerController player;
-    public float distance;
+    [HideInInspector] public PlayerController player;
+    [HideInInspector] public float distance;
     public Transform fromTransform;
     //Debug
     Ray ray;
@@ -19,6 +19,29 @@ public class LineOfSight : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
     }
 
+    public bool RaycastToPlayerSuccessful( out GameObject firstHit)
+    {
+        firstHit = null;
+        //cast a ray toward the player
+        ray = new Ray(fromTransform.position, (player.transform.position - fromTransform.position).normalized);
+        RaycastHit[] hits = Physics.RaycastAll(ray, distance + 2f);
+
+        if (hits.Length > 0)
+        {
+            // Sory hits by distance
+            List<RaycastHit> hitList = SetHitList(hits);
+
+            if (hitList.Count > 0)
+            {
+                firstHit = hitList[0].transform.gameObject;
+                if (ReferenceEquals(hitList[0].transform.gameObject,player.gameObject))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     public bool RaycastToPlayerSuccessful()
     {
         //cast a ray toward the player
@@ -32,7 +55,7 @@ public class LineOfSight : MonoBehaviour
 
             if (hitList.Count > 0)
             {
-                if (ReferenceEquals(hitList[0].transform.gameObject,player.gameObject))
+                if (ReferenceEquals(hitList[0].transform.gameObject, player.gameObject))
                 {
                     return true;
                 }
@@ -66,6 +89,8 @@ public class LineOfSight : MonoBehaviour
                             break;
                         }
                     }
+
+                    //print(outList[0].transform.name);
                     if (!added)
                     {
                         outList.Add(hit);

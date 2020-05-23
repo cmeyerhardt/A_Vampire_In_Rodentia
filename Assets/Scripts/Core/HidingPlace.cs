@@ -22,7 +22,7 @@ public class HidingPlace : Interactable, IRaycast
         {
             if(Input.GetMouseButtonDown(0))
             {
-                if(playerController.IsInRange(transform.position, playerController.navMeshAgent.stoppingDistance))
+                if (playerController.IsInRange(GetComponent<Collider>().ClosestPointOnBounds(transform.position), playerController.GetStoppingDistance()))
                 {
                     Interact(playerController);
                     playerController.playerState = PlayerState.Hiding;

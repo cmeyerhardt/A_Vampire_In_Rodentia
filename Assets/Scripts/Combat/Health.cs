@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
-        newHealthValueEvent.Invoke(currentHealth / maxHealth);
+        newHealthValueEvent.Invoke(GetHealthPerc());
     }
 
     public void ModifyHealth(float change)
@@ -27,6 +27,9 @@ public class Health : MonoBehaviour
         {
             currentHealth = Mathf.Clamp(currentHealth + change, 0f, maxHealth);
 
+            // update display
+            newHealthValueEvent.Invoke(GetHealthPerc());
+
             if (currentHealth <= 0f)
             {
                 isDead = true;
@@ -34,9 +37,6 @@ public class Health : MonoBehaviour
             }
             else
             {
-                // update display
-                newHealthValueEvent.Invoke(currentHealth / maxHealth);
-
                 string changeString = change.ToString();
                 if (change > 0f)
                 {
@@ -45,5 +45,10 @@ public class Health : MonoBehaviour
                 textSpawner.SpawnText(changeString, displayColor, true);
             }
         }
+    }
+
+    public float GetHealthPerc()
+    {
+        return currentHealth / maxHealth;
     }
 }

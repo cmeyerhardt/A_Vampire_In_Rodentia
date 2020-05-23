@@ -37,4 +37,27 @@ public class Protector : AIController, IRaycast
 #endif
         base.Update();
     }
+
+    public override void PlayerHeard(bool heard)
+    {
+        base.PlayerHeard(heard);
+        if (currentBehaviour != "Return") //todo: keep this? prevents ai state change due to hearing player while returning to tether
+        {
+            //Debug.Log("Next...");
+            switch (currentState)
+            {
+                case NPCState.None:
+                case NPCState.Default:
+                    Debug.Log(transform.gameObject + " becoming suspicious");
+                    currentState = NPCState.Suspicious;
+                    break;
+                case NPCState.Suspicious:
+                    lastState = NPCState.None;
+                    break;
+                default:
+                    //Debug.Log("Dummmmmmmm dum dum dum duuuuuuum");
+                    break;
+            }
+        }
+    }
 }
