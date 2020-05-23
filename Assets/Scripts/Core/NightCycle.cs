@@ -275,8 +275,9 @@ public class NightCycle : MonoBehaviour
 
         }
 
-        LerpMoon(adjustedPercentage);
+        //LerpMoon(adjustedPercentage);
         sun.transform.rotation = Quaternion.Lerp(lastSunGoal, currentSunGoal, adjustedPercentage);
+        moon.transform.rotation = Quaternion.Lerp(lastMoonGoal, currentMoonGoal, adjustedPercentage);
 
         transform.Rotate(Time.deltaTime, 0, 0);
 
