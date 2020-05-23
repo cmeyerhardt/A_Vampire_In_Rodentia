@@ -14,17 +14,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ai: {fileID: 0}
   tasks: []
-  maxChaseDistance: 40
-  attackRange: 15
+  maxChaseDistance: 60
+  attackRange: 25
   attackDamage: 10
   attackInterval: 3
+  attackVolume: 10
   stunRange: 4
   stunInterval: 5
   stunDuration: 3
-  startLocation: {x: 0, y: 0, z: 0}
+  stunVolume: 10
+  stunStaminaCost: 10
   player: {fileID: 0}
   projectile: {fileID: -4080611748272314067, guid: fd5adf59e407ceb41bd82d29f8f81b66,
     type: 3}
+--- !u!114 &361487838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759792092228257692}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236987e91392c946a6d8cc740e0b897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ai: {fileID: 0}
+  tasks: []
+  location: {x: 0, y: 0, z: 0}
+  locationString: 
+  useV3: 0
+  range: 0
+  distanceToLocation: 0
+--- !u!114 &361487839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759792092228257692}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236987e91392c946a6d8cc740e0b897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ai: {fileID: 0}
+  tasks: []
+  location: {x: 0, y: 0, z: 0}
+  locationString: 
+  useV3: 0
+  range: 0
+  distanceToLocation: 0
 --- !u!1001 &529853706793582478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -39.1
       objectReference: {fileID: 0}
     - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
@@ -50,27 +90,27 @@ PrefabInstance:
     - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 20.1
       objectReference: {fileID: 0}
     - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7050996
       objectReference: {fileID: 0}
     - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.70910835
       objectReference: {fileID: 0}
     - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
@@ -85,7 +125,7 @@ PrefabInstance:
     - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -89.675
       objectReference: {fileID: 0}
     - target: {fileID: 3161344850520422317, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
@@ -95,18 +135,78 @@ PrefabInstance:
     - target: {fileID: 5238969804815366162, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: m_Name
-      value: Hunter
+      value: Hunter (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514368205423378375, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: sightRange
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514368205423378375, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: hearingThreshold
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: availableBehaviours
-      value: Attack, Patrol, Wait, GoToLocation, GoToObject, Wander
+      value: Attack, Patrol, Wait, GoToLocation, GoToObject
       objectReference: {fileID: 0}
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: behaviourPresets.Array.data[1].module
       value: 
       objectReference: {fileID: 5808004016270932172}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[0]
+      value: Return
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[1]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
+      value: GoToPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
+      value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: GoToPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 361487838}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Return
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 361487839}
     - target: {fileID: 8981156204387246604, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

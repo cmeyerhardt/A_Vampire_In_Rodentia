@@ -53,7 +53,6 @@ public class PlayerController : Character
     [Header("Stamina Drain")]
     public float walkStaminaDrain = 0f;
     public float sprintStaminaDrain = 4f;
-    public float blinkStaminaDrain = 6f;
     [SerializeField] float dashCost = 30f;
     [SerializeField] float stunCost = 30f;
 

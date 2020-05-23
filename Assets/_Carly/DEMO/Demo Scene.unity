@@ -128,11 +128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1078132545824504115, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: sirenNoiseLevel
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2150565189391299144, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
       propertyPath: m_Name
@@ -140,99 +135,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
-      propertyPath: stateSequences.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[0].sequence.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[1].sequence.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[2].sequence.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: behaviourPresets.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
       propertyPath: bed
       value: 
       objectReference: {fileID: 1899996835}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[0].state
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[1].state
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[2].state
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
-      value: Siren
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[0].sequence.Array.data[0]
-      value: Wait:5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[2].sequence.Array.data[0]
-      value: Flee
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: currentState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: behaviourPresets.Array.data[2].behaviour
-      value: Sleep
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: behaviourPresets.Array.data[2].module
-      value: 
-      objectReference: {fileID: 872678773}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: behaviourPresets.Array.data[1].module
-      value: 
-      objectReference: {fileID: 872678772}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: mouseFurColor.r
-      value: 0.8584906
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: mouseFurColor.g
-      value: 0.7196758
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: mouseFurColor.b
-      value: 0.5790762
-      objectReference: {fileID: 0}
     - target: {fileID: 9129784384419724791, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -598,50 +503,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 343541173}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &361487826 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5759792092228257692, guid: 0838293017f52314daca08af79839794,
-    type: 3}
-  m_PrefabInstance: {fileID: 1605796052}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &361487838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361487826}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3236987e91392c946a6d8cc740e0b897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ai: {fileID: 0}
-  tasks: []
-  location: {x: 0, y: 0, z: 0}
-  locationString: 
-  useV3: 0
-  range: 0
-  distanceToLocation: 0
---- !u!114 &361487839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361487826}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3236987e91392c946a6d8cc740e0b897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ai: {fileID: 0}
-  tasks: []
-  location: {x: 0, y: 0, z: 0}
-  locationString: 
-  useV3: 0
-  range: 0
-  distanceToLocation: 0
 --- !u!1001 &441620868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -761,46 +622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6474d31985fa229498a461368b349355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &606783233 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2150565189391299144, guid: f6966725dc3d68f4b8090711bae918a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1231823498}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &606783247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606783233}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d5169b428d9585469b3a62c746e5f56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ai: {fileID: 0}
-  tasks: []
-  objectReference: {fileID: 0}
-  objectName: 
-  range: 0
-  distanceToReference: 0
-  bed: {fileID: 0}
---- !u!114 &606783248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606783233}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc82c32ae603dd04f81d8026e709e39b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ai: {fileID: 0}
-  tasks: []
-  fleeDistance: 40
 --- !u!1 &633822349
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,46 +792,6 @@ MonoBehaviour:
   gizmoType: 0
   gizmoColor: {r: 1, g: 0, b: 0.90136623, a: 1}
   radius: 0.5
---- !u!1 &872678758 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2150565189391299144, guid: f6966725dc3d68f4b8090711bae918a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 123695014}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &872678772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872678758}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc82c32ae603dd04f81d8026e709e39b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ai: {fileID: 0}
-  tasks: []
-  fleeDistance: 60
---- !u!114 &872678773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872678758}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d5169b428d9585469b3a62c746e5f56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ai: {fileID: 0}
-  tasks: []
-  objectReference: {fileID: 0}
-  objectName: 
-  range: 0
-  distanceToReference: 0
-  bed: {fileID: 1899996835}
 --- !u!1001 &877061034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1182,7 +963,7 @@ PrefabInstance:
     - target: {fileID: 1588154006615921851, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: walkingNoiseLevel
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1588154006615921851, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
@@ -1805,16 +1586,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1078132545824504115, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: sirenNoiseLevel
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1867340490753357213, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: debugShowGizmos
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2150565189391299144, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
       propertyPath: m_Name
@@ -1822,144 +1593,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
-      propertyPath: stateSequences.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[0].sequence.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[1].sequence.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[2].sequence.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: behaviourPresets.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
       propertyPath: bed
       value: 
       objectReference: {fileID: 511064315}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: sleepTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: wakeTime
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[0].state
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[1].state
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[2].state
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
-      value: Siren
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[0].sequence.Array.data[0]
-      value: Wait:5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: stateSequences.Array.data[2].sequence.Array.data[0]
-      value: Flee
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: currentState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: behaviourPresets.Array.data[2].behaviour
-      value: Sleep
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: behaviourPresets.Array.data[2].module
-      value: 
-      objectReference: {fileID: 606783247}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: behaviourPresets.Array.data[1].module
-      value: 
-      objectReference: {fileID: 606783248}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: mouseFurColor.r
-      value: 0.735849
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: mouseFurColor.g
-      value: 0.6259617
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: mouseFurColor.b
-      value: 0.32974365
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: randomizeMouseShirtColor
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: randomizeRed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: randomizeGreen
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: mouseShirtColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: mouseShirtColor.g
-      value: 0.06132078
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: mouseShirtColor.b
-      value: 0.64906865
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: mouseShirtColor.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9129784384419724791, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2750,110 +2386,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: stateSequences.Array.data[0].sequence.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: behaviourPresets.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: navMeshDistanceBuffer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
-      value: Wait:5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
-      value: GoToPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: stateSequences.Array.data[0].sequence.Array.data[0]
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: stateSequences.Array.data[0].sequence.Array.data[1]
-      value: Wait
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: stateSequences.Array.data[0].sequence.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: availableBehaviours
-      value: Attack, Patrol, Wait, GoToLocation, GoToObject
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: behaviourPresets.Array.data[3].behaviour
-      value: GoToPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: behaviourPresets.Array.data[3].module
-      value: 
-      objectReference: {fileID: 361487838}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: behaviourPresets.Array.data[4].behaviour
-      value: Return
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: behaviourPresets.Array.data[4].module
-      value: 
-      objectReference: {fileID: 361487839}
-    - target: {fileID: 5466406264419188809, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: sightRange
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5466406264419188809, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: hearingThreshold
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5759792092228257692, guid: 0838293017f52314daca08af79839794,
         type: 3}
       propertyPath: m_Name
       value: Hunter (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759792092228257692, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5808004016270932172, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: attackRange
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5808004016270932172, guid: 0838293017f52314daca08af79839794,
-        type: 3}
-      propertyPath: maxChaseDistance
-      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0838293017f52314daca08af79839794, type: 3}

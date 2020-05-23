@@ -24,8 +24,6 @@ public class Detector : LineOfSight
         playerDetectedEvent.AddListener(ai.PlayerSighted);
         //playerHeardEvent.AddListener(ai.PlayerHeard);
         fromTransform = ai.head;
-
-
     }
 
     private void Start()
