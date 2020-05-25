@@ -22,14 +22,15 @@ public class Villager : AIController
     [SerializeField] bool randomizeBlue = true;
     Material shirtMaterial = null;
     Material furMaterial = null;
-
-
+    
     //Cache
+    NightCycle nightCycle = null;
     FeedingVictim victim = null;
     Health health = null;
     public override void Awake()
     {
         base.Awake();
+        nightCycle = FindObjectOfType<NightCycle>();
         victim = GetComponent<FeedingVictim>();
         health = GetComponent<Health>();
         Material[] materials = skinnedMeshRend.materials;

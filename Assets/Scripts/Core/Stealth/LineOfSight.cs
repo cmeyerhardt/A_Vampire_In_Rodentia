@@ -8,7 +8,7 @@ using UnityEngine;
 public class LineOfSight : MonoBehaviour
 {
     [HideInInspector] public PlayerController player;
-    [HideInInspector] public float distance;
+    //[HideInInspector] public float distance;
     public Transform fromTransform;
     //Debug
     Ray ray;
@@ -19,7 +19,7 @@ public class LineOfSight : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
     }
 
-    public bool RaycastToPlayerSuccessful( out GameObject firstHit)
+    public bool RaycastToPlayerSuccessful(float distance, out GameObject firstHit)
     {
         firstHit = null;
         //cast a ray toward the player
@@ -42,7 +42,7 @@ public class LineOfSight : MonoBehaviour
         }
         return false;
     }
-    public bool RaycastToPlayerSuccessful()
+    public bool RaycastToPlayerSuccessful(float distance)
     {
         //cast a ray toward the player
         ray = new Ray(fromTransform.position, (player.transform.position - fromTransform.position).normalized);

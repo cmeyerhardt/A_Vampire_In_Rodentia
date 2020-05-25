@@ -17,47 +17,61 @@ public enum PlayerState { Idle, /*Walking, Jumping,*/Dashing, Feeding, CommenceF
 
 public class PlayerController : Character
 {
-    public FloatEvent makeSoundEvent = new FloatEvent();
-
     [Header("Player--")]
     public PlayerState playerState = PlayerState.Idle;
     public bool isHidden = false;
 
+    
     [Header("Input")]
     [SerializeField] KeyCode sprintingKey = KeyCode.LeftShift;
     [SerializeField] KeyCode dashKey = KeyCode.Alpha1;
     //public bool allowFlying = true;
     //[SerializeField] [Range(10f, 30f)] float flyingSpeed = 10f;
     public bool allowKeyBoardTurn = true;
+
+    [Header("Movement")]
+    [Tooltip("The unit's actual speed.\n\nactualMovementSpeed = baseMovementSpeed + sprintSpeed * stamina% * sprintModifier")]
+    public float actualMovementSpeed = 0f;
+
+    [SerializeField] [Tooltip("The base amount of speed to add when sprinting.")]
+    [Range(0f, 20f)] public float sprintSpeed = 10f;
+    [SerializeField] [Range(1f, 10f)] public float dashDistance = 5f;
+    [SerializeField] [Range(45f, 270f)] public float turnSpeed = 100f;
     
-    [Header("Jumping")]
-    [SerializeField] [Range(1f, 500f)] float jumpForce = 250f;
-    [SerializeField] [Range(1f, 50f)] float airForward = 25f;
-    [SerializeField] float maxJumpsAllowed = 2;
-    [SerializeField] float diminishedUpForce = .85f;
-    bool jump = false;
-    int jumpCounter = 0;
-    float currentUpForce;
-    float currentJumpsAllowed = 0;
-
-    [Header("Stunning")]
-    [SerializeField] float stunRange = 3f;
-    [SerializeField] float stunDuration = 3f;
-
     [Header("Noise")]
-    [SerializeField] float sprintingNoiseLevel = 3f;
-    [SerializeField] float walkingNoiseLevel = 0.1f;
+    public FloatEvent makeSoundEvent = new FloatEvent();
+    public float actualMovingNoiseLevel = 0f;
+    [SerializeField] [Range(0,20f)] float walkingNoiseLevel = 0f;
+    [SerializeField] [Range(0,20f)] float sprintingNoiseLevel = 3f;
+    [SerializeField] [Range(0,20f)] float maxNoiseLevel = 6f;
+    public bool walkLouderIfLowStamina = false;
     //[SerializeField] GameObject soundEffectFX = null;
 
-
+    [Header("Modified by Stamina Levels")]
+    [SerializeField]
+    [Tooltip("How much will stamina levels affect sprint speed?\n\nEx. If Stamina is at 50% and sprintSpeedModifier is at 1, sprintSpeed will be modified by 100% of stamina levels")]
+    [Range(0f, 10f)] public float sprintSpeedModifier = 1f;
+    [Tooltip("How much will stamina levels affect walking noise produced?\n\nEx. If Stamina is at 50% and noiseModifier is at .5, noiseModifier will be modified by 50% of stamina levels")]
+    [Range(0f, 10f)] public float noiseModifier = 1f;
+    
     [Header("Stamina Drain")]
     public float walkStaminaDrain = 0f;
     public float sprintStaminaDrain = 4f;
     [SerializeField] float dashCost = 30f;
     [SerializeField] float stunCost = 30f;
-
-
-
+    
+    [Header("Jumping")]
+    [SerializeField] [Range(1f, 500f)] float jumpForce = 250f;
+    [SerializeField] [Range(1f, 50f)] float airForward = 25f;
+    [SerializeField] float maxJumpsAllowed = Mathf.Infinity;
+    [SerializeField] [Tooltip("Diminishing upForce after each middair jump")]float diminishedUpForce = .85f;
+    public bool jump = false;
+    int jumpCounter = 0;
+    float currentUpForce;
+    float currentJumpsAllowed = 0;
+    float jumpTimer = 0f;
+    float jumpCooldown = .2f;
+    
     // Cache
     Transform cameraPivot = null;
     Vector3 lastCollisionPoint = Vector3.zero;
@@ -65,9 +79,6 @@ public class PlayerController : Character
     FeedingVictim currentVictim = null;
     [HideInInspector] public Feeder feeder = null;
     Health health = null;
-
-    //[Header("Cursor")]
-    //[SerializeField] CursorMapping[] cursorMappings = null;
 
     private new void Awake()
     {
@@ -80,10 +91,8 @@ public class PlayerController : Character
         currentUpForce = diminishedUpForce;
         currentJumpsAllowed = maxJumpsAllowed;
         jumpCounter = 0;
-        //ResetState();
 
         //makeSoundEvent.AddListener(MakeSoundEffect);
-        //SetCursor(CursorType.None);
     }
 
     //private void MakeSoundEffect(float intensity)
@@ -129,7 +138,8 @@ public class PlayerController : Character
         {
             if(objectInHand != null)
             {
-                DropObject();
+                objectInHand.BePickedUp(this,false);
+                DropObject(false);
             }
         }
 #if UNITY_EDITOR
@@ -146,15 +156,14 @@ public class PlayerController : Character
     private IEnumerator Dash()
     {
         playerState = PlayerState.Dashing;
-        textSpawner.SpawnText("Dashing!", Color.green);
+        //textSpawner.SpawnText("Dashing!", Color.green);
         stamina.ModifyStamina(-dashCost);
 
-        NavMeshHit hit;
-        NavMesh.Raycast(transform.position, transform.position + 5f * transform.forward, out hit, 1);
-
-        navMeshAgent.velocity = DetermineDirectionOfMovement(10f, 0f);// (new Vector3(0f, 0f, 2f);
+        //NavMeshHit hit;
+        //NavMesh.Raycast(transform.position, DetermineDirectionOfMovement(1f, 0f), out hit, 1);
+        //navMeshAgent.velocity = DetermineDirectionOfMovement(10f, 0f);// (new Vector3(0f, 0f, 2f);
         //navMeshAgent.SetDestination(hit.position);
-
+        //this.hit = hit.position;
         //float moveSpeed = navMeshAgent.speed;
         //navMeshAgent.speed = 50f;
         //navMeshAgent.SetDestination(transform.position + transform.forward * 5);
@@ -164,10 +173,9 @@ public class PlayerController : Character
         //}
         //navMeshAgent.speed = moveSpeed;
 
-        //navMeshAgent.Warp(transform.position + transform.forward * 10);
+        navMeshAgent.Warp(transform.position + DetermineDirectionOfMovement(dashDistance, 0f));
 
-
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         playerState = PlayerState.Idle;
         yield return null;
     }
@@ -177,28 +185,19 @@ public class PlayerController : Character
     /***********************
     * ABILITY
     ***********************/
-    public override float GetDeltaModifier()
-    {
-        float modifier = 0f;
-        if (Input.GetKey(sprintingKey))
-        {
-            modifier += 3f;
-        }
-        return modifier;
-    }
 
     public bool CheckStunConditions(Protector guard)
     {
         if (guard != null)
         {
-            if (IsInRange(guard.transform.position, stunRange))
+            if (IsInRange(guard.transform.position, outgoingStunRange))
             {
                 if (stamina.GetStaminaValue() > stunCost)
                 {
                     //Stun target
-                    textSpawner.SpawnText("Stunning!", Color.green);
+                    //textSpawner.SpawnText("Stunning!", Color.green);
                     stamina.ModifyStamina(-stunCost);
-                    guard.Stun(stunDuration);
+                    guard.Stun(outgoingStunDuration);
                     return true;
                 }
                 else
@@ -265,7 +264,7 @@ public class PlayerController : Character
         }
         else
         {
-            textSpawner.SpawnText("Failed to Feed");
+            //textSpawner.SpawnText("Failed to Feed");
             //todo -- NPC becomes alert/flees?
             playerState = PlayerState.Idle;
         }
@@ -305,7 +304,6 @@ public class PlayerController : Character
     {
         base.Die();
         textSpawner.SpawnText("I'm BLLUUUHHH.. dead", Color.red);
-        //todo -- game over stuff
     }
 
     /***********************
@@ -325,24 +323,47 @@ public class PlayerController : Character
             }
         }
 
+        // Process Jumping
+        if (jumpCounter < maxJumpsAllowed)
+        {
+            if(jumpTimer <= 0f)
+            {
+                if (Input.GetButtonDown("Jump"))
+                {
+                    Jump((jump) ? diminishedUpForce * jumpCounter : 1f);
+                    jumpTimer = jumpCooldown;
+                }
+                if (Input.GetButton("Jump"))
+                {
+                    if (!jump) { Jump(1f); }
+                    jumpTimer = jumpCooldown;
+                }
+            }
+            else
+            {
+                jumpTimer -= Time.deltaTime;
+            }
+
+        }
+
         // Process Translation
         if (horizontalMag != 0f || verticalMag != 0f)
         {
             if (currentInteractiable != null)
             {
                 currentInteractiable.CancelInteract();
-                textSpawner.SpawnText("-Cancel Interact-", Color.yellow);
+                textSpawner.SpawnText("Inturrupted", Color.yellow);
                 playerState = PlayerState.Idle;
             }
-            if(playerState == PlayerState.Feeding)
+            if (playerState == PlayerState.Feeding)
             {
-                textSpawner.SpawnText("-Cancel Feeding-", Color.yellow);
+                textSpawner.SpawnText("Inturrupted", Color.red);
                 feeder.CancelFeeding();
                 playerState = PlayerState.Idle;
             }
             if (jump) // air controls
             {
-                //todo should not have to break this up into conditions. find a way to limit velocity while in air
+                //todo find an elegant way to control velocity while in air
                 if (rigidBody.velocity.y > 0) // going up
                 {
                     rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity + direction * airForward * Time.deltaTime, sprintSpeed);
@@ -356,38 +377,53 @@ public class PlayerController : Character
             {
                 float staminaCost = walkStaminaDrain;
                 // Determine how fast the player moves: running, walking speed
+
                 float movementSpeed = baseMovementSpeed;
                 float noiseLevel = walkingNoiseLevel;
+                
                 if(Input.GetKey(sprintingKey))
                 {
-                    noiseLevel = sprintingNoiseLevel;
-                    staminaCost = sprintStaminaDrain;
-                    movementSpeed = sprintSpeed;
+                    if(stamina.CheckCanAffordCost(sprintStaminaDrain))
+                    {
+                        staminaCost = sprintStaminaDrain;
+
+                        //modify sprint speed by stamina percentage
+                            // if stamina is at X%, movementSpeed is increased by X% of the sprintSpeed value * sprintModifier
+                        movementSpeed = Mathf.Clamp(baseMovementSpeed + sprintSpeed * sprintSpeedModifier * stamina.GetStaminaPerc()
+                            , baseMovementSpeed
+                            , maxMovementSpeed);
+
+                        //similarly for noise level
+                        noiseLevel = Mathf.Clamp(walkingNoiseLevel + sprintingNoiseLevel * noiseModifier * (1f - stamina.GetStaminaPerc())
+                            , walkingNoiseLevel
+                            , maxNoiseLevel);
+                    }
                 }
+                else if (walkLouderIfLowStamina)
+                {
+                    noiseLevel = Mathf.Clamp(walkingNoiseLevel + noiseModifier * (1f - stamina.GetStaminaPerc())
+                            , 0f
+                            , maxNoiseLevel);
+                }
+                actualMovementSpeed = movementSpeed;
 
                 // The player model object turns toward the direction of movement
                 model.forward = Vector3.Slerp(model.transform.forward, direction, turnSpeed * Time.deltaTime);
-
+                
                 // The object moves via navmesh in the direction of movement
                 navMeshAgent.Move(direction * movementSpeed * Time.deltaTime);
+
+                // Drain stamina accordingly
                 stamina.ModifyStaminaShowOnIncrement(-staminaCost * Time.deltaTime);
+
+                // Make noise accordingly
                 makeSoundEvent.Invoke(noiseLevel);
+                actualMovingNoiseLevel = noiseLevel;
+
                 //Update animator
-                //animator.SetFloat("ForwardSpeed", movementSpeed);
             }
         }
-        // Process Jumping
-        if (jumpCounter < maxJumpsAllowed)
-        {
-            if (Input.GetButtonDown("Jump"))
-            {
-                Jump((jump) ? diminishedUpForce : 1f);
-            }
-            if (Input.GetButton("Jump"))
-            {
-                if (!jump) { Jump(1f); }
-            }
-        }
+
     }
 
     public Vector3 DetermineDirectionOfMovement(float verticalMag, float horizontalMag)
@@ -414,14 +450,17 @@ public class PlayerController : Character
     private void Jump(float jumpScalar)
     {
         jumpCounter++;
+
         if(navMeshAgent.enabled)
         {
+            print("turning off nevmesh to jump");
             navMeshAgent.isStopped = true;
             navMeshAgent.enabled = false;
         }
+
         rigidBody.isKinematic = false;
         rigidBody.useGravity = true;
-
+        jump = true;
         if (direction == Vector3.zero)
         {
             rigidBody.AddForce(Vector3.up * jumpForce * jumpScalar * Input.GetAxis("Jump"));
@@ -430,11 +469,17 @@ public class PlayerController : Character
         {
             rigidBody.AddForce((Vector3.up + direction) * jumpForce * jumpScalar * Input.GetAxis("Jump"));
         }
-        jump = true;
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        if ((collision.gameObject.tag == "Ground" || collision.gameObject.isStatic))
+        {
+            print("onground");
+            lastCollisionPoint = transform.position;
+        }
+
         if (jump)
         {
             if ((collision.gameObject.tag == "Ground" || collision.gameObject.isStatic))
@@ -461,95 +506,4 @@ public class PlayerController : Character
             }
         }
     }
-
-
-    ///***********************
-    //* RAYCASTING
-    //***********************/
-
-    //private void ProcessRaycast()
-    //{
-    //    if (InteractWithUI()) { return; }
-    //    if (isDead)
-    //    {
-    //        SetCursor(CursorType.PlayerDead);
-    //        return;
-    //    }
-    //    if (InteractWithComponent()) { return; }
-    //    SetCursor(CursorType.None);
-    //}
-
-    //private bool InteractWithUI()
-    //{
-    //    if (EventSystem.current.IsPointerOverGameObject()) //is the cursor over UI?
-    //    {
-    //        SetCursor(CursorType.UI);
-    //        return true;
-    //    }
-    //    return false;
-    //}
-
-    //private bool InteractWithComponent()
-    //{
-    //    RaycastHit[] hits = SortRaycasts();
-
-    //    foreach (RaycastHit hit in hits)
-    //    {
-    //        IRaycast[] raycastables = hit.transform.GetComponents<IRaycast>();
-    //        foreach (IRaycast raycastable in raycastables)
-    //        {
-    //            if (raycastable.HandleRaycast(this))
-    //            {
-    //                SetCursor(raycastable.GetCursorType());
-    //                return true;
-    //            }
-    //        }
-    //    }
-    //    return false;
-    //}
-
-    //RaycastHit[] SortRaycasts()
-    //{
-    //    //get all hits
-    //    RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
-
-    //    float[] distances = new float[hits.Length];
-    //    for (int i = 0; i < hits.Length; i++)
-    //    {
-    //        distances[i] = hits[i].distance;
-    //    }
-    //    Array.Sort(distances, hits);
-
-    //    //sort array of hits
-    //    //return
-    //    return Physics.RaycastAll(GetMouseRay());
-    //}
-
-    //private static Ray GetMouseRay()
-    //{
-    //    return Camera.main.ScreenPointToRay(Input.mousePosition);
-    //}
-
-    ///***********************
-    //* CURSOR
-    //***********************/
-
-    //private void SetCursor(CursorType type)
-    //{
-    //    CursorMapping mapping = GetCursorMapping(type);
-    //    Cursor.SetCursor(mapping.texture, mapping.hotspot, CursorMode.Auto);
-    //}
-
-    //private CursorMapping GetCursorMapping(CursorType type)
-    //{
-    //    foreach (CursorMapping mapping in cursorMappings)
-    //    {
-    //        if (mapping.type == type)
-    //        {
-    //            return mapping;
-    //        }
-    //    }
-    //    return cursorMappings[0];
-    //}
-
 }

@@ -4,18 +4,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum ColorizeType { MeshRenderer, MeshRenderer_Emissive, SpriteRenderer, Image, Light, TextMeshProUGUI, ParticleSystem }
+
+[System.Serializable]
+public class ColorizeSet
+{
+    [SerializeField] public ColorizeType type;
+    [SerializeField] public GameObject[] gameObject;
+}
+
 public class Colorizer : MonoBehaviour
 {
-    public enum ColorizeType { MeshRenderer, MeshRenderer_Emissive, SpriteRenderer, Image, Light, TextMeshProUGUI, ParticleSystem }
-
-    [System.Serializable]
-    public class ColorizeSet
-    {
-        [SerializeField] public ColorizeType type;
-        [SerializeField] public GameObject[] gameObject;
-
-    }
-
     public bool recolorInStart = false;
 
     [Header("Configure")]
@@ -38,6 +37,7 @@ public class Colorizer : MonoBehaviour
     public void Recolor(Color newColor)
     {
         if (colorizeSets.Length <= 0) { return; }
+
         Color _color = newColor;
 
         foreach (ColorizeSet colorSet in colorizeSets)

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WindowManager : MonoBehaviour
 {
-    //todo -- make this a Stack?
+    //todo -- use a Stack?
     [SerializeField] List<Window> openWindows = new List<Window>();
     [SerializeField] Window escapeKeyMenu = null;
 

@@ -2,115 +2,80 @@
 using TMPro;
 using UnityEngine;
 
-public enum TimeSegment { None, Sunset, Dusk, Night, Dawn, Sunrise }
+public enum TimeSegment { None, Sunset, Dusk, Night, Dawn, Sunrise, Day }
 
 public class NightCycle : MonoBehaviour
 {
-    public TimeEvent timeEvent;
-    [Header("Track Values")]
-    public TimeSegment currentTimeSegment = TimeSegment.Sunset;
-    [SerializeField] [Range(0, 1.2f)] float nightPercentage = 0f;
+    //public TimeEvent timeEvent;
+    [Header("Current Time")]
+    //public TimeSegment currentTimeSegment = TimeSegment.Sunset;
+    //public TimeSegment lastTimeSegment = TimeSegment.Sunset;
+    [SerializeField] [Range(0, 2f)] float nightPercentage = 0f;
     [SerializeField] float currentTime = 0f;
     public float currentHour = 0f;
-    public float numGameSecPerRealSec = 0f;
-    public bool daytime = true;
 
+
+    [Header("Current Time Settings")]
     public Material currentSky = null;
     public Light currentCelestialBodyLightSource = null;
     public Gradient currentGradient = null;
+    public float numGameSecPerRealSec = 0f;
 
     [Header("Configure Values")]
     [SerializeField] float nightLengthRealSeconds = 100f;
     [SerializeField] int nightLengthGameHours = 8;
     [SerializeField] int startHour = 8;
     //[SerializeField] int endHour = 6;
+    [SerializeField] float nightBeginPercentage = .2f;
+    [SerializeField] float dawnBeginPercentage = .8f;
     
-
     [Header("Sun")]
-    //public bool sunIsOut = false;
+    [SerializeField] AnimationCurve sunLightIntensity = new AnimationCurve();
     [SerializeField] Gradient sunGradient = null;
     [SerializeField] Light sun = null;
     [SerializeField] Material day = null;
-    [SerializeField] Quaternion sunSunsetRotation;
-    [SerializeField] Quaternion sunDuskRotation;
-    [SerializeField] Quaternion sunMidnightRotation;
-    [SerializeField] Quaternion sunDawnRotation;
-    [SerializeField] Quaternion sunSunriseRotation;
-    Quaternion currentSunGoal;
-    Quaternion lastSunGoal;
-
+    [SerializeField] Quaternion sunSunsetRotation = new Quaternion();
+    [SerializeField] Quaternion sunMidnightRotation = new Quaternion();
+    [SerializeField] Quaternion sunSunriseRotation = new Quaternion();
+    Quaternion currentSunGoal = new Quaternion();
+    Quaternion lastSunGoal = new Quaternion();
 
     [Header("Moon")]
-    //public bool moonIsOut = false;
+    [SerializeField] AnimationCurve moonLightIntensity = new AnimationCurve();
     [SerializeField] Gradient moonGradient = null;
     [SerializeField] Light moon = null;
     [SerializeField] Material night = null;
-    //[SerializeField] float switchToMoonPerc = .2f;
-    [SerializeField] Quaternion moonSunsetRotation;
-    [SerializeField] Quaternion moonDuskRotation;
-    [SerializeField] Quaternion moonMidnightRotation;
-    [SerializeField] Quaternion moonDawnRotation;
-    [SerializeField] Quaternion moonSunriseRotation;
-    Quaternion currentMoonGoal;
-    Quaternion lastMoonGoal;
+    [SerializeField] Quaternion moonSunsetRotation = new Quaternion();
+    //[SerializeField] Quaternion moonMidnightRotation = new Quaternion();
+    [SerializeField] Quaternion moonSunriseRotation = new Quaternion();
+    //Quaternion currentMoonGoal = new Quaternion();
+    //Quaternion lastMoonGoal = new Quaternion();
 
-    //bool moonRising = true;
+    //Dictionary<TimeSegment, Quaternion> moonRotations = new Dictionary<TimeSegment, Quaternion>();
+    //Dictionary<TimeSegment, Quaternion> sunRotations = new Dictionary<TimeSegment, Quaternion>();
 
-    [SerializeField] Vector3 sunStartRotation = new Vector3(-5f, 0f, 0f);
-    [SerializeField] Vector3 sunEndRotation = new Vector3(175f, 0f, 0f); //sunrise
-
-    //float totalSunDegrees = 0f;
-
-    //[SerializeField] Vector3 moonStartRotation = new Vector3();
-    //[SerializeField] Vector3 moonMidRotation = new Vector3();
-    //[SerializeField] Vector3 moonEndRotation = new Vector3();
-    //[SerializeField] Vector3 moonGoalV = new Vector3();
-    //[SerializeField] Vector3 lastGoalV = new Vector3();
-    
-    [SerializeField] float nightPerc = .2f;
-    [SerializeField] float dawnPerc = .8f;
-
+    [Header("Debug")]
     //bool morning = false;
     public bool go = false;
     public bool triggerLose = false;
 
-    //[SerializeField] TimeSettings[] timeSettings = null;
-
     [Header("Reference")]
-    [SerializeField] TextMeshProUGUI text = null;
+    [SerializeField] TextMeshProUGUI timeText = null;
     [SerializeField] TextMeshProUGUI percText = null;
-
-    //Animator animator = null;
-
-    private void Awake()
-    {
-        //animator = GetComponent<Animator>();
-        //animator.SetFloat("duration", nightLengthRealSeconds/10f);
-        //animator.SetFloat("duration", nightLengthRealSeconds/10f);
-        //animator.Play("CelestialBodiesAnimation", 0, nightLengthRealSeconds);
-        //animator.speed = 10f/nightLengthRealSeconds;
-    }
 
     void Start()
     {
         nightPercentage = 0f;
         currentTime = 0f;
 
-        lastMoonGoal = moonSunsetRotation;
-        currentMoonGoal = moonMidnightRotation;
+        //lastMoonGoal = moonSunsetRotation;
+        //currentMoonGoal = moonMidnightRotation;
 
         lastSunGoal = sunSunsetRotation;
-        currentSunGoal = sunMidnightRotation;
-
-        //thresholds: sun and moon
-        // sunset       -
-        // dusk         
-        // midnight     
-        // dawn     
-        // sunrise      
+        currentSunGoal = sunMidnightRotation;   
 
         sun.transform.rotation = sunSunsetRotation;
-        moon.transform.rotation = moonSunsetRotation;
+        //moon.transform.rotation = moonSunsetRotation;
 
         numGameSecPerRealSec = (nightLengthGameHours * 60f) / nightLengthRealSeconds;
         SetTimeToDay();
@@ -119,71 +84,71 @@ public class NightCycle : MonoBehaviour
 
     void Update()
     {
-        TimeSegment time = DetermineTime(nightPercentage);
-        if (time != currentTimeSegment)
+        //TimeSegment time = DetermineTime(nightPercentage);
+        //if (time != currentTimeSegment)
+        //{
+        //    // Initialize cycle settings
+        //    print("Time is now: " + time);
+        //    currentTimeSegment = time;
+        //    switch (currentTimeSegment)
+        //    {
+        //        case TimeSegment.Sunset:
+        //            currentTimeSegment = TimeSegment.Dusk;
+        //            break;
+        //        case TimeSegment.Dusk:
+        //            break;
+        //        case TimeSegment.Night:
+        //            SetTimeToNight();
+        //            break;
+        //        case TimeSegment.Dawn:
+        //            SetTimeToDay();
+        //            break;
+        //        case TimeSegment.Sunrise:
+        //            //print("sunrise");
+        //            if (triggerLose)
+        //            {
+        //                GetComponent<LevelManager>().GameTimeDone();
+        //            }
+        //            break;
+        //        case TimeSegment.Day:
+        //            break;
+        //    }
+        //}
+        
+        if(nightPercentage > 1f)
         {
-            // Initialize cycle settings
-            print("Time is now: " + time);
-            currentTimeSegment = time;
-            switch (currentTimeSegment)
+            if (triggerLose)
             {
-                case TimeSegment.Sunset:
-                    currentTimeSegment = TimeSegment.Dusk;
-                    break;
-                case TimeSegment.Dusk:
-                    break;
-                case TimeSegment.Night:
-                    break;
-                case TimeSegment.Dawn:
-                    break;
-                case TimeSegment.Sunrise:
-                    if (triggerLose)
-                    {
-                        GetComponent<LevelManager>().GameTimeDone();
-                    }
-                    break;
+                triggerLose = false;
+                GetComponent<LevelManager>().GameTimeDone();
             }
         }
 
-        if(daytime && sun.transform.rotation.x < .97f)
-        {
-            SetTimeToNight();
-            timeEvent.Invoke(TimeSegment.Night);
-            //print("sun greater than 200");
-        }
-        else if (!daytime && moon.transform.rotation.x > .1f)
-        {
-            print("daytime again");
-            SetTimeToDay();
-            timeEvent.Invoke(TimeSegment.Dawn);
-        }
-        //if(moon.transform.rotation.x > 200f)
-        //{
-        //    print("moon greater than 200");
-        //}
-        //else
-        //{
-        //    print(moon.transform.rotation.x);
-        //}
-
-
         // Update text
-        text.text = FormatTime(currentTime);
+        timeText.text = FormatTime(currentTime);
         percText.text = string.Format("{0:0}%", nightPercentage * 100f);
         
         //Update time of day settings
         SetColorOfCelestialBody(nightPercentage);
         RotateCelestialBodies(nightPercentage);
+        moon.intensity = moonLightIntensity.Evaluate(nightPercentage);
+        sun.intensity = sunLightIntensity.Evaluate(nightPercentage);
 
         if (!go) { return; }
 
         // Time progresses over time
-        if (currentTime < nightLengthRealSeconds)
+        //if (currentTime < nightLengthRealSeconds)
+        //{
+        //    currentTime += numGameSecPerRealSec * Time.deltaTime;
+        //}
+        currentTime += numGameSecPerRealSec * Time.deltaTime;
+        nightPercentage = currentTime / nightLengthRealSeconds;
+        if(nightPercentage > 2)
         {
-            currentTime += numGameSecPerRealSec * Time.deltaTime;
+            currentTime = startHour;
+            nightPercentage = 0f;
         }
 
-        nightPercentage = Mathf.Min(currentTime / nightLengthRealSeconds, 1.1f);
     }
 
     private void SetTimeToNight()
@@ -204,21 +169,25 @@ public class NightCycle : MonoBehaviour
         {
             return TimeSegment.Sunset;
         }
-        else if(percentage > 0f && percentage < nightPerc)
+        else if(percentage > 0f && percentage < nightBeginPercentage)
         {
             return TimeSegment.Dusk;
         }
-        else if (percentage >= nightPerc && percentage < dawnPerc)
+        else if (percentage >= nightBeginPercentage && percentage < dawnBeginPercentage)
         {
             return TimeSegment.Night;
         }
-        else if (percentage >= dawnPerc && percentage < 1f)
+        else if (percentage >= dawnBeginPercentage && percentage < 1f)
         {
             return TimeSegment.Dawn;
         }
-        else if(percentage >= 1f)
+        else if(percentage == 1f)
         {
             return TimeSegment.Sunrise;
+        }
+        else if(percentage > 1f)
+        {
+            return TimeSegment.Day;
         }
         else
         {
@@ -235,95 +204,33 @@ public class NightCycle : MonoBehaviour
 
     private void RotateCelestialBodies(float percentage)
     {
-        float adjustedPercentage = percentage * 2f;
-
-
-        if (percentage == .5f)
-        {
-            print("half");
-        }
-
-        if (percentage >= .5f)
-        {
-            adjustedPercentage = (percentage - .5f) * 2f;
-
-            //lastMoonGoal = moonMidnightRotation;
-            //currentMoonGoal = moonSunriseRotation;
-
-            moon.transform.rotation = moonMidnightRotation;
-            sun.transform.rotation = sunMidnightRotation;
-
-            lastMoonGoal = moonMidnightRotation;
-            currentMoonGoal = moonSunriseRotation;
-            lastSunGoal = sunMidnightRotation;
-            currentSunGoal = sunSunriseRotation;
-        }
-
-        if (daytime && nightPerc < .5f)
+        if (percentage < .5f)
         {
             //dusk
-            sun.transform.rotation = Quaternion.Lerp(sunSunriseRotation, sunMidnightRotation, adjustedPercentage);
+            sun.transform.rotation = Quaternion.Lerp(sunSunsetRotation, sunMidnightRotation, percentage * 2f);
         }
-        else if (daytime && nightPerc > .5f)
+        else if (percentage > .5f && percentage < 1f)
         {
             //dawn
-
+            sun.transform.rotation = Quaternion.Lerp(sunMidnightRotation, sunSunriseRotation, (percentage - .5f) *2f);
         }
-        else if (!daytime)
+        else if(percentage > 1f)
         {
-            //lerp moon from dusk to dawn rotation
-
+            //day
+            sun.transform.rotation = Quaternion.Lerp(sunSunriseRotation, sunSunsetRotation, (percentage - 1f));
+        }
+        else if (percentage == .5f)
+        {
+            sun.transform.rotation = sunMidnightRotation;
         }
 
-        //LerpMoon(adjustedPercentage);
-        sun.transform.rotation = Quaternion.Lerp(lastSunGoal, currentSunGoal, adjustedPercentage);
-        moon.transform.rotation = Quaternion.Lerp(lastMoonGoal, currentMoonGoal, adjustedPercentage);
-
-        transform.Rotate(Time.deltaTime, 0, 0);
-
-        //if(moon.transform.rotation < )
-
-        //if (moon.transform.rotation == currentMoonGoal)
-        //{
-        //    print("moon goal met");
-        //    lastMoonGoal = currentMoonGoal;
-        //    currentMoonGoal = moonSunriseRotation;
-        //    //moonRising = false;
-        //}
-        //if(isMoonOut)
-        //{
-        //    //moon.transform.rotation = Quaternion.Lerp(Quaternion.Euler(lastGoalV), Quaternion.Euler(moonGoalV), moonPerc);
-        //    //moon.transform.rotation = Quaternion.Euler(new Vector3(Mathf.Lerp(moonStartRotation.x, -moonEndRotation.x, nightPercentage), 0f, 0f));
-        //    moon.transform.rotation = Quaternion.Lerp(lastMoonGoal, currentMoonGoal, adjustedPercentage);
-        //}
-        //else
-        //{
-        //    sun.transform.rotation = Quaternion.Lerp(lastSunGoal, currentSunGoal, adjustedPercentage);
-
-        //}
-
-        //moon.transform.rotation = Quaternion.Lerp(lastMoonGoal, currentMoonGoal, moonPerc);
-
-
-
-        //sun.transform.rotation = Quaternion.Euler(Vector3.Lerp(sunStartRotation, sunEndRotation, nightPercentage));
-
-
-        //Vector3 sunRotateThisFrame = new Vector3(sun.transform.rotation.x, 0f, 0f);
-        //sunRotateThisFrame.x = totalSunDegrees * nightPercentage;
-
-        //sun.transform.Rotate(sunRotateThisFrame * Time.deltaTime, Space.Self);
-
-        //sun.transform.rotation = Quaternion.Euler(sunRotateThisFrame);
-
+        moon.transform.rotation = Quaternion.Lerp(moonSunsetRotation, moonSunriseRotation, percentage);
     }
 
     private void ChangeTimeOfNightSettings(string timeOfDay)
     {
-
         if(timeOfDay == "night")
         {
-            daytime = false;
             ChangeDominantLightSource(moon);
             ChangeDominantSky(night);
             currentGradient = moonGradient;
@@ -331,7 +238,6 @@ public class NightCycle : MonoBehaviour
         }
         else if (timeOfDay == "day")
         {
-            daytime = true;
             ChangeDominantLightSource(sun);
             ChangeDominantSky(day);
             currentGradient = sunGradient;

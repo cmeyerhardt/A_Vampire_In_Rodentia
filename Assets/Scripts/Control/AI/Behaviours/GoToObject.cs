@@ -9,7 +9,7 @@ public class GoToObject : AIBehaviour
     [SerializeField] public GameObject objectReference = null;
     [SerializeField] public string objectName;
     public float range = 0f;
-
+    [SerializeField] [Range(0f, 10f)] float movementFraction = .75f;
     public float distanceToReference;
     private bool arrivedAtObject = false;
 
@@ -31,7 +31,7 @@ public class GoToObject : AIBehaviour
         }
         if (objectReference != null)
         {
-            ai.MoveToDestination(objectReference.transform.position, .75f);
+            ai.MoveToDestination(objectReference.transform.position, movementFraction);
         }
 
         //if (TryGetReference(out objectReference))
@@ -149,9 +149,10 @@ public class PickUpObject : GoToObject
 
     public override void TaskDone(string task = null)
     {
-        if (task == "GoToObject" && objectReference.GetComponent<PickUp>() != null)
+        PickUp pickup = objectReference.GetComponent<PickUp>();
+        if (task == "GoToObject" && pickup != null)
         {
-            ai.PickUpObject(objectReference);
+            pickup.BePickedUp(ai, true);
             tasks.Remove("PickUpObject");
         }
         base.TaskDone();

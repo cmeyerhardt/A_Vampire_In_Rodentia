@@ -2,32 +2,40 @@
 
 public class Detector : LineOfSight
 {
+    [Header("Detection")]
+    public float detectedPercentage = 0f;
+    public float suspiciousDetectionValue = .3f;
+
     [Header("Sight")]
     public bool canSeePlayer = false;
-    [SerializeField] [Range(0,100f)]public float sightRange = 20f;
-    [SerializeField] [Range(0,100f)]public float hearingThreshold = 20f;
-    [SerializeField] bool canHearWhileSleeping = true;
+    [SerializeField] [Range(0.1f,100f)]public float sightRange = 40f;
     [SerializeField] bool canSeeWhileSleeping = true;
-    [SerializeField] bool debugShowGizmos = false;
-    [HideInInspector] public BoolEvent playerDetectedEvent;
-    //[HideInInspector] public BoolEvent playerHeardEvent = new BoolEvent();
+    public float detectionEscalateRate = 4f;
 
-    //todo -- Hearing
+    [Header("Hearing")]
+    [SerializeField] [Range(0, 100f)] public float hearingThreshold = 20f;
+    [SerializeField] bool canHearWhileSleeping = true;
+
+    [Header("Debug")]
+    [SerializeField] bool debugShowGizmos = false;
+
     AIController ai = null;
+    DetectionTracker playerDetection = null;
 
     public new void Awake()
     {
-        distance = sightRange;
         base.Awake();
         ai = GetComponent<AIController>();
+
         
-        playerDetectedEvent.AddListener(ai.PlayerSighted);
+        //playerDetectedEvent.AddListener(ai.PlayerSighted);
         //playerHeardEvent.AddListener(ai.PlayerHeard);
         fromTransform = ai.head;
     }
 
     private void Start()
     {
+        playerDetection = ai.player.GetComponent<DetectionTracker>();
         if (ai.player != null)
         {
             player.makeSoundEvent.AddListener(CheckSoundDetection);
@@ -45,76 +53,148 @@ public class Detector : LineOfSight
         //ai.textSpawner.SpawnText(volume.ToString() + " " + resultingVolumeByDistance, (resultingVolumeByDistance > hearingThreshold) ? Color.red : Color.yellow);
         if(resultingVolumeByDistance > hearingThreshold )
         {
-            ai.textSpawner.SpawnText("!", Color.red);
-            //playerHeardEvent.Invoke(true);
             ai.PlayerHeard(true);
+            detectedPercentage = .5f;
         }
     }
 
     private void Update()
     {
         if (player.isDead) { return; }
-        if (player.isHidden || player.playerState == PlayerState.Hiding) { canSeePlayer = false; playerDetectedEvent.Invoke(false); return; }
+        //if (player.isHidden || player.playerState == PlayerState.Hiding) { canSeePlayer = false; ai.PlayerSighted(false); return; }
         if (!canSeeWhileSleeping && ai.currentBehaviour == "Sleep") { return; }
 
-        if (ai.IsInRange(player.transform.position, sightRange))
+
+
+        if (ai.IsInRange(player.transform.position, sightRange) && !player.isHidden)
         {
             // if player is in front of ai
             if (Vector3.Dot((ai.playerHead.transform.position - ai.head.transform.position).normalized, ai.transform.forward) > 0)
             {
                 // If player is in line of sight
-                if (RaycastToPlayerSuccessful() &&  (!ai.canSeePlayer)) // todo: && if math result > vision threshold:
+
+                // Detect player immediately
+                //if (RaycastToPlayerSuccessful(sightRange) &&  (!ai.canSeePlayer)) // todo: && if math result > vision threshold:
+                //{
+                //    print(gameObject.name + " sees player");
+                //    ai.PlayerSighted(true);
+                //}
+
+                // Detect Player Over Time. Detection will occur faster as player gets closer
+                if (RaycastToPlayerSuccessful(sightRange) && (!ai.canSeePlayer))
                 {
-                    print(gameObject.name + " sees player");
-                    
-                    playerDetectedEvent.Invoke(true);
+                    if (DetectOnDelay())
+                    {
+                        ai.PlayerSighted(true);
+                    }
+                    //else
+                    //{
+                    //    print(gameObject.name + " is beginning to see Vampire");
+                    //}
                 }
-                if(ai.canSeePlayer)
+
+                if (ai.canSeePlayer)
                 {
-                    if (!RaycastToPlayerSuccessful(out GameObject o))
+                    if (!RaycastToPlayerSuccessful(sightRange, out GameObject o))
                     {
                         //Debug.Log(o.name);
-                        //playerDetectedEvent.Invoke(false);
                         ai.PlayerSighted(false);
                     }
                 }
-
-                // If the player is seen and goes out of line of sight
-                //todo -- fix flip flopping
             }
             else
             {
-                playerDetectedEvent.Invoke(false);
+                ai.PlayerSighted(false);
             }
+        }
+        //else
+        //{
+        //    RollOffDetection();
+        //}
 
-
+        if (ai.currentState == NPCState.Alert)
+        {
+            detectedPercentage = 1f;
+        }
+        else if(ai.currentState == NPCState.Suspicious)
+        {
+            detectedPercentage = suspiciousDetectionValue;
+        }
+        else
+        {
+            RollOffDetection();
         }
 
-        //if (ai.canSeePlayer)
-        //{
-        //    if (!RaycastToPlayerSuccessful(out GameObject o))
-        //    {
-        //        Debug.Log(o.name + " 2");
-        //        //playerDetectedEvent.Invoke(false);
-        //        ai.PlayerSighted(false);
-        //    }
-        //}
+        if (detectedPercentage > 0f)
+        {
+            playerDetection.AddToDetectedValue(this);
+        }
+
+        if (detectedPercentage == 0f)
+        {
+            playerDetection.RemoveDetectionValue(this);
+        }
+    }
+
+    private void RollOffDetection()
+    {
+        if (detectedPercentage > 0f)
+        {
+            detectedPercentage = Mathf.Max(detectedPercentage - Time.deltaTime / detectionEscalateRate, (ai.currentState == NPCState.Suspicious) ? suspiciousDetectionValue : 0f);
+        }
+    }
+
+    private bool DetectOnDelay()
+    {
+        float playerDistancePercentage = 1f - (player.transform.position - fromTransform.position).magnitude / sightRange;
+        //print(playerDistancePercentage);
+        detectedPercentage += detectionEscalateRate * Time.deltaTime * playerDistancePercentage;
+        if (detectedPercentage >= 1f)
+        {
+            ai.PlayerSighted(true);
+            return true;
+        }
+        return false;
     }
 
     public void OnDrawGizmos()
     {
         if(!debugShowGizmos) { return; }
-        if (canSeePlayer)
-        {
-            Gizmos.color = Color.red;
-        }
-        else
-        {
-            Gizmos.color = Color.yellow;
-        }
+        Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(fromTransform.position, sightRange);
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(fromTransform.position, hearingThreshold);
     }
 }
+
+
+
+// old code
+//else if(ai.IsInRange(player.transform.position, suspiciousSightRange) && !ai.canSeePlayer)
+//{
+//    // detection will occur faster as player gets closer
+//    detectedPercentage = 1f - (player.transform.position - fromTransform.position).magnitude / suspiciousSightRange;
+//    if (RaycastToPlayerSuccessful(suspiciousSightRange) && (!ai.canSeePlayer))
+//    {
+//        if(DetectOnDelay())
+//        {
+//            detectedPercentage = 0f;
+//            ai.PlayerSighted(true);
+//        }
+//    }
+//    else
+//    {
+//        ai.PlayerSighted(false);
+//    }
+//}
+
+//if (ai.canSeePlayer)
+//{
+//    if (!RaycastToPlayerSuccessful(out GameObject o))
+//    {
+//        Debug.Log(o.name + " 2");
+//        //playerDetectedEvent.Invoke(false);
+//        ai.PlayerSighted(false);
+//    }
+//}

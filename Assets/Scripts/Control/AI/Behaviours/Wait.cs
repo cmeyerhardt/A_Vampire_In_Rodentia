@@ -5,12 +5,12 @@ public class Wait : AIBehaviour
     [Header("Wait--")]
     [SerializeField] public float duration = 3f;
     [SerializeField] public bool waitIndefinitly = false;
-
+    [SerializeField] [Range(0f, 10f)] float movementFraction = .75f;
     public float timer = 0f;
 
     public new void OnEnable()
     {
-        ai.MoveToDestination(transform.position, .75f);
+        ai.MoveToDestination(transform.position, movementFraction);
 
         if (!waitIndefinitly)
         {

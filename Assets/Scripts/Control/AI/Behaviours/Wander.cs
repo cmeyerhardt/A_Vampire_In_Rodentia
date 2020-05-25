@@ -14,6 +14,8 @@ public class Wander : AIBehaviour
     [SerializeField] public float delay = 2f;
     [SerializeField] public float maxDelayVariation = 2f;
 
+    [SerializeField] [Range(0f, 10f)] float movementFraction = .75f;
+
     Coroutine wanderRoutine = null;
     public bool hasRoutine = false;
 
@@ -40,7 +42,7 @@ public class Wander : AIBehaviour
         if (ai == null) { return; }
         if ((transform.position - wanderRegion.transform.position).magnitude > wanderRegion.radius && !movingToRegion)
         {
-            ai.MoveToDestination(wanderRegion.transform.position, .75f);
+            ai.MoveToDestination(wanderRegion.transform.position, movementFraction);
             movingToRegion = true;
         }
 
@@ -72,7 +74,7 @@ public class Wander : AIBehaviour
                 break;
             }
 
-            ai.MoveToDestination(wanderTarget.transform.position, .75f);
+            ai.MoveToDestination(wanderTarget.transform.position, movementFraction);
             yield return null;
         }
 

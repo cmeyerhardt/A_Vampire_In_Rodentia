@@ -15,7 +15,7 @@ public class Stamina : MonoBehaviour
     [SerializeField] FloatingTextSpawner textSpawner = null;
 
     // Private
-    public float incrementCounter = 1f;
+    public float incrementCounter = 0f;
     public float staminaAccumulate = 0f;
     
     private void Awake()
@@ -79,12 +79,15 @@ public class Stamina : MonoBehaviour
 
     private void ShowText(float change)
     {
-        string changeString = string.Format("{0:0}", change);
-        if (change > 0f)
+        if (change != 0f)
         {
-            changeString = "+" + changeString;
+            string changeString = string.Format("{0:0.0}", change);
+            if(change > 0f)
+            {
+                changeString = "+" + changeString;
+            }
+            textSpawner.SpawnText(changeString, displayColor, true);
         }
-        textSpawner.SpawnText(changeString, displayColor, true);
     }
 
     public void ModifyStaminaShowOnIncrement(float change)

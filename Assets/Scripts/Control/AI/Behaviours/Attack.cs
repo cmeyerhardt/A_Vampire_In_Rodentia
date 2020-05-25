@@ -6,7 +6,7 @@ public class Attack : AIBehaviour
 {
     [Header("Attack--")]
     [SerializeField] float maxChaseDistance = 40f;
-
+    [SerializeField] [Range(0f, 10f)] float movementFraction = 1f;
     [Header("Attack")]
     [SerializeField] public float attackRange = 4f; //melee ~3.5f
     [SerializeField] public float attackDamage = 3f;
@@ -14,12 +14,9 @@ public class Attack : AIBehaviour
     [SerializeField] public float attackVolume = 10f;
                             
     [Header("Stun")]        
-    [SerializeField] public float stunRange = 3f;
     [SerializeField] public float stunInterval = 5f;
-    [SerializeField] public float stunDuration = 3f;
     [SerializeField] public float stunVolume = 10f;
     [SerializeField] public float stunStaminaCost = 10f;
-
 
     // Cache
     float globalCooldown = 0f;
@@ -35,7 +32,7 @@ public class Attack : AIBehaviour
         player = ai.player.GetComponent<Health>();
         if (player != null && !ai.IsInRange(player.transform.position, attackRange))
         {
-            ai.MoveToDestination(player.transform.position, 1f);
+            ai.MoveToDestination(player.transform.position, movementFraction);
         }
 
         globalCooldown = 0f;
@@ -91,7 +88,7 @@ public class Attack : AIBehaviour
         }
         else
         {
-            if (ai.IsInRange(player.transform.position, stunRange))
+            if (ai.IsInRange(player.transform.position, ai.outgoingStunRange))
             {
                 if (stunCounter >= stunInterval)
                 {
@@ -101,7 +98,7 @@ public class Attack : AIBehaviour
                         ai.StopMoving();
                         stunCounter = 0f;
                         globalCooldown = 1f;
-                        ai.player.Stun(stunDuration);
+                        ai.player.Stun(ai.outgoingStunDuration);
                         ai.player.makeSoundEvent.Invoke(stunVolume);
                     }
                 }
@@ -127,7 +124,7 @@ public class Attack : AIBehaviour
             }
             else
             {
-                ai.MoveToDestination(player.transform.position, 1f);
+                ai.MoveToDestination(player.transform.position, movementFraction);
             }
         }
     }

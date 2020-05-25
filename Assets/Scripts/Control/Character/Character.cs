@@ -8,17 +8,24 @@ public class Character : MonoBehaviour
     public bool isStunned = false;
 
     public Interactable currentInteractiable = null;
-    [SerializeField] public GameObject objectInHand = null;
+    [SerializeField] public PickUp objectInHand = null;
 
     [Header("Movement")]
-    [SerializeField] [Range(0f, 20f)]  public float baseMovementSpeed = 5f;
-    [SerializeField] [Range(0f, 20f)]  public float sprintSpeed = 10f;
-    [SerializeField] [Range(10f, 3000f)] public float dashSpeed = 20f;
-    [SerializeField] [Range(45f, 270f)] public float turnSpeed = 100f;
-    [SerializeField] [Range(0f, 270f)] public float staminaDrainedWhenStunned = 10f;
-    [SerializeField] [Range(0f, 1f)] public float stunResistChance = .1f;
-    [SerializeField] [Range(0f, 1f)] public float stunDurationReduction = .1f;
-    float navMeshDistanceBuffer = 2f;
+    [SerializeField] [Tooltip("Base movement speed for this unit")]
+    [Range(0f, 20f)]  public float baseMovementSpeed = 5f;
+
+    [SerializeField] [Tooltip("Override for max movement speed for this unit.\nWill override any other movement speed modifiers")]
+    [Range(0f, 40f)]  public float maxMovementSpeed = 20f;
+
+    [SerializeField] [Tooltip("Add to navMeshAgent.stoppingDistance when checking range to destination. Helps agent reach destinations that are wider than stopping distance")]
+    [Range(2f, 5f)] float navMeshDistanceBuffer = 2.5f;
+
+    [Header("Stunning")]
+    [SerializeField] [Range(0f, 10f)] public float outgoingStunRange = 3f;
+    [SerializeField] [Range(0f, 50f)] public float outgoingStunDuration = 3f;
+    [SerializeField] [Range(0f, 100f)] public float staminaDrainWhenImStunned = 10f;
+    [SerializeField] [Range(0f, 1f)] public float myStunResistChance = .1f;
+    [SerializeField] [Range(0f, 1f)] public float myStunDurationReduction = .1f;
 
     [HideInInspector] public FloatingTextSpawner textSpawner = null;
     [HideInInspector] public NavMeshAgent navMeshAgent = null;
@@ -26,12 +33,12 @@ public class Character : MonoBehaviour
     [HideInInspector] public Animator animator = null;
     [HideInInspector] public Stamina stamina = null;
     
-    [Header("Transform Eeferences")]
-    [HideInInspector] public Transform model = null;
+    [Header("Transform References")]
+
     [SerializeField] public Transform head = null;
     [SerializeField] public Transform hand = null;
     [SerializeField] public Collider hitBox = null;
-
+    [HideInInspector] public Transform model = null;
     public virtual void Awake()
     {
         textSpawner = GetComponentInChildren<FloatingTextSpawner>();
@@ -60,13 +67,13 @@ public class Character : MonoBehaviour
 
     public virtual void Stun(float duration)
     {
-        if (Random.Range(0f, 1f) <= stunResistChance)
+        if (Random.Range(0f, 1f) <= myStunResistChance)
         {
             isStunned = true;
-            stamina.ModifyStamina(staminaDrainedWhenStunned);
+            stamina.ModifyStamina(staminaDrainWhenImStunned);
             textSpawner.SpawnText("Stunned", Color.blue);
 
-            float _duration = Mathf.Clamp(duration * (1 - stunDurationReduction), 0f, duration);
+            float _duration = Mathf.Clamp(duration * (1 - myStunDurationReduction), 0f, duration);
 
             if (_duration > 0)
             {
@@ -77,18 +84,12 @@ public class Character : MonoBehaviour
         {
             UnStun();
         }
-
     }
 
     public virtual void UnStun()
     {
-        textSpawner.SpawnText("Stun fades", Color.blue);
+        textSpawner.SpawnText("Stun Fades", Color.blue);
         isStunned = false;
-    }
-
-    public virtual float GetDeltaModifier()
-    {
-        return 0f;
     }
 
     public void MoveToDestination(Vector3 destination, float speedFraction)
@@ -97,7 +98,7 @@ public class Character : MonoBehaviour
         {
             head.forward = transform.forward;
             navMeshAgent.destination = destination;
-            navMeshAgent.speed = baseMovementSpeed * Mathf.Clamp01(speedFraction);
+            navMeshAgent.speed = Mathf.Clamp(baseMovementSpeed * Mathf.Clamp01(speedFraction), baseMovementSpeed, maxMovementSpeed);
             navMeshAgent.isStopped = false;
         }
     }
@@ -136,24 +137,19 @@ public class Character : MonoBehaviour
         return navMeshAgent.stoppingDistance + navMeshDistanceBuffer;
     }
 
-    public void DropObject()
+    public virtual void DropObject(bool objectTaken)
     {
         if(objectInHand != null)
         {
-            print("Dropping " + objectInHand);
+            //print("Dropping " + objectInHand);
             objectInHand.transform.parent = null;
-            Rigidbody droppedObject = objectInHand.GetComponent<Rigidbody>();
-            if(droppedObject != null)
-            {
-                droppedObject.useGravity = true;
-                droppedObject.isKinematic = false;
-            }
+            //objectInHand.BePickedUp(this, false);
         }
         objectInHand = null;
     }
 
 
-    public bool PickUpObject(GameObject objectToPickUp)
+    public bool PickUpObject(PickUp objectToPickUp)
     {
         if (objectInHand == null)
         {

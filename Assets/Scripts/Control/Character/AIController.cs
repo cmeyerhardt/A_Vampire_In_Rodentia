@@ -319,7 +319,16 @@ public class AIController : Character
         }
         return true;
     }
-    
+
+    public override void DropObject(bool objectTaken)
+    {
+        if(objectTaken)
+        {
+            currentState = NPCState.Suspicious;
+        }
+        base.DropObject(objectTaken);
+    }
+
 
     /***********************
     * STATE
@@ -336,7 +345,14 @@ public class AIController : Character
     {
         if(currentState == NPCState.Incapacitated)
         {
-            currentState = lastState;
+            if(canSeePlayer)
+            {
+                currentState = NPCState.Alert;
+            }
+            else
+            {
+                currentState = NPCState.Suspicious;
+            }
             lastState = NPCState.Incapacitated;
             base.UnStun();
         }
@@ -347,7 +363,7 @@ public class AIController : Character
         StopMoving();
         if (aIBehaviour != null)
         {
-            print("aIBehaviour now done" + aIBehaviour);
+            //print("aIBehaviour now done" + aIBehaviour);
             //aIBehaviour.doneEvent.Invoke(aIBehaviour);
             aIBehaviour.enabled = false;
             aIBehaviour = null;
@@ -378,17 +394,17 @@ public class AIController : Character
         {
             lastState = currentState;
 
-            switch (currentState)
-            {
-                case NPCState.Alert:
-                    textSpawner.SpawnText("!", Color.red);
-                    break;
-                case NPCState.Suspicious:
-                    textSpawner.SpawnText("?", Color.yellow);
-                    break;
-                case NPCState.Default:
-                    break;
-            }
+            //switch (currentState)
+            //{
+            //    case NPCState.Alert:
+            //        textSpawner.SpawnText("!", Color.red);
+            //        break;
+            //    case NPCState.Suspicious:
+            //        textSpawner.SpawnText("?", Color.yellow);
+            //        break;
+            //    case NPCState.Default:
+            //        break;
+            //}
             SetBehaviourSequence(stateMap[currentState]);
         }
     }
@@ -466,7 +482,7 @@ public class AIController : Character
             t += w + ", ";
             currentBehaviourSequence.Enqueue(w);
         }
-        Debug.Log("Next Behaviour Sequence: " + t);
+        ////Debug.Log("Next Behaviour Sequence: " + t);
 
         currentBehaviour = currentBehaviourSequence.Dequeue();
     }
@@ -488,7 +504,7 @@ public class AIController : Character
             canSeePlayer = true;
             textSpawner.SpawnText("A Vampire!", Color.red);
             currentState = NPCState.Alert;
-            DropObject();
+            DropObject(false);
         }
         //else if (currentState == NPCState.Alert && alerted)
         //{

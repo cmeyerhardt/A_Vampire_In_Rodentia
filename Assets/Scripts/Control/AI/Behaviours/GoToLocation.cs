@@ -10,6 +10,7 @@ public class GoToLocation : AIBehaviour
     [SerializeField] public string locationString; //(x,y,z)
     [SerializeField] public bool useV3 = false;
     public float range = 0f;
+    [SerializeField] [Range(0f, 10f)]float movementFraction = 1f;
 
     public float distanceToLocation;
 
@@ -29,7 +30,7 @@ public class GoToLocation : AIBehaviour
             if (FindLocation(locationString, out nullableLocation))
             {
                 //print(location);
-                ai.MoveToDestination((Vector3)nullableLocation, 1f);
+                ai.MoveToDestination((Vector3)nullableLocation, movementFraction);
             }
             else
             {
@@ -40,7 +41,7 @@ public class GoToLocation : AIBehaviour
 
         else
         {
-            ai.MoveToDestination((Vector3)nullableLocation, 1f);
+            ai.MoveToDestination((Vector3)nullableLocation, movementFraction);
         }
     }
 
