@@ -6,10 +6,10 @@ public enum TimeSegment { None, Sunset, Dusk, Night, Dawn, Sunrise, Day }
 
 public class NightCycle : MonoBehaviour
 {
-    //public TimeEvent timeEvent;
+    public TimeEvent timeEvent;
     [Header("Current Time")]
-    //public TimeSegment currentTimeSegment = TimeSegment.Sunset;
-    //public TimeSegment lastTimeSegment = TimeSegment.Sunset;
+    public TimeSegment currentTimeSegment = TimeSegment.Sunset;
+    public TimeSegment lastTimeSegment = TimeSegment.Sunset;
     [SerializeField] [Range(0, 2f)] float nightPercentage = 0f;
     [SerializeField] float currentTime = 0f;
     public float currentHour = 0f;
@@ -84,38 +84,38 @@ public class NightCycle : MonoBehaviour
 
     void Update()
     {
-        //TimeSegment time = DetermineTime(nightPercentage);
-        //if (time != currentTimeSegment)
-        //{
-        //    // Initialize cycle settings
-        //    print("Time is now: " + time);
-        //    currentTimeSegment = time;
-        //    switch (currentTimeSegment)
-        //    {
-        //        case TimeSegment.Sunset:
-        //            currentTimeSegment = TimeSegment.Dusk;
-        //            break;
-        //        case TimeSegment.Dusk:
-        //            break;
-        //        case TimeSegment.Night:
-        //            SetTimeToNight();
-        //            break;
-        //        case TimeSegment.Dawn:
-        //            SetTimeToDay();
-        //            break;
-        //        case TimeSegment.Sunrise:
-        //            //print("sunrise");
-        //            if (triggerLose)
-        //            {
-        //                GetComponent<LevelManager>().GameTimeDone();
-        //            }
-        //            break;
-        //        case TimeSegment.Day:
-        //            break;
-        //    }
-        //}
-        
-        if(nightPercentage > 1f)
+        TimeSegment time = DetermineTime(nightPercentage);
+        if (time != currentTimeSegment)
+        {
+            // Initialize cycle settings
+            print("Time is now: " + time);
+            currentTimeSegment = time;
+            switch (currentTimeSegment)
+            {
+                case TimeSegment.Sunset:
+                    currentTimeSegment = TimeSegment.Dusk;
+                    break;
+                case TimeSegment.Dusk:
+                    break;
+                case TimeSegment.Night:
+                    SetTimeToNight();
+                    break;
+                case TimeSegment.Dawn:
+                    SetTimeToDay();
+                    break;
+                case TimeSegment.Sunrise:
+                    //print("sunrise");
+                    if (triggerLose)
+                    {
+                        GetComponent<LevelManager>().GameTimeDone();
+                    }
+                    break;
+                case TimeSegment.Day:
+                    break;
+            }
+        }
+
+        if (nightPercentage > 1f)
         {
             if (triggerLose)
             {
