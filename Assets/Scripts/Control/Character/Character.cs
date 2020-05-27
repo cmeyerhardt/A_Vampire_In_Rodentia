@@ -113,10 +113,16 @@ public class Character : MonoBehaviour
         audioSource.PlayOneShot(clip);
     }
 
-    public virtual void StunTarget(Character target)
+    public virtual void StunTarget(Character target, AudioClip clip = null)
     {
-        PlaySoundEffect(stunSound);
-
+        if(clip == null)
+        {
+            PlaySoundEffect(stunSound);
+        }
+        else
+        {
+            PlaySoundEffect(clip);
+        }
         
         if (Random.Range(0f, 1f) > target.myStunResistChance)
         {

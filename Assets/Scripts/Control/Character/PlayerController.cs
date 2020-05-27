@@ -45,6 +45,8 @@ public class PlayerController : Character
     [SerializeField] [Range(0,20f)] float maxNoiseLevel = 6f;
 
     public bool walkLouderIfLowStamina = false;
+    [SerializeField] AudioClip hunterStun = null;
+    [SerializeField] AudioClip guardStun = null;
     [SerializeField] AudioClip sprintFootsteps = null;
     [SerializeField] [Range(0,1f)] float sprintFootstepsInterval = 1f;
     //[SerializeField] GameObject soundEffectFX = null;
@@ -228,7 +230,16 @@ public class PlayerController : Character
                 if (stamina.GetStaminaValue() > stunCost)
                 {
                     stamina.ModifyStamina(-stunCost);
-                    guard.BecomeStunned(outgoingStunDuration);
+
+                    if(guard.tag == "Hunter")
+                    {
+                        StunTarget(guard, hunterStun);
+                    }
+                    else if (guard.tag == "Guard")
+                    {
+                        StunTarget(guard, guardStun);
+                    }
+
                     return true;
                 }
                 else
@@ -249,7 +260,6 @@ public class PlayerController : Character
             return false;
         }
     }
-
 
     /***********************
     * FEEDING

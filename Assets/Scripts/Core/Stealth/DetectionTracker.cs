@@ -164,7 +164,7 @@ public class DetectionTracker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Enemy")
+        if(other.gameObject.tag == "Guard" || other.gameObject.tag == "Hunter")
         {
             numEnemiesNearby++;
             RecalculateDetection();
@@ -173,11 +173,10 @@ public class DetectionTracker : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "Enemy")
+        if(other.gameObject.tag == "Guard" || other.gameObject.tag == "Hunter")
         {
             numEnemiesNearby--;
             RecalculateDetection();
         }
     }
-
 }

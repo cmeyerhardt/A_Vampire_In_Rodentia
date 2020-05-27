@@ -1203,12 +1203,12 @@ PrefabInstance:
     - target: {fileID: 1588154006615921851, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: myStunResistChance
-      value: 0.106
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1588154006615921851, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: myStunDurationReduction
-      value: 0.125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1588154006615921851, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}

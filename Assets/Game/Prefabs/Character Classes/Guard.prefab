@@ -95,6 +95,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guard
       objectReference: {fileID: 0}
+    - target: {fileID: 5238969804815366162, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_TagString
+      value: Guard
+      objectReference: {fileID: 0}
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: stateSequences.Array.data[0].sequence.Array.size
