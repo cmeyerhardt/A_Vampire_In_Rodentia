@@ -17,6 +17,11 @@ public class FeedingVictim : MonoBehaviour, IRaycast
     private void Awake()
     {
         villager = GetComponent<Villager>();
+
+    }
+
+    private void Start()
+    {
         feedingOn.AddListener(villager.health.ModifyHealth);
         feedingOn.AddListener(villager.ChangeFurColor);
     }
