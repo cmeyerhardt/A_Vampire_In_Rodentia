@@ -21,7 +21,7 @@ public class PatrolFinite : Patrol
         //print("finite enable");
         if(numLoops == 0)
         {
-            print("numLoops =" + numLoops);
+            //print("numLoops =" + numLoops);
             looping = false;
             doneEvent.Invoke(this);
         }
@@ -42,11 +42,9 @@ public class PatrolFinite : Patrol
     public new void Update()
     {
         base.Update();
-
-
+        
         //if (ai == null) { return; }
         //print("finiteUpdate");
-
     }
 
     public override void ProcessWaiting()

@@ -13,8 +13,7 @@ public class Patrol : AIBehaviour
         public float waitTime;
     }
 
-    //private Queue<Transform> route = new Queue<Transform>();
-    private Queue<WaypointWaitBundle> route2 = new Queue<WaypointWaitBundle>();
+    private Queue<WaypointWaitBundle> route = new Queue<WaypointWaitBundle>();
 
     [Header("Current State")] [Header("Patrol--")]
     public Transform currentDestination = null;
@@ -25,7 +24,6 @@ public class Patrol : AIBehaviour
     float secondsCounter = 1f;
 
     [Header("Patrol Route")]
-    //[SerializeField] public Transform[] patrolRouteWaypoints = null;
     [SerializeField] Color gizmosColor = Color.white;
     [SerializeField] public WaypointWaitBundle[] patrolRouteWaypoints2 = null;
 
@@ -40,12 +38,7 @@ public class Patrol : AIBehaviour
 
     public new void Start()
     {
-        //print("Base Start");
         base.Start();
-        //foreach (Transform t in patrolRouteWaypoints)
-        //{
-        //    route.Enqueue(t);
-        //}
 
         if (patrolRouteWaypoints2.Length == 0)
         {
@@ -55,7 +48,7 @@ public class Patrol : AIBehaviour
         foreach (WaypointWaitBundle waypoint in patrolRouteWaypoints2)
         {
             //print("enqueuing " + waypoint);
-            route2.Enqueue(waypoint);
+            route.Enqueue(waypoint);
         }
 
         LeaveDestination();
@@ -103,7 +96,7 @@ public class Patrol : AIBehaviour
             //    ai.MoveToDestination(currentDestination.position, patrolSpeedFraction);
             //}
         }
-        else if (route2.Count > 0)
+        else if (route.Count > 0)
         {
             //print("currentDestination = null");
             //print("current dest is null and there are other waypoints");
@@ -138,7 +131,7 @@ public class Patrol : AIBehaviour
         else
         {
             //Leave immediately
-            if (route2.Count > 0 && PrepareToEmbark())
+            if (route.Count > 0 && PrepareToEmbark())
             {
                 LeaveDestination();
             }
@@ -165,7 +158,7 @@ public class Patrol : AIBehaviour
             yield return new WaitForSeconds(delay);
         }
 
-        if (route2.Count > 0 && PrepareToEmbark())
+        if (route.Count > 0 && PrepareToEmbark())
         {
             LeaveDestination();
         }
@@ -178,7 +171,7 @@ public class Patrol : AIBehaviour
     public virtual bool PrepareToEmbark()
     {
         //print("base prepare embark");
-        route2.Enqueue(currentBundle);
+        route.Enqueue(currentBundle);
         secondsCounter = 0f;
         return true;
     }
@@ -213,7 +206,7 @@ public class Patrol : AIBehaviour
     
     public virtual void LeaveDestination()
     {
-        currentBundle = route2.Dequeue();
+        currentBundle = route.Dequeue();
         currentDestination = currentBundle.waypoint;
         waitTimer = currentBundle.waitTime;
         ai.MoveToDestination(currentDestination.position, patrolSpeedFraction);
@@ -237,7 +230,6 @@ public class Patrol : AIBehaviour
             Gizmos.color = gizmosColor;
             Gizmos.DrawSphere(GetWaypointPosition(i), .2f);
             Gizmos.DrawLine(GetWaypointPosition(i), GetWaypointPosition(j));
-
         }
     }
 
