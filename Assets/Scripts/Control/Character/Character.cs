@@ -20,6 +20,8 @@ public class Character : MonoBehaviour
     [SerializeField] [Tooltip("Add to navMeshAgent.stoppingDistance when checking range to destination. Helps agent reach destinations that are wider than stopping distance")]
     [Range(2f, 5f)] float navMeshDistanceBuffer = 2.5f;
 
+    public bool walking = false;
+
     [Header("Stunning")]
     [SerializeField] [Range(0f, 10f)] public float outgoingStunRange = 3f;
     [SerializeField] [Range(0f, 50f)] public float outgoingStunDuration = 3f;
@@ -27,11 +29,20 @@ public class Character : MonoBehaviour
     [SerializeField] [Range(0f, 1f)] public float myStunResistChance = .1f;
     [SerializeField] [Range(0f, 1f)] public float myStunDurationReduction = .1f;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip stunSound = null;
+    [SerializeField] AudioClip footsteps = null;
+    [SerializeField] [Range(0f, 2f)] public float footStepInterval = 1f;
+    [HideInInspector] public float footstepCounter = 0f;
+    Vector3 currentDestination = new Vector3();
+
     [HideInInspector] public FloatingTextSpawner textSpawner = null;
     [HideInInspector] public NavMeshAgent navMeshAgent = null;
     [HideInInspector] public Rigidbody rigidBody = null;
     [HideInInspector] public Animator animator = null;
     [HideInInspector] public Stamina stamina = null;
+    [HideInInspector] public AudioSource audioSource = null;
+
     
     [Header("Transform References")]
     [SerializeField] public Transform head = null;
@@ -47,6 +58,7 @@ public class Character : MonoBehaviour
         animator = GetComponent<Animator>();
         stamina = GetComponent<Stamina>();
         model = transform.Find("Model");
+        audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void Start()
@@ -56,6 +68,32 @@ public class Character : MonoBehaviour
     public virtual void Update()
     {
         if(isDead) { return; }
+        if(walking)
+        {
+            MakeMovementSounds(footsteps);
+        }
+        if (walking && IsInRange(currentDestination))
+        {
+            walking = false;
+        }
+    }
+
+    public void AnimationEventMakeFootstepsSoundEffect()
+    {
+        MakeMovementSounds(footsteps);
+    }
+
+    public virtual void MakeMovementSounds(AudioClip clip)
+    {
+        if (footstepCounter > footStepInterval)
+        {
+            PlaySoundEffect(clip);
+            footstepCounter = 0f;
+        }
+        else
+        {
+            footstepCounter += Time.deltaTime;
+        }
     }
 
     public virtual void Die()
@@ -70,7 +108,19 @@ public class Character : MonoBehaviour
         model.rotation = Quaternion.Euler(-90f, 0f, 0f);
     }
 
-    public virtual void Stun(float duration)
+    public void PlaySoundEffect(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
+
+    public virtual void StunTarget(Character target)
+    {
+        PlaySoundEffect(stunSound);
+        print(gameObject.name +" stuns "+ target.name);
+        target.BecomeStunned(outgoingStunDuration);
+    }
+
+    public virtual void BecomeStunned(float duration)
     {
         if (Random.Range(0f, 1f) <= myStunResistChance)
         {
@@ -87,11 +137,11 @@ public class Character : MonoBehaviour
         }
         else
         {
-            UnStun();
+            BecomeUnStunned();
         }
     }
 
-    public virtual void UnStun()
+    public virtual void BecomeUnStunned()
     {
         textSpawner.SpawnText("Stun Fades", Color.blue);
         isStunned = false;
@@ -101,17 +151,19 @@ public class Character : MonoBehaviour
     {
         if (navMeshAgent.isActiveAndEnabled && navMeshAgent.isOnNavMesh)
         {
+            walking = true;
             head.forward = transform.forward;
+            currentDestination = destination;
             navMeshAgent.destination = destination;
             navMeshAgent.speed = Mathf.Clamp(baseMovementSpeed * Mathf.Clamp01(speedFraction), baseMovementSpeed, maxMovementSpeed);
             navMeshAgent.isStopped = false;
         }
     }
 
-    public void MoveInDirection(Vector3 direction, float speed)
-    {
-        navMeshAgent.Move(direction * speed * Time.deltaTime);
-    }
+    //public void MoveInDirection(Vector3 direction, float speed)
+    //{
+    //    navMeshAgent.Move(direction * speed * Time.deltaTime);
+    //}
 
     public void StopMoving()
     {

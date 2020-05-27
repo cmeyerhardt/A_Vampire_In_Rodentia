@@ -5,8 +5,6 @@ public class Villager : AIController
     [Header("Sleeping")]
     [Header("Villager--")]
     [SerializeField] public Bed bed;
-    public float sleepTime = 5f;
-    public float wakeTime = 20f;
 
     [Header("Behaviours")]
     public bool sleepingBehavioursSet = false;
@@ -25,7 +23,7 @@ public class Villager : AIController
     
     //Cache
     FeedingVictim victim = null;
-    Health health = null;
+    public Health health = null;
 
     public override void Awake()
     {
@@ -86,20 +84,20 @@ public class Villager : AIController
         
         if (currentState != NPCState.Default) { return; }
 
-        if (bed != null)
-        {
-            if (Time.time >= sleepTime && Time.time < wakeTime && !sleepingBehavioursSet)
-            {
-                sleepingBehavioursSet = true;
-                SetSleepBehaviour();
-            }
+        //if (bed != null)
+        //{
+        //    if (Time.time >= sleepTime && Time.time < wakeTime && !sleepingBehavioursSet)
+        //    {
+        //        sleepingBehavioursSet = true;
+        //        SetSleepBehaviour();
+        //    }
 
-            if (Time.time >= wakeTime && sleepingBehavioursSet)
-            {
-                sleepingBehavioursSet = false;
-                SetDefaultBehaviours();
-            }
-        }
+        //    if (Time.time >= wakeTime && sleepingBehavioursSet)
+        //    {
+        //        sleepingBehavioursSet = false;
+        //        SetDefaultBehaviours();
+        //    }
+        //}
 
 #if UNITY_EDITOR
         availableBehaviours = "GoToLocation, GoToObject, PickUpObject, DropObject, Patrol, Siren, Sleep, Wait";
@@ -123,6 +121,7 @@ public class Villager : AIController
 
     private void SetDefaultBehaviours()
     {
+        if (bed == null) { return; }
         if (stateMap.ContainsKey(NPCState.Default))
         {
             UpdateStateList(NPCState.Default, baseDefault);
@@ -133,6 +132,7 @@ public class Villager : AIController
 
     private void SetSleepBehaviour()
     {
+        if(bed == null) { return; }
         if (stateMap.ContainsKey(NPCState.Default))
         {
             baseDefault = stateMap[NPCState.Default];

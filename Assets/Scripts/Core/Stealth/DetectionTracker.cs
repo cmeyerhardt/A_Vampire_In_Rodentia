@@ -17,7 +17,6 @@ public class DetectionTracker : MonoBehaviour
     [SerializeField] float minYScalar = .35f;
     [SerializeField] float maxYScalar = 1f;
 
-
     Dictionary<Detector, float> detectionDict = new Dictionary<Detector, float>();
 
     [SerializeField] FloatingTextSpawner textSpawner = null;
@@ -97,7 +96,6 @@ public class DetectionTracker : MonoBehaviour
                 case MusicState.Combat:
                     print("Playing combat music");
                     textSpawner.SpawnText("Combat", Color.red);
-
                     //todo Kitarraman - turn on combat music
 
                     break;
@@ -121,9 +119,31 @@ public class DetectionTracker : MonoBehaviour
             }
         
 
-    }
+        }
 
-        if(indicator == null) { return; }
+        switch (currentMusicState)
+        {
+            case MusicState.Combat:
+
+                //todo Kitarraman - increase volume of combat music
+
+                break;
+            case MusicState.Pensive:
+
+                //todo Kitarraman - increase volume of pensive music
+
+                break;
+            case MusicState.Sneaky:
+
+                //todo Kitarraman - increase volume of sneaky music
+
+                break;
+            case MusicState.None:
+                print("Music is off");
+                break;
+        }
+
+        if (indicator == null) { return; }
 
         if(currentMaxDetectedValue == 0f && indicator.gameObject.activeInHierarchy)
         {

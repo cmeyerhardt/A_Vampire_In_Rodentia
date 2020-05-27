@@ -335,14 +335,14 @@ public class AIController : Character
     * STATE
     ***********************/
 
-    public override void Stun(float duration)
+    public override void BecomeStunned(float duration)
     {
         lastState = currentState;
         currentState = NPCState.Incapacitated;
-        base.Stun(duration);
+        base.BecomeStunned(duration);
     }
 
-    public override void UnStun()
+    public override void BecomeUnStunned()
     {
         if(currentState == NPCState.Incapacitated)
         {
@@ -355,7 +355,7 @@ public class AIController : Character
                 currentState = NPCState.Suspicious;
             }
             lastState = NPCState.Incapacitated;
-            base.UnStun();
+            base.BecomeUnStunned();
         }
     }
 

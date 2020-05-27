@@ -36,14 +36,17 @@ public class PlayerController : Character
     [Range(0f, 20f)] public float sprintSpeed = 10f;
     [SerializeField] [Range(1f, 10f)] public float dashDistance = 5f;
     [SerializeField] [Range(45f, 270f)] public float turnSpeed = 100f;
-    
+
     [Header("Noise")]
     public FloatEvent makeSoundEvent = new FloatEvent();
     public float actualMovingNoiseLevel = 0f;
     [SerializeField] [Range(0,20f)] float walkingNoiseLevel = 0f;
     [SerializeField] [Range(0,20f)] float sprintingNoiseLevel = 3f;
     [SerializeField] [Range(0,20f)] float maxNoiseLevel = 6f;
+
     public bool walkLouderIfLowStamina = false;
+    [SerializeField] AudioClip sprintFootsteps = null;
+    [SerializeField] [Range(0,1f)] float sprintFootstepsInterval = 1f;
     //[SerializeField] GameObject soundEffectFX = null;
 
     [Header("Modified by Stamina Levels")]
@@ -132,6 +135,15 @@ public class PlayerController : Character
             //}
         }
 
+        if(Input.GetAxis("Vertical") != 0f || Input.GetAxis("Horizontal")!= 0f)
+        {
+            walking = true;
+        }
+        else
+        {
+            walking = false;
+        }
+
         //ProcessRaycast();
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -150,6 +162,28 @@ public class PlayerController : Character
             navMeshAgent.enabled = true;
         }
 #endif
+    }
+
+
+    public override void MakeMovementSounds(AudioClip clip)
+    {
+        if(Input.GetKey(sprintingKey))
+        {
+            if (footstepCounter > sprintFootstepsInterval)
+            {
+                PlaySoundEffect(sprintFootsteps);
+                footstepCounter = 0f;
+            }
+            else
+            {
+                footstepCounter += Time.deltaTime;
+            }
+            //base.MakeMovementSounds(sprintFootsteps);
+        }
+        else
+        {
+            base.MakeMovementSounds(clip);
+        }
     }
 
     private IEnumerator Dash()
@@ -193,10 +227,8 @@ public class PlayerController : Character
             {
                 if (stamina.GetStaminaValue() > stunCost)
                 {
-                    //Stun target
-                    //textSpawner.SpawnText("Stunning!", Color.green);
                     stamina.ModifyStamina(-stunCost);
-                    guard.Stun(outgoingStunDuration);
+                    guard.BecomeStunned(outgoingStunDuration);
                     return true;
                 }
                 else
@@ -257,7 +289,7 @@ public class PlayerController : Character
             {
                 yield return null;
             }
-            currentVictim.GetComponent<Character>().Stun(-1);
+            currentVictim.GetComponent<Character>().BecomeStunned(-1);
             feeder.AssignVictim(currentVictim);
             playerState = PlayerState.Feeding;
         }
@@ -323,27 +355,27 @@ public class PlayerController : Character
         }
 
         // Process Jumping
-        if (jumpCounter < maxJumpsAllowed)
-        {
-            if(jumpTimer <= 0f)
-            {
-                if (Input.GetButtonDown("Jump"))
-                {
-                    Jump((jump) ? diminishedUpForce * jumpCounter : 1f);
-                    jumpTimer = jumpCooldown;
-                }
-                if (Input.GetButton("Jump"))
-                {
-                    if (!jump) { Jump(1f); }
-                    jumpTimer = jumpCooldown;
-                }
-            }
-            else
-            {
-                jumpTimer -= Time.deltaTime;
-            }
+        //if (jumpCounter < maxJumpsAllowed)
+        //{
+        //    if(jumpTimer <= 0f)
+        //    {
+        //        if (Input.GetButtonDown("Jump"))
+        //        {
+        //            Jump((jump) ? diminishedUpForce * jumpCounter : 1f);
+        //            jumpTimer = jumpCooldown;
+        //        }
+        //        if (Input.GetButton("Jump"))
+        //        {
+        //            if (!jump) { Jump(1f); }
+        //            jumpTimer = jumpCooldown;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        jumpTimer -= Time.deltaTime;
+        //    }
 
-        }
+        //}
 
         // Process Translation
         if (horizontalMag != 0f || verticalMag != 0f)
@@ -360,19 +392,19 @@ public class PlayerController : Character
                 feeder.CancelFeeding();
                 playerState = PlayerState.Idle;
             }
-            if (jump) // air controls
-            {
-                //todo find an elegant way to control velocity while in air
-                if (rigidBody.velocity.y > 0) // going up
-                {
-                    rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity + direction * airForward * Time.deltaTime, sprintSpeed);
-                }
-                else // going down
-                {
-                    rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity + direction * Time.deltaTime, baseMovementSpeed);
-                }
-            }
-            else // ground controls
+            //if (jump) // air controls
+            //{
+            //    //todo find an elegant way to control velocity while in air
+            //    if (rigidBody.velocity.y > 0) // going up
+            //    {
+            //        rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity + direction * airForward * Time.deltaTime, sprintSpeed);
+            //    }
+            //    else // going down
+            //    {
+            //        rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity + direction * Time.deltaTime, baseMovementSpeed);
+            //    }
+            //}
+            //else // ground controls
             {
                 float staminaCost = walkStaminaDrain;
                 // Determine how fast the player moves: running, walking speed
@@ -419,7 +451,8 @@ public class PlayerController : Character
                 makeSoundEvent.Invoke(noiseLevel);
                 actualMovingNoiseLevel = noiseLevel;
 
-                //Update animator
+
+                //todo -- Update animator with movement speed
             }
         }
 

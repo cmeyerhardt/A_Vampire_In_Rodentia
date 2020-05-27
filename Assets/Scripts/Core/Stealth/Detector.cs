@@ -61,6 +61,7 @@ public class Detector : LineOfSight
 
     private void Update()
     {
+        if (player == null) { return; }
         if (player.isDead) { return; }
         //if (player.isHidden || player.playerState == PlayerState.Hiding) { canSeePlayer = false; ai.PlayerSighted(false); return; }
         if (!canSeeWhileSleeping && ai.currentBehaviour == "Sleep") { return; }
