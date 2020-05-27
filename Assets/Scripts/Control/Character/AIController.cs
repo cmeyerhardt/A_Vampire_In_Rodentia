@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 
-public enum NPCState { None, Default, Suspicious, Alert, Incapacitated, Dead }
+public enum NPCState { None, Default, Suspicious, Alert, /*Incapacitated, Dead */}
 
 [System.Serializable]
 public class BehaviourNode
@@ -119,8 +119,7 @@ public class AIController : Character
     public override void Update()
     {
         if (isDead) { return; }
-        if (isStunned) { return; }
-        
+        if (isStunned) { print(gameObject.name + " is stunned so i cant do anything"); return; }
         base.Update();
 
         if (currentState != lastState)
@@ -337,14 +336,14 @@ public class AIController : Character
 
     public override void BecomeStunned(float duration)
     {
-        lastState = currentState;
-        currentState = NPCState.Incapacitated;
+        //lastState = currentState;
+        //isStunned = true;
         base.BecomeStunned(duration);
     }
 
     public override void BecomeUnStunned()
     {
-        if(currentState == NPCState.Incapacitated)
+        if(isStunned)
         {
             if(canSeePlayer)
             {
@@ -354,7 +353,7 @@ public class AIController : Character
             {
                 currentState = NPCState.Suspicious;
             }
-            lastState = NPCState.Incapacitated;
+            lastState = NPCState.None;
             base.BecomeUnStunned();
         }
     }

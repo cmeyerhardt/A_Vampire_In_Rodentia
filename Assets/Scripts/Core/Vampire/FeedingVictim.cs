@@ -30,9 +30,10 @@ public class FeedingVictim : MonoBehaviour, IRaycast
     {
         if(beingFedOn)
         {
-            villager.currentState = NPCState.Incapacitated;
+            villager.isStunned = true;
         }
     }
+
     public float GetFedValue()
     {
         return healthLossOnFeed;
@@ -47,12 +48,14 @@ public class FeedingVictim : MonoBehaviour, IRaycast
     {
         if(Random.Range(0f,1f) <= chanceToResistFeed)
         {
+            print("unsuccessful");
             succeeded = false;
-            beingFedOn = true;
             CancelBeingFedOn();
         }
         else
         {
+            print("successful");
+            beingFedOn = true;
             succeeded = true;
             fedOnEvent.Invoke(true);
         }
@@ -60,6 +63,7 @@ public class FeedingVictim : MonoBehaviour, IRaycast
 
     public void CancelBeingFedOn()
     {
+        print(gameObject.name + "canceling feeding");
         beingFedOn = false;
         GetComponent<AIController>().BecomeUnStunned();
         fedOnEvent.Invoke(false);

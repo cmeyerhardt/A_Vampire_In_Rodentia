@@ -117,28 +117,35 @@ public class Character : MonoBehaviour
     {
         PlaySoundEffect(stunSound);
         print(gameObject.name +" stuns "+ target.name);
-        target.BecomeStunned(outgoingStunDuration);
-    }
-
-    public virtual void BecomeStunned(float duration)
-    {
+        
         if (Random.Range(0f, 1f) <= myStunResistChance)
         {
-            isStunned = true;
-            stamina.ModifyStamina(staminaDrainWhenImStunned);
-            textSpawner.SpawnText("Stunned", Color.blue);
-
-            float _duration = Mathf.Clamp(duration * (1 - myStunDurationReduction), 0f, duration);
-
-            if (_duration > 0)
-            {
-                Invoke("UnStun", _duration);
-            }
+            target.BecomeStunned(outgoingStunDuration);
         }
         else
         {
             BecomeUnStunned();
         }
+    }
+
+    public virtual void BecomeStunned(float duration)
+    {
+        isStunned = true;
+        stamina.ModifyStamina(staminaDrainWhenImStunned);
+        textSpawner.SpawnText("Stunned", Color.blue);
+
+        float _duration = Mathf.Clamp(duration * (1 - myStunDurationReduction), 0f, duration);
+
+        if (_duration > 0)
+        {
+            Invoke("BecomeUnStunned", _duration);
+        }
+    }
+
+    public virtual void BecomeStunned()
+    {
+        isStunned = true;
+        textSpawner.SpawnText("Stunned", Color.blue);
     }
 
     public virtual void BecomeUnStunned()
