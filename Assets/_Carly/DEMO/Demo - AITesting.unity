@@ -1253,7 +1253,7 @@ PrefabInstance:
     - target: {fileID: 2650222127965767851, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.22
+      value: -28.8
       objectReference: {fileID: 0}
     - target: {fileID: 2650222127965767851, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
@@ -1263,7 +1263,7 @@ PrefabInstance:
     - target: {fileID: 2650222127965767851, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 49.35
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2650222127965767851, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
@@ -1374,6 +1374,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AABB.m_Extent.z
       value: 0.64219904
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371410896171412771, guid: f1506da7beff4634ab334da0ab52e871,
+        type: 3}
+      propertyPath: currentHealth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371410896171412771, guid: f1506da7beff4634ab334da0ab52e871,
+        type: 3}
+      propertyPath: maxHealth
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6675461061331678054, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
@@ -2988,6 +2998,11 @@ PrefabInstance:
       propertyPath: behaviourPresets.Array.data[2].module
       value: 
       objectReference: {fileID: 1218389189}
+    - target: {fileID: 5015459794981734869, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: outgoingStunRange
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6526626496181592126, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: uniqueIdentifier
@@ -3107,6 +3122,16 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[0].sequence.Array.data[1]
       value: PickUp:Torch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: outgoingStunRange
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: outgoingStunDuration
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5466406264419188809, guid: 0838293017f52314daca08af79839794,
         type: 3}

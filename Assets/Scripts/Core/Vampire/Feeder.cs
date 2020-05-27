@@ -6,7 +6,7 @@ public class Feeder : MonoBehaviour
     [SerializeField] AudioClip feedingSFX;
     [SerializeField] [Tooltip("sec.")][Range(0f,10f)]float feedIntervalWhileLatched = 2f;
     [SerializeField] [Tooltip("sec.")][Range(0f,10f)]float timeToWaitToAvoidInturruption = 1f;
-    [SerializeField] [Range(0f,10f)]float feedInturruptionCost = 1f;
+    [SerializeField] [Range(0f,10f)] float feedInturruptionCost = 5f;
     [SerializeField] [Range(0f,1f)] float healthGainRatio = .5f;
     [SerializeField] [Range(0f,1f)] float rangeToBreakFeeding = 5f;
     bool feeding = false;
@@ -93,7 +93,7 @@ public class Feeder : MonoBehaviour
             //Check if cancel early
             if (totalTimeFeeding < timeToWaitToAvoidInturruption)
             {
-                textSpawner.SpawnText("Penalty", new Color(1f, .5f, 0f));
+                //textSpawner.SpawnText("Penalty", new Color(1f, .5f, 0f));
                 stamina.ModifyStamina(-feedInturruptionCost);
             }
 

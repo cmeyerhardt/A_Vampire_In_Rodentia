@@ -103,6 +103,10 @@ public class Attack : AIBehaviour
                         //ai.player.BecomeStunned(ai.outgoingStunDuration);
                         ai.player.makeSoundEvent.Invoke(stunVolume);
                     }
+                    else
+                    {
+                        print(gameObject.name +" Couldn't afford to stun");
+                    }
                 }
                 else
                 {

@@ -116,15 +116,12 @@ public class Character : MonoBehaviour
     public virtual void StunTarget(Character target)
     {
         PlaySoundEffect(stunSound);
-        print(gameObject.name +" stuns "+ target.name);
+
         
-        if (Random.Range(0f, 1f) <= myStunResistChance)
+        if (Random.Range(0f, 1f) > target.myStunResistChance)
         {
+            print(gameObject.name + " stuns " + target.name);
             target.BecomeStunned(outgoingStunDuration);
-        }
-        else
-        {
-            BecomeUnStunned();
         }
     }
 
