@@ -33,7 +33,7 @@ public class Protector : AIController, IRaycast
     new void Update()
     {
 #if UNITY_EDITOR
-        availableBehaviours = "Attack, GoToLocation, GoToObject, Patrol, Pickup, Siren, Wait";
+        availableBehaviours = "Attack,GoToLocation, GoToObject, PickUpObject, DropObject, Patrol, Siren, Wait";
 #endif
         base.Update();
     }
@@ -48,14 +48,13 @@ public class Protector : AIController, IRaycast
             {
                 case NPCState.None:
                 case NPCState.Default:
-                    Debug.Log(transform.gameObject + " becoming suspicious");
+                    //Debug.Log(transform.gameObject + " becoming suspicious");
                     currentState = NPCState.Suspicious;
                     break;
                 case NPCState.Suspicious:
                     lastState = NPCState.None;
                     break;
                 default:
-                    //Debug.Log("Dummmmmmmm dum dum dum duuuuuuum");
                     break;
             }
         }

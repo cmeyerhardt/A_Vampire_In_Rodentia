@@ -20,7 +20,6 @@ public class PlayerController : Character
     [Header("Player--")]
     public PlayerState playerState = PlayerState.Idle;
     public bool isHidden = false;
-
     
     [Header("Input")]
     [SerializeField] KeyCode sprintingKey = KeyCode.LeftShift;
@@ -91,7 +90,7 @@ public class PlayerController : Character
         currentUpForce = diminishedUpForce;
         currentJumpsAllowed = maxJumpsAllowed;
         jumpCounter = 0;
-
+         
         //makeSoundEvent.AddListener(MakeSoundEffect);
     }
 

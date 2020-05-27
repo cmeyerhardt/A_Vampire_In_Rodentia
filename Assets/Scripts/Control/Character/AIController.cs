@@ -145,10 +145,11 @@ public class AIController : Character
             StartCurrentBehaviour();
         }
 
+
         // Loop state behaviours here
     }
 
-    private AIBehaviour ParseBehaviourString(string s)
+    public virtual AIBehaviour ParseBehaviourString(string s)
     {
         string[] words = s.Split(':');
         //for(int i = 0; i < words.Length; i++)
@@ -213,7 +214,7 @@ public class AIController : Character
                 }
                 catch (Exception e)
                 {
-                    Debug.Log(e);
+                    //Debug.Log(e);
                     Type t = e.GetType();
                     if (t == typeof(ArgumentNullException) || t == typeof(FormatException) || t == typeof(IndexOutOfRangeException))
                     {
@@ -384,7 +385,7 @@ public class AIController : Character
 
         if (behaviourMap.ContainsKey("GoToPlayer"))
         {
-            Debug.Log("Setting player location " + player.transform.position);
+            //Debug.Log("Setting player location " + player.transform.position);
             ((GoToLocation)behaviourMap["GoToPlayer"]).nullableLocation = player.transform.position;
         }
 
@@ -516,13 +517,13 @@ public class AIController : Character
             //lastSeenPlayerLocation = player.transform.position;
             if (behaviourMap.ContainsKey("GoToPlayer"))
             {
-                Debug.Log("Setting player location " + player.transform.position);
+                //Debug.Log("Setting player location " + player.transform.position);
                 ((GoToLocation)behaviourMap["GoToPlayer"]).nullableLocation = player.transform.position;
             }
             canSeePlayer = false;
             DeEscalateState();
             //MoveToDestination(lastSeenPlayerLocation, 1f);
-            print("cannot see player");
+            //print("cannot see player");
             textSpawner.SpawnText("Where'd it go?", Color.yellow);
         }
 
@@ -530,7 +531,7 @@ public class AIController : Character
 
     public virtual void PlayerHeard(bool heard)
     {
-        Debug.Log(gameObject + " heard the player.");
+        //Debug.Log(gameObject + " heard the player.");
         
         //switch(currentState)
         //{

@@ -94,7 +94,7 @@ public class Attack : AIBehaviour
                 {
                     if (ai.stamina.CheckCanAffordCost(stunStaminaCost))
                     {
-                        print("Stunning");
+                        //print("Stunning");
                         ai.StopMoving();
                         stunCounter = 0f;
                         globalCooldown = 1f;

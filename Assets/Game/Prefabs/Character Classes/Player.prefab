@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527bb167818a7da4c8e987bfa7bc9d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentMusicState: 0
+  lastMusicState: 0
   currentMaxDetectedValue: 0
   indicator: {fileID: 3404681746481524444}
   displayGradient:
@@ -176,6 +178,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   minYScalar: 0.35
   maxYScalar: 1
+  textSpawner: {fileID: 1655876966581177603}
 --- !u!114 &1588154006615921851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,10 +214,6 @@ MonoBehaviour:
   model: {fileID: 0}
   playerState: 0
   isHidden: 0
-  makeSoundEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  actualMovingNoiseLevel: 0
   sprintingKey: 304
   dashKey: 306
   allowKeyBoardTurn: 1
@@ -222,6 +221,10 @@ MonoBehaviour:
   sprintSpeed: 10
   dashDistance: 5
   turnSpeed: 100
+  makeSoundEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  actualMovingNoiseLevel: 0
   walkingNoiseLevel: 0
   sprintingNoiseLevel: 3
   maxNoiseLevel: 6
@@ -236,6 +239,7 @@ MonoBehaviour:
   airForward: 25
   maxJumpsAllowed: 2
   diminishedUpForce: 0.85
+  jump: 0
   feeder: {fileID: 0}
 --- !u!114 &4854193863790158348
 MonoBehaviour:
@@ -527,6 +531,28 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!64 &7970624366227897613
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709236194401151647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: cd657f1fc19e4494493cc8347debdab0, type: 3}
+--- !u!33 &3865109088241372007
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709236194401151647}
+  m_Mesh: {fileID: 4300000, guid: cd657f1fc19e4494493cc8347debdab0, type: 3}
 --- !u!1 &7797889297969116351
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,28 +708,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!64 &7970624366227897613
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8709236194401151647}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: cd657f1fc19e4494493cc8347debdab0, type: 3}
---- !u!33 &3865109088241372007
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8709236194401151647}
-  m_Mesh: {fileID: 4300000, guid: cd657f1fc19e4494493cc8347debdab0, type: 3}
 --- !u!1001 &78493686900888375
 PrefabInstance:
   m_ObjectHideFlags: 0

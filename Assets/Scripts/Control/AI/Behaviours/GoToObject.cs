@@ -158,3 +158,29 @@ public class PickUpObject : GoToObject
         base.TaskDone();
     }
 }
+
+public class DropObject : AIBehaviour
+{
+    private new void Awake()
+    {
+        base.Awake();
+    }
+
+    public new void OnEnable()
+    {
+        base.OnEnable();
+        ai.DropObject(false);
+        doneEvent.Invoke(this);
+    }
+
+    //public new void Start()
+    //{
+    //    base.Start();
+    //}
+
+    //public new void Update()
+    //{
+    //    base.Update();
+    //    if (ai == null) { return; }
+    //}
+}

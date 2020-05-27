@@ -24,15 +24,21 @@ public class Villager : AIController
     Material furMaterial = null;
     
     //Cache
-    NightCycle nightCycle = null;
     FeedingVictim victim = null;
     Health health = null;
+
     public override void Awake()
     {
         base.Awake();
-        nightCycle = FindObjectOfType<NightCycle>();
+        NightCycle nightCycle = FindObjectOfType<NightCycle>();
+        if(nightCycle != null)
+        {
+            nightCycle.timeEvent.AddListener(TimeChangeEvent);
+        }
+
         victim = GetComponent<FeedingVictim>();
         health = GetComponent<Health>();
+
         Material[] materials = skinnedMeshRend.materials;
         if(materials != null && materials.Length > 0)
         {
@@ -48,7 +54,7 @@ public class Villager : AIController
                 }
                 else if(!randomizeMouseShirtColor && mouseShirtColor.a > 0f)
                 {
-                    shirtMaterial.SetColor("_Color", (Color)mouseShirtColor);
+                    shirtMaterial.SetColor("_Color", mouseShirtColor);
                 }
             }
         }
@@ -77,85 +83,63 @@ public class Villager : AIController
     public new void Update()
     {
         base.Update();
-
-        //if (bed == null) { return; }
+        
         if (currentState != NPCState.Default) { return; }
 
-        //if (Time.time >= sleepTime && Time.time < wakeTime && !goingToSleep)
-        //{
-        //    goingToSleep = true;
-        //    MoveToDestination(bed.transform.position, 1f);
-        //}
-
-        //if (IsInRange(bed.transform.position, GetStoppingDistance()))
-        //{
-        //    //print("At my bed");
-        //    bed.Interact(this);
-        //    inBed = true;
-        //}
-        ////else
-        ////{
-        ////    //print("Not in range yet");
-        ////    MoveToDestination(bed.transform.position, 1f);
-        ////}
-
-        //if (inBed)
-        //{
-        //    if (zzzCounter > 0f)
-        //    {
-        //        zzzCounter -= Time.deltaTime;
-        //    }
-        //    else
-        //    {
-        //        textSpawner.SpawnText("Zzz..", Color.yellow);
-        //        zzzCounter = 4f;
-        //    }
-        //}
-
-        ////todo -- put in sleep on disable
-        //if(Time.time >= wakeTime && inBed)
-        //{
-        //    inBed = false;
-        //    bed.CancelInteract();
-        //}
-
-        if (Time.time >= sleepTime && Time.time < wakeTime && !sleepingBehavioursSet)
+        if (bed != null)
         {
-            sleepingBehavioursSet = true;
-
-            if (stateMap.ContainsKey(NPCState.Default))
+            if (Time.time >= sleepTime && Time.time < wakeTime && !sleepingBehavioursSet)
             {
-                baseDefault = stateMap[NPCState.Default];
-                string[] s = { "Sleep" };
-                UpdateStateList(NPCState.Default, s);
-                stateMap[NPCState.Default] = s;
+                sleepingBehavioursSet = true;
+                SetSleepBehaviour();
             }
-            //next task
-        }
 
-
-        if (Time.time >= wakeTime && sleepingBehavioursSet)
-        {
-            sleepingBehavioursSet = false;
-
-            if (stateMap.ContainsKey(NPCState.Default))
+            if (Time.time >= wakeTime && sleepingBehavioursSet)
             {
-                UpdateStateList(NPCState.Default, baseDefault);
-                stateMap[NPCState.Default] = baseDefault;
-                lastState = NPCState.None;
+                sleepingBehavioursSet = false;
+                SetDefaultBehaviours();
             }
         }
-
-
-
-
-
-
-
 
 #if UNITY_EDITOR
-        availableBehaviours = "GoToLocation, GoToObject, Patrol, Siren, Sleep, Wait, Wander";
+        availableBehaviours = "GoToLocation, GoToObject, PickUpObject, DropObject, Patrol, Siren, Sleep, Wait";
 #endif
+    }
+
+    public void TimeChangeEvent(TimeSegment time)
+    {
+        switch(time)
+        {
+            case TimeSegment.Night:
+                SetSleepBehaviour();
+                break;
+            case TimeSegment.Dawn:
+                SetDefaultBehaviours();
+                    break;
+            default:
+                break;
+        }
+    }
+
+    private void SetDefaultBehaviours()
+    {
+        if (stateMap.ContainsKey(NPCState.Default))
+        {
+            UpdateStateList(NPCState.Default, baseDefault);
+            stateMap[NPCState.Default] = baseDefault;
+            lastState = NPCState.None;
+        }
+    }
+
+    private void SetSleepBehaviour()
+    {
+        if (stateMap.ContainsKey(NPCState.Default))
+        {
+            baseDefault = stateMap[NPCState.Default];
+            string[] s = { "Sleep" };
+            UpdateStateList(NPCState.Default, s);
+            stateMap[NPCState.Default] = s;
+        }
     }
 
     void UpdateStateList(NPCState state, string[] sequence)
@@ -184,6 +168,23 @@ public class Villager : AIController
         }
     }
 
+    public override AIBehaviour ParseBehaviourString(string s)
+    {
+
+        if(s.Split(':')[0] != null)
+        {
+            if (s.Split(':')[0] == "Sleep")
+            {
+                print("Parsing String for Sleep");
+                Sleep sleep = gameObject.AddComponent<Sleep>();
+                sleep.ai = this;
+                sleep.enabled = false;
+                sleep.bed = bed;
+            }
+        }
+        return base.ParseBehaviourString(s);
+    }
+
     //public void CommenceBeingFedOn(bool currentlyBeingFedOn)
     //{
     //    if (currentlyBeingFedOn)
@@ -196,3 +197,43 @@ public class Villager : AIController
     //    }
     //}
 }
+
+
+
+//if (Time.time >= sleepTime && Time.time < wakeTime && !goingToSleep)
+//{
+//    goingToSleep = true;
+//    MoveToDestination(bed.transform.position, 1f);
+//}
+
+//if (IsInRange(bed.transform.position, GetStoppingDistance()))
+//{
+//    //print("At my bed");
+//    bed.Interact(this);
+//    inBed = true;
+//}
+////else
+////{
+////    //print("Not in range yet");
+////    MoveToDestination(bed.transform.position, 1f);
+////}
+
+//if (inBed)
+//{
+//    if (zzzCounter > 0f)
+//    {
+//        zzzCounter -= Time.deltaTime;
+//    }
+//    else
+//    {
+//        textSpawner.SpawnText("Zzz..", Color.yellow);
+//        zzzCounter = 4f;
+//    }
+//}
+
+////todo -- put in sleep on disable
+//if(Time.time >= wakeTime && inBed)
+//{
+//    inBed = false;
+//    bed.CancelInteract();
+//}

@@ -34,11 +34,11 @@ public class Character : MonoBehaviour
     [HideInInspector] public Stamina stamina = null;
     
     [Header("Transform References")]
-
     [SerializeField] public Transform head = null;
     [SerializeField] public Transform hand = null;
     [SerializeField] public Collider hitBox = null;
     [HideInInspector] public Transform model = null;
+
     public virtual void Awake()
     {
         textSpawner = GetComponentInChildren<FloatingTextSpawner>();
@@ -58,10 +58,15 @@ public class Character : MonoBehaviour
         if(isDead) { return; }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         isDead = true;
+
+        //todo -- should dead bodies block movement?
         navMeshAgent.enabled = false;
+
+        //update animator
+
         model.rotation = Quaternion.Euler(-90f, 0f, 0f);
     }
 
@@ -143,7 +148,6 @@ public class Character : MonoBehaviour
         {
             //print("Dropping " + objectInHand);
             objectInHand.transform.parent = null;
-            //objectInHand.BePickedUp(this, false);
         }
         objectInHand = null;
     }

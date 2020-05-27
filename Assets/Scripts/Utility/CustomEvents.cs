@@ -8,6 +8,9 @@ public class FloatEvent : UnityEvent<float> { }
 public class BoolEvent : UnityEvent<bool> { }
 
 [System.Serializable]
+public class StringEvent : UnityEvent<string> { }
+
+[System.Serializable]
 public class MessageColorEvent : UnityEvent<string, Color> { }
 
 [System.Serializable]
