@@ -46,8 +46,11 @@ public class PlayerController : Character
 
     public bool walkLouderIfLowStamina = false;
     [SerializeField] AudioClip hunterStun = null;
+    [SerializeField] [Range(0f, 1f)] public float hunterStunVolume = 1f;
     [SerializeField] AudioClip guardStun = null;
+    [SerializeField] [Range(0f, 1f)] public float guardStunVolume = 1f;
     [SerializeField] AudioClip sprintFootsteps = null;
+    [SerializeField] [Range(0f, 1f)] public float sprintFootStepsVolume = 1f;
     [SerializeField] [Range(0,1f)] float sprintFootstepsInterval = 1f;
     //[SerializeField] GameObject soundEffectFX = null;
 
@@ -167,13 +170,13 @@ public class PlayerController : Character
     }
 
 
-    public override void MakeMovementSounds(AudioClip clip)
+    public override void MakeMovementSounds(AudioClip clip, float volumeScale)
     {
         if(Input.GetKey(sprintingKey))
         {
             if (footstepCounter > sprintFootstepsInterval)
             {
-                PlaySoundEffect(sprintFootsteps);
+                PlaySoundEffect(sprintFootsteps, sprintFootStepsVolume);
                 footstepCounter = 0f;
             }
             else
@@ -184,7 +187,7 @@ public class PlayerController : Character
         }
         else
         {
-            base.MakeMovementSounds(clip);
+            base.MakeMovementSounds(clip, volumeScale);
         }
     }
 
@@ -233,11 +236,11 @@ public class PlayerController : Character
 
                     if(guard.tag == "Hunter")
                     {
-                        StunTarget(guard, hunterStun);
+                        StunTarget(guard, hunterStunVolume, hunterStun);
                     }
                     else if (guard.tag == "Guard")
                     {
-                        StunTarget(guard, guardStun);
+                        StunTarget(guard, guardStunVolume, guardStun);
                     }
 
                     return true;

@@ -4,6 +4,7 @@ public class Feeder : MonoBehaviour
 {
     public FloatEvent feedEvent;
     [SerializeField] AudioClip feedingSFX;
+    [SerializeField] [Range(0f, 1f)] float feedingSFXVolume = 5f;
     [SerializeField] [Tooltip("sec.")][Range(0f,10f)]float feedIntervalWhileLatched = 2f;
     [SerializeField] [Tooltip("sec.")][Range(0f,10f)]float timeToWaitToAvoidInturruption = 1f;
     [SerializeField] [Range(0f,10f)] float feedInturruptionCost = 5f;
@@ -73,13 +74,13 @@ public class Feeder : MonoBehaviour
         victimHealth = currentVictim.GetComponent<Health>();
         totalTimeFeeding = 0f;
         feeding = true;
-        playerController.PlaySoundEffect(feedingSFX);
+        playerController.PlaySoundEffect(feedingSFX, feedingSFXVolume);
         //Trigger Feeding Animation
     }
 
     private void Feed(float value)
     {
-        playerController.PlaySoundEffect(feedingSFX);
+        playerController.PlaySoundEffect(feedingSFX, feedingSFXVolume);
         currentVictim.FeedOn();
         health.ModifyHealth(value * healthGainRatio);
         stamina.ModifyStamina(value);

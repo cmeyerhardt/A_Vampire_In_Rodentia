@@ -31,7 +31,10 @@ public class Character : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] AudioClip stunSound = null;
+    [SerializeField] [Range(0f, 1f)] public float stunSoundVolume = 1f;
     [SerializeField] AudioClip footsteps = null;
+    [SerializeField] [Range(0f, 1f)] public float footStepsVolume = 1f;
+
     [SerializeField] [Range(0f, 2f)] public float footStepInterval = 1f;
     [HideInInspector] public float footstepCounter = 0f;
     Vector3 currentDestination = new Vector3();
@@ -42,7 +45,6 @@ public class Character : MonoBehaviour
     [HideInInspector] public Animator animator = null;
     [HideInInspector] public Stamina stamina = null;
     [HideInInspector] public AudioSource audioSource = null;
-
     
     [Header("Transform References")]
     [SerializeField] public Transform head = null;
@@ -70,7 +72,7 @@ public class Character : MonoBehaviour
         if(isDead) { return; }
         if(walking)
         {
-            MakeMovementSounds(footsteps);
+            MakeMovementSounds(footsteps, footStepsVolume);
         }
         if (walking && IsInRange(currentDestination))
         {
@@ -80,14 +82,14 @@ public class Character : MonoBehaviour
 
     public void AnimationEventMakeFootstepsSoundEffect()
     {
-        MakeMovementSounds(footsteps);
+        MakeMovementSounds(footsteps, footStepsVolume);
     }
 
-    public virtual void MakeMovementSounds(AudioClip clip)
+    public virtual void MakeMovementSounds(AudioClip clip, float volume)
     {
         if (footstepCounter > footStepInterval)
         {
-            PlaySoundEffect(clip);
+            PlaySoundEffect(clip, volume);
             footstepCounter = 0f;
         }
         else
@@ -108,20 +110,23 @@ public class Character : MonoBehaviour
         model.rotation = Quaternion.Euler(-90f, 0f, 0f);
     }
 
-    public void PlaySoundEffect(AudioClip clip)
+    public void PlaySoundEffect(AudioClip clip, float volumeScale)
     {
-        audioSource.PlayOneShot(clip);
+        audioSource.Stop();
+        audioSource.clip = clip;
+        audioSource.volume = volumeScale;
+        audioSource.Play();
     }
 
-    public virtual void StunTarget(Character target, AudioClip clip = null)
+    public virtual void StunTarget(Character target, float volume = 1f, AudioClip clip = null)
     {
         if(clip == null)
         {
-            PlaySoundEffect(stunSound);
+            PlaySoundEffect(stunSound, volume);
         }
         else
         {
-            PlaySoundEffect(clip);
+            PlaySoundEffect(clip, volume);
         }
         
         if (Random.Range(0f, 1f) > target.myStunResistChance)

@@ -1215,6 +1215,21 @@ PrefabInstance:
       propertyPath: footStepInterval
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1588154006615921851, guid: f1506da7beff4634ab334da0ab52e871,
+        type: 3}
+      propertyPath: hunterStunVolume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588154006615921851, guid: f1506da7beff4634ab334da0ab52e871,
+        type: 3}
+      propertyPath: guardStunVolume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588154006615921851, guid: f1506da7beff4634ab334da0ab52e871,
+        type: 3}
+      propertyPath: sprintFootStepsVolume
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2172110978398349902, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: m_Size.x
