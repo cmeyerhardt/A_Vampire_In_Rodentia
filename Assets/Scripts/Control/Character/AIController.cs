@@ -520,12 +520,11 @@ public class AIController : Character
                 ((GoToLocation)behaviourMap["GoToPlayer"]).nullableLocation = player.transform.position;
             }
             canSeePlayer = false;
-            DeEscalateState();
+            //DeEscalateState();
             //MoveToDestination(lastSeenPlayerLocation, 1f);
             //print("cannot see player");
             textSpawner.SpawnText("Where'd it go?", Color.yellow);
         }
-
     }
 
     public virtual void PlayerHeard(bool heard)
