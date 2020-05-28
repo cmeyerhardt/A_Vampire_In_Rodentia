@@ -143,10 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527bb167818a7da4c8e987bfa7bc9d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMusicState: 0
-  lastMusicState: 0
+  highestAlertState: 1
+  lastState: 1
   currentMaxDetectedValue: 0
-  numEnemiesNearby: 0
+  enemiesNearby: []
   indicator: {fileID: 3404681746481524444}
   displayGradient:
     serializedVersion: 2
@@ -180,6 +180,24 @@ MonoBehaviour:
   minYScalar: 0.35
   maxYScalar: 1
   textSpawner: {fileID: 1655876966581177603}
+  _MasterMixer: {fileID: 0}
+  transitionUsingSnapshots: 1
+  sneakySnapshot: {fileID: 0}
+  pensiveSnapshot: {fileID: 0}
+  combatSnapshot: {fileID: 0}
+  sneakyTransitionTime: 0.4
+  pensiveTransitionTime: 0.4
+  combatTransitionTime: 0.4
+  changeVolumeOfAudioSourceOnTransition: 0
+  sneakyMusic: {fileID: 0}
+  pensiveMusic: {fileID: 0}
+  combatMusic: {fileID: 0}
+  sneakyMusicMaxVolume: 1
+  pensiveMusicMaxVolume: 1
+  combatMusicMaxVolume: 1
+  sneakyVolumeChangeRate: 1
+  pensiveVolumeChangeRate: 1
+  combatVolumeChangeRate: 1
 --- !u!114 &1588154006615921851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +224,9 @@ MonoBehaviour:
   myStunResistChance: 0.1
   myStunDurationReduction: 0.1
   stunSound: {fileID: 8300000, guid: f70b5a03ee8636741b12d6ab5b8c7b6b, type: 3}
+  stunSoundVolume: 1
   footsteps: {fileID: 8300000, guid: 26313004fb2191948b82553e7518edf9, type: 3}
+  footStepsVolume: 1
   footStepInterval: 1
   footstepCounter: 0
   textSpawner: {fileID: 1655876966581177603}
@@ -237,8 +257,11 @@ MonoBehaviour:
   maxNoiseLevel: 6
   walkLouderIfLowStamina: 0
   hunterStun: {fileID: 8300000, guid: 4bb728666d0636e438d52f17003858cc, type: 3}
+  hunterStunVolume: 1
   guardStun: {fileID: 8300000, guid: f70b5a03ee8636741b12d6ab5b8c7b6b, type: 3}
+  guardStunVolume: 1
   sprintFootsteps: {fileID: 8300000, guid: a4be32db2fd952d4387b5701374bdef4, type: 3}
+  sprintFootStepsVolume: 1
   sprintFootstepsInterval: 0.4
   sprintSpeedModifier: 1
   noiseModifier: 1
@@ -336,6 +359,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   feedingSFX: {fileID: 0}
+  feedingSFXVolume: 5
   feedIntervalWhileLatched: 2
   timeToWaitToAvoidInturruption: 1
   feedInturruptionCost: 1
@@ -543,28 +567,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!64 &7970624366227897613
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8709236194401151647}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: cd657f1fc19e4494493cc8347debdab0, type: 3}
---- !u!33 &3865109088241372007
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8709236194401151647}
-  m_Mesh: {fileID: 4300000, guid: cd657f1fc19e4494493cc8347debdab0, type: 3}
 --- !u!1 &7797889297969116351
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,6 +722,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!64 &7970624366227897613
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709236194401151647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: cd657f1fc19e4494493cc8347debdab0, type: 3}
+--- !u!33 &3865109088241372007
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709236194401151647}
+  m_Mesh: {fileID: 4300000, guid: cd657f1fc19e4494493cc8347debdab0, type: 3}
 --- !u!1001 &78493686900888375
 PrefabInstance:
   m_ObjectHideFlags: 0
