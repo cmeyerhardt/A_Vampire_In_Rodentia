@@ -1343,12 +1343,12 @@ PrefabInstance:
     - target: {fileID: 481993616040555333, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: pensiveMusicMaxVolume
-      value: 0.75
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 481993616040555333, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: combatMusicMaxVolume
-      value: 0.75
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 481993616040555333, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
@@ -1415,12 +1415,12 @@ PrefabInstance:
     - target: {fileID: 481993616040555333, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: combatTransitionTime
-      value: 2
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 481993616040555333, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: pensiveTransitionTime
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 481993616040555333, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
@@ -1435,7 +1435,7 @@ PrefabInstance:
     - target: {fileID: 481993616040555333, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: sneakyTransitionTime
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 721531277885356849, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
@@ -4050,8 +4050,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b9abe151e1af942aca9c53c49e4339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  daysSurvived: 0
-  survivors: []
 --- !u!1 &1982541444
 GameObject:
   m_ObjectHideFlags: 0
