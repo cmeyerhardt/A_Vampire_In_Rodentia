@@ -6,6 +6,7 @@ public class Detector : LineOfSight
     public float detectedPercentage = 0f;
     public float suspiciousDetectionValue = .3f;
     float lastDetectedPercentage = 0f;
+    NPCState lastState = NPCState.None;
 
     [Header("Sight")]
     public bool canSeePlayer = false;
@@ -128,15 +129,18 @@ public class Detector : LineOfSight
             RollOffDetection();
         }
 
-        if (gameObject.tag != "Enemy") { return; }
-        if (detectedPercentage > 0f/* && lastDetectedPercentage != detectedPercentage*/)
+        if (gameObject.tag == "Hunter" || gameObject.tag == "Guard") 
         {
-            //lastDetectedPercentage = detectedPercentage;
-            playerDetection.AddToDetectedValue(this);
-        }
-        else/* if (detectedPercentage == 0f)*/
-        {
-            playerDetection.RemoveDetectionValue(this);
+            if (detectedPercentage > 0f && (lastDetectedPercentage != detectedPercentage || lastState != ai.currentState))
+            {
+                //lastState = ai.currentState;
+                //lastDetectedPercentage = detectedPercentage;
+                playerDetection.AddToDetectedValue(this, ai.currentState);
+            }
+            else if (detectedPercentage == 0f)
+            {
+                playerDetection.RemoveDetectionValue(this);
+            }
         }
     }
 

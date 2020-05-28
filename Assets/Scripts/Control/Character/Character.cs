@@ -9,6 +9,7 @@ public class Character : MonoBehaviour
 
     public Interactable currentInteractiable = null;
     [SerializeField] public PickUp objectInHand = null;
+    Transform originalParent = null;
 
     [Header("Movement")]
     [SerializeField] [Tooltip("Base movement speed for this unit")]
@@ -54,6 +55,7 @@ public class Character : MonoBehaviour
 
     public virtual void Awake()
     {
+        originalParent = transform.parent;
         textSpawner = GetComponentInChildren<FloatingTextSpawner>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         rigidBody = GetComponent<Rigidbody>();
@@ -115,7 +117,7 @@ public class Character : MonoBehaviour
         audioSource.Stop();
         audioSource.clip = clip;
         audioSource.volume = volumeScale;
-        audioSource.Play();
+        audioSource.PlayOneShot(clip, volumeScale);
     }
 
     public virtual void StunTarget(Character target, float volume = 1f, AudioClip clip = null)
@@ -247,7 +249,7 @@ public class Character : MonoBehaviour
     public void CancelInteract()
     {
         //print("Canceling " + name + " interact with " + occupant);
-        transform.parent = null;
+        //transform.parent = null;
 
         if (currentInteractiable != null)
         {

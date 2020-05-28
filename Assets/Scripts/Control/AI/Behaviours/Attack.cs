@@ -25,6 +25,14 @@ public class Attack : AIBehaviour
     [HideInInspector]  public Health player = null;
     bool attacking = false;
 
+    public new void Awake()
+    {
+        base.Awake();
+        globalCooldown = 0f;
+        attackCounter = attackInterval;
+        stunCounter = stunInterval;
+    }
+
     public new void OnEnable()
     {
         base.OnEnable();
@@ -34,18 +42,15 @@ public class Attack : AIBehaviour
         {
             ai.MoveToDestination(player.transform.position, movementFraction);
         }
-
-        globalCooldown = 0f;
-        attackCounter = attackInterval;
-        stunCounter = stunInterval;
     }
 
     public new void Update()
     {
-        if(player == null) { return; }
+        if (player == null) { return; }
         if (player.isDead) { doneEvent.Invoke(this); return; }
-        base.Update();
         if (ai == null) { Debug.LogError("No AI Reference. Attack Behaviour: " + gameObject.name); return; }
+        base.Update();
+
         if (ai.behaviourMap.ContainsKey("Return") && ((GoToLocation)ai.behaviourMap["Return"]).nullableLocation != null)
         {
             if (player == null || (!ai.canSeePlayer && (transform.position - (Vector3)((GoToLocation)ai.behaviourMap["Return"]).nullableLocation).magnitude > maxChaseDistance))
