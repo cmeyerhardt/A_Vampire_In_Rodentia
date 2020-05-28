@@ -867,7 +867,7 @@ PrefabInstance:
     - target: {fileID: 32967580393907949, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 113765829271979633, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
@@ -3515,8 +3515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b9abe151e1af942aca9c53c49e4339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  daysSurvived: 0
-  survivors: []
 --- !u!1 &1982541444
 GameObject:
   m_ObjectHideFlags: 0
