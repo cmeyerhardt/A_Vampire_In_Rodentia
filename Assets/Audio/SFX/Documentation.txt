@@ -9,3 +9,8 @@ GuardFootstep = each one of these is the sound of a single footstep. No metallic
 PlayerLoudFootstep = this has to play each time the player moves using SHIFT+WASD keys
 PlayerSilentFootstep = this has to play when the player sneaks around
 Hunter'sBolt = that's the sound of the bolt being shot from the crossbow
+Update 05/28/2020
+BoltImpactOnPlayer = as you (Carly) made me notice, we were lacking the sound of the arrow hitting the player, so here it is.
+HunterBarking = since I don't have great barking sounds (and can't record my dog since there's too much noise at home to field record it), use this for the guards too. I'm not very happy with this solution, but I'd rather avoid going on freesound.org and having to credit other people.
+MouseDying = pretty self-explainatory
+Ambience = make this play as ambience noise. Set it in the audio mixer, I'll pass later and mix it to get the right amount of music and ambience noise to bring the scene to life
