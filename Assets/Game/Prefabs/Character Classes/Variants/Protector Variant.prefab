@@ -207,25 +207,28 @@ MonoBehaviour:
   currentInteractiable: {fileID: 0}
   objectInHand: {fileID: 0}
   baseMovementSpeed: 5
-  walkingSpeed: 7
-  sprintSpeed: 10
-  dashSpeed: 20
+  maxMovementSpeed: 20
+  navMeshDistanceBuffer: 2.5
+  outgoingStunRange: 3
+  outgoingStunDuration: 3
+  staminaDrainWhenImStunned: 10
+  myStunResistChance: 0.1
+  myStunDurationReduction: 0.1
   textSpawner: {fileID: 0}
   navMeshAgent: {fileID: 0}
   rigidBody: {fileID: 0}
-  indicator: {fileID: 0}
   animator: {fileID: 0}
   stamina: {fileID: 0}
-  model: {fileID: 0}
   head: {fileID: 9211518523048860850}
   hand: {fileID: 6648718779712291948}
+  hitBox: {fileID: 0}
+  model: {fileID: 0}
   canSeePlayer: 0
   currentState: 0
   lastState: 0
   aIBehaviour: {fileID: 0}
   currentBehaviour: 
   lastBehaviour: 
-  deEscalationWaitTime: 6
   availableBehaviours: Attack, Patrol, Sleep
   stateSequences:
   - state: 1
@@ -242,13 +245,14 @@ MonoBehaviour:
     - Attack
   behaviourPresets:
   - behaviour: Idle
-    module: {fileID: 8526454386560524895}
+    module: {fileID: 0}
   - behaviour: Attack
     module: {fileID: 9013415846929125376}
   - behaviour: Patrol
-    module: {fileID: 8526454386560524895}
+    module: {fileID: 0}
   player: {fileID: 0}
   playerHead: {fileID: 0}
+  detector: {fileID: 0}
 --- !u!114 &9013415846929125376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,13 +268,15 @@ MonoBehaviour:
   ai: {fileID: 0}
   tasks: []
   maxChaseDistance: 40
+  movementFraction: 1
   attackRange: 3
   attackDamage: 3
   attackInterval: 3
-  stunRange: 5
+  attackVolume: 10
   stunInterval: 15
-  stunDuration: 3
-  startLocation: {x: 0, y: 0, z: 0}
+  stunVolume: 10
+  stunStaminaCost: 10
+  player: {fileID: 0}
 --- !u!1 &5344848995254111241
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +459,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protector Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 926728164076872530, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1741793121749622572, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: m_RootOrder
@@ -533,18 +544,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4929446104298330944}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8526454386560524895 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3620018939525888287, guid: d237c9cb145cff247b42b9b8eb6c28e5,
-    type: 3}
-  m_PrefabInstance: {fileID: 4929446104298330944}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238969804815366162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5484abd45ec6ca64c8a56915c13ee6fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &9121519261203538042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4251059871065652026, guid: d237c9cb145cff247b42b9b8eb6c28e5,

@@ -42,6 +42,7 @@ public class Attack : AIBehaviour
 
     public new void Update()
     {
+        if(player == null) { return; }
         if (player.isDead) { doneEvent.Invoke(this); return; }
         base.Update();
         if (ai == null) { Debug.LogError("No AI Reference. Attack Behaviour: " + gameObject.name); return; }
@@ -94,12 +95,17 @@ public class Attack : AIBehaviour
                 {
                     if (ai.stamina.CheckCanAffordCost(stunStaminaCost))
                     {
-                        print("Stunning");
+                        //print("Stunning");
                         ai.StopMoving();
                         stunCounter = 0f;
                         globalCooldown = 1f;
-                        ai.player.Stun(ai.outgoingStunDuration);
+                        ai.StunTarget(ai.player);
+                        //ai.player.BecomeStunned(ai.outgoingStunDuration);
                         ai.player.makeSoundEvent.Invoke(stunVolume);
+                    }
+                    else
+                    {
+                        print(gameObject.name +" Couldn't afford to stun");
                     }
                 }
                 else
@@ -140,6 +146,7 @@ public class Attack : AIBehaviour
     public virtual void PerformAttack(float damage)
     {
         player.ModifyHealth(-damage);
+        //ai.PlaySoundEffect(hitSound);
         ai.player.makeSoundEvent.Invoke(attackVolume);
     }
 }

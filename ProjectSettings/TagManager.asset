@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Core
+  - Enemy
+  - Hunter
+  - Guard
   layers:
   - Default
   - TransparentFX

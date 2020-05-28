@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     public FloatEvent newHealthValueEvent;
-    public UnityEvent deathEvent;
+    public StringEvent deathEvent;
 
     [Header("State")]
     public bool isDead = false;
@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
             if (currentHealth <= 0f)
             {
                 isDead = true;
-                deathEvent.Invoke();
+                deathEvent.Invoke(GetComponent<SavableObject>().GetUniqueIdentifier());
             }
             else
             {

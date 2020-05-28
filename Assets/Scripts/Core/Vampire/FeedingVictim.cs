@@ -6,16 +6,32 @@ public class FeedingVictim : MonoBehaviour, IRaycast
     [HideInInspector] public BoolEvent fedOnEvent;
     [HideInInspector] public FloatEvent feedingOn;
     [HideInInspector] public BoolEvent resistEvent;
-    
+
     //[SerializeField] float recoveryDelay = 3f;
-    
+    bool beingFedOn = false;
     [SerializeField] float healthLossOnFeed = 5f;
     [SerializeField] float chanceToResistFeed = .1f;
 
+    Villager villager = null;
+
     private void Awake()
     {
-        feedingOn.AddListener(GetComponent<Health>().ModifyHealth);
-        feedingOn.AddListener(GetComponent<Villager>().ChangeFurColor);
+        villager = GetComponent<Villager>();
+
+    }
+
+    private void Start()
+    {
+        feedingOn.AddListener(villager.health.ModifyHealth);
+        feedingOn.AddListener(villager.ChangeFurColor);
+    }
+
+    private void Update()
+    {
+        if(beingFedOn)
+        {
+            villager.isStunned = true;
+        }
     }
 
     public float GetFedValue()
@@ -32,11 +48,14 @@ public class FeedingVictim : MonoBehaviour, IRaycast
     {
         if(Random.Range(0f,1f) <= chanceToResistFeed)
         {
+            print("unsuccessful");
             succeeded = false;
             CancelBeingFedOn();
         }
         else
         {
+            print("successful");
+            beingFedOn = true;
             succeeded = true;
             fedOnEvent.Invoke(true);
         }
@@ -44,7 +63,9 @@ public class FeedingVictim : MonoBehaviour, IRaycast
 
     public void CancelBeingFedOn()
     {
-        GetComponent<AIController>().UnStun();
+        print(gameObject.name + "canceling feeding");
+        beingFedOn = false;
+        GetComponent<AIController>().BecomeUnStunned();
         fedOnEvent.Invoke(false);
     }
     

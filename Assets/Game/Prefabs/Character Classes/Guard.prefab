@@ -95,6 +95,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guard
       objectReference: {fileID: 0}
+    - target: {fileID: 5238969804815366162, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_TagString
+      value: Guard
+      objectReference: {fileID: 0}
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: stateSequences.Array.data[0].sequence.Array.size
@@ -135,6 +140,16 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[0].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: footsteps
+      value: 
+      objectReference: {fileID: 8300000, guid: 76268cea80bbffa4c8586e41ea3f10c4, type: 3}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stunSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f9735697bca6fac4f94ac2add6428287, type: 3}
     - target: {fileID: 9013415846929125376, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: attackRange

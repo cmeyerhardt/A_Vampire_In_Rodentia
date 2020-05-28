@@ -5,6 +5,7 @@ public class Detector : LineOfSight
     [Header("Detection")]
     public float detectedPercentage = 0f;
     public float suspiciousDetectionValue = .3f;
+    float lastDetectedPercentage = 0f;
 
     [Header("Sight")]
     public bool canSeePlayer = false;
@@ -60,12 +61,11 @@ public class Detector : LineOfSight
 
     private void Update()
     {
+        if (player == null) { return; }
         if (player.isDead) { return; }
         //if (player.isHidden || player.playerState == PlayerState.Hiding) { canSeePlayer = false; ai.PlayerSighted(false); return; }
         if (!canSeeWhileSleeping && ai.currentBehaviour == "Sleep") { return; }
-
-
-
+        
         if (ai.IsInRange(player.transform.position, sightRange) && !player.isHidden)
         {
             // if player is in front of ai
@@ -118,19 +118,23 @@ public class Detector : LineOfSight
         }
         else if(ai.currentState == NPCState.Suspicious)
         {
-            detectedPercentage = suspiciousDetectionValue;
+            if(detectedPercentage > suspiciousDetectionValue)
+            {
+                RollOffDetection();
+            }
         }
         else
         {
             RollOffDetection();
         }
 
-        if (detectedPercentage > 0f)
+        if (gameObject.tag != "Enemy") { return; }
+        if (detectedPercentage > 0f/* && lastDetectedPercentage != detectedPercentage*/)
         {
+            //lastDetectedPercentage = detectedPercentage;
             playerDetection.AddToDetectedValue(this);
         }
-
-        if (detectedPercentage == 0f)
+        else/* if (detectedPercentage == 0f)*/
         {
             playerDetection.RemoveDetectionValue(this);
         }

@@ -7,10 +7,12 @@ public class Sleep : GoToObject
     bool sleeping = false;
     float zzzCounter = 2f;
 
-
     public new void OnEnable()
     {
-        objectReference = bed.transform.Find("Entry").gameObject;
+        if(bed != null)
+        {
+            objectReference = bed.transform.Find("Entry").gameObject;
+        }
         base.OnEnable();
     }
 

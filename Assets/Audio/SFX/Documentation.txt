@@ -1,0 +1,11 @@
+Documentation for audio assets
+Player sucking blood = pretty self-explainatory, I made just two variations
+PlayerStunningHunter = again, pretty self-explainatory. It's different from PlayerStunningGuard because of the metallic layer
+HunterStunningPlayer = Hunter hitting player
+HunterFootstep = each one of these is the sound of a single footstep
+PlayerStunningGuard = as I've anticipated before this is for when the player stuns the guards
+GuardStunningPlayer = guard hitting the player
+GuardFootstep = each one of these is the sound of a single footstep. No metallic layer since guards don't wear armor
+PlayerLoudFootstep = this has to play each time the player moves using SHIFT+WASD keys
+PlayerSilentFootstep = this has to play when the player sneaks around
+Hunter'sBolt = that's the sound of the bolt being shot from the crossbow
