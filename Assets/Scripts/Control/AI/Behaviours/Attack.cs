@@ -7,12 +7,16 @@ public class Attack : AIBehaviour
     [Header("Attack--")]
     [SerializeField] float maxChaseDistance = 40f;
     [SerializeField] [Range(0f, 10f)] float movementFraction = 1f;
+
     [Header("Attack")]
     [SerializeField] public float attackRange = 4f; //melee ~3.5f
     [SerializeField] public float attackDamage = 3f;
     [SerializeField] public float attackInterval = 3f;
     [SerializeField] public float attackVolume = 10f;
-                            
+
+    [SerializeField] AudioClip hitSound = null;
+    [SerializeField] [Range(0f, 1f)] float hitSoundMaxVolume = 1f;
+
     [Header("Stun")]        
     [SerializeField] public float stunInterval = 5f;
     [SerializeField] public float stunVolume = 10f;
@@ -126,7 +130,7 @@ public class Attack : AIBehaviour
                     ai.StopMoving();
                     attackCounter = 0f;
                     globalCooldown = 1f;
-                    PerformAttack(attackDamage);
+                    PerformAttack(attackDamage, true);
                 }
                 else
                 {
@@ -148,10 +152,13 @@ public class Attack : AIBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, 1);
     }
 
-    public virtual void PerformAttack(float damage)
+    public virtual void PerformAttack(float damage, bool playSound)
     {
         player.ModifyHealth(-damage);
-        //ai.PlaySoundEffect(hitSound);
+        if(playSound)
+        {
+            ai.PlaySoundEffect(hitSound, hitSoundMaxVolume);
+        }
         ai.player.makeSoundEvent.Invoke(attackVolume);
     }
 }

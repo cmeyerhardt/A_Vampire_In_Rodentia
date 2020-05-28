@@ -393,6 +393,18 @@ public class AIController : Character
         if (stateMap.ContainsKey(currentState))
         {
             lastState = currentState;
+
+            //switch (currentState)
+            //{
+            //    case NPCState.Alert:
+            //        textSpawner.SpawnText("!", Color.red);
+            //        break;
+            //    case NPCState.Suspicious:
+            //        textSpawner.SpawnText("?", Color.yellow);
+            //        break;
+            //    case NPCState.Default:
+            //        break;
+            //}
             SetBehaviourSequence(stateMap[currentState]);
         }
     }
@@ -470,7 +482,7 @@ public class AIController : Character
             t += w + ", ";
             currentBehaviourSequence.Enqueue(w);
         }
-        Debug.Log("Next Behaviour Sequence: " + t);
+        ////Debug.Log("Next Behaviour Sequence: " + t);
 
         currentBehaviour = currentBehaviourSequence.Dequeue();
     }
@@ -508,7 +520,7 @@ public class AIController : Character
                 ((GoToLocation)behaviourMap["GoToPlayer"]).nullableLocation = player.transform.position;
             }
             canSeePlayer = false;
-            DeEscalateState();
+            //DeEscalateState();
             //MoveToDestination(lastSeenPlayerLocation, 1f);
             //print("cannot see player");
             textSpawner.SpawnText("Where'd it go?", Color.yellow);

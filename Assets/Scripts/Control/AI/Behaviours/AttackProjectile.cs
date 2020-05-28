@@ -22,17 +22,16 @@ public class AttackProjectile : Attack
         base.Update();
     }
 
-    public override void PerformAttack(float damage)
+    public override void PerformAttack(float damage, bool playSound)
     {
         Projectile _projectile = Instantiate(projectile, ai.hand.position, Quaternion.identity, null);
-        _projectile.Initialize(player, gameObject);
+        _projectile.Initialize(player, ai);
         _projectile.projectileHitEvent.AddListener(ProjectileHit);
     }
 
-    public void ProjectileHit()
+    public void ProjectileHit(bool playSound)
     {
-        //ai.player.makeSound.Invoke(ai.attackVolume);
-        base.PerformAttack(attackDamage);
+        base.PerformAttack(attackDamage, playSound);
     }
 
 }

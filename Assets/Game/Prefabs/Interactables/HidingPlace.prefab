@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3961705956214677712}
   m_Layer: 0
-  m_Name: RotationSetting
+  m_Name: UseTransform
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 3168943367266527872}
   - component: {fileID: 8254126402523934112}
   - component: {fileID: 443519887222766077}
+  - component: {fileID: 642946040154120295}
   m_Layer: 0
   m_Name: HidingPlace
   m_TagString: Untagged
@@ -107,9 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e876af139a19563479b08e6fbf2f4f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  occupied: 0
   allowPlayer: 1
-  debugColor: {r: 1, g: 0, b: 0.6582799, a: 1}
+  occupied: 0
+  occupant: {fileID: 0}
+  useTransform: {fileID: 0}
+  entryLocation: {x: 0, y: 0, z: 0}
+  entry: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &8254126402523934112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -139,3 +143,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &642946040154120295
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754118873717288988}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

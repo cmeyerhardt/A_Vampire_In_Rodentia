@@ -133,11 +133,11 @@ public class Detector : LineOfSight
         {
             if (detectedPercentage > 0f && (lastDetectedPercentage != detectedPercentage || lastState != ai.currentState))
             {
-                //lastState = ai.currentState;
-                //lastDetectedPercentage = detectedPercentage;
+                lastState = ai.currentState;
+                lastDetectedPercentage = detectedPercentage;
                 playerDetection.AddToDetectedValue(this, ai.currentState);
             }
-            else if (detectedPercentage == 0f)
+            else if (detectedPercentage == 0f && playerDetection.detectionDict.ContainsKey(this))
             {
                 playerDetection.RemoveDetectionValue(this);
             }

@@ -32,7 +32,7 @@ public class DetectionTracker : MonoBehaviour
     [SerializeField] [Range(0f, 10f)] float combatTransitionTime = 10f;
 
     [Header("AudioSource Settings")]
-    public bool changeVolumeOfAudioSourceOnTransition = false;
+    public bool changeVolumeOfAudioSourceOnTransition = true;
     [SerializeField] AudioSource sneakyMusic = null;
     [SerializeField] AudioSource pensiveMusic = null;
     [SerializeField] AudioSource combatMusic = null;
@@ -45,8 +45,8 @@ public class DetectionTracker : MonoBehaviour
     [SerializeField] [Range(0f, 10f)] float combatVolumeChangeRate = 1f;
 
 
-    Dictionary<Detector, float> detectionDict = new Dictionary<Detector, float>();
-    Dictionary<Detector, NPCState> detectionStateDict = new Dictionary<Detector, NPCState>();
+    public Dictionary<Detector, float> detectionDict = new Dictionary<Detector, float>();
+    public Dictionary<Detector, NPCState> detectionStateDict = new Dictionary<Detector, NPCState>();
     
     private void Start()
     {
@@ -95,18 +95,17 @@ public class DetectionTracker : MonoBehaviour
         bool reCalculate = false;
         if (detectionDict.ContainsKey(detector))
         {
-            print("Removing " + detector);
             detectionDict.Remove(detector);
             reCalculate = true;
         }
         if (detectionStateDict.ContainsKey(detector))
         {
-            print("Removing " + detector);
             detectionDict.Remove(detector);
             reCalculate = true;
         }
         if (reCalculate)
         {
+            print("Removing " + detector);
             RecalculateDetection();
         }
     }
@@ -115,8 +114,10 @@ public class DetectionTracker : MonoBehaviour
         bool reCalculate = false;
         if (detectionDict.ContainsKey(detector))
         {
+            print("Modifying " + detector);
+
             // if already a key, modify value
-            if(detectionDict[detector] != detector.detectedPercentage)
+            if (detectionDict[detector] != detector.detectedPercentage)
             {
                 detectionDict[detector] = detector.detectedPercentage;
                 reCalculate = true;
@@ -125,6 +126,7 @@ public class DetectionTracker : MonoBehaviour
         }
         else
         {
+            print("Adding " + detector);
             // if not in dictionary, add to it
             detectionDict.Add(detector, detector.detectedPercentage);
             reCalculate = true;
@@ -154,7 +156,7 @@ public class DetectionTracker : MonoBehaviour
     // Recalculate detection given all enemies that are detecting the player
     public void RecalculateDetection()
     {
-        print("Recalculating");
+        //print("Recalculating");
         float _value = 0f;
         string _string = "";
         NPCState highestState = NPCState.Default;
@@ -201,7 +203,7 @@ public class DetectionTracker : MonoBehaviour
         }
 
 
-        print("Highest Value: " + currentMaxDetectedValue + ", Highest State: " + highestAlertState);
+        //print("Highest Value: " + currentMaxDetectedValue + ", Highest State: " + highestAlertState);
     }
     
     

@@ -3,50 +3,43 @@ using UnityEngine.Events;
 
 public class Projectile : MonoBehaviour
 {
-    float projectileSpeed = 20f;
+    [Header("Configure")]
+    [SerializeField] [Range(0f,50f)]float projectileSpeed = 20f;
+    [SerializeField] [Range(0f,50f)] float lifeTime = 12f;
     [SerializeField] GameObject[] destroyOnHit = null;
-    [SerializeField] GameObject hitFX = null;
-    public UnityEvent projectileHitEvent;
-    GameObject originator = null;
 
-    bool stopped = false;
+    [Header("Hit FX")]
+    [SerializeField] AudioClip hitSoundObject = null;
+    [SerializeField] [Range(0f, 1f)] float hitSoundObjectMaxVolume = 1f;
+    [SerializeField] GameObject hitFX = null;
+    public BoolEvent projectileHitEvent;
+    
+    // Cache
+    Character originator = null;
+    Health player = null;
+    Rigidbody rb = null;
+
+    bool stopped = true;
     bool hit = false;
     bool playerDamaged = false;
 
-    Health player;
-    bool initialized = false;
-    float lifeTime = 12f;
-
-    Rigidbody rb;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
-    Vector3 point = new Vector3();
 
-    public void Initialize(Health player, GameObject originator)
+    public void Initialize(Health player, Character originator)
     {
         this.originator = originator;
         this.player = player;
         Collider hitBox = player.GetComponent<Character>().hitBox;
-        //hitBox.ClosestPoint
         transform.LookAt(hitBox.ClosestPointOnBounds(transform.position));
         Destroy(gameObject, lifeTime);
-        initialized = true; 
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (initialized)
-        {
-            Gizmos.DrawSphere(point, .2f);
-        }
+        stopped = false;
     }
 
     void Update()
     {
-        if(!initialized) { return; }
-
         if(!stopped)
         {
             transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
@@ -55,21 +48,29 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (!other.GetComponent<Health>()) { return; }
-        if (player.isDead) { return; }
+        Health target = other.GetComponent<Health>();
 
-        if(!other.isTrigger && other.gameObject != originator)
+        if (!other.isTrigger && other.gameObject != originator)
         {
             stopped = true;
+            rb.useGravity = false;
+            rb.isKinematic = true;
             transform.parent = other.transform;
         }
 
-
-        if (other.GetComponent<Health>() == player && !playerDamaged)
+        if (target != null && target == player && !player.isDead)
         {
-            playerDamaged = true;
-            projectileHitEvent.Invoke();
-            transform.parent = player.GetComponent<Character>().model;
+            if (!playerDamaged)
+            {
+                playerDamaged = true;
+                projectileHitEvent.Invoke(true);
+                transform.parent = player.GetComponent<Character>().model;
+            }
+        }
+        else
+        {
+            originator.PlaySoundEffect(hitSoundObject, hitSoundObjectMaxVolume);
+            projectileHitEvent.Invoke(false);
         }
 
         if (hitFX && !hit)
@@ -83,7 +84,6 @@ public class Projectile : MonoBehaviour
             
             Destroy(impactObj, 1f);
         }
-
 
         foreach (GameObject toDestroy in destroyOnHit)
         {

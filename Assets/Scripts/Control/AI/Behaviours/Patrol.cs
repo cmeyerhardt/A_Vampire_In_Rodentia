@@ -45,13 +45,16 @@ public class Patrol : AIBehaviour
             print("No route to patrol");
             doneEvent.Invoke(this);
         }
-        foreach (WaypointWaitBundle waypoint in patrolRouteWaypoints2)
+        else
         {
-            //print("enqueuing " + waypoint);
-            route.Enqueue(waypoint);
-        }
+            foreach (WaypointWaitBundle waypoint in patrolRouteWaypoints2)
+            {
+                //print("enqueuing " + waypoint);
+                route.Enqueue(waypoint);
+            }
 
-        LeaveDestination();
+            LeaveDestination();
+        }
     }
 
     // Update is called once per frame

@@ -47,12 +47,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603658908ec3be64b8971cfaffcaa4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileSpeed: 20
+  lifeTime: 12
   destroyOnHit:
   - {fileID: 9033707198315744157}
+  hitSoundObject: {fileID: 8300000, guid: c0296f6846325e34eb6eca26a5f401dc, type: 3}
+  hitSoundObjectMaxVolume: 1
   hitFX: {fileID: 6691039484242745229, guid: bf3fa2cb5856449488f9314b27435675, type: 3}
   projectileHitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &3389604483125244949
 Rigidbody:
   m_ObjectHideFlags: 0
