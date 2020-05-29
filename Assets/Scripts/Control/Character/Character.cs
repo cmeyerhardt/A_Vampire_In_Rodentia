@@ -10,14 +10,13 @@ public class Character : MonoBehaviour
     public Interactable currentInteractiable = null;
     [SerializeField] public PickUp objectInHand = null;
     Transform originalParent = null;
+    [Range(1f, 10f)] public float destroyOnDeathDelay = 5f;
 
     [Header("Movement")]
     [SerializeField] [Tooltip("Base movement speed for this unit")]
     [Range(0f, 20f)]  public float baseMovementSpeed = 5f;
-
-    [SerializeField] [Tooltip("Override for max movement speed for this unit.\nWill override any other movement speed modifiers")]
+    [SerializeField] [Tooltip("Override for max movement speed for this unit.\nThis will override any other movement speed modifiers")]
     [Range(0f, 40f)]  public float maxMovementSpeed = 20f;
-
     [SerializeField] [Tooltip("Add to navMeshAgent.stoppingDistance when checking range to destination. Helps agent reach destinations that are wider than stopping distance")]
     [Range(2f, 5f)] float navMeshDistanceBuffer = 2.5f;
 
@@ -31,6 +30,8 @@ public class Character : MonoBehaviour
     [SerializeField] [Range(0f, 1f)] public float myStunDurationReduction = .1f;
 
     [Header("Audio")]
+    [SerializeField] AudioClip dyingSound = null;
+    [SerializeField] [Range(0, 1)] float dyingSoundMaxVolume = 1f;
     [SerializeField] AudioClip stunSound = null;
     [SerializeField] [Range(0f, 1f)] public float stunSoundVolume = 1f;
     [SerializeField] AudioClip footsteps = null;
@@ -102,14 +103,18 @@ public class Character : MonoBehaviour
 
     public virtual void Die()
     {
+        if (dyingSound != null && !isDead)
+        {
+            PlaySoundEffect(dyingSound, dyingSoundMaxVolume);
+        }
         isDead = true;
-
-        //todo -- should dead bodies block movement?
+        
         navMeshAgent.enabled = false;
-
+        
         //update animator
-
         model.rotation = Quaternion.Euler(-90f, 0f, 0f);
+
+        Destroy(gameObject, destroyOnDeathDelay);
     }
 
     public void PlaySoundEffect(AudioClip clip, float volumeScale)
@@ -140,9 +145,11 @@ public class Character : MonoBehaviour
 
     public virtual void BecomeStunned(float duration)
     {
-        isStunned = true;
+        //isStunned = true;
+        BecomeStunned();
+        //textSpawner.SpawnText("Stunned", Color.blue);
         stamina.ModifyStamina(staminaDrainWhenImStunned);
-        textSpawner.SpawnText("Stunned", Color.blue);
+
 
         float _duration = Mathf.Clamp(duration * (1 - myStunDurationReduction), 0f, duration);
 
@@ -156,12 +163,14 @@ public class Character : MonoBehaviour
     {
         isStunned = true;
         textSpawner.SpawnText("Stunned", Color.blue);
+        //todo - Update Animator with Stunned Pose
     }
 
     public virtual void BecomeUnStunned()
     {
         textSpawner.SpawnText("Stun Fades", Color.blue);
         isStunned = false;
+        //todo - Update Animator with Idle Pose
     }
 
     public void MoveToDestination(Vector3 destination, float speedFraction)
@@ -174,6 +183,8 @@ public class Character : MonoBehaviour
             navMeshAgent.destination = destination;
             navMeshAgent.speed = Mathf.Clamp(baseMovementSpeed * Mathf.Clamp01(speedFraction), baseMovementSpeed, maxMovementSpeed);
             navMeshAgent.isStopped = false;
+
+            //todo - Update Animator with speed
         }
     }
 
@@ -188,6 +199,7 @@ public class Character : MonoBehaviour
         {
             MoveToDestination(transform.position, 1f);
             navMeshAgent.isStopped = true;
+
         }
     }
 

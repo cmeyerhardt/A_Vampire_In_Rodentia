@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.EventSystems;
 
 public enum PlayerState { Idle, /*Walking, Jumping,*/Dashing, Feeding, CommenceFeeding, Dead, Hiding, Interacting/*, Flying*/}
 //public enum CursorType { None, UI, Victim, Guard, Hide, PlayerDead };
@@ -68,16 +65,16 @@ public class PlayerController : Character
     [SerializeField] float stunCost = 30f;
     
     [Header("Jumping")]
-    [SerializeField] [Range(1f, 500f)] float jumpForce = 250f;
-    [SerializeField] [Range(1f, 50f)] float airForward = 25f;
-    [SerializeField] float maxJumpsAllowed = Mathf.Infinity;
-    [SerializeField] [Tooltip("Diminishing upForce after each middair jump")]float diminishedUpForce = .85f;
-    public bool jump = false;
-    int jumpCounter = 0;
-    float currentUpForce;
-    float currentJumpsAllowed = 0;
-    float jumpTimer = 0f;
-    float jumpCooldown = .2f;
+    //[SerializeField] [Range(1f, 500f)] float jumpForce = 250f;
+    //[SerializeField] [Range(1f, 50f)] float airForward = 25f;
+    //[SerializeField] float maxJumpsAllowed = Mathf.Infinity;
+    //[SerializeField] [Tooltip("Diminishing upForce after each middair jump")]float diminishedUpForce = .85f;
+    //public bool jump = false;
+    //int jumpCounter = 0;
+    //float currentUpForce;
+    //float currentJumpsAllowed = 0;
+    //float jumpTimer = 0f;
+    //float jumpCooldown = .2f;
     
     // Cache
     Transform cameraPivot = null;
@@ -95,9 +92,9 @@ public class PlayerController : Character
         feeder = GetComponent<Feeder>();
         health = GetComponent<Health>();
 
-        currentUpForce = diminishedUpForce;
-        currentJumpsAllowed = maxJumpsAllowed;
-        jumpCounter = 0;
+        //currentUpForce = diminishedUpForce;
+        //currentJumpsAllowed = maxJumpsAllowed;
+        //jumpCounter = 0;
          
         //makeSoundEvent.AddListener(MakeSoundEffect);
     }
@@ -324,8 +321,8 @@ public class PlayerController : Character
         switch(playerState)
         {
             case PlayerState.Idle:
-                currentJumpsAllowed = maxJumpsAllowed;
-                currentUpForce = diminishedUpForce;
+                //currentJumpsAllowed = maxJumpsAllowed;
+                //currentUpForce = diminishedUpForce;
                 break;
             case PlayerState.CommenceFeeding:
                 break;
@@ -463,9 +460,9 @@ public class PlayerController : Character
                 // Make noise accordingly
                 makeSoundEvent.Invoke(noiseLevel);
                 actualMovingNoiseLevel = noiseLevel;
-
-
-                //todo -- Update animator with movement speed
+                
+                //todo -- Update Animator with movement speed
+                //actualMovementSpeed
             }
         }
 
@@ -492,63 +489,63 @@ public class PlayerController : Character
     /***********************
      * JUMPING
      ***********************/
-    private void Jump(float jumpScalar)
-    {
-        jumpCounter++;
+    //private void Jump(float jumpScalar)
+    //{
+    //    jumpCounter++;
 
-        if(navMeshAgent.enabled)
-        {
-            print("turning off nevmesh to jump");
-            navMeshAgent.isStopped = true;
-            navMeshAgent.enabled = false;
-        }
+    //    if(navMeshAgent.enabled)
+    //    {
+    //        print("turning off nevmesh to jump");
+    //        navMeshAgent.isStopped = true;
+    //        navMeshAgent.enabled = false;
+    //    }
 
-        rigidBody.isKinematic = false;
-        rigidBody.useGravity = true;
-        jump = true;
-        if (direction == Vector3.zero)
-        {
-            rigidBody.AddForce(Vector3.up * jumpForce * jumpScalar * Input.GetAxis("Jump"));
-        }
-        else
-        {
-            rigidBody.AddForce((Vector3.up + direction) * jumpForce * jumpScalar * Input.GetAxis("Jump"));
-        }
+    //    rigidBody.isKinematic = false;
+    //    rigidBody.useGravity = true;
+    //    jump = true;
+    //    if (direction == Vector3.zero)
+    //    {
+    //        rigidBody.AddForce(Vector3.up * jumpForce * jumpScalar * Input.GetAxis("Jump"));
+    //    }
+    //    else
+    //    {
+    //        rigidBody.AddForce((Vector3.up + direction) * jumpForce * jumpScalar * Input.GetAxis("Jump"));
+    //    }
 
-    }
+    //}
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if ((collision.gameObject.tag == "Ground" || collision.gameObject.isStatic))
-        {
-            print("onground");
-            lastCollisionPoint = transform.position;
-        }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if ((collision.gameObject.tag == "Ground" || collision.gameObject.isStatic))
+    //    {
+    //        print("onground");
+    //        lastCollisionPoint = transform.position;
+    //    }
 
-        if (jump)
-        {
-            if ((collision.gameObject.tag == "Ground" || collision.gameObject.isStatic))
-            {
-                jump = false;
-                lastCollisionPoint = transform.position;
-                GetComponent<MovementTransform>().enabled = false;
-                print(collision.gameObject.name + " Static: " + collision.gameObject.isStatic);
-                print("Collided with ground");
+    //    if (jump)
+    //    {
+    //        if ((collision.gameObject.tag == "Ground" || collision.gameObject.isStatic))
+    //        {
+    //            jump = false;
+    //            lastCollisionPoint = transform.position;
+    //            GetComponent<MovementTransform>().enabled = false;
+    //            print(collision.gameObject.name + " Static: " + collision.gameObject.isStatic);
+    //            print("Collided with ground");
 
-                rigidBody.isKinematic = true;
-                rigidBody.useGravity = false;
-                navMeshAgent.enabled = true;
-                navMeshAgent.isStopped = false;
-                jumpCounter = 0;
-            }
-            else
-            {
-                if (!collision.collider.isTrigger)
-                {
-                    GetComponent<MovementTransform>().enabled = true;
-                    print("Landed on object that is not navmesh/static");
-                }
-            }
-        }
-    }
+    //            rigidBody.isKinematic = true;
+    //            rigidBody.useGravity = false;
+    //            navMeshAgent.enabled = true;
+    //            navMeshAgent.isStopped = false;
+    //            jumpCounter = 0;
+    //        }
+    //        else
+    //        {
+    //            if (!collision.collider.isTrigger)
+    //            {
+    //                GetComponent<MovementTransform>().enabled = true;
+    //                print("Landed on object that is not navmesh/static");
+    //            }
+    //        }
+    //    }
+    //}
 }

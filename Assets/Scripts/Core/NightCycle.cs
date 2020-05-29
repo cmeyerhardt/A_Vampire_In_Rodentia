@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public enum TimeSegment { None, Sunset, Dusk, Night, Dawn, Sunrise, Day }
@@ -90,6 +89,7 @@ public class NightCycle : MonoBehaviour
             // Initialize cycle settings
             print("Time is now: " + time);
             currentTimeSegment = time;
+            timeEvent.Invoke(currentTimeSegment);
             switch (currentTimeSegment)
             {
                 case TimeSegment.Sunset:

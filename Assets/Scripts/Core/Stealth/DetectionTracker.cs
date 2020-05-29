@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -15,7 +14,6 @@ public class DetectionTracker : MonoBehaviour
     [SerializeField] Gradient displayGradient = new Gradient();
     [SerializeField] float minYScalar = .35f;
     [SerializeField] float maxYScalar = 1f;
-    [SerializeField] FloatingTextSpawner textSpawner = null;
 
     [Header("Music")]
     public AudioMixer _MasterMixer;
@@ -23,9 +21,9 @@ public class DetectionTracker : MonoBehaviour
 
     [Header("Snapshot Settings")]
     public bool transitionUsingSnapshots = true;
-    [SerializeField] AudioMixerSnapshot sneakySnapshot;
-    [SerializeField] AudioMixerSnapshot pensiveSnapshot;
-    [SerializeField] AudioMixerSnapshot combatSnapshot;
+    [SerializeField] AudioMixerSnapshot sneakySnapshot = null;
+    [SerializeField] AudioMixerSnapshot pensiveSnapshot = null;
+    [SerializeField] AudioMixerSnapshot combatSnapshot = null;
 
     [SerializeField] [Range(0f, 10f)] float sneakyTransitionTime = 1f;
     [SerializeField] [Range(0f, 10f)] float pensiveTransitionTime = 10f;

@@ -3,7 +3,7 @@
 public class Feeder : MonoBehaviour
 {
     public FloatEvent feedEvent;
-    [SerializeField] AudioClip feedingSFX;
+    [SerializeField] AudioClip feedingSFX = null;
     [SerializeField] [Range(0f, 1f)] float feedingSFXVolume = 5f;
     [SerializeField] [Tooltip("sec.")][Range(0f,10f)]float feedIntervalWhileLatched = 2f;
     [SerializeField] [Tooltip("sec.")][Range(0f,10f)]float timeToWaitToAvoidInturruption = 1f;

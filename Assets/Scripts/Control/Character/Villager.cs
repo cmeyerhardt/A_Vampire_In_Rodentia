@@ -2,8 +2,10 @@
 
 public class Villager : AIController 
 {
-    [Header("Sleeping")]
     [Header("Villager--")]
+    public bool listeningToTime = false;
+
+    [Header("Sleeping")]
     [SerializeField] public Bed bed;
 
     [Header("Behaviours")]
@@ -32,6 +34,7 @@ public class Villager : AIController
         if(nightCycle != null)
         {
             nightCycle.timeEvent.AddListener(TimeChangeEvent);
+            listeningToTime = true;
         }
 
         victim = GetComponent<FeedingVictim>();
@@ -106,13 +109,14 @@ public class Villager : AIController
 
     public void TimeChangeEvent(TimeSegment time)
     {
+        //print("time is now " + time);
         switch(time)
         {
             case TimeSegment.Night:
-                SetSleepBehaviour();
+                Invoke("SetSleepBehaviour", Random.Range(0,2f));
                 break;
             case TimeSegment.Dawn:
-                SetDefaultBehaviours();
+                Invoke("SetDefaultBehaviours", Random.Range(0, 2f));
                     break;
             default:
                 break;
@@ -122,6 +126,7 @@ public class Villager : AIController
     private void SetDefaultBehaviours()
     {
         if (bed == null) { return; }
+        print("Setting default behaviours");
         if (stateMap.ContainsKey(NPCState.Default))
         {
             UpdateStateList(NPCState.Default, baseDefault);
@@ -133,6 +138,7 @@ public class Villager : AIController
     private void SetSleepBehaviour()
     {
         if(bed == null) { return; }
+        print("Setting sleep behaviours");
         if (stateMap.ContainsKey(NPCState.Default))
         {
             baseDefault = stateMap[NPCState.Default];
