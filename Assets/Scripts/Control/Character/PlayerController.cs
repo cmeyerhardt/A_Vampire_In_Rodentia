@@ -218,6 +218,23 @@ public class PlayerController : Character
     /***********************
     * ABILITY
     ***********************/
+    public override void StunTarget(Character target, float volume = 1, AudioClip clip = null)
+    {
+        animator.SetInteger("State", 3);
+        base.StunTarget(target, volume, clip);
+    }
+
+    public override void BecomeStunned()
+    {
+        animator.SetInteger("State", 5);
+        base.BecomeStunned();
+    }
+
+    public override void BecomeUnStunned()
+    {
+        base.BecomeUnStunned();
+        SetState(PlayerState.Idle);
+    }
 
     public bool CheckStunConditions(Protector guard)
     {
@@ -311,6 +328,11 @@ public class PlayerController : Character
     /***********************
     * STATE
     ***********************/
+
+    public void Hide()
+    {
+        SetState(PlayerState.Hiding);
+    }
 
     public void SetState(PlayerState newState)
     {

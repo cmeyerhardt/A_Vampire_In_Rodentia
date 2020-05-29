@@ -6,13 +6,14 @@ public class MaterialDimmer : MonoBehaviour
     SkinnedMeshRenderer skinnedMeshRend = null;
     Material[] materials = null;
 
-    bool dimColor = false;
-    public bool fading = false;
-    float lowest = .4f;
-    float time = 3f;
-    float fadingTime = 3f;
-    Color originalColor = new Color();
+    //bool dimColor = false;
+    //public bool fading = false;
+    //float lowest = .4f;
+    //float time = 3f;
+    //float fadingTime = 3f;
+    //Color originalColor = new Color();
     List<Color> originalColors = new List<Color>();
+    Color dimmedColor = new Color(.5f, .5f, .5f, .5f);
 
     void Awake()
     {
@@ -96,7 +97,7 @@ public class MaterialDimmer : MonoBehaviour
             if (material != null)
             {
                 //print("Setting dim material color");
-                material.SetColor("_Color", new Color(originalColors[i].r * lowest, originalColors[i].g * lowest, originalColors[i].b * lowest, 1f));
+                material.SetColor("_Color", dimmedColor);
             }
         }
 

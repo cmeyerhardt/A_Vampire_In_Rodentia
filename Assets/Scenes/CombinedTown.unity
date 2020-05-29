@@ -287,6 +287,23 @@ PrefabInstance:
       propertyPath: uniqueIdentifier
       value: 5e87ea3a-7bf8-4cce-9619-16808045569d
       objectReference: {fileID: 0}
+    - target: {fileID: 7053204138101073915, guid: f1506da7beff4634ab334da0ab52e871,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053204138101073915, guid: f1506da7beff4634ab334da0ab52e871,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'Hips'\n\tTransform 'Ankle.R'\n\tTransform
+        'Little2.R'\n\tTransform 'Neck'\n\tTransform 'Thumb1.R'\n\tTransform 'Knee.L'\n\tTransform
+        'Ring1.R'\n\tTransform 'Little1.R'\n\tTransform 'Index2.R'\n\tTransform 'Thigh.R'\n\tand
+        more ...\n\tFrom animation clip 'PlayerIdle'\n\tFrom animation clip 'PlayerAttack'\n\tFrom
+        animation clip 'PlayerRun'\n\tFrom animation clip 'PlayerWalk'\n\tFrom animation
+        clip 'Stunned'\n\tFrom animation clip 'PlayerHide'"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1506da7beff4634ab334da0ab52e871, type: 3}
 --- !u!1001 &703971036
