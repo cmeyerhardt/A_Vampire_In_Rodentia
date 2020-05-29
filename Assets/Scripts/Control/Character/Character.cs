@@ -115,7 +115,7 @@ public class Character : MonoBehaviour
     public void PlaySoundEffect(AudioClip clip, float volumeScale)
     {
         audioSource.Stop();
-        print("Playing clip " + clip.name + " at volume " + volumeScale);
+        //print("Playing clip " + clip.name + " at volume " + volumeScale);
         audioSource.clip = clip;
         audioSource.volume = volumeScale;
         audioSource.PlayOneShot(clip, volumeScale);
@@ -193,7 +193,11 @@ public class Character : MonoBehaviour
         //update animator
         model.rotation = Quaternion.Euler(-90f, 0f, 0f);
 
-        Destroy(gameObject, destroyOnDeathDelay);
+        if(gameObject.tag != "Player")
+        {
+            Destroy(gameObject, destroyOnDeathDelay);
+        }
+
     }
 
 

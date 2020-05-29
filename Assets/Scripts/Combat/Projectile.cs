@@ -49,6 +49,7 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Health target = other.GetComponent<Health>();
+        if(target == null) { return; }
         if(target.isDead) { return; }
         if(!stopped)
         {
