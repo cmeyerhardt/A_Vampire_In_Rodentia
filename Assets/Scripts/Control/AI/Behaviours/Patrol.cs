@@ -219,6 +219,7 @@ public class Patrol : AIBehaviour
     // Draw Route
     private void OnDrawGizmos()
     {
+        if(patrolRouteWaypoints2 == null) { return; }
         if (patrolRouteWaypoints2.Length <= 0) { return; }
 
         for (int i = 0; i < patrolRouteWaypoints2.Length; i++)

@@ -119,7 +119,7 @@ public class AIController : Character
     public override void Update()
     {
         if (isDead) { return; }
-        if (isStunned) { print(gameObject.name + " is stunned so i cant do anything"); return; }
+        if (isStunned) { /*print(gameObject.name + " is stunned so i cant do anything");*/ return; }
         base.Update();
 
         if (currentState != lastState)

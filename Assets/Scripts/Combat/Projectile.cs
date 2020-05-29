@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
     Rigidbody rb = null;
 
     bool stopped = true;
-    bool hit = false;
+    //bool hit = false;
     bool playerDamaged = false;
 
     private void Awake()
@@ -49,45 +49,48 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Health target = other.GetComponent<Health>();
-
-        if (!other.isTrigger && other.gameObject != originator)
+        if(target.isDead) { return; }
+        if(!stopped)
         {
-            stopped = true;
-            rb.useGravity = false;
-            rb.isKinematic = true;
-            transform.parent = other.transform;
-        }
-
-        if (target != null && target == player && !player.isDead)
-        {
-            if (!playerDamaged)
+            if (!other.isTrigger && other.gameObject != originator)
             {
-                playerDamaged = true;
-                projectileHitEvent.Invoke(true);
-                transform.parent = player.GetComponent<Character>().model;
+                rb.useGravity = false;
+                rb.isKinematic = true;
+                transform.parent = other.transform;
             }
-        }
-        else
-        {
-            originator.PlaySoundEffect(hitSoundObject, hitSoundObjectMaxVolume);
-            projectileHitEvent.Invoke(false);
-        }
 
-        if (hitFX && !hit)
-        {
-            hit = true;
-            Vector3 closestPoint = other.ClosestPoint(transform.position);
-            GameObject impactObj = Instantiate(hitFX);
+            if (target != null && target == player && !player.isDead)
+            {
+                stopped = true;
+                if (!playerDamaged)
+                {
+                    playerDamaged = true;
+                    projectileHitEvent.Invoke(true);
+                    transform.parent = player.GetComponent<Character>().model;
+                }
+            }
+            else
+            {
+                stopped = true;
+                originator.PlaySoundEffect(hitSoundObject, hitSoundObjectMaxVolume);
+                projectileHitEvent.Invoke(false);
+            }
 
-            impactObj.transform.position = closestPoint;
-            impactObj.transform.rotation = transform.rotation;
-            
-            Destroy(impactObj, 1f);
-        }
+            if (hitFX)
+            {
+                Vector3 closestPoint = other.ClosestPoint(transform.position);
+                GameObject impactObj = Instantiate(hitFX);
 
-        foreach (GameObject toDestroy in destroyOnHit)
-        {
-            Destroy(toDestroy);
+                impactObj.transform.position = closestPoint;
+                impactObj.transform.rotation = transform.rotation;
+
+                Destroy(impactObj, 1f);
+            }
+
+            foreach (GameObject toDestroy in destroyOnHit)
+            {
+                Destroy(toDestroy);
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ public class Protector : AIController, IRaycast
     {
         if(!isDead)
         {
+            playerController.target = gameObject;
             if (Input.GetMouseButtonDown(0))
             {
                 _ = playerController.CheckStunConditions(this);

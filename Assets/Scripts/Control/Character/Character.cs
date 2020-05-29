@@ -37,9 +37,9 @@ public class Character : MonoBehaviour
     [SerializeField] AudioClip footsteps = null;
     [SerializeField] [Range(0f, 1f)] public float footStepsVolume = 1f;
 
-    [SerializeField] [Range(0f, 2f)] public float footStepInterval = 1f;
-    [HideInInspector] public float footstepCounter = 0f;
-    Vector3 currentDestination = new Vector3();
+    //[SerializeField] [Range(0f, 2f)] public float footStepInterval = 1f;
+    //[HideInInspector] public float footstepCounter = 0f;
+    //Vector3 currentDestination = new Vector3();
 
     [HideInInspector] public FloatingTextSpawner textSpawner = null;
     [HideInInspector] public NavMeshAgent navMeshAgent = null;
@@ -60,7 +60,7 @@ public class Character : MonoBehaviour
         textSpawner = GetComponentInChildren<FloatingTextSpawner>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         rigidBody = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         stamina = GetComponent<Stamina>();
         model = transform.Find("Model");
         audioSource = GetComponent<AudioSource>();
@@ -73,61 +73,62 @@ public class Character : MonoBehaviour
     public virtual void Update()
     {
         if(isDead) { return; }
-        if(walking)
-        {
-            MakeMovementSounds(footsteps, footStepsVolume);
-        }
-        if (walking && IsInRange(currentDestination))
-        {
-            walking = false;
-        }
+        //if(walking)
+        //{
+        //    MakeMovementSounds(footsteps, footStepsVolume);
+        //}
+        //if (walking && IsInRange(currentDestination))
+        //{
+        //    walking = false;
+        //}
     }
 
-    public void AnimationEventMakeFootstepsSoundEffect()
+
+    /*
+     * ANIMATION
+     */
+    public virtual void AnimationEventMakeFootstepsSoundEffect()
     {
-        MakeMovementSounds(footsteps, footStepsVolume);
+        PlaySoundEffect(footsteps, footStepsVolume);
     }
 
+    public virtual void AnimationEventResetAttack()
+    {
+
+    }
+
+    public virtual void AnimationEventHit()
+    {
+        PlaySoundEffect(stunSound, stunSoundVolume);
+    }
+
+
+
+    /*
+     * SOUND FX
+     */
     public virtual void MakeMovementSounds(AudioClip clip, float volume)
     {
-        if (footstepCounter > footStepInterval)
-        {
-            PlaySoundEffect(clip, volume);
-            footstepCounter = 0f;
-        }
-        else
-        {
-            footstepCounter += Time.deltaTime;
-        }
-    }
-
-    public virtual void Die()
-    {
-        if (dyingSound != null && !isDead)
-        {
-            PlaySoundEffect(dyingSound, dyingSoundMaxVolume);
-        }
-        isDead = true;
-        
-        navMeshAgent.enabled = false;
-        
-        //update animator
-        model.rotation = Quaternion.Euler(-90f, 0f, 0f);
-
-        Destroy(gameObject, destroyOnDeathDelay);
+        PlaySoundEffect(clip, volume);
     }
 
     public void PlaySoundEffect(AudioClip clip, float volumeScale)
     {
         audioSource.Stop();
+        print("Playing clip " + clip.name + " at volume " + volumeScale);
         audioSource.clip = clip;
         audioSource.volume = volumeScale;
         audioSource.PlayOneShot(clip, volumeScale);
     }
 
+
+
+    /*
+     * STUN
+     */
     public virtual void StunTarget(Character target, float volume = 1f, AudioClip clip = null)
     {
-        if(clip == null)
+        if (clip == null)
         {
             PlaySoundEffect(stunSound, volume);
         }
@@ -135,7 +136,7 @@ public class Character : MonoBehaviour
         {
             PlaySoundEffect(clip, volume);
         }
-        
+
         if (Random.Range(0f, 1f) > target.myStunResistChance)
         {
             print(gameObject.name + " stuns " + target.name);
@@ -170,16 +171,42 @@ public class Character : MonoBehaviour
     {
         textSpawner.SpawnText("Stun Fades", Color.blue);
         isStunned = false;
-        //todo - Update Animator with Idle Pose
+        //todo - Update Animator with Idle Anim
     }
 
+
+
+
+    /*
+     * DEATH
+     */
+    public virtual void Die()
+    {
+        if (dyingSound != null && !isDead)
+        {
+            PlaySoundEffect(dyingSound, dyingSoundMaxVolume);
+        }
+        isDead = true;
+
+        navMeshAgent.enabled = false;
+
+        //update animator
+        model.rotation = Quaternion.Euler(-90f, 0f, 0f);
+
+        Destroy(gameObject, destroyOnDeathDelay);
+    }
+
+
+    /*
+    * MOVEMENT
+    */
     public void MoveToDestination(Vector3 destination, float speedFraction)
     {
         if (navMeshAgent.isActiveAndEnabled && navMeshAgent.isOnNavMesh)
         {
-            walking = true;
+            //walking = true;
             head.forward = transform.forward;
-            currentDestination = destination;
+            //currentDestination = destination;
             navMeshAgent.destination = destination;
             navMeshAgent.speed = Mathf.Clamp(baseMovementSpeed * Mathf.Clamp01(speedFraction), baseMovementSpeed, maxMovementSpeed);
             navMeshAgent.isStopped = false;
@@ -223,6 +250,15 @@ public class Character : MonoBehaviour
         return navMeshAgent.stoppingDistance + navMeshDistanceBuffer;
     }
 
+
+
+
+
+
+
+    /*
+    * INTERACTION
+    */
     public virtual void DropObject(bool objectTaken)
     {
         if(objectInHand != null)

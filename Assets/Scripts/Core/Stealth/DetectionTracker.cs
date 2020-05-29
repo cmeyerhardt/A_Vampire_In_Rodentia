@@ -103,7 +103,7 @@ public class DetectionTracker : MonoBehaviour
         }
         if (reCalculate)
         {
-            print("Removing " + detector);
+            //print("Removing " + detector);
             RecalculateDetection();
         }
     }
@@ -112,7 +112,7 @@ public class DetectionTracker : MonoBehaviour
         bool reCalculate = false;
         if (detectionDict.ContainsKey(detector))
         {
-            print("Modifying " + detector);
+            //print("Modifying " + detector);
 
             // if already a key, modify value
             if (detectionDict[detector] != detector.detectedPercentage)
@@ -124,7 +124,7 @@ public class DetectionTracker : MonoBehaviour
         }
         else
         {
-            print("Adding " + detector);
+            //print("Adding " + detector);
             // if not in dictionary, add to it
             detectionDict.Add(detector, detector.detectedPercentage);
             reCalculate = true;

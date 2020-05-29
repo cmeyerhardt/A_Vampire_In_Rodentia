@@ -13,11 +13,10 @@ public class FeedingVictim : MonoBehaviour, IRaycast
     [SerializeField] float chanceToResistFeed = .1f;
 
     Villager villager = null;
-
+    
     private void Awake()
     {
         villager = GetComponent<Villager>();
-
     }
 
     private void Start()
@@ -78,8 +77,10 @@ public class FeedingVictim : MonoBehaviour, IRaycast
     {
         if(!GetComponent<Character>().isDead && playerController.playerState != PlayerState.Feeding)
         {
-            if(Input.GetMouseButtonDown(0))
+            playerController.target = gameObject;
+            if (Input.GetMouseButtonDown(0))
             {
+
                 playerController.CheckFeedingConditions(this);
             }
             return true;

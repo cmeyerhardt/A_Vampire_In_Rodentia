@@ -66,13 +66,10 @@ public class Interactable : MonoBehaviour, IRaycast
         //print("Canceling " + name + " interact with " + occupant);
         occupant.transform.parent = null;
 
-
         occupant.transform.position = entryLocation;
         occupant.model.transform.rotation = entry;
 
         occupant.currentInteractiable = null;
-
-        //change animation to standing
 
         occupant.navMeshAgent.enabled = true;
         occupied = false;

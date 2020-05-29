@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 526230999963827639}
   - component: {fileID: 2988294551535270087}
   - component: {fileID: 5347373650055997974}
-  - component: {fileID: 2818092554818381998}
   - component: {fileID: 1612288633}
   - component: {fileID: 958528251351229560}
   - component: {fileID: 3899112486945065386}
@@ -85,25 +84,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!95 &2818092554818381998
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96066719563335745}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!195 &1612288633
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -177,19 +157,28 @@ MonoBehaviour:
   isStunned: 0
   currentInteractiable: {fileID: 0}
   objectInHand: {fileID: 0}
+  destroyOnDeathDelay: 5
   baseMovementSpeed: 5
   maxMovementSpeed: 20
   navMeshDistanceBuffer: 2.5
+  walking: 0
   outgoingStunRange: 3
   outgoingStunDuration: 3
   staminaDrainWhenImStunned: 10
   myStunResistChance: 0.1
   myStunDurationReduction: 0.1
+  dyingSound: {fileID: 0}
+  dyingSoundMaxVolume: 1
+  stunSound: {fileID: 0}
+  stunSoundVolume: 1
+  footsteps: {fileID: 0}
+  footStepsVolume: 1
   textSpawner: {fileID: 0}
   navMeshAgent: {fileID: 0}
   rigidBody: {fileID: 0}
   animator: {fileID: 0}
   stamina: {fileID: 0}
+  audioSource: {fileID: 0}
   head: {fileID: 0}
   hand: {fileID: 1559720927350191167}
   hitBox: {fileID: 7736555737478638297}

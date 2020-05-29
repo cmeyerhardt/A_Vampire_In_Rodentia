@@ -11,6 +11,15 @@ public enum PlayerState { Idle, /*Walking, Jumping,*/Dashing, Feeding, CommenceF
 //    [HideInInspector] public Vector2 hotspot = Vector2.zero;
 //}
 
+//Animation States
+//PlayerIdle = 0
+//PlayerWalk = 1
+//PlayerRun = 2
+//PlayerAttack = 3
+//PlayerFeed = 4
+//Stunned = 5
+//PlayerHide = 6
+
 
 public class PlayerController : Character
 {
@@ -18,6 +27,7 @@ public class PlayerController : Character
     public PlayerState playerState = PlayerState.Idle;
     public PlayerState lastState = PlayerState.Idle;
     public bool isHidden = false;
+    public GameObject target = null;
     
     [Header("Input")]
     [SerializeField] KeyCode sprintingKey = KeyCode.LeftShift;
@@ -123,7 +133,11 @@ public class PlayerController : Character
         if (playerState == PlayerState.Dashing) { return; }
         if (isStunned) { return; }
 
-        ProcessMovementInput(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
+        ProcessMovementInput(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"), out bool stopped);
+        if(stopped)
+        {
+            animator.SetFloat("Speed", 0);
+        }
 
         if (Input.GetKeyDown(dashKey))
         {
@@ -139,14 +153,14 @@ public class PlayerController : Character
             }
         }
 
-        if(Input.GetAxis("Vertical") != 0f || Input.GetAxis("Horizontal")!= 0f)
-        {
-            walking = true;
-        }
-        else
-        {
-            walking = false;
-        }
+        //if(Input.GetAxis("Vertical") != 0f || Input.GetAxis("Horizontal")!= 0f)
+        //{
+        //    walking = true;
+        //}
+        //else
+        //{
+        //    walking = false;
+        //}
 
         //ProcessRaycast();
         if (Input.GetKeyDown(KeyCode.T))
@@ -173,15 +187,7 @@ public class PlayerController : Character
     {
         if(Input.GetKey(sprintingKey))
         {
-            if (footstepCounter > sprintFootstepsInterval)
-            {
-                PlaySoundEffect(sprintFootsteps, sprintFootStepsVolume);
-                footstepCounter = 0f;
-            }
-            else
-            {
-                footstepCounter += Time.deltaTime;
-            }
+            PlaySoundEffect(sprintFootsteps, sprintFootStepsVolume);
         }
         else
         {
@@ -218,10 +224,46 @@ public class PlayerController : Character
     /***********************
     * ABILITY
     ***********************/
-    public override void StunTarget(Character target, float volume = 1, AudioClip clip = null)
+    public override void AnimationEventHit()
     {
-        animator.SetInteger("State", 3);
-        base.StunTarget(target, volume, clip);
+        if (target.gameObject.tag == "Guard")
+        {
+            StunTarget(target.GetComponent<Character>(), guardStunVolume, guardStun);
+        }
+        else if (target.gameObject.tag == "Hunter")
+        {
+            StunTarget(target.GetComponent<Character>(), hunterStunVolume, hunterStun);
+        }
+        else
+        {
+            base.AnimationEventHit();
+        }
+
+    }
+    //public override void StunTarget(Character target, float volume = 1, AudioClip clip = null)
+    //{
+    //    //animator.SetInteger("State", 3);
+    //    //animator.ResetTrigger("CancelTriggerAttack");
+    //    //animator.SetTrigger("TriggerAttack");
+    //    base.StunTarget(target, volume, clip);
+    //    //if(target.gameObject.tag == "Guard")
+    //    //{
+    //    //    base.StunTarget(target, guardStunVolume, guardStun);
+    //    //}
+    //    //if (target.gameObject.tag == "Hunter")
+    //    //{
+    //    //    base.StunTarget(target, hunterStunVolume, hunterStun);
+    //    //}
+    //    //else
+    //    //{
+            
+    //    //}
+    //}
+
+    public override void AnimationEventResetAttack()
+    {
+        animator.SetInteger("State", 0);
+        base.AnimationEventResetAttack();
     }
 
     public override void BecomeStunned()
@@ -245,15 +287,16 @@ public class PlayerController : Character
                 if (stamina.GetStaminaValue() > stunCost)
                 {
                     stamina.ModifyStamina(-stunCost);
-
-                    if(guard.tag == "Hunter")
-                    {
-                        StunTarget(guard, hunterStunVolume, hunterStun);
-                    }
-                    else if (guard.tag == "Guard")
-                    {
-                        StunTarget(guard, guardStunVolume, guardStun);
-                    }
+                    animator.SetInteger("State", 3);
+                    //AnimationEventHit();
+                    //if (guard.tag == "Hunter")
+                    //{
+                    //    StunTarget(guard, hunterStunVolume, hunterStun);
+                    //}
+                    //else if (guard.tag == "Guard")
+                    //{
+                    //    StunTarget(guard, guardStunVolume, guardStun);
+                    //}
 
                     return true;
                 }
@@ -372,10 +415,10 @@ public class PlayerController : Character
     * MOVEMENT
     ***********************/
 
-    private void ProcessMovementInput(float verticalMag, float horizontalMag)
+    private void ProcessMovementInput(float verticalMag, float horizontalMag, out bool stopped)
     {
         direction = DetermineDirectionOfMovement(verticalMag, horizontalMag);
-
+        stopped = true;
         if(allowKeyBoardTurn)
         {
             // Process Rotation
@@ -411,6 +454,8 @@ public class PlayerController : Character
         // Process Translation
         if (horizontalMag != 0f || verticalMag != 0f)
         {
+            animator.SetInteger("State", 1);
+            stopped = false;
             animatorState = 1;
             if (currentInteractiable != null)
             {
@@ -485,14 +530,18 @@ public class PlayerController : Character
             makeSoundEvent.Invoke(noiseLevel);
             actualMovingNoiseLevel = noiseLevel;
 
-            //todo -- Update Animator with movement speed
-            //actualMovementSpeed
+
         }
         else if (horizontalMag == 0f && verticalMag == 0f)
         {
             animatorState = 0;
+            actualMovementSpeed = 0f;
+            stopped = true;
         }
-        animator.SetInteger("State", animatorState);
+        //todo -- Update Animator with movement speed
+        //actualMovementSpeed
+        animator.SetFloat("Speed", actualMovementSpeed);
+        //animator.SetInteger("State", animatorState);
     }
 
     public Vector3 DetermineDirectionOfMovement(float verticalMag, float horizontalMag)
