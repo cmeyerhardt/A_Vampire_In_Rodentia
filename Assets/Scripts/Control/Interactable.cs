@@ -33,7 +33,6 @@ public class Interactable : MonoBehaviour, IRaycast
                 if (playerController.IsInRange(transform.position, playerController.navMeshAgent.stoppingDistance))
                 {
                     Interact(playerController);
-                    playerController.playerState = PlayerState.Interacting;
                 }
                 else
                 {

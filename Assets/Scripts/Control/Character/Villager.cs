@@ -61,7 +61,7 @@ public class Villager : AIController
         }
     }
 
-    public void ChangeFurColor(float change)
+    public void ChangeFurColor(float _ph)
     {
         if (furMaterial != null)
         {

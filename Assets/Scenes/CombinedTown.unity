@@ -653,6 +653,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1877967793980814252, guid: 8959ea09f2238ca498ce52e80ccd81b2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.73247844
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877967793980814252, guid: 8959ea09f2238ca498ce52e80ccd81b2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.018353036
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877967793980814252, guid: 8959ea09f2238ca498ce52e80ccd81b2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.07821975
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877967793980814252, guid: 8959ea09f2238ca498ce52e80ccd81b2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6760328
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877967793980814252, guid: 8959ea09f2238ca498ce52e80ccd81b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 99.073
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877967793980814252, guid: 8959ea09f2238ca498ce52e80ccd81b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 62.12799
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877967793980814252, guid: 8959ea09f2238ca498ce52e80ccd81b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 57.259995
+      objectReference: {fileID: 0}
     - target: {fileID: 3247226682993306664, guid: 8959ea09f2238ca498ce52e80ccd81b2,
         type: 3}
       propertyPath: moonLightIntensity.m_Curve.Array.data[1].time
@@ -816,6 +851,11 @@ PrefabInstance:
     - target: {fileID: 8830862482614538735, guid: 8959ea09f2238ca498ce52e80ccd81b2,
         type: 3}
       propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8830862482614538735, guid: 8959ea09f2238ca498ce52e80ccd81b2,
+        type: 3}
+      propertyPath: m_Intensity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9034610028384608289, guid: 8959ea09f2238ca498ce52e80ccd81b2,

@@ -104,7 +104,7 @@ public class Feeder : MonoBehaviour
             }
 
             currentVictim = null;
-            GetComponent<PlayerController>().playerState = PlayerState.Idle;
+            GetComponent<PlayerController>().SetState(PlayerState.Idle);
         }
 
         feeding = false;

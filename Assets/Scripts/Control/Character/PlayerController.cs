@@ -16,14 +16,16 @@ public class PlayerController : Character
 {
     [Header("Player--")]
     public PlayerState playerState = PlayerState.Idle;
+    public PlayerState lastState = PlayerState.Idle;
     public bool isHidden = false;
     
     [Header("Input")]
     [SerializeField] KeyCode sprintingKey = KeyCode.LeftShift;
-    [SerializeField] KeyCode dashKey = KeyCode.Alpha1;
+    [SerializeField] KeyCode dashKey = KeyCode.Space;
+    public bool allowKeyBoardTurn = true;
     //public bool allowFlying = true;
     //[SerializeField] [Range(10f, 30f)] float flyingSpeed = 10f;
-    public bool allowKeyBoardTurn = true;
+
 
     [Header("Movement")]
     [Tooltip("The unit's actual speed.\n\nactualMovementSpeed = baseMovementSpeed + sprintSpeed * stamina% * sprintModifier")]
@@ -64,7 +66,7 @@ public class PlayerController : Character
     [SerializeField] float dashCost = 30f;
     [SerializeField] float stunCost = 30f;
     
-    [Header("Jumping")]
+    //[Header("Jumping")]
     //[SerializeField] [Range(1f, 500f)] float jumpForce = 250f;
     //[SerializeField] [Range(1f, 50f)] float airForward = 25f;
     //[SerializeField] float maxJumpsAllowed = Mathf.Infinity;
@@ -83,10 +85,12 @@ public class PlayerController : Character
     FeedingVictim currentVictim = null;
     [HideInInspector] public Feeder feeder = null;
     Health health = null;
+    MaterialDimmer dimmer = null;
 
     private new void Awake()
     {
         base.Awake();
+        dimmer = GetComponent<MaterialDimmer>();
         GetComponent<MovementTransform>().enabled = false;
         cameraPivot = transform.Find("CameraPivot");
         feeder = GetComponent<Feeder>();
@@ -107,16 +111,13 @@ public class PlayerController : Character
     private new void Start()
     {
         base.Start();
-    }
-
-    private void ResetState()
-    {
-        ChangeState(PlayerState.Idle);
+        SetState(PlayerState.Idle);
     }
 
     public new void Update()
     {
         base.Update();
+
         // Player cannot control character while "latching on" to NPC or Dashing
         if (playerState == PlayerState.CommenceFeeding) { return; }
         if (playerState == PlayerState.Dashing) { return; }
@@ -129,12 +130,13 @@ public class PlayerController : Character
             if (stamina.GetStaminaValue() > dashCost)
             {
                 //Dash forward
+                stamina.ModifyStamina(-dashCost);
                 StartCoroutine(Dash());
             }
-            //else
-            //{
-            //    textSpawner.SpawnText("Too Tired!", Color.green);
-            //}
+            else
+            {
+                textSpawner.SpawnText("Too Tired!", Color.green);
+            }
         }
 
         if(Input.GetAxis("Vertical") != 0f || Input.GetAxis("Horizontal")!= 0f)
@@ -180,7 +182,6 @@ public class PlayerController : Character
             {
                 footstepCounter += Time.deltaTime;
             }
-            //base.MakeMovementSounds(sprintFootsteps);
         }
         else
         {
@@ -190,10 +191,9 @@ public class PlayerController : Character
 
     private IEnumerator Dash()
     {
-        playerState = PlayerState.Dashing;
+        SetState(PlayerState.Dashing);
         //textSpawner.SpawnText("Dashing!", Color.green);
-        stamina.ModifyStamina(-dashCost);
-
+        
         //NavMeshHit hit;
         //NavMesh.Raycast(transform.position, DetermineDirectionOfMovement(1f, 0f), out hit, 1);
         //navMeshAgent.velocity = DetermineDirectionOfMovement(10f, 0f);// (new Vector3(0f, 0f, 2f);
@@ -211,11 +211,9 @@ public class PlayerController : Character
         navMeshAgent.Warp(transform.position + DetermineDirectionOfMovement(dashDistance, 0f));
 
         yield return new WaitForSeconds(1f);
-        playerState = PlayerState.Idle;
+        SetState(PlayerState.Idle);
         yield return null;
     }
-
-
 
     /***********************
     * ABILITY
@@ -285,7 +283,7 @@ public class PlayerController : Character
 
     public IEnumerator CommenceFeeding(FeedingVictim victim)
     {
-        playerState = PlayerState.CommenceFeeding;
+        SetState(PlayerState.CommenceFeeding);
 
         navMeshAgent.isStopped = true;
         currentVictim = victim;
@@ -299,15 +297,14 @@ public class PlayerController : Character
             {
                 yield return null;
             }
+            animator.SetInteger("State", 4);
             currentVictim.GetComponent<Character>().BecomeStunned(-1);
             feeder.AssignVictim(currentVictim);
             playerState = PlayerState.Feeding;
         }
         else
         {
-            //textSpawner.SpawnText("Failed to Feed");
-            //todo -- NPC becomes alert/flees?
-            playerState = PlayerState.Idle;
+            SetState(PlayerState.Idle);
         }
     }
 
@@ -315,23 +312,25 @@ public class PlayerController : Character
     * STATE
     ***********************/
 
-    private void ChangeState(PlayerState newState)
+    public void SetState(PlayerState newState)
     {
+        print("PlayerState: " + newState);
         playerState = newState;
         switch(playerState)
         {
             case PlayerState.Idle:
-                //currentJumpsAllowed = maxJumpsAllowed;
-                //currentUpForce = diminishedUpForce;
+                animator.SetInteger("State", 0);
                 break;
             case PlayerState.CommenceFeeding:
                 break;
             case PlayerState.Dashing:
                 break;
             case PlayerState.Feeding:
+                animator.SetInteger("State", 4);
                 break;
             case PlayerState.Hiding:
-                textSpawner.SpawnText("-hidden-", Color.white);
+                animator.SetInteger("State", 6);
+                dimmer.DimMaterialColor();
                 break;
             //case PlayerState.Flying:
             //    maxJumpsAllowed = Mathf.Infinity;
@@ -386,21 +385,23 @@ public class PlayerController : Character
         //    }
 
         //}
-
+        int animatorState = 0;
         // Process Translation
         if (horizontalMag != 0f || verticalMag != 0f)
         {
+            animatorState = 1;
             if (currentInteractiable != null)
             {
+                dimmer.RestoreMaterialColor();
                 currentInteractiable.CancelInteract();
                 textSpawner.SpawnText("Inturrupted", Color.yellow);
-                playerState = PlayerState.Idle;
+                SetState(PlayerState.Idle);
             }
             if (playerState == PlayerState.Feeding)
             {
                 textSpawner.SpawnText("Inturrupted", Color.red);
                 feeder.CancelFeeding();
-                playerState = PlayerState.Idle;
+                SetState(PlayerState.Idle);
             }
             //if (jump) // air controls
             //{
@@ -415,57 +416,61 @@ public class PlayerController : Character
             //    }
             //}
             //else // ground controls
+            //{
+            float staminaCost = walkStaminaDrain;
+            // Determine how fast the player moves: running, walking speed
+
+            float movementSpeed = baseMovementSpeed;
+            float noiseLevel = walkingNoiseLevel;
+
+            if (Input.GetKey(sprintingKey))
             {
-                float staminaCost = walkStaminaDrain;
-                // Determine how fast the player moves: running, walking speed
-
-                float movementSpeed = baseMovementSpeed;
-                float noiseLevel = walkingNoiseLevel;
-                
-                if(Input.GetKey(sprintingKey))
+                if (stamina.CheckCanAffordCost(sprintStaminaDrain))
                 {
-                    if(stamina.CheckCanAffordCost(sprintStaminaDrain))
-                    {
-                        staminaCost = sprintStaminaDrain;
+                    animatorState = 2;
+                    staminaCost = sprintStaminaDrain;
 
-                        //modify sprint speed by stamina percentage
-                            // if stamina is at X%, movementSpeed is increased by X% of the sprintSpeed value * sprintModifier
-                        movementSpeed = Mathf.Clamp(baseMovementSpeed + sprintSpeed * sprintSpeedModifier * stamina.GetStaminaPerc()
-                            , baseMovementSpeed
-                            , maxMovementSpeed);
+                    //modify sprint speed by stamina percentage
+                    // if stamina is at X%, movementSpeed is increased by X% of the sprintSpeed value * sprintModifier
+                    movementSpeed = Mathf.Clamp(baseMovementSpeed + sprintSpeed * sprintSpeedModifier * stamina.GetStaminaPerc()
+                        , baseMovementSpeed
+                        , maxMovementSpeed);
 
-                        //similarly for noise level
-                        noiseLevel = Mathf.Clamp(walkingNoiseLevel + sprintingNoiseLevel * noiseModifier * (1f - stamina.GetStaminaPerc())
-                            , walkingNoiseLevel
-                            , maxNoiseLevel);
-                    }
+                    //similarly for noise level
+                    noiseLevel = Mathf.Clamp(walkingNoiseLevel + sprintingNoiseLevel * noiseModifier * (1f - stamina.GetStaminaPerc())
+                        , walkingNoiseLevel
+                        , maxNoiseLevel);
                 }
-                else if (walkLouderIfLowStamina)
-                {
-                    noiseLevel = Mathf.Clamp(walkingNoiseLevel + noiseModifier * (1f - stamina.GetStaminaPerc())
-                            , 0f
-                            , maxNoiseLevel);
-                }
-                actualMovementSpeed = movementSpeed;
-
-                // The player model object turns toward the direction of movement
-                model.forward = Vector3.Slerp(model.transform.forward, direction, turnSpeed * Time.deltaTime);
-                
-                // The object moves via navmesh in the direction of movement
-                navMeshAgent.Move(direction * movementSpeed * Time.deltaTime);
-
-                // Drain stamina accordingly
-                stamina.ModifyStaminaShowOnIncrement(-staminaCost * Time.deltaTime);
-
-                // Make noise accordingly
-                makeSoundEvent.Invoke(noiseLevel);
-                actualMovingNoiseLevel = noiseLevel;
-                
-                //todo -- Update Animator with movement speed
-                //actualMovementSpeed
             }
-        }
+            else if (walkLouderIfLowStamina)
+            {
+                noiseLevel = Mathf.Clamp(walkingNoiseLevel + noiseModifier * (1f - stamina.GetStaminaPerc())
+                        , 0f
+                        , maxNoiseLevel);
+            }
+            actualMovementSpeed = movementSpeed;
 
+            // The player model object turns toward the direction of movement
+            model.forward = Vector3.Slerp(model.transform.forward, direction, turnSpeed * Time.deltaTime);
+
+            // The object moves via navmesh in the direction of movement
+            navMeshAgent.Move(direction * movementSpeed * Time.deltaTime);
+
+            // Drain stamina accordingly
+            stamina.ModifyStaminaShowOnIncrement(-staminaCost * Time.deltaTime);
+
+            // Make noise accordingly
+            makeSoundEvent.Invoke(noiseLevel);
+            actualMovingNoiseLevel = noiseLevel;
+
+            //todo -- Update Animator with movement speed
+            //actualMovementSpeed
+        }
+        else if (horizontalMag == 0f && verticalMag == 0f)
+        {
+            animatorState = 0;
+        }
+        animator.SetInteger("State", animatorState);
     }
 
     public Vector3 DetermineDirectionOfMovement(float verticalMag, float horizontalMag)
