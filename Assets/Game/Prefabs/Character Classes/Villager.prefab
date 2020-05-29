@@ -17,6 +17,7 @@ MonoBehaviour:
   objectReference: {fileID: 0}
   objectName: 
   range: 0
+  movementFraction: 0.75
   distanceToReference: 0
   bed: {fileID: 0}
 --- !u!114 &1078132545824504115
@@ -36,6 +37,7 @@ MonoBehaviour:
   objectReference: {fileID: 0}
   objectName: 
   range: 0
+  movementFraction: 0.75
   distanceToReference: 0
   maxSeekDistance: 40
   sirenNoiseLevel: 20
@@ -78,22 +80,34 @@ MonoBehaviour:
   isStunned: 0
   currentInteractiable: {fileID: 0}
   objectInHand: {fileID: 0}
+  destroyOnDeathDelay: 5
   baseMovementSpeed: 5
-  sprintSpeed: 10
-  dashSpeed: 20
-  turnSpeed: 100
-  staminaDrainedWhenStunned: 10
-  stunResistChance: 0.1
-  stunDurationReduction: 0.1
+  maxMovementSpeed: 20
+  navMeshDistanceBuffer: 2.5
+  walking: 0
+  outgoingStunRange: 3
+  outgoingStunDuration: 3
+  staminaDrainWhenImStunned: 10
+  myStunResistChance: 0.1
+  myStunDurationReduction: 0.1
+  dyingSound: {fileID: 8300000, guid: d1798fa6b97538b4587f4fa4c07f6169, type: 3}
+  dyingSoundMaxVolume: 1
+  stunSound: {fileID: 0}
+  stunSoundVolume: 1
+  footsteps: {fileID: 0}
+  footStepsVolume: 1
+  footStepInterval: 1
+  footstepCounter: 0
   textSpawner: {fileID: 0}
   navMeshAgent: {fileID: 0}
   rigidBody: {fileID: 0}
   animator: {fileID: 0}
   stamina: {fileID: 0}
-  model: {fileID: 0}
+  audioSource: {fileID: 0}
   head: {fileID: 3280425120394951437}
   hand: {fileID: 3280425120394951479}
   hitBox: {fileID: 0}
+  model: {fileID: 0}
   canSeePlayer: 0
   currentState: 1
   lastState: 0
@@ -119,9 +133,8 @@ MonoBehaviour:
   player: {fileID: 0}
   playerHead: {fileID: 0}
   detector: {fileID: 0}
+  listeningToTime: 0
   bed: {fileID: 0}
-  sleepTime: 10
-  wakeTime: 40
   sleepingBehavioursSet: 0
   baseDefault: []
   skinnedMeshRend: {fileID: 3280425120400648803}
@@ -131,6 +144,7 @@ MonoBehaviour:
   randomizeRed: 0
   randomizeGreen: 0
   randomizeBlue: 1
+  health: {fileID: 0}
 --- !u!114 &7029019338965501878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 926728164076872530, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: m_Name
-      value: Villager (1)
+      value: Villager
       objectReference: {fileID: 0}
     - target: {fileID: 1741793121749622572, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
