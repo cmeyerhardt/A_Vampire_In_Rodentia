@@ -33,6 +33,7 @@ public class Siren : GoToObject
         if (protector == null)
         {
             print("No guards!");
+            doneEvent.Invoke(this);
         }
 
         base.OnEnable();
@@ -46,6 +47,7 @@ public class Siren : GoToObject
     public new void Update()
     {
         base.Update();
+        if(protector == null) { return; }
         if(ai.IsInRange(protector.transform.position))
         {
             if(protector.behaviourMap.ContainsKey("GoToPlayer"))

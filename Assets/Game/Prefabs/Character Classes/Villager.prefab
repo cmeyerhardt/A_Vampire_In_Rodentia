@@ -92,29 +92,37 @@ MonoBehaviour:
   myStunDurationReduction: 0.1
   dyingSound: {fileID: 8300000, guid: d1798fa6b97538b4587f4fa4c07f6169, type: 3}
   dyingSoundMaxVolume: 1
+  useSecondaryAudioSourceDyingSound: 0
   stunSound: {fileID: 0}
   stunSoundVolume: 1
+  useSecondaryAudioSourceStunSound: 0
   footsteps: {fileID: 0}
   footStepsVolume: 1
-  footStepInterval: 1
-  footstepCounter: 0
+  useSecondaryAudioSourceFootstepsSound: 0
   textSpawner: {fileID: 0}
   navMeshAgent: {fileID: 0}
   rigidBody: {fileID: 0}
   animator: {fileID: 0}
   stamina: {fileID: 0}
-  audioSource: {fileID: 0}
+  primaryAudioSource: {fileID: 0}
+  secondaryAudioSource: {fileID: 0}
   head: {fileID: 3280425120394951437}
   hand: {fileID: 3280425120394951479}
   hitBox: {fileID: 0}
   model: {fileID: 0}
+  suspiciousSounds:
+  - {fileID: 8300000, guid: de429f721380b8b44900ca3dce02637d, type: 3}
+  - {fileID: 8300000, guid: 90f7531db1881a14ba544f6bc5526a66, type: 3}
+  - {fileID: 8300000, guid: 6378d11f298022042a92944cbc5b20b6, type: 3}
+  suspiciousSoundMaxVolume: 1
+  useSecondaryAudioSourceSuspiciousSound: 0
   canSeePlayer: 0
   currentState: 1
   lastState: 0
   aIBehaviour: {fileID: 0}
   currentBehaviour: 
   lastBehaviour: 
-  availableBehaviours: GoToLocation, GoToObject, Patrol, Siren, Sleep, Wait, Wander
+  availableBehaviours: GoToLocation, GoToObject, Patrol, Siren, Sleep, Wait
   stateSequences:
   - state: 1
     sequence:

@@ -244,25 +244,6 @@ public class PlayerController : Character
         }
 
     }
-    //public override void StunTarget(Character target, float volume = 1, AudioClip clip = null)
-    //{
-    //    //animator.SetInteger("State", 3);
-    //    //animator.ResetTrigger("CancelTriggerAttack");
-    //    //animator.SetTrigger("TriggerAttack");
-    //    base.StunTarget(target, volume, clip);
-    //    //if(target.gameObject.tag == "Guard")
-    //    //{
-    //    //    base.StunTarget(target, guardStunVolume, guardStun);
-    //    //}
-    //    //if (target.gameObject.tag == "Hunter")
-    //    //{
-    //    //    base.StunTarget(target, hunterStunVolume, hunterStun);
-    //    //}
-    //    //else
-    //    //{
-            
-    //    //}
-    //}
 
     public override void AnimationEventResetAttack()
     {
@@ -543,8 +524,7 @@ public class PlayerController : Character
             actualMovementSpeed = 0f;
             stopped = true;
         }
-        //todo -- Update Animator with movement speed
-        //actualMovementSpeed
+
         animator.SetFloat("Speed", actualMovementSpeed);
         //animator.SetInteger("State", animatorState);
     }

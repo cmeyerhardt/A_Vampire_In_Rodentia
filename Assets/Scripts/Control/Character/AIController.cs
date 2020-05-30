@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 
-public enum NPCState { None, Default, Suspicious, Alert, /*Incapacitated, Dead */}
+public enum NPCState { None, Default, Suspicious, Alert}
 
 [System.Serializable]
 public class BehaviourNode
@@ -19,26 +19,23 @@ public class BehaviourSequence
     public NPCState state;
     public string[] sequence;
 }
-//todo - give de-escalation wait times random variation of +-2s ?
+
 public class AIController : Character
 {
+    [Header("Audio")]
+    [Header("NPC--")]
+    [SerializeField] AudioClip[] suspiciousSounds = null;
+    [SerializeField] [Range(0f, 1f)] public float suspiciousSoundMaxVolume = 1f;
+    [SerializeField] public bool useSecondaryAudioSourceSuspiciousSound = false;
+
 
     [Header("State")]
-    [Header("NPC--")]
     public bool canSeePlayer = false;
-        //public Vector3 lastSeenPlayerLocation = new Vector3();
-        //public float timeSinceLastSawPlayer = 0f;
     public NPCState currentState = NPCState.Default;
     public NPCState lastState = NPCState.Default;
     public AIBehaviour aIBehaviour = null;
     public string currentBehaviour = "";
     [HideInInspector]public string lastBehaviour = "";
-
-    //[SerializeField] float waitTimeVariation = 2f;
-
-    //[SerializeField] public string[] defaultBehaviourSequence = null;
-    //[SerializeField] public string[] alertBehaviourSequence = null;
-    //[SerializeField] public string[] suspiciousBehaviourSequence = null;
 
     [Header("State Behviours")]
     [SerializeField] [TextArea] public string availableBehaviours = "Attack, Patrol, Sleep";
@@ -50,11 +47,12 @@ public class AIController : Character
     [Header("Behaviour Modules")]
     [SerializeField] public List<BehaviourNode> behaviourPresets = new List<BehaviourNode>();
 
+
+
     // Cache
     [HideInInspector] public PlayerController player = null;
     [HideInInspector] public Transform playerHead = null;
     Vector3 tetherPoint = new Vector3();
-
     [HideInInspector] public Detector detector = null;
 
 
@@ -124,13 +122,6 @@ public class AIController : Character
 
         if (currentState != lastState)
         {
-            // If going to change state while waiting to de-escalate, cancel the de-escalation before changing the state
-            //if (deEscalating)
-            //{
-            //    print(gameObject.name + " cancel de-escalation");
-            //    deEscalating = false;
-            //    CancelInvoke("DeEscalateState");
-            //}
             SetState();
         }
 
@@ -381,6 +372,10 @@ public class AIController : Character
                 }
             }
         }
+        else if (currentState == NPCState.Suspicious)
+        {
+            PlaySoundEffect(suspiciousSounds[UnityEngine.Random.Range(0, suspiciousSounds.Length-1)], suspiciousSoundMaxVolume, useSecondaryAudioSourceSuspiciousSound);
+        }
 
         if (behaviourMap.ContainsKey("GoToPlayer"))
         {
@@ -388,23 +383,11 @@ public class AIController : Character
             ((GoToLocation)behaviourMap["GoToPlayer"]).nullableLocation = player.transform.position;
         }
 
-        
+
 
         if (stateMap.ContainsKey(currentState))
         {
             lastState = currentState;
-
-            //switch (currentState)
-            //{
-            //    case NPCState.Alert:
-            //        textSpawner.SpawnText("!", Color.red);
-            //        break;
-            //    case NPCState.Suspicious:
-            //        textSpawner.SpawnText("?", Color.yellow);
-            //        break;
-            //    case NPCState.Default:
-            //        break;
-            //}
             SetBehaviourSequence(stateMap[currentState]);
         }
     }
@@ -414,11 +397,9 @@ public class AIController : Character
         switch (currentState)
         {
             case NPCState.Alert:
-                textSpawner.SpawnText("I thought I saw something", Color.yellow);
                 currentState = NPCState.Suspicious;
                 break;
             case NPCState.Suspicious:
-                textSpawner.SpawnText("I guess it was nothing", Color.green);
                 currentState = NPCState.Default;
                 break;
             default:
