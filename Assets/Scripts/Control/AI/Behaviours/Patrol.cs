@@ -219,6 +219,7 @@ public class Patrol : AIBehaviour
     // Draw Route
     private void OnDrawGizmos()
     {
+#if UNITY_EDITOR
         if(patrolRouteWaypoints2 == null) { return; }
         if (patrolRouteWaypoints2.Length <= 0) { return; }
 
@@ -229,12 +230,20 @@ public class Patrol : AIBehaviour
             {
                 j = 0;
             }
-            if (patrolRouteWaypoints2[i].waypoint == null) { return; }
+            if (patrolRouteWaypoints2 == null) { return; }
+            if (patrolRouteWaypoints2[i].waypoint != null)
+            {
+                try
+                {
+                    Gizmos.color = gizmosColor;
+                    Gizmos.DrawSphere(GetWaypointPosition(i), .2f);
+                    Gizmos.DrawLine(GetWaypointPosition(i), GetWaypointPosition(j));
+                }
+                catch { Debug.LogWarning("Transform references in Patrol are null. Remove the element from the collection or reference a transform to remove this warning."); }
 
-            Gizmos.color = gizmosColor;
-            Gizmos.DrawSphere(GetWaypointPosition(i), .2f);
-            Gizmos.DrawLine(GetWaypointPosition(i), GetWaypointPosition(j));
+            }
         }
+#endif
     }
 
     public Vector3 GetWaypointPosition(int i)

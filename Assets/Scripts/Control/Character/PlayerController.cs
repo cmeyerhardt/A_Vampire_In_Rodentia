@@ -52,15 +52,19 @@ public class PlayerController : Character
     [SerializeField] [Range(0,20f)] float walkingNoiseLevel = 0f;
     [SerializeField] [Range(0,20f)] float sprintingNoiseLevel = 3f;
     [SerializeField] [Range(0,20f)] float maxNoiseLevel = 6f;
-
     public bool walkLouderIfLowStamina = false;
+
+    [Header("Audio")]
     [SerializeField] AudioClip hunterStun = null;
     [SerializeField] [Range(0f, 1f)] public float hunterStunVolume = 1f;
+    [SerializeField] public bool useSecondaryAudioSourceHunterStunSound = false;
     [SerializeField] AudioClip guardStun = null;
     [SerializeField] [Range(0f, 1f)] public float guardStunVolume = 1f;
+    [SerializeField] public bool useSecondaryAudioSourceGuardStunSound = false;
     [SerializeField] AudioClip sprintFootsteps = null;
     [SerializeField] [Range(0f, 1f)] public float sprintFootStepsVolume = 1f;
-    [SerializeField] [Range(0,1f)] float sprintFootstepsInterval = 1f;
+    [SerializeField] public bool useSecondaryAudioSourceSprintStepsSound = false;
+    //[SerializeField] [Range(0,1f)] float sprintFootstepsInterval = 1f;
     //[SerializeField] GameObject soundEffectFX = null;
 
     [Header("Modified by Stamina Levels")]
@@ -75,19 +79,19 @@ public class PlayerController : Character
     public float sprintStaminaDrain = 4f;
     [SerializeField] float dashCost = 30f;
     [SerializeField] float stunCost = 30f;
-    
-    //[Header("Jumping")]
-    //[SerializeField] [Range(1f, 500f)] float jumpForce = 250f;
-    //[SerializeField] [Range(1f, 50f)] float airForward = 25f;
-    //[SerializeField] float maxJumpsAllowed = Mathf.Infinity;
-    //[SerializeField] [Tooltip("Diminishing upForce after each middair jump")]float diminishedUpForce = .85f;
-    //public bool jump = false;
-    //int jumpCounter = 0;
-    //float currentUpForce;
-    //float currentJumpsAllowed = 0;
-    //float jumpTimer = 0f;
-    //float jumpCooldown = .2f;
-    
+
+    [Header("Jumping")]
+    [SerializeField] [Range(1f, 500f)] float jumpForce = 250f;
+    [SerializeField] [Range(1f, 50f)] float airForward = 25f;
+    [SerializeField] float maxJumpsAllowed = Mathf.Infinity;
+    [SerializeField] [Tooltip("Diminishing upForce after each middair jump")] float diminishedUpForce = .85f;
+    public bool jump = false;
+    int jumpCounter = 0;
+    float currentUpForce;
+    float currentJumpsAllowed = 0;
+    float jumpTimer = 0f;
+    float jumpCooldown = .2f;
+
     // Cache
     Transform cameraPivot = null;
     Vector3 lastCollisionPoint = Vector3.zero;
@@ -183,15 +187,15 @@ public class PlayerController : Character
     }
 
 
-    public override void MakeMovementSounds(AudioClip clip, float volumeScale)
+    public override void MakeMovementSounds(AudioClip clip, float volumeScale, bool secondary = false)
     {
         if(Input.GetKey(sprintingKey))
         {
-            PlaySoundEffect(sprintFootsteps, sprintFootStepsVolume);
+            PlaySoundEffect(sprintFootsteps, sprintFootStepsVolume, useSecondaryAudioSourceSprintStepsSound);
         }
         else
         {
-            base.MakeMovementSounds(clip, volumeScale);
+            base.MakeMovementSounds(clip, volumeScale, useSecondaryAudioSourceFootstepsSound);
         }
     }
 
@@ -228,11 +232,11 @@ public class PlayerController : Character
     {
         if (target.gameObject.tag == "Guard")
         {
-            StunTarget(target.GetComponent<Character>(), guardStunVolume, guardStun);
+            StunTarget(target.GetComponent<Character>(), useSecondaryAudioSourceGuardStunSound, guardStunVolume, guardStun);
         }
         else if (target.gameObject.tag == "Hunter")
         {
-            StunTarget(target.GetComponent<Character>(), hunterStunVolume, hunterStun);
+            StunTarget(target.GetComponent<Character>(), useSecondaryAudioSourceHunterStunSound,  hunterStunVolume, hunterStun);
         }
         else
         {
@@ -391,6 +395,7 @@ public class PlayerController : Character
             case PlayerState.Dashing:
                 break;
             case PlayerState.Feeding:
+                print("Feeding animation");
                 animator.SetInteger("State", 4);
                 break;
             case PlayerState.Hiding:

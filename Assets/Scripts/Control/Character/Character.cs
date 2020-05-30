@@ -32,10 +32,13 @@ public class Character : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioClip dyingSound = null;
     [SerializeField] [Range(0, 1)] float dyingSoundMaxVolume = 1f;
+    [SerializeField] public bool useSecondaryAudioSourceDyingSound = false;
     [SerializeField] AudioClip stunSound = null;
     [SerializeField] [Range(0f, 1f)] public float stunSoundVolume = 1f;
+    [SerializeField] public bool useSecondaryAudioSourceStunSound = false;
     [SerializeField] AudioClip footsteps = null;
     [SerializeField] [Range(0f, 1f)] public float footStepsVolume = 1f;
+    [SerializeField] public bool useSecondaryAudioSourceFootstepsSound = false;
 
     //[SerializeField] [Range(0f, 2f)] public float footStepInterval = 1f;
     //[HideInInspector] public float footstepCounter = 0f;
@@ -46,7 +49,8 @@ public class Character : MonoBehaviour
     [HideInInspector] public Rigidbody rigidBody = null;
     [HideInInspector] public Animator animator = null;
     [HideInInspector] public Stamina stamina = null;
-    [HideInInspector] public AudioSource audioSource = null;
+    [SerializeField] public AudioSource primaryAudioSource = null;
+    [SerializeField] public AudioSource secondaryAudioSource = null;
     
     [Header("Transform References")]
     [SerializeField] public Transform head = null;
@@ -63,7 +67,8 @@ public class Character : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         stamina = GetComponent<Stamina>();
         model = transform.Find("Model");
-        audioSource = GetComponent<AudioSource>();
+        primaryAudioSource = GetComponent<AudioSource>();
+        secondaryAudioSource = transform.Find("SecondaryAudioSource").GetComponent<AudioSource>();
     }
 
     public virtual void Start()
@@ -89,7 +94,7 @@ public class Character : MonoBehaviour
      */
     public virtual void AnimationEventMakeFootstepsSoundEffect()
     {
-        PlaySoundEffect(footsteps, footStepsVolume);
+        PlaySoundEffect(footsteps, footStepsVolume, useSecondaryAudioSourceFootstepsSound);
     }
 
     public virtual void AnimationEventResetAttack()
@@ -99,7 +104,7 @@ public class Character : MonoBehaviour
 
     public virtual void AnimationEventHit()
     {
-        PlaySoundEffect(stunSound, stunSoundVolume);
+        PlaySoundEffect(stunSound, stunSoundVolume, useSecondaryAudioSourceStunSound);
     }
 
 
@@ -107,18 +112,32 @@ public class Character : MonoBehaviour
     /*
      * SOUND FX
      */
-    public virtual void MakeMovementSounds(AudioClip clip, float volume)
+    public virtual void MakeMovementSounds(AudioClip clip, float volume, bool secondary)
     {
-        PlaySoundEffect(clip, volume);
+        PlaySoundEffect(clip, volume, secondary);
     }
 
-    public void PlaySoundEffect(AudioClip clip, float volumeScale)
+    public void PlaySoundEffect(AudioClip clip, float volumeScale, bool secondary)
     {
-        audioSource.Stop();
         print("Playing clip " + clip.name + " at volume " + volumeScale);
-        audioSource.clip = clip;
-        audioSource.volume = volumeScale;
-        audioSource.PlayOneShot(clip, volumeScale);
+        if(clip != null)
+        {
+            if(secondary)
+            {
+                secondaryAudioSource.Stop();
+                secondaryAudioSource.clip = clip;
+                secondaryAudioSource.volume = volumeScale;
+                secondaryAudioSource.PlayOneShot(clip, volumeScale);
+            }
+            else
+            {
+                primaryAudioSource.Stop();
+                primaryAudioSource.clip = clip;
+                primaryAudioSource.volume = volumeScale;
+                primaryAudioSource.PlayOneShot(clip, volumeScale);
+            }
+
+        }
     }
 
 
@@ -126,15 +145,15 @@ public class Character : MonoBehaviour
     /*
      * STUN
      */
-    public virtual void StunTarget(Character target, float volume = 1f, AudioClip clip = null)
+    public virtual void StunTarget(Character target, bool secondary, float volume = 1f, AudioClip clip = null)
     {
         if (clip == null)
         {
-            PlaySoundEffect(stunSound, volume);
+            PlaySoundEffect(stunSound, volume, secondary);
         }
         else
         {
-            PlaySoundEffect(clip, volume);
+            PlaySoundEffect(clip, volume, secondary);
         }
 
         if (Random.Range(0f, 1f) > target.myStunResistChance)
@@ -184,7 +203,7 @@ public class Character : MonoBehaviour
     {
         if (dyingSound != null && !isDead)
         {
-            PlaySoundEffect(dyingSound, dyingSoundMaxVolume);
+            PlaySoundEffect(dyingSound, dyingSoundMaxVolume, useSecondaryAudioSourceDyingSound);
         }
         isDead = true;
 
@@ -197,7 +216,6 @@ public class Character : MonoBehaviour
         {
             Destroy(gameObject, destroyOnDeathDelay);
         }
-
     }
 
 

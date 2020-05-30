@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     [Header("Hit FX")]
     [SerializeField] AudioClip hitSoundObject = null;
     [SerializeField] [Range(0f, 1f)] float hitSoundObjectMaxVolume = 1f;
+    [SerializeField] public bool useSecondaryAudioSourceHitObjectSound = false;
     [SerializeField] GameObject hitFX = null;
     public BoolEvent projectileHitEvent;
     
@@ -73,7 +74,7 @@ public class Projectile : MonoBehaviour
             else
             {
                 stopped = true;
-                originator.PlaySoundEffect(hitSoundObject, hitSoundObjectMaxVolume);
+                originator.PlaySoundEffect(hitSoundObject, hitSoundObjectMaxVolume, useSecondaryAudioSourceHitObjectSound);
                 projectileHitEvent.Invoke(false);
             }
 

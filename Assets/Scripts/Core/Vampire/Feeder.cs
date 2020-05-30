@@ -3,16 +3,23 @@
 public class Feeder : MonoBehaviour
 {
     public FloatEvent feedEvent;
-    [SerializeField] AudioClip feedingSFX = null;
-    [SerializeField] [Range(0f, 1f)] float feedingSFXVolume = 5f;
+    
+    [Header("Configure")]
     [SerializeField] [Tooltip("sec.")][Range(0f,10f)]float feedIntervalWhileLatched = 2f;
     [SerializeField] [Tooltip("sec.")][Range(0f,10f)]float timeToWaitToAvoidInturruption = 1f;
     [SerializeField] [Range(0f,10f)] float feedInturruptionCost = 5f;
     [SerializeField] [Range(0f,1f)] float healthGainRatio = .5f;
     [SerializeField] [Range(0f,1f)] float rangeToBreakFeeding = 5f;
-    bool feeding = false;
+
+    [Header("Audio")]
+    [SerializeField] AudioClip feedingSFX = null;
+    [SerializeField] [Range(0f, 1f)] float feedingSFXVolume = 5f;
+    [SerializeField] public bool useSecondaryAudioSourceFeedingSound = false;
+
+
 
     // Cache
+    bool feeding = false;
     float feedCounter = 0f;
     float totalTimeFeeding = 0f;
 
@@ -74,13 +81,13 @@ public class Feeder : MonoBehaviour
         victimHealth = currentVictim.GetComponent<Health>();
         totalTimeFeeding = 0f;
         feeding = true;
-        playerController.PlaySoundEffect(feedingSFX, feedingSFXVolume);
+        playerController.PlaySoundEffect(feedingSFX, feedingSFXVolume, useSecondaryAudioSourceFeedingSound);
         //Trigger Feeding Animation
     }
 
     private void Feed(float value)
     {
-        playerController.PlaySoundEffect(feedingSFX, feedingSFXVolume);
+        playerController.PlaySoundEffect(feedingSFX, feedingSFXVolume, useSecondaryAudioSourceFeedingSound);
         currentVictim.FeedOn();
         health.ModifyHealth(value * healthGainRatio);
         stamina.ModifyStamina(value);
@@ -90,7 +97,7 @@ public class Feeder : MonoBehaviour
     {
         if(feeding)
         {
-            playerController.audioSource.Stop();
+            playerController.primaryAudioSource.Stop();
             //Check if cancel early
             if (totalTimeFeeding < timeToWaitToAvoidInturruption)
             {

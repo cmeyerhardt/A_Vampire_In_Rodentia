@@ -14,13 +14,15 @@ public class Attack : AIBehaviour
     [SerializeField] public float attackInterval = 3f;
     [SerializeField] public float attackVolume = 10f;
 
-    [SerializeField] AudioClip hitSound = null;
-    [SerializeField] [Range(0f, 1f)] float hitSoundMaxVolume = 1f;
-
     [Header("Stun")]        
     [SerializeField] public float stunInterval = 5f;
     [SerializeField] public float stunVolume = 10f;
     [SerializeField] public float stunStaminaCost = 10f;
+
+    [Header("Audio")]
+    [SerializeField] AudioClip hitSound = null;
+    [SerializeField] [Range(0f, 1f)] float hitSoundMaxVolume = 1f;
+    [SerializeField] public bool useSecondaryAudioSourceAttackSound = false;
 
     // Cache
     float globalCooldown = 0f;
@@ -108,7 +110,7 @@ public class Attack : AIBehaviour
                         ai.StopMoving();
                         stunCounter = 0f;
                         globalCooldown = 1f;
-                        ai.StunTarget(ai.player);
+                        ai.StunTarget(ai.player, ai.useSecondaryAudioSourceStunSound);
                         //ai.player.BecomeStunned(ai.outgoingStunDuration);
                         ai.player.makeSoundEvent.Invoke(stunVolume);
                     }
@@ -157,7 +159,7 @@ public class Attack : AIBehaviour
         player.ModifyHealth(-damage);
         if(playSound)
         {
-            ai.PlaySoundEffect(hitSound, hitSoundMaxVolume);
+            ai.PlaySoundEffect(hitSound, hitSoundMaxVolume, useSecondaryAudioSourceAttackSound);
         }
         ai.player.makeSoundEvent.Invoke(attackVolume);
     }

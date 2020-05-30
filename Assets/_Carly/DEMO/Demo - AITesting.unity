@@ -1013,10 +1013,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2871807772648926928, guid: f1506da7beff4634ab334da0ab52e871,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5164696215061022484, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: m_Name
       value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038596259061471508, guid: f1506da7beff4634ab334da0ab52e871,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1506da7beff4634ab334da0ab52e871, type: 3}
@@ -2170,7 +2180,7 @@ MonoBehaviour:
   arrived: 0
   gizmosColor: {r: 1, g: 1, b: 1, a: 1}
   patrolRouteWaypoints2:
-  - waypoint: {fileID: 0}
+  - waypoint: {fileID: 126901871}
     waitTime: 0
   - waypoint: {fileID: 1506288550}
     waitTime: 0
