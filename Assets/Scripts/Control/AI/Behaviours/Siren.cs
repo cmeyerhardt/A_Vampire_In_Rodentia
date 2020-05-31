@@ -48,6 +48,10 @@ public class Siren : GoToObject
     {
         base.Update();
         if(protector == null) { return; }
+        if(protector.currentState == NPCState.Alert || protector.currentState == NPCState.Suspicious)
+        {
+            doneEvent.Invoke(this);
+        }
         if(ai.IsInRange(protector.transform.position))
         {
             if(protector.behaviourMap.ContainsKey("GoToPlayer"))
