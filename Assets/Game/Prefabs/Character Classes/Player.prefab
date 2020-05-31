@@ -232,7 +232,7 @@ MonoBehaviour:
   objectInHand: {fileID: 0}
   destroyOnDeathDelay: 5
   baseMovementSpeed: 3
-  maxMovementSpeed: 30
+  maxMovementSpeed: 20
   navMeshDistanceBuffer: 2.5
   walking: 0
   outgoingStunRange: 5

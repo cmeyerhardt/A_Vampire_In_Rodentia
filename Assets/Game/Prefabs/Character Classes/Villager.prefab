@@ -62,7 +62,7 @@ MonoBehaviour:
   resistEvent:
     m_PersistentCalls:
       m_Calls: []
-  healthLossOnFeed: 5
+  healthLossOnFeed: 7
   chanceToResistFeed: 0.1
 --- !u!114 &6467423296068981850
 MonoBehaviour:
@@ -191,8 +191,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   isDead: 0
-  currentHealth: 100
-  maxHealth: 100
+  currentHealth: 21
+  maxHealth: 21
   displayColor: {r: 1, g: 0, b: 0, a: 1}
   textSpawner: {fileID: 5516385277082073183}
 --- !u!1001 &1226159972738126106
@@ -546,6 +546,11 @@ PrefabInstance:
         type: 3}
       propertyPath: randomizeMouseShirtColor
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: chooseRandomColorFromCollection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5562277774350318428, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
