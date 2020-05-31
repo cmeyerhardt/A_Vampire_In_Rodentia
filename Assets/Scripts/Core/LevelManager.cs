@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
@@ -12,12 +9,12 @@ public class LevelManager : MonoBehaviour
     [SerializeField] WindowManager windowManager = null;
 
     PlayerController player = null;
-    SceneLoader sceneLoader = null;
+    //SceneLoader sceneLoader = null;
 
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        sceneLoader = FindObjectOfType<SceneLoader>();
+        //sceneLoader = FindObjectOfType<SceneLoader>();
     }
 
     void Update()
@@ -40,7 +37,7 @@ public class LevelManager : MonoBehaviour
 
     public void GameTimeDone()
     {
-        if ((player.isHidden || player.playerState == PlayerState.Hiding) && !player.isDead && player.stamina.GetStaminaValue() > 0f)
+        if ((player.isHidden || player.playerState == PlayerState.Hiding) && !player.isDead && player.stamina.GetStaminaValue() >= 15f)
         {
             Win();
         }
@@ -63,12 +60,18 @@ public class LevelManager : MonoBehaviour
     public void QuitLevel()
     {
         UnPauseGame();
-        sceneLoader.ReturnToMenu();
+        FindObjectOfType<SceneLoader>().ReturnToMenu();
     }
 
     public void NextLevel()
     {
         UnPauseGame();
-        sceneLoader.NextLevel();
+        FindObjectOfType<SceneLoader>().NextLevel();
+    }
+
+    public void RestartLevel()
+    {
+        UnPauseGame();
+        FindObjectOfType<SceneLoader>().Play();
     }
 }
