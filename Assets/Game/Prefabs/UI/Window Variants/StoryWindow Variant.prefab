@@ -1434,7 +1434,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 27.8
+  m_Spacing: 30.3
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -1530,7 +1530,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: from Villagers
+  m_text: on Villagers
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4d5bc1b0b750734484aad54e5f0b4a8, type: 2}
   m_sharedMaterial: {fileID: 569072997265045381, guid: d4d5bc1b0b750734484aad54e5f0b4a8,
@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2153318839032042620}
-    characterCount: 14
+    characterCount: 12
     spriteCount: 0
     spaceCount: 1
     wordCount: 2

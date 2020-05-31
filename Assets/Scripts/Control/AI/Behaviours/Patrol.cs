@@ -199,7 +199,7 @@ public class Patrol : AIBehaviour
             }
             else
             {
-                ai.textSpawner.SpawnText(string.Format("Sentry: {0:0}", waitTimer), Color.white);
+                //ai.textSpawner.SpawnText(string.Format("Sentry: {0:0}", waitTimer), Color.white);
                 secondsCounter = 1f;
             }
 

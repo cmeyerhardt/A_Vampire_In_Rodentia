@@ -42,16 +42,17 @@ public class Character : MonoBehaviour
 
     //[SerializeField] [Range(0f, 2f)] public float footStepInterval = 1f;
     //[HideInInspector] public float footstepCounter = 0f;
-    //Vector3 currentDestination = new Vector3();
+    Vector3 currentDestination = new Vector3();
 
+    [Header("References")]
+    [HideInInspector] public Animator animator = null;
+    [SerializeField] public AudioSource primaryAudioSource = null;
+    [SerializeField] public AudioSource secondaryAudioSource = null;
     [HideInInspector] public FloatingTextSpawner textSpawner = null;
     [HideInInspector] public NavMeshAgent navMeshAgent = null;
     [HideInInspector] public Rigidbody rigidBody = null;
-    [HideInInspector] public Animator animator = null;
     [HideInInspector] public Stamina stamina = null;
-    [SerializeField] public AudioSource primaryAudioSource = null;
-    [SerializeField] public AudioSource secondaryAudioSource = null;
-    
+
     [Header("Transform References")]
     [SerializeField] public Transform head = null;
     [SerializeField] public Transform hand = null;
@@ -64,15 +65,24 @@ public class Character : MonoBehaviour
         textSpawner = GetComponentInChildren<FloatingTextSpawner>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         rigidBody = GetComponent<Rigidbody>();
-        animator = GetComponentInChildren<Animator>();
+
         stamina = GetComponent<Stamina>();
         model = transform.Find("Model");
+        animator = model.GetComponentInChildren<Animator>();
         primaryAudioSource = GetComponent<AudioSource>();
         secondaryAudioSource = transform.Find("SecondaryAudioSource").GetComponent<AudioSource>();
     }
 
     public virtual void Start()
     {
+        SetAnimatorSpeed(0);
+    }
+
+    private void SetAnimatorSpeed(float speed)
+    {
+        print("Setting animator speed for " + gameObject.name + " to " + speed);
+        animator.SetInteger("State", 0);
+        animator.SetFloat("Speed", speed);
     }
 
     public virtual void Update()
@@ -82,10 +92,12 @@ public class Character : MonoBehaviour
         //{
         //    MakeMovementSounds(footsteps, footStepsVolume);
         //}
-        //if (walking && IsInRange(currentDestination))
-        //{
-        //    walking = false;
-        //}
+        if (walking && IsInRange(currentDestination))
+        {
+            walking = false;
+            //StopMoving();
+            SetAnimatorSpeed(0);
+        }
     }
 
 
@@ -119,10 +131,10 @@ public class Character : MonoBehaviour
 
     public void PlaySoundEffect(AudioClip clip, float volumeScale, bool secondary)
     {
-        print("Playing clip " + clip.name + " at volume " + volumeScale);
         if(clip != null)
         {
-            if(secondary)
+            print("Playing clip " + clip.name + " at volume " + volumeScale);
+            if (secondary)
             {
                 secondaryAudioSource.Stop();
                 secondaryAudioSource.clip = clip;
@@ -136,7 +148,6 @@ public class Character : MonoBehaviour
                 primaryAudioSource.volume = volumeScale;
                 primaryAudioSource.PlayOneShot(clip, volumeScale);
             }
-
         }
     }
 
@@ -158,7 +169,7 @@ public class Character : MonoBehaviour
 
         if (Random.Range(0f, 1f) > target.myStunResistChance)
         {
-            print(gameObject.name + " stuns " + target.name);
+            //print(gameObject.name + " stuns " + target.name);
             target.BecomeStunned(outgoingStunDuration);
         }
     }
@@ -182,15 +193,15 @@ public class Character : MonoBehaviour
     public virtual void BecomeStunned()
     {
         isStunned = true;
-        textSpawner.SpawnText("Stunned", Color.blue);
-        //todo - Update Animator with Stunned Pose
+        textSpawner.SpawnText("Stunned", true, Color.blue);
+        animator.SetInteger("State", 5);
     }
 
     public virtual void BecomeUnStunned()
     {
-        textSpawner.SpawnText("Stun Fades", Color.blue);
+        textSpawner.SpawnText("Stun Fades", true, Color.blue);
         isStunned = false;
-        //todo - Update Animator with Idle Anim
+        animator.SetInteger("State", 0);
     }
 
 
@@ -210,6 +221,7 @@ public class Character : MonoBehaviour
         navMeshAgent.enabled = false;
 
         //update animator
+        animator.StopPlayback();
         model.rotation = Quaternion.Euler(-90f, 0f, 0f);
 
         if(gameObject.tag != "Player")
@@ -218,7 +230,6 @@ public class Character : MonoBehaviour
         }
     }
 
-
     /*
     * MOVEMENT
     */
@@ -226,13 +237,14 @@ public class Character : MonoBehaviour
     {
         if (navMeshAgent.isActiveAndEnabled && navMeshAgent.isOnNavMesh)
         {
-            //walking = true;
+            walking = true;
             head.forward = transform.forward;
             //currentDestination = destination;
             navMeshAgent.destination = destination;
             navMeshAgent.speed = Mathf.Clamp(baseMovementSpeed * Mathf.Clamp01(speedFraction), baseMovementSpeed, maxMovementSpeed);
             navMeshAgent.isStopped = false;
 
+            SetAnimatorSpeed(navMeshAgent.speed);
             //todo - Update Animator with speed
         }
     }
@@ -248,7 +260,8 @@ public class Character : MonoBehaviour
         {
             MoveToDestination(transform.position, 1f);
             navMeshAgent.isStopped = true;
-
+            animator.SetInteger("State", 0);
+            animator.SetFloat("Speed", 0);
         }
     }
 

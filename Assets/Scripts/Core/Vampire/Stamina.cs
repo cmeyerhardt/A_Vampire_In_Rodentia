@@ -86,7 +86,7 @@ public class Stamina : MonoBehaviour
             {
                 changeString = "+" + changeString;
             }
-            textSpawner.SpawnText(changeString, displayColor, true);
+            textSpawner.SpawnText(changeString, true, displayColor, true);
         }
     }
 

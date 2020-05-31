@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//todo -- use inheritance for beds, hiding places
-
 public class HidingPlace : Interactable, IRaycast
 {
     public new void Awake()
@@ -29,7 +27,7 @@ public class HidingPlace : Interactable, IRaycast
                 }
                 else
                 {
-                    playerController.textSpawner.SpawnText("Out of Range");
+                    playerController.textSpawner.SpawnText("Out of Range", true, Color.red);
                 }
             }
             return true;

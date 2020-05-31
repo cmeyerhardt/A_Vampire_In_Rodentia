@@ -34,7 +34,7 @@ public class Sleep : GoToObject
             }
             else
             {
-                ai.textSpawner.SpawnText("Zzz..", Color.yellow);
+                ai.textSpawner.SpawnText("Zzz..", true, Color.yellow);
                 zzzCounter = 4f;
             }
         }

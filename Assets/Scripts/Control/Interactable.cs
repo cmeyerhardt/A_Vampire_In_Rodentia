@@ -36,7 +36,7 @@ public class Interactable : MonoBehaviour, IRaycast
                 }
                 else
                 {
-                    playerController.textSpawner.SpawnText("Out of Range");
+                    playerController.textSpawner.SpawnText("Out of Range", true);
                 }
             }
             return true;

@@ -59,11 +59,11 @@ public class Projectile : MonoBehaviour
                 rb.useGravity = false;
                 rb.isKinematic = true;
                 transform.parent = other.transform;
+                stopped = true;
             }
 
             if (target != null && target == player && !player.isDead)
             {
-                stopped = true;
                 if (!playerDamaged)
                 {
                     playerDamaged = true;
@@ -73,7 +73,6 @@ public class Projectile : MonoBehaviour
             }
             else
             {
-                stopped = true;
                 originator.PlaySoundEffect(hitSoundObject, hitSoundObjectMaxVolume, useSecondaryAudioSourceHitObjectSound);
                 projectileHitEvent.Invoke(false);
             }

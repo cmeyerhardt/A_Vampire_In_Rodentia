@@ -5,30 +5,30 @@ public class FloatingTextSpawner : MonoBehaviour
 {
     [SerializeField] FloatingText floatingText = null;
     float xVariation = 1f;
-    float lastSpawn;
-    float spawnDelay = .2f;
-    bool wait = false;
-    public int numRoutines = 0;
+    //float lastSpawn;
+    //float spawnDelay = .2f;
+    //bool wait = false;
+    //public int numRoutines = 0;
 
-    private void Update()
-    {
-        if(lastSpawn < spawnDelay)
-        {
-            lastSpawn += Time.deltaTime;
+    //private void Update()
+    //{
+    //    if(lastSpawn < spawnDelay)
+    //    {
+    //        lastSpawn += Time.deltaTime;
 
-        }
-        else
-        {
-            wait = false;
-        }
-    }
+    //    }
+    //    else
+    //    {
+    //        wait = false;
+    //    }
+    //}
 
-    public void SpawnText(string message, Color? color = null, bool randomPosition = false)
+    public void SpawnText(string message, bool floating, Color? color = null, bool randomPosition = false)
     {
         //if(!wait)
         {
-            wait = true;
-            lastSpawn = Time.deltaTime;
+            //wait = true;
+            //lastSpawn = Time.deltaTime;
 
             Vector3 _position = transform.position;
 
@@ -52,14 +52,14 @@ public class FloatingTextSpawner : MonoBehaviour
         //}
     }
 
-    private IEnumerator WaitDelay(string message, Color? color = null, bool randomPosition = false)
-    {
-        numRoutines++;
-        while(wait)
-        {
-            yield return null;
-        }
-        SpawnText(message, color, randomPosition);
-        numRoutines--;
-    }
+    //private IEnumerator WaitDelay(string message, Color? color = null, bool randomPosition = false)
+    //{
+    //    numRoutines++;
+    //    while(wait)
+    //    {
+    //        yield return null;
+    //    }
+    //    SpawnText(message, color, randomPosition);
+    //    numRoutines--;
+    //}
 }

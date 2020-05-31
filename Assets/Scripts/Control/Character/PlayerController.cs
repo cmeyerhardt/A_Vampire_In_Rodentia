@@ -80,17 +80,17 @@ public class PlayerController : Character
     [SerializeField] float dashCost = 30f;
     [SerializeField] float stunCost = 30f;
 
-    [Header("Jumping")]
-    [SerializeField] [Range(1f, 500f)] float jumpForce = 250f;
-    [SerializeField] [Range(1f, 50f)] float airForward = 25f;
-    [SerializeField] float maxJumpsAllowed = Mathf.Infinity;
-    [SerializeField] [Tooltip("Diminishing upForce after each middair jump")] float diminishedUpForce = .85f;
-    public bool jump = false;
-    int jumpCounter = 0;
-    float currentUpForce;
-    float currentJumpsAllowed = 0;
-    float jumpTimer = 0f;
-    float jumpCooldown = .2f;
+    //[Header("Jumping")]
+    //[SerializeField] [Range(1f, 500f)] float jumpForce = 250f;
+    //[SerializeField] [Range(1f, 50f)] float airForward = 25f;
+    //[SerializeField] float maxJumpsAllowed = Mathf.Infinity;
+    //[SerializeField] [Tooltip("Diminishing upForce after each middair jump")] float diminishedUpForce = .85f;
+    //public bool jump = false;
+    //int jumpCounter = 0;
+    //float currentUpForce;
+    //float currentJumpsAllowed = 0;
+    //float jumpTimer = 0f;
+    //float jumpCooldown = .2f;
 
     // Cache
     Transform cameraPivot = null;
@@ -153,7 +153,7 @@ public class PlayerController : Character
             }
             else
             {
-                textSpawner.SpawnText("Too Tired!", Color.green);
+                textSpawner.SpawnText("Too Tired!", true, Color.green);
             }
         }
 
@@ -287,19 +287,19 @@ public class PlayerController : Character
                 }
                 else
                 {
-                    textSpawner.SpawnText("Too Tired!", Color.green);
+                    textSpawner.SpawnText("Too Tired!", true, Color.green);
                     return false;
                 }
             }
             else
             {
-                textSpawner.SpawnText("Out of Range!", Color.red);
+                textSpawner.SpawnText("Out of Range!", true, Color.red);
                 return false;
             }
         }
         else
         {
-            textSpawner.SpawnText("No Target!", Color.red);
+            textSpawner.SpawnText("No Target!", true, Color.red);
             return false;
         }
     }
@@ -319,7 +319,7 @@ public class PlayerController : Character
             }
             else
             {
-                textSpawner.SpawnText("Out of Range!", Color.red);
+                textSpawner.SpawnText("Out of Range!", true, Color.red);
                 return false;
             }
         }
@@ -394,7 +394,7 @@ public class PlayerController : Character
     public new void Die()
     {
         base.Die();
-        textSpawner.SpawnText("I'm BLLUUUHHH.. dead", Color.red);
+        //textSpawner.SpawnText("I'm BLLUUUHHH.. dead", true, Color.red);
     }
 
     /***********************
@@ -436,23 +436,23 @@ public class PlayerController : Character
         //    }
 
         //}
-        int animatorState = 0;
+          //int animatorState = 0;
         // Process Translation
         if (horizontalMag != 0f || verticalMag != 0f)
         {
             animator.SetInteger("State", 1);
             stopped = false;
-            animatorState = 1;
+            //animatorState = 1;
             if (currentInteractiable != null)
             {
                 dimmer.RestoreMaterialColor();
                 currentInteractiable.CancelInteract();
-                textSpawner.SpawnText("Inturrupted", Color.yellow);
+                textSpawner.SpawnText("Inturrupted", true, Color.yellow);
                 SetState(PlayerState.Idle);
             }
             if (playerState == PlayerState.Feeding)
             {
-                textSpawner.SpawnText("Inturrupted", Color.red);
+                textSpawner.SpawnText("Inturrupted", true, Color.red);
                 feeder.CancelFeeding();
                 SetState(PlayerState.Idle);
             }
@@ -480,7 +480,7 @@ public class PlayerController : Character
             {
                 if (stamina.CheckCanAffordCost(sprintStaminaDrain))
                 {
-                    animatorState = 2;
+                    //animatorState = 2;
                     staminaCost = sprintStaminaDrain;
 
                     //modify sprint speed by stamina percentage
@@ -520,7 +520,7 @@ public class PlayerController : Character
         }
         else if (horizontalMag == 0f && verticalMag == 0f)
         {
-            animatorState = 0;
+            //animatorState = 0;
             actualMovementSpeed = 0f;
             stopped = true;
         }

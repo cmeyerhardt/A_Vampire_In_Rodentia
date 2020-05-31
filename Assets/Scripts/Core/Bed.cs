@@ -22,7 +22,7 @@ public class Bed : HidingPlace, IRaycast
                 }
                 else
                 {
-                    playerController.textSpawner.SpawnText("Out of Range");
+                    playerController.textSpawner.SpawnText("Out of Range", true, Color.red);
                 }
             }
             return true;

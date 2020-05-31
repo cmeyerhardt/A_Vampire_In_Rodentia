@@ -58,17 +58,20 @@ MonoBehaviour:
   footsteps: {fileID: 0}
   footStepsVolume: 1
   useSecondaryAudioSourceFootstepsSound: 0
+  animator: {fileID: 0}
+  primaryAudioSource: {fileID: 5425560613867970235}
+  secondaryAudioSource: {fileID: 1637327012931483878}
   textSpawner: {fileID: 6740220481580837189}
   navMeshAgent: {fileID: 0}
   rigidBody: {fileID: 0}
-  animator: {fileID: 0}
   stamina: {fileID: 0}
-  primaryAudioSource: {fileID: 5425560613867970235}
-  secondaryAudioSource: {fileID: 1637327012931483878}
   head: {fileID: 0}
   hand: {fileID: 0}
   hitBox: {fileID: 0}
   model: {fileID: 0}
+  suspiciousSounds: []
+  suspiciousSoundMaxVolume: 1
+  useSecondaryAudioSourceSuspiciousSound: 0
   canSeePlayer: 0
   currentState: 1
   lastState: 1
@@ -172,6 +175,21 @@ PrefabInstance:
     - target: {fileID: 3996916198836047913, guid: f81391574d6fa1644ac8bd4bfbc65a52,
         type: 3}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996916198836047913, guid: f81391574d6fa1644ac8bd4bfbc65a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996916198836047913, guid: f81391574d6fa1644ac8bd4bfbc65a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996916198836047913, guid: f81391574d6fa1644ac8bd4bfbc65a52,
+        type: 3}
+      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4661540069120724009, guid: f81391574d6fa1644ac8bd4bfbc65a52,

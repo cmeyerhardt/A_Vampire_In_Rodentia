@@ -39,7 +39,7 @@ public class PickUp : MonoBehaviour, IRaycast
             }
             else
             {
-                playerController.textSpawner.SpawnText("Out of Range");
+                playerController.textSpawner.SpawnText("Out of Range", true, Color.red);
             }
         }
         return false;

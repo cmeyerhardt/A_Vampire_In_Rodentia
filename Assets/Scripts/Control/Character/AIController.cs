@@ -374,7 +374,11 @@ public class AIController : Character
         }
         else if (currentState == NPCState.Suspicious)
         {
-            PlaySoundEffect(suspiciousSounds[UnityEngine.Random.Range(0, suspiciousSounds.Length-1)], suspiciousSoundMaxVolume, useSecondaryAudioSourceSuspiciousSound);
+            if(suspiciousSounds.Length > 0)
+            {
+                PlaySoundEffect(suspiciousSounds[UnityEngine.Random.Range(0, suspiciousSounds.Length - 1)], suspiciousSoundMaxVolume, useSecondaryAudioSourceSuspiciousSound);
+            }
+
         }
 
         if (behaviourMap.ContainsKey("GoToPlayer"))
@@ -483,7 +487,7 @@ public class AIController : Character
         if (/*currentState != NPCState.Alert &&*/ alerted && !canSeePlayer)
         {
             canSeePlayer = true;
-            textSpawner.SpawnText("A Vampire!", Color.red);
+            textSpawner.SpawnText("A Vampire!", true, Color.red);
             currentState = NPCState.Alert;
             DropObject(false);
         }
@@ -504,7 +508,7 @@ public class AIController : Character
             //DeEscalateState();
             //MoveToDestination(lastSeenPlayerLocation, 1f);
             //print("cannot see player");
-            textSpawner.SpawnText("Where'd it go?", Color.yellow);
+            //textSpawner.SpawnText("Where'd it go?", Color.yellow);
         }
     }
 

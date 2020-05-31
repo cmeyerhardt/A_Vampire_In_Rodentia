@@ -42,7 +42,7 @@ public class Health : MonoBehaviour
                 {
                     changeString = "+" + changeString;
                 }
-                textSpawner.SpawnText(changeString, displayColor, true);
+                textSpawner.SpawnText(changeString, false, displayColor, true);
             }
         }
     }
