@@ -1835,6 +1835,16 @@ PrefabInstance:
       propertyPath: m_WarningMessage
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1427751211974910441, guid: 333913816816ca043a29673eaa593047,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1427751211974910441, guid: 333913816816ca043a29673eaa593047,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c1f61cec742390f4e80441730a18e7e0, type: 2}
     - target: {fileID: 1427751211979960489, guid: 333913816816ca043a29673eaa593047,
         type: 3}
       propertyPath: m_LocalPosition.x
