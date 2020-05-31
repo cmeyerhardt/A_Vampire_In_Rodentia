@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum TimeSegment { None, Sunset, Dusk, Night, Dawn, Sunrise, Day }
 
@@ -53,6 +54,8 @@ public class NightCycle : MonoBehaviour
     //Dictionary<TimeSegment, Quaternion> moonRotations = new Dictionary<TimeSegment, Quaternion>();
     //Dictionary<TimeSegment, Quaternion> sunRotations = new Dictionary<TimeSegment, Quaternion>();
 
+    [SerializeField] Gradient timeImageGradient = new Gradient();
+    [SerializeField] Image timeImage = null;
     [Header("Debug")]
     //bool morning = false;
     public bool go = false;
@@ -79,6 +82,12 @@ public class NightCycle : MonoBehaviour
         numGameSecPerRealSec = (nightLengthGameHours * 60f) / nightLengthRealSeconds;
         SetTimeToDay();
 
+    }
+
+    public void UpdateTimeImage(float percentage)
+    {
+        timeImage.fillAmount = Mathf.Clamp(percentage, 0f, 1f);
+        timeImage.color = timeImageGradient.Evaluate(percentage);
     }
 
     void Update()
@@ -127,7 +136,8 @@ public class NightCycle : MonoBehaviour
         // Update text
         timeText.text = FormatTime(currentTime);
         percText.text = string.Format("{0:0}%", nightPercentage * 100f);
-        
+        UpdateTimeImage(nightPercentage);
+
         //Update time of day settings
         SetColorOfCelestialBody(nightPercentage);
         RotateCelestialBodies(nightPercentage);

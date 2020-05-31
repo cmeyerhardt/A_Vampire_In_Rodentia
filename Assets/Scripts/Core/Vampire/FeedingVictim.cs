@@ -7,7 +7,7 @@ public class FeedingVictim : MonoBehaviour, IRaycast
     [HideInInspector] public FloatEvent feedingOn;
     [HideInInspector] public BoolEvent resistEvent;
 
-    //[SerializeField] float recoveryDelay = 3f;
+    [SerializeField] float recoveryDelay = 3f;
     bool beingFedOn = false;
     [SerializeField] float healthLossOnFeed = 5f;
     [SerializeField] float chanceToResistFeed = .1f;
@@ -63,11 +63,16 @@ public class FeedingVictim : MonoBehaviour, IRaycast
     public void CancelBeingFedOn()
     {
         //print(gameObject.name + " canceling feeding");
+        Invoke("UnStun", recoveryDelay);
+    }
+
+    private void UnStun()
+    {
         beingFedOn = false;
         GetComponent<AIController>().BecomeUnStunned();
         fedOnEvent.Invoke(false);
     }
-    
+
     public CursorType GetCursorType()
     {
         return CursorType.Victim;

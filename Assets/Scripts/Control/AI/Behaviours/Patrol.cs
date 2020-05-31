@@ -246,7 +246,6 @@ public class Patrol : AIBehaviour
                 {
                     Debug.LogWarning("Transform references in Patrol are null. Remove the element from the collection or reference a transform to remove this warning.");
                 }
-
             }
         }
 #endif

@@ -363,15 +363,16 @@ public class AIController : Character
     {
         if(isStunned)
         {
-            if(canSeePlayer)
-            {
-                currentState = NPCState.Alert;
-            }
-            else
-            {
-                currentState = NPCState.Suspicious;
-            }
+            //if(canSeePlayer)
+            //{
+            //    currentState = NPCState.Alert;
+            //}
+            //else
+            //{
+            //    currentState = NPCState.Suspicious;
+            //}
             lastState = NPCState.None;
+            currentState = NPCState.Alert;
             base.BecomeUnStunned();
         }
     }

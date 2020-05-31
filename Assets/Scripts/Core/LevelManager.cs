@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Window winMenu = null;
     //[SerializeField] Window pauseMenu = null;
 
-    [SerializeField] WindowManager windowManager = null;
+    [SerializeField] public WindowManager windowManager = null;
 
     PlayerController player = null;
     //SceneLoader sceneLoader = null;

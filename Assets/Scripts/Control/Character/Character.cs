@@ -42,7 +42,7 @@ public class Character : MonoBehaviour
 
     //[SerializeField] [Range(0f, 2f)] public float footStepInterval = 1f;
     //[HideInInspector] public float footstepCounter = 0f;
-    Vector3 currentDestination = new Vector3();
+    //Vector3 currentDestination = new Vector3();
 
     [Header("References")]
     [HideInInspector] public Animator animator = null;

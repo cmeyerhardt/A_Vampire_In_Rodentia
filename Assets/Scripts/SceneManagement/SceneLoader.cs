@@ -9,7 +9,7 @@ public class SceneLoader : MonoBehaviour
     public UnityEvent doneLoadingEvent;
     [SerializeField] CanvasFade loadingScreen = null;
     [SerializeField] int sceneToLoadOnPlay = 1;
-    [SerializeField] float loadWaitTime = 2f;
+    //[SerializeField] float loadWaitTime = 2f;
 
     public void ExitGame()
     {
@@ -62,8 +62,16 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadSplashMenu()
     {
-        FindObjectOfType<LevelManager>().PauseGame();
-        FindObjectOfType<WindowManager>().OpenSplashScreen();
+        LevelManager _lm = FindObjectOfType<LevelManager>();
+        if (_lm != null)
+        {
+            _lm.PauseGame();
+            _lm.windowManager.OpenSplashScreen();
+        }
+        else
+        {
+            print("null");
+        }
     }
 
 }

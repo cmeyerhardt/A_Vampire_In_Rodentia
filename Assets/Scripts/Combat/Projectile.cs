@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
     [Header("Configure")]
     [SerializeField] [Range(0f,50f)]float projectileSpeed = 20f;
     [SerializeField] [Range(0f,50f)] float lifeTime = 12f;
-    [SerializeField] GameObject[] destroyOnHit = null;
+    //[SerializeField] GameObject[] destroyOnHit = null;
 
     [Header("Hit FX")]
     [SerializeField] AudioClip hitSoundObject = null;

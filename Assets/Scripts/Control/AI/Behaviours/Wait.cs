@@ -5,7 +5,7 @@ public class Wait : AIBehaviour
     [Header("Wait--")]
     [SerializeField] public float duration = 3f;
     [SerializeField] public bool waitIndefinitly = false;
-    [SerializeField] [Range(0f, 10f)] float movementFraction = .75f;
+    //[SerializeField] [Range(0f, 10f)] float movementFraction = .75f;
     public float timer = 0f;
 
     public new void OnEnable()

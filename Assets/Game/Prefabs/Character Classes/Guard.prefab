@@ -28,6 +28,46 @@ MonoBehaviour:
     waitTime: 0
   patrolSpeedFraction: 0.5
   numLoops: 1
+--- !u!114 &4672025672293095450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4628790373438011979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236987e91392c946a6d8cc740e0b897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ai: {fileID: 0}
+  tasks: []
+  location: {x: 0, y: 0, z: 0}
+  locationString: 
+  useV3: 0
+  range: 0
+  movementFraction: 1
+  distanceToLocation: 0
+--- !u!114 &7070806037120641568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4628790373438011979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236987e91392c946a6d8cc740e0b897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ai: {fileID: 0}
+  tasks: []
+  location: {x: 0, y: 0, z: 0}
+  locationString: 
+  useV3: 0
+  range: 0
+  movementFraction: 1
+  distanceToLocation: 0
 --- !u!1001 &251697312544392580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -431,7 +471,7 @@ PrefabInstance:
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: stateSequences.Array.data[0].sequence.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
@@ -445,8 +485,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
       propertyPath: stateSequences.Array.data[0].sequence.Array.data[2]
-      value: Patrol
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
@@ -456,7 +506,7 @@ PrefabInstance:
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
-      value: GoToLocation:Player
+      value: GoToPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
@@ -466,12 +516,12 @@ PrefabInstance:
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: stateSequences.Array.data[0].sequence.Array.data[0]
-      value: PickUp:Torch
+      value: Return
       objectReference: {fileID: 0}
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: stateSequences.Array.data[0].sequence.Array.data[1]
-      value: Wait:5
+      value: Patrol
       objectReference: {fileID: 0}
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
@@ -523,6 +573,31 @@ PrefabInstance:
       propertyPath: baseMovementSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: GoToPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: GoToPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Return
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 7070806037120641568}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 4672025672293095450}
     - target: {fileID: 9013415846929125376, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: attackRange
