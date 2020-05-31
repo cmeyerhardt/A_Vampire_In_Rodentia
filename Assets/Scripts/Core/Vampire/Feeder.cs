@@ -89,8 +89,8 @@ public class Feeder : MonoBehaviour
     {
         playerController.PlaySoundEffect(feedingSFX, feedingSFXVolume, useSecondaryAudioSourceFeedingSound);
         currentVictim.FeedOn();
-        health.ModifyHealth(value * healthGainRatio);
-        stamina.ModifyStamina(value);
+        health.ModifyHealth(value);
+        stamina.ModifyStamina(value * healthGainRatio);
     }
 
     public void CancelFeeding()
