@@ -37,7 +37,7 @@ MonoBehaviour:
   objectReference: {fileID: 0}
   objectName: 
   range: 0
-  movementFraction: 2
+  movementFraction: 2.2
   distanceToReference: 0
   maxSeekDistance: 40
   sirenNoiseLevel: 20
@@ -81,7 +81,7 @@ MonoBehaviour:
   currentInteractiable: {fileID: 0}
   objectInHand: {fileID: 0}
   destroyOnDeathDelay: 5
-  baseMovementSpeed: 5
+  baseMovementSpeed: 3
   maxMovementSpeed: 20
   navMeshDistanceBuffer: 2.5
   walking: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   hand: {fileID: 3280425120394951479}
   hitBox: {fileID: 0}
   model: {fileID: 0}
-  audioRange: 35
+  rangeToHearAudio: 30
   suspiciousSounds:
   - {fileID: 8300000, guid: de429f721380b8b44900ca3dce02637d, type: 3}
   - {fileID: 8300000, guid: 90f7531db1881a14ba544f6bc5526a66, type: 3}
@@ -295,52 +295,52 @@ PrefabInstance:
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key0.g
-      value: 1
+      value: 0.2612818
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key0.b
-      value: 1
+      value: 0.002491996
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key1.g
-      value: 1
+      value: 0.6473798
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key1.b
-      value: 1
+      value: 0.3915094
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key2.r
-      value: 0.9811321
+      value: 0.6698113
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key2.g
-      value: 0.9811321
+      value: 0.6698113
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key3.r
-      value: 0.8820755
+      value: 0.33962262
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key3.b
-      value: 0.8537736
+      value: 0.33962262
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key4.r
-      value: 0.8443396
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key4.g
-      value: 0.93445873
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
@@ -350,7 +350,7 @@ PrefabInstance:
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key5.r
-      value: 0.052918315
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
@@ -360,7 +360,7 @@ PrefabInstance:
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key5.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
@@ -390,27 +390,27 @@ PrefabInstance:
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.ctime1
-      value: 65535
+      value: 20239
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.ctime2
-      value: 29491
+      value: 48380
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.ctime3
-      value: 41441
+      value: 65535
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.ctime4
-      value: 53392
+      value: 65535
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.ctime5
-      value: 60331
+      value: 65535
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
@@ -425,17 +425,17 @@ PrefabInstance:
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.m_NumColorKeys
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key2.b
-      value: 0.89320046
+      value: 0.6698113
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key3.g
-      value: 1
+      value: 0.33962262
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
@@ -450,7 +450,7 @@ PrefabInstance:
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
       propertyPath: furColorGradient.key0.r
-      value: 1
+      value: 0.5283019
       objectReference: {fileID: 0}
     - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}
