@@ -10,7 +10,7 @@ public class Wait : AIBehaviour
 
     public new void OnEnable()
     {
-        ai.MoveToDestination(transform.position, movementFraction);
+        ai.StopMoving();
 
         if (!waitIndefinitly)
         {

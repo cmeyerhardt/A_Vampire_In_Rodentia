@@ -2229,6 +2229,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
+      propertyPath: alertSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
       propertyPath: availableBehaviours
       value: Attack, Patrol, Wait, GoToLocation, GoToObject
       objectReference: {fileID: 0}
@@ -2307,6 +2312,21 @@ PrefabInstance:
       propertyPath: hand
       value: 
       objectReference: {fileID: 193546769029622778}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: alertSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7b6bb0a76f485f4cbe109b5fabde965, type: 3}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: alertSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: ee879fcbfe9760d4ba36375b58bf90be, type: 3}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: alertSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3facf955f26c51d4bb3b825cb9d8e31f, type: 3}
     - target: {fileID: 8981156204387246604, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

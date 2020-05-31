@@ -488,11 +488,6 @@ MonoBehaviour:
   sprintStaminaDrain: 7
   dashCost: 30
   stunCost: 30
-  jumpForce: 250
-  airForward: 25
-  maxJumpsAllowed: Infinity
-  diminishedUpForce: 0.85
-  jump: 0
   feeder: {fileID: 0}
 --- !u!114 &4854193863790158348
 MonoBehaviour:
@@ -821,18 +816,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8709236194401151647}
   m_Mesh: {fileID: 4300000, guid: cd657f1fc19e4494493cc8347debdab0, type: 3}
---- !u!114 &650084610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8709236194401151647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f708e40a9e424e9469ed1707e78e14dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &6690761166763676499
 Animator:
   serializedVersion: 3
@@ -852,6 +835,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &650084610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709236194401151647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f708e40a9e424e9469ed1707e78e14dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7668216413527402343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1630,6 +1625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WarningMessage
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988294551535270087, guid: f81391574d6fa1644ac8bd4bfbc65a52,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3482243950476138865, guid: f81391574d6fa1644ac8bd4bfbc65a52,
         type: 3}

@@ -227,6 +227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
+      propertyPath: suspiciousSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
       propertyPath: stateSequences.Array.data[0].sequence.Array.data[2]
       value: Patrol
       objectReference: {fileID: 0}
@@ -280,6 +285,21 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 2332612010324293050}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: suspiciousSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: de429f721380b8b44900ca3dce02637d, type: 3}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: suspiciousSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 90f7531db1881a14ba544f6bc5526a66, type: 3}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: suspiciousSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6378d11f298022042a92944cbc5b20b6, type: 3}
     - target: {fileID: 9013415846929125376, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: attackRange
