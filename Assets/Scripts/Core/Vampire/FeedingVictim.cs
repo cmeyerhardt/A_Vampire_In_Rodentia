@@ -75,7 +75,7 @@ public class FeedingVictim : MonoBehaviour, IRaycast
 
     public bool HandleRaycast(PlayerController playerController)
     {
-        if(!GetComponent<Character>().isDead && playerController.playerState != PlayerState.Feeding)
+        if(!GetComponent<Character>().isDead && playerController.playerState != PlayerState.Feeding && playerController.playerState != PlayerState.Hiding)
         {
             playerController.target = gameObject;
             if (Input.GetMouseButtonDown(0))

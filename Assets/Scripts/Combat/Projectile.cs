@@ -84,16 +84,21 @@ public class Projectile : MonoBehaviour
                 originator.PlaySoundEffect(hitSoundObject, hitSoundObjectMaxVolume, useSecondaryAudioSourceHitObjectSound);
             }
 
-            if (hitFX)
+            try
             {
-                Vector3 closestPoint = other.ClosestPoint(transform.position);
-                GameObject hitPFX = Instantiate(hitFX);
+                if (hitFX != null)
+                {
+                    Vector3 closestPoint = other.ClosestPoint(transform.position);
+                    GameObject hitPFX = Instantiate(hitFX);
 
-                hitPFX.transform.position = closestPoint;
-                hitPFX.transform.rotation = transform.rotation;
+                    hitPFX.transform.position = closestPoint;
+                    hitPFX.transform.rotation = transform.rotation;
 
-                Destroy(hitPFX, 1f);
+                    Destroy(hitPFX, 1f);
+                }
             }
+            catch { }
+
 
             //foreach (GameObject toDestroy in destroyOnHit)
             //{

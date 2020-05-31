@@ -84,8 +84,9 @@ public class Detector : LineOfSight
                 // Detect Player Over Time. Detection will occur faster as player gets closer
                 if (RaycastToPlayerSuccessful(sightRange) && (!ai.canSeePlayer))
                 {
-                    if (DetectOnDelay())
+                    if (DetectOnDelay() && ai.currentState != NPCState.Alert)
                     {
+                        print("See player");
                         ai.PlayerSighted(true);
                     }
                     //else
@@ -98,7 +99,7 @@ public class Detector : LineOfSight
                 {
                     if (!RaycastToPlayerSuccessful(sightRange, out GameObject o))
                     {
-                        //Debug.Log(o.name);
+                        Debug.Log(o.name);
                         ai.PlayerSighted(false);
                     }
                 }

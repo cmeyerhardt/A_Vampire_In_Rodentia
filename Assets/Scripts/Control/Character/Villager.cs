@@ -11,17 +11,6 @@ public class Villager : AIController
     [Header("Behaviours")]
     public bool sleepingBehavioursSet = false;
     public string[] baseDefault = null;
-
-    //[Header("Mouse Color")]
-    //[SerializeField] SkinnedMeshRenderer skinnedMeshRend = null;
-    //[SerializeField] Color mouseFurColor = new Color();
-    //[SerializeField] Color mouseShirtColor = new Color();
-    //[SerializeField] bool randomizeMouseShirtColor = true;
-    //[SerializeField] bool randomizeRed = true;
-    //[SerializeField] bool randomizeGreen = true;
-    //[SerializeField] bool randomizeBlue = true;
-    //Material shirtMaterial = null;
-    //Material furMaterial = null;
     
     //Cache
     FeedingVictim victim = null;
@@ -39,26 +28,6 @@ public class Villager : AIController
 
         victim = GetComponent<FeedingVictim>();
         health = GetComponent<Health>();
-
-        //Material[] materials = skinnedMeshRend.materials;
-        //if(materials != null && materials.Length > 0)
-        //{
-        //    furMaterial = materials[0];
-        //    ChangeFurColor(0);
-        //    shirtMaterial = materials[1];
-        //    if (shirtMaterial != null)
-        //    {
-        //        if (randomizeMouseShirtColor || mouseShirtColor.a == 0f)
-        //        {
-        //            Color randomShirtColor = new Color(randomizeRed ? Random.Range(0f, 1f) : 0f, randomizeGreen ? Random.Range(0f, 1f) : 0f, randomizeBlue ? Random.Range(0f, 1f) : 0f);
-        //            shirtMaterial.SetColor("_Color", randomShirtColor);
-        //        }
-        //        else if(!randomizeMouseShirtColor && mouseShirtColor.a > 0f)
-        //        {
-        //            shirtMaterial.SetColor("_Color", mouseShirtColor);
-        //        }
-        //    }
-        //}
     }
 
 
@@ -81,20 +50,6 @@ public class Villager : AIController
         
         if (currentState != NPCState.Default) { return; }
 
-        //if (bed != null)
-        //{
-        //    if (Time.time >= sleepTime && Time.time < wakeTime && !sleepingBehavioursSet)
-        //    {
-        //        sleepingBehavioursSet = true;
-        //        SetSleepBehaviour();
-        //    }
-
-        //    if (Time.time >= wakeTime && sleepingBehavioursSet)
-        //    {
-        //        sleepingBehavioursSet = false;
-        //        SetDefaultBehaviours();
-        //    }
-        //}
 
 #if UNITY_EDITOR
         availableBehaviours = "GoToLocation, GoToObject, PickUpObject, DropObject, Patrol, Siren, Sleep, Wait";

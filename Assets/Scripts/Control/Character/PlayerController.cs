@@ -254,6 +254,10 @@ public class PlayerController : Character
     public override void BecomeStunned()
     {
         animator.SetInteger("State", 5);
+        if(playerState == PlayerState.Feeding)
+        {
+            feeder.CancelFeeding();
+        }
         base.BecomeStunned();
     }
 

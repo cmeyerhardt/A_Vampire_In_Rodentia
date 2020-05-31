@@ -1386,6 +1386,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2650222127965767851}
     m_Modifications:
+    - target: {fileID: 3819736437343781626, guid: a09216e166a10494c8c280c33b31b2ee,
+        type: 3}
+      propertyPath: panSpeed
+      value: 750
+      objectReference: {fileID: 0}
     - target: {fileID: 5495892132551533373, guid: a09216e166a10494c8c280c33b31b2ee,
         type: 3}
       propertyPath: maxCameraDist

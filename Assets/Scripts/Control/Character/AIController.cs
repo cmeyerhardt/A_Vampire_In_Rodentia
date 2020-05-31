@@ -354,6 +354,7 @@ public class AIController : Character
 
     private void SetState(NPCState newState)
     {
+        print(gameObject.name + " Setting State: " + newState);
         StopMoving();
         if (aIBehaviour != null)
         {
@@ -507,11 +508,11 @@ public class AIController : Character
     ***********************/
     public void PlayerSighted(bool alerted)
     {
-        if (/*currentState != NPCState.Alert &&*/ alerted && !canSeePlayer)
+        if (currentState != NPCState.Alert && alerted && !canSeePlayer)
         {
             canSeePlayer = true;
             //textSpawner.SpawnText("A Vampire!", true, Color.red);
-            //print("player sighted Setting alert state");
+            print("player sighted Setting alert state");
             currentState = NPCState.Alert;
             DropObject(false);
         }
@@ -519,7 +520,7 @@ public class AIController : Character
         //{
         //    timeSinceLastSawPlayer = 0f;
         //}
-        else if (canSeePlayer && !alerted)
+        else if (currentState == NPCState.Alert && canSeePlayer && !alerted)
         {
             
             //lastSeenPlayerLocation = player.transform.position;
@@ -531,7 +532,7 @@ public class AIController : Character
             canSeePlayer = false;
             //DeEscalateState();
             //MoveToDestination(lastSeenPlayerLocation, 1f);
-            //print("cannot see player");
+            print("cannot see player");
             //textSpawner.SpawnText("Where'd it go?", Color.yellow);
         }
     }

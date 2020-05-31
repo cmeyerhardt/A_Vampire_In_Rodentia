@@ -98,7 +98,7 @@ MonoBehaviour:
   ai: {fileID: 0}
   tasks: []
   maxChaseDistance: 40
-  movementFraction: 1
+  movementFraction: 2
   attackRange: 3
   attackDamage: 3
   attackInterval: 3

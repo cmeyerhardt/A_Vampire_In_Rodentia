@@ -11,6 +11,7 @@ public class GoToLocation : AIBehaviour
     [SerializeField] public bool useV3 = false;
     public float range = 0f;
     [SerializeField] [Range(0f, 10f)]float movementFraction = 1f;
+    float exitTime = 10f;
 
     public float distanceToLocation;
 
@@ -64,6 +65,16 @@ public class GoToLocation : AIBehaviour
         else
         {
             Debug.Log("No location found to compare distance to.");
+            doneEvent.Invoke(this);
+        }
+
+        if(exitTime > 0f)
+        {
+            exitTime -= Time.deltaTime;
+        }
+        else
+        {
+            ai.StopMoving();
             doneEvent.Invoke(this);
         }
     }
