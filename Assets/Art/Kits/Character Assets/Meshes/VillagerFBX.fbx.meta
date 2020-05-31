@@ -1,145 +1,413 @@
 fileFormatVersion: 2
 guid: 3b121b7a61c18b64580d439f805f52b9
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Ankle.L
-    100002: Ankle.L_end
-    100004: Ankle.R
-    100006: Ankle.R_end
-    100008: Arm.L
-    100010: Arm.R
-    100012: Armature
-    100014: Chest
-    100016: Cube
-    100018: Ear1.L
-    100020: Ear1.R
-    100022: Ear2.L
-    100024: Ear2.L_end
-    100026: Ear2.R
-    100028: Ear2.R_end
-    100030: Elbow.L
-    100032: Elbow.R
-    100034: Head
-    100036: Hips
-    100038: Index1.L
-    100040: Index1.R
-    100042: Index2.L
-    100044: Index2.L_end
-    100046: Index2.R
-    100048: Index2.R_end
-    100050: Knee.L
-    100052: Knee.R
-    100054: Little1.L
-    100056: Little1.R
-    100058: Little2.L
-    100060: Little2.L_end
-    100062: Little2.R
-    100064: Little2.R_end
-    100066: Middle1.L
-    100068: Middle1.R
-    100070: Middle2.L
-    100072: Middle2.L_end
-    100074: Middle2.R
-    100076: Middle2.R_end
-    100078: Neck
-    100080: Ring1.L
-    100082: Ring1.R
-    100084: Ring2.L
-    100086: Ring2.L_end
-    100088: Ring2.R
-    100090: Ring2.R_end
-    100092: Shoulder.L
-    100094: Shoulder.R
-    100096: Spine
-    100098: Thigh.L
-    100100: Thigh.R
-    100102: Thumb1.L
-    100104: Thumb1.R
-    100106: Thumb2.L
-    100108: Thumb2.L_end
-    100110: Thumb2.R
-    100112: Thumb2.R_end
-    100114: //RootNode
-    100116: Wrist.L
-    100118: Wrist.R
-    100120: Tail1
-    100122: Tail2
-    100124: Tail3
-    100126: Tail3_end
-    400000: Ankle.L
-    400002: Ankle.L_end
-    400004: Ankle.R
-    400006: Ankle.R_end
-    400008: Arm.L
-    400010: Arm.R
-    400012: Armature
-    400014: Chest
-    400016: Cube
-    400018: Ear1.L
-    400020: Ear1.R
-    400022: Ear2.L
-    400024: Ear2.L_end
-    400026: Ear2.R
-    400028: Ear2.R_end
-    400030: Elbow.L
-    400032: Elbow.R
-    400034: Head
-    400036: Hips
-    400038: Index1.L
-    400040: Index1.R
-    400042: Index2.L
-    400044: Index2.L_end
-    400046: Index2.R
-    400048: Index2.R_end
-    400050: Knee.L
-    400052: Knee.R
-    400054: Little1.L
-    400056: Little1.R
-    400058: Little2.L
-    400060: Little2.L_end
-    400062: Little2.R
-    400064: Little2.R_end
-    400066: Middle1.L
-    400068: Middle1.R
-    400070: Middle2.L
-    400072: Middle2.L_end
-    400074: Middle2.R
-    400076: Middle2.R_end
-    400078: Neck
-    400080: Ring1.L
-    400082: Ring1.R
-    400084: Ring2.L
-    400086: Ring2.L_end
-    400088: Ring2.R
-    400090: Ring2.R_end
-    400092: Shoulder.L
-    400094: Shoulder.R
-    400096: Spine
-    400098: Thigh.L
-    400100: Thigh.R
-    400102: Thumb1.L
-    400104: Thumb1.R
-    400106: Thumb2.L
-    400108: Thumb2.L_end
-    400110: Thumb2.R
-    400112: Thumb2.R_end
-    400114: //RootNode
-    400116: Wrist.L
-    400118: Wrist.R
-    400120: Tail1
-    400122: Tail2
-    400124: Tail3
-    400126: Tail3_end
-    2100000: Townsfolk
-    2100002: Clothes
-    4300000: Cube
-    9500000: //RootNode
-    13700000: Cube
-    2186277476908879412: ImportLogs
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Ankle.L
+  - first:
+      1: 100002
+    second: Ankle.L_end
+  - first:
+      1: 100004
+    second: Ankle.R
+  - first:
+      1: 100006
+    second: Ankle.R_end
+  - first:
+      1: 100008
+    second: Arm.L
+  - first:
+      1: 100010
+    second: Arm.R
+  - first:
+      1: 100012
+    second: Armature
+  - first:
+      1: 100014
+    second: Chest
+  - first:
+      1: 100016
+    second: Cube
+  - first:
+      1: 100018
+    second: Ear1.L
+  - first:
+      1: 100020
+    second: Ear1.R
+  - first:
+      1: 100022
+    second: Ear2.L
+  - first:
+      1: 100024
+    second: Ear2.L_end
+  - first:
+      1: 100026
+    second: Ear2.R
+  - first:
+      1: 100028
+    second: Ear2.R_end
+  - first:
+      1: 100030
+    second: Elbow.L
+  - first:
+      1: 100032
+    second: Elbow.R
+  - first:
+      1: 100034
+    second: Head
+  - first:
+      1: 100036
+    second: Hips
+  - first:
+      1: 100038
+    second: Index1.L
+  - first:
+      1: 100040
+    second: Index1.R
+  - first:
+      1: 100042
+    second: Index2.L
+  - first:
+      1: 100044
+    second: Index2.L_end
+  - first:
+      1: 100046
+    second: Index2.R
+  - first:
+      1: 100048
+    second: Index2.R_end
+  - first:
+      1: 100050
+    second: Knee.L
+  - first:
+      1: 100052
+    second: Knee.R
+  - first:
+      1: 100054
+    second: Little1.L
+  - first:
+      1: 100056
+    second: Little1.R
+  - first:
+      1: 100058
+    second: Little2.L
+  - first:
+      1: 100060
+    second: Little2.L_end
+  - first:
+      1: 100062
+    second: Little2.R
+  - first:
+      1: 100064
+    second: Little2.R_end
+  - first:
+      1: 100066
+    second: Middle1.L
+  - first:
+      1: 100068
+    second: Middle1.R
+  - first:
+      1: 100070
+    second: Middle2.L
+  - first:
+      1: 100072
+    second: Middle2.L_end
+  - first:
+      1: 100074
+    second: Middle2.R
+  - first:
+      1: 100076
+    second: Middle2.R_end
+  - first:
+      1: 100078
+    second: Neck
+  - first:
+      1: 100080
+    second: Ring1.L
+  - first:
+      1: 100082
+    second: Ring1.R
+  - first:
+      1: 100084
+    second: Ring2.L
+  - first:
+      1: 100086
+    second: Ring2.L_end
+  - first:
+      1: 100088
+    second: Ring2.R
+  - first:
+      1: 100090
+    second: Ring2.R_end
+  - first:
+      1: 100092
+    second: Shoulder.L
+  - first:
+      1: 100094
+    second: Shoulder.R
+  - first:
+      1: 100096
+    second: Spine
+  - first:
+      1: 100098
+    second: Thigh.L
+  - first:
+      1: 100100
+    second: Thigh.R
+  - first:
+      1: 100102
+    second: Thumb1.L
+  - first:
+      1: 100104
+    second: Thumb1.R
+  - first:
+      1: 100106
+    second: Thumb2.L
+  - first:
+      1: 100108
+    second: Thumb2.L_end
+  - first:
+      1: 100110
+    second: Thumb2.R
+  - first:
+      1: 100112
+    second: Thumb2.R_end
+  - first:
+      1: 100114
+    second: //RootNode
+  - first:
+      1: 100116
+    second: Wrist.L
+  - first:
+      1: 100118
+    second: Wrist.R
+  - first:
+      1: 100120
+    second: Tail1
+  - first:
+      1: 100122
+    second: Tail2
+  - first:
+      1: 100124
+    second: Tail3
+  - first:
+      1: 100126
+    second: Tail3_end
+  - first:
+      4: 400000
+    second: Ankle.L
+  - first:
+      4: 400002
+    second: Ankle.L_end
+  - first:
+      4: 400004
+    second: Ankle.R
+  - first:
+      4: 400006
+    second: Ankle.R_end
+  - first:
+      4: 400008
+    second: Arm.L
+  - first:
+      4: 400010
+    second: Arm.R
+  - first:
+      4: 400012
+    second: Armature
+  - first:
+      4: 400014
+    second: Chest
+  - first:
+      4: 400016
+    second: Cube
+  - first:
+      4: 400018
+    second: Ear1.L
+  - first:
+      4: 400020
+    second: Ear1.R
+  - first:
+      4: 400022
+    second: Ear2.L
+  - first:
+      4: 400024
+    second: Ear2.L_end
+  - first:
+      4: 400026
+    second: Ear2.R
+  - first:
+      4: 400028
+    second: Ear2.R_end
+  - first:
+      4: 400030
+    second: Elbow.L
+  - first:
+      4: 400032
+    second: Elbow.R
+  - first:
+      4: 400034
+    second: Head
+  - first:
+      4: 400036
+    second: Hips
+  - first:
+      4: 400038
+    second: Index1.L
+  - first:
+      4: 400040
+    second: Index1.R
+  - first:
+      4: 400042
+    second: Index2.L
+  - first:
+      4: 400044
+    second: Index2.L_end
+  - first:
+      4: 400046
+    second: Index2.R
+  - first:
+      4: 400048
+    second: Index2.R_end
+  - first:
+      4: 400050
+    second: Knee.L
+  - first:
+      4: 400052
+    second: Knee.R
+  - first:
+      4: 400054
+    second: Little1.L
+  - first:
+      4: 400056
+    second: Little1.R
+  - first:
+      4: 400058
+    second: Little2.L
+  - first:
+      4: 400060
+    second: Little2.L_end
+  - first:
+      4: 400062
+    second: Little2.R
+  - first:
+      4: 400064
+    second: Little2.R_end
+  - first:
+      4: 400066
+    second: Middle1.L
+  - first:
+      4: 400068
+    second: Middle1.R
+  - first:
+      4: 400070
+    second: Middle2.L
+  - first:
+      4: 400072
+    second: Middle2.L_end
+  - first:
+      4: 400074
+    second: Middle2.R
+  - first:
+      4: 400076
+    second: Middle2.R_end
+  - first:
+      4: 400078
+    second: Neck
+  - first:
+      4: 400080
+    second: Ring1.L
+  - first:
+      4: 400082
+    second: Ring1.R
+  - first:
+      4: 400084
+    second: Ring2.L
+  - first:
+      4: 400086
+    second: Ring2.L_end
+  - first:
+      4: 400088
+    second: Ring2.R
+  - first:
+      4: 400090
+    second: Ring2.R_end
+  - first:
+      4: 400092
+    second: Shoulder.L
+  - first:
+      4: 400094
+    second: Shoulder.R
+  - first:
+      4: 400096
+    second: Spine
+  - first:
+      4: 400098
+    second: Thigh.L
+  - first:
+      4: 400100
+    second: Thigh.R
+  - first:
+      4: 400102
+    second: Thumb1.L
+  - first:
+      4: 400104
+    second: Thumb1.R
+  - first:
+      4: 400106
+    second: Thumb2.L
+  - first:
+      4: 400108
+    second: Thumb2.L_end
+  - first:
+      4: 400110
+    second: Thumb2.R
+  - first:
+      4: 400112
+    second: Thumb2.R_end
+  - first:
+      4: 400114
+    second: //RootNode
+  - first:
+      4: 400116
+    second: Wrist.L
+  - first:
+      4: 400118
+    second: Wrist.R
+  - first:
+      4: 400120
+    second: Tail1
+  - first:
+      4: 400122
+    second: Tail2
+  - first:
+      4: 400124
+    second: Tail3
+  - first:
+      4: 400126
+    second: Tail3_end
+  - first:
+      21: 2100000
+    second: Townsfolk
+  - first:
+      21: 2100002
+    second: Clothes
+  - first:
+      43: 4300000
+    second: Cube
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Cube
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -172,6 +440,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -179,18 +448,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 1
@@ -199,331 +469,11 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
-    human:
-    - boneName: Hips
-      humanName: Hips
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Thigh.L
-      humanName: LeftUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Thigh.R
-      humanName: RightUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Knee.L
-      humanName: LeftLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Knee.R
-      humanName: RightLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Ankle.L
-      humanName: LeftFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Ankle.R
-      humanName: RightFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Spine
-      humanName: Spine
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Neck
-      humanName: Neck
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Head
-      humanName: Head
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Shoulder.L
-      humanName: LeftShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Shoulder.R
-      humanName: RightShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Arm.L
-      humanName: LeftUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Arm.R
-      humanName: RightUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Elbow.L
-      humanName: LeftLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Elbow.R
-      humanName: RightLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Wrist.L
-      humanName: LeftHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Wrist.R
-      humanName: RightHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Ear2.L
-      humanName: LeftEye
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Ear2.R
-      humanName: RightEye
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Thumb1.L
-      humanName: Left Thumb Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Thumb2.L
-      humanName: Left Thumb Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Index1.L
-      humanName: Left Index Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Index2.L
-      humanName: Left Index Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Middle1.L
-      humanName: Left Middle Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Middle2.L
-      humanName: Left Middle Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Ring1.L
-      humanName: Left Ring Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Ring2.L
-      humanName: Left Ring Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Little1.L
-      humanName: Left Little Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Little2.L
-      humanName: Left Little Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Thumb1.R
-      humanName: Right Thumb Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Thumb2.R
-      humanName: Right Thumb Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Index1.R
-      humanName: Right Index Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Index2.R
-      humanName: Right Index Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Middle1.R
-      humanName: Right Middle Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Middle2.R
-      humanName: Right Middle Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Ring1.R
-      humanName: Right Ring Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Ring2.R
-      humanName: Right Ring Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Little1.R
-      humanName: Right Little Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Little2.R
-      humanName: Right Little Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
+    serializedVersion: 3
+    human: []
     skeleton:
     - name: VillagerFBX(Clone)
       parentName: 
@@ -856,13 +806,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
+    globalScale: 1
+    rootMotionBoneName: Cube
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 3
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
