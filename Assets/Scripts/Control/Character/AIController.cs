@@ -24,6 +24,7 @@ public class AIController : Character
 {
     [Header("Audio")]
     [Header("NPC--")]
+    [SerializeField] [Range(0,50f)]float audioRange = 25f;
     [SerializeField] AudioClip[] suspiciousSounds = null;
     [SerializeField] [Range(0f, 1f)] public float suspiciousSoundMaxVolume = 1f;
     [SerializeField] public bool useSecondaryAudioSourceSuspiciousSound = false;
@@ -428,6 +429,15 @@ public class AIController : Character
                 break;
         }
     }
+
+    public override void PlaySoundEffect(AudioClip clip, float volumeScale, bool secondary)
+    {
+        if(IsInRange(player.transform.position, audioRange))
+        {
+            base.PlaySoundEffect(clip, volumeScale, secondary);
+        }
+    }
+
 
 
     /***********************
