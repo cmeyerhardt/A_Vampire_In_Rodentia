@@ -37,7 +37,7 @@ MonoBehaviour:
   objectReference: {fileID: 0}
   objectName: 
   range: 0
-  movementFraction: 2.2
+  movementFraction: 2
   distanceToReference: 0
   maxSeekDistance: 40
   sirenNoiseLevel: 20
@@ -110,7 +110,7 @@ MonoBehaviour:
   hand: {fileID: 3280425120394951479}
   hitBox: {fileID: 0}
   model: {fileID: 0}
-  rangeToHearAudio: 30
+  audioRange: 35
   suspiciousSounds:
   - {fileID: 8300000, guid: de429f721380b8b44900ca3dce02637d, type: 3}
   - {fileID: 8300000, guid: 90f7531db1881a14ba544f6bc5526a66, type: 3}

@@ -198,48 +198,24 @@ public class AIController : Character
                 u.objectName = words[1];
                 return u;
             case "Wait":
-                Wait currentWait = GetComponent<Wait>();
-                if(currentWait == null)
+                Wait bw = gameObject.AddComponent<Wait>();
+                bw.ai = this;
+                try
                 {
-                    Wait bw = gameObject.AddComponent<Wait>();
-                    bw.ai = this;
-                    try
-                    {
-                        bw.duration = float.Parse(words[1]);
-                        bw.waitIndefinitly = false;
-                    }
-                    catch (Exception e)
-                    {
-                        //Debug.Log(e);
-                        Type t = e.GetType();
-                        if (t == typeof(ArgumentNullException) || t == typeof(FormatException) || t == typeof(IndexOutOfRangeException))
-                        {
-                            bw.duration = 0f;
-                            bw.waitIndefinitly = true;
-                        }
-                    }
-                    return bw;
+                    bw.duration = float.Parse(words[1]);
+                    bw.waitIndefinitly = false;
                 }
-                else
+                catch (Exception e)
                 {
-                    try
+                    //Debug.Log(e);
+                    Type t = e.GetType();
+                    if (t == typeof(ArgumentNullException) || t == typeof(FormatException) || t == typeof(IndexOutOfRangeException))
                     {
-                        currentWait.duration = float.Parse(words[1]);
-                        currentWait.waitIndefinitly = false;
+                        bw.duration = 0f;
+                        bw.waitIndefinitly = true;
                     }
-                    catch (Exception e)
-                    {
-                        //Debug.Log(e);
-                        Type t = e.GetType();
-                        if (t == typeof(ArgumentNullException) || t == typeof(FormatException) || t == typeof(IndexOutOfRangeException))
-                        {
-                            currentWait.duration = 0f;
-                            currentWait.waitIndefinitly = true;
-                        }
-                    }
-                    return currentWait;
                 }
-
+                return bw;
             //case "Wander":
             //    Wander w = gameObject.AddComponent<Wander>();
             //    w.ai = this;
