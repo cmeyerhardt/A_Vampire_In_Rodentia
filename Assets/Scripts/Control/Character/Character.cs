@@ -80,7 +80,7 @@ public class Character : MonoBehaviour
 
     private void SetAnimatorSpeed(float speed)
     {
-        print("Setting animator speed for " + gameObject.name + " to " + speed);
+        //print("Setting animator speed for " + gameObject.name + " to " + speed);
         animator.SetInteger("State", 0);
         animator.SetFloat("Speed", speed);
     }
@@ -92,12 +92,12 @@ public class Character : MonoBehaviour
         //{
         //    MakeMovementSounds(footsteps, footStepsVolume);
         //}
-        if (walking && IsInRange(currentDestination))
-        {
-            walking = false;
-            //StopMoving();
-            SetAnimatorSpeed(0);
-        }
+        //if (walking && IsInRange(currentDestination))
+        //{
+        //    walking = false;
+        //    //StopMoving();
+        //    SetAnimatorSpeed(0);
+        //}
     }
 
 
@@ -241,11 +241,12 @@ public class Character : MonoBehaviour
             head.forward = transform.forward;
             //currentDestination = destination;
             navMeshAgent.destination = destination;
-            navMeshAgent.speed = Mathf.Clamp(baseMovementSpeed * Mathf.Clamp01(speedFraction), baseMovementSpeed, maxMovementSpeed);
+            float _speed = Mathf.Clamp(baseMovementSpeed * Mathf.Clamp01(speedFraction), baseMovementSpeed, maxMovementSpeed);
+            navMeshAgent.speed = _speed;
             navMeshAgent.isStopped = false;
 
-            SetAnimatorSpeed(navMeshAgent.speed);
-            //todo - Update Animator with speed
+            //print(gameObject.name + " going to " + destination);
+            SetAnimatorSpeed(_speed);
         }
     }
 
@@ -258,7 +259,7 @@ public class Character : MonoBehaviour
     {
         if(navMeshAgent.isOnNavMesh)
         {
-            MoveToDestination(transform.position, 1f);
+            MoveToDestination(transform.position, 0);
             navMeshAgent.isStopped = true;
             animator.SetInteger("State", 0);
             animator.SetFloat("Speed", 0);
