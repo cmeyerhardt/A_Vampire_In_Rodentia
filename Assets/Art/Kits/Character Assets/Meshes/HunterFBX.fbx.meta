@@ -1,11 +1,139 @@
 fileFormatVersion: 2
-guid: 7ebb8c895bcd1b24cb7fdb13e825b77e
+guid: eb7fd7a531fd7fc419943e5614889427
 ModelImporter:
-  serializedVersion: 19300
-  internalIDToNameTable: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Ankle.L
+    100002: Ankle.L_end
+    100004: Ankle.R
+    100006: Ankle.R_end
+    100008: Arm.L
+    100010: Arm.R
+    100012: Armature
+    100014: Chest
+    100016: Cube
+    100018: Ear1.L
+    100020: Ear1.L_end
+    100022: Ear1.R
+    100024: Ear1.R_end
+    100026: Elbow.L
+    100028: Elbow.R
+    100030: Head
+    100032: Hips
+    100034: //RootNode
+    100036: Index1.L
+    100038: Index1.R
+    100040: Index2.L
+    100042: Index2.L_end
+    100044: Index2.R
+    100046: Index2.R_end
+    100048: Knee.L
+    100050: Knee.R
+    100052: Little1.L
+    100054: Little1.R
+    100056: Little2.L
+    100058: Little2.L_end
+    100060: Little2.R
+    100062: Little2.R_end
+    100064: Middle1.L
+    100066: Middle1.R
+    100068: Middle2.L
+    100070: Middle2.L_end
+    100072: Middle2.R
+    100074: Middle2.R_end
+    100076: Neck
+    100078: Ring1.L
+    100080: Ring1.R
+    100082: Ring2.L
+    100084: Ring2.L_end
+    100086: Ring2.R
+    100088: Ring2.R_end
+    100090: Shoulder.L
+    100092: Shoulder.R
+    100094: Spine
+    100096: Tail1
+    100098: Tail2
+    100100: Tail3
+    100102: Tail3_end
+    100104: Thigh.L
+    100106: Thigh.R
+    100108: Thumb1.L
+    100110: Thumb1.R
+    100112: Thumb2.L
+    100114: Thumb2.L_end
+    100116: Thumb2.R
+    100118: Thumb2.R_end
+    100120: Wrist.L
+    100122: Wrist.R
+    400000: Ankle.L
+    400002: Ankle.L_end
+    400004: Ankle.R
+    400006: Ankle.R_end
+    400008: Arm.L
+    400010: Arm.R
+    400012: Armature
+    400014: Chest
+    400016: Cube
+    400018: Ear1.L
+    400020: Ear1.L_end
+    400022: Ear1.R
+    400024: Ear1.R_end
+    400026: Elbow.L
+    400028: Elbow.R
+    400030: Head
+    400032: Hips
+    400034: //RootNode
+    400036: Index1.L
+    400038: Index1.R
+    400040: Index2.L
+    400042: Index2.L_end
+    400044: Index2.R
+    400046: Index2.R_end
+    400048: Knee.L
+    400050: Knee.R
+    400052: Little1.L
+    400054: Little1.R
+    400056: Little2.L
+    400058: Little2.L_end
+    400060: Little2.R
+    400062: Little2.R_end
+    400064: Middle1.L
+    400066: Middle1.R
+    400068: Middle2.L
+    400070: Middle2.L_end
+    400072: Middle2.R
+    400074: Middle2.R_end
+    400076: Neck
+    400078: Ring1.L
+    400080: Ring1.R
+    400082: Ring2.L
+    400084: Ring2.L_end
+    400086: Ring2.R
+    400088: Ring2.R_end
+    400090: Shoulder.L
+    400092: Shoulder.R
+    400094: Spine
+    400096: Tail1
+    400098: Tail2
+    400100: Tail3
+    400102: Tail3_end
+    400104: Thigh.L
+    400106: Thigh.R
+    400108: Thumb1.L
+    400110: Thumb1.R
+    400112: Thumb2.L
+    400114: Thumb2.L_end
+    400116: Thumb2.R
+    400118: Thumb2.R_end
+    400120: Wrist.L
+    400122: Wrist.R
+    2100000: Main
+    4300000: Cube
+    9500000: //RootNode
+    13700000: Cube
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -31,14 +159,13 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -46,19 +173,18 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -67,10 +193,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -80,16 +206,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: Cube
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
