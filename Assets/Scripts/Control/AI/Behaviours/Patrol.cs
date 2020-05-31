@@ -242,7 +242,10 @@ public class Patrol : AIBehaviour
                     Gizmos.DrawSphere(GetWaypointPosition(i), .2f);
                     Gizmos.DrawLine(GetWaypointPosition(i), GetWaypointPosition(j));
                 }
-                catch { Debug.LogWarning("Transform references in Patrol are null. Remove the element from the collection or reference a transform to remove this warning."); }
+                catch
+                {
+                    Debug.LogWarning("Transform references in Patrol are null. Remove the element from the collection or reference a transform to remove this warning.");
+                }
 
             }
         }

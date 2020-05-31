@@ -53,7 +53,7 @@ public class Attack : AIBehaviour
     public new void Update()
     {
         if (player == null) { return; }
-        if (player.isDead) { doneEvent.Invoke(this); return; }
+        if (player.isDead || ai.player.isHidden) { doneEvent.Invoke(this); return; }
         if (ai == null) { Debug.LogError("No AI Reference. Attack Behaviour: " + gameObject.name); return; }
         base.Update();
 

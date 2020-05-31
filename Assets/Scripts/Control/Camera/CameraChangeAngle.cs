@@ -4,7 +4,7 @@ public class CameraChangeAngle : MonoBehaviour
 {
     [Header("Rotate an object around its pivot via mouse input")]
     [SerializeField] [Tooltip("0: Right-Click, 1: Left-Click, 2: Middle-Click")][Range(0, 2)] int mouseButton = 1;
-    [SerializeField] [Range(750f, 2000f)] float panSpeed = 1000f;
+    [SerializeField] [Range(500f, 2000f)] float panSpeed = 1000f;
     public bool takeXInput = true;
     public bool takeYInput = true;
 

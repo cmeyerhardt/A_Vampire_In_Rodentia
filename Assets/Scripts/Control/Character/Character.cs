@@ -185,7 +185,7 @@ public class Character : MonoBehaviour
         //isStunned = true;
         BecomeStunned();
         //textSpawner.SpawnText("Stunned", Color.blue);
-        stamina.ModifyStamina(staminaDrainWhenImStunned);
+        stamina.ModifyStamina(-staminaDrainWhenImStunned);
 
 
         float _duration = Mathf.Clamp(duration * (1 - myStunDurationReduction), 0f, duration);
