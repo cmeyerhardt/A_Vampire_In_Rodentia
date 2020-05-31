@@ -5,11 +5,13 @@ using UnityEngine;
 public class AnimationHelper : MonoBehaviour
 {
     Character character = null;
+    Attack attack = null;
     Animator animator = null;
 
     private void Awake()
     {
         character = GetComponentInParent<Character>();
+        attack = GetComponentInParent<Attack>();
         animator = GetComponent<Animator>();
     }
 
@@ -38,6 +40,14 @@ public class AnimationHelper : MonoBehaviour
         if (character != null)
         {
             character.AnimationEventHit();
+        }
+    }
+
+    public void AnimationEventHitDamage()
+    {
+        if(attack != null)
+        {
+            attack.AnimationEventHitDamage();
         }
     }
 }

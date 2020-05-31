@@ -212,7 +212,10 @@ public class Patrol : AIBehaviour
         currentBundle = route.Dequeue();
         currentDestination = currentBundle.waypoint;
         waitTimer = currentBundle.waitTime;
-        ai.MoveToDestination(currentDestination.position, patrolSpeedFraction);
+        if (currentDestination != null)
+        {
+            ai.MoveToDestination(currentDestination.position, patrolSpeedFraction);
+        }
         arrived = false;
     }
 

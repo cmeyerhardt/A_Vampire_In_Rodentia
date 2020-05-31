@@ -2137,6 +2137,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 336019576345333926, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: skinnedMeshRend
+      value: 
+      objectReference: {fileID: 6068341379567899422}
     - target: {fileID: 1016577634088038661, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2327,6 +2332,11 @@ PrefabInstance:
       propertyPath: alertSounds.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 3facf955f26c51d4bb3b825cb9d8e31f, type: 3}
+    - target: {fileID: 5553559607712058252, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: audioRange
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 8981156204387246604, guid: 40e40cafc4a80154898da6c6d16f7d20,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2351,6 +2361,21 @@ PrefabInstance:
         type: 3}
       propertyPath: stunInterval
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121519261203538042, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121519261203538042, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121519261203538042, guid: 40e40cafc4a80154898da6c6d16f7d20,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9013415846929125376, guid: 40e40cafc4a80154898da6c6d16f7d20, type: 3}

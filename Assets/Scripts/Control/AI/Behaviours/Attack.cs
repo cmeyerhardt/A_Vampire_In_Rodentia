@@ -132,7 +132,8 @@ public class Attack : AIBehaviour
                     ai.StopMoving();
                     attackCounter = 0f;
                     globalCooldown = 1f;
-                    PerformAttack(attackDamage, true);
+
+                    PerformAttack(true, true);
                 }
                 else
                 {
@@ -154,13 +155,21 @@ public class Attack : AIBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, 1);
     }
 
-    public virtual void PerformAttack(float damage, bool playSound)
+    public virtual void PerformAttack(bool playSound, bool doAttackAnim)
     {
-        player.ModifyHealth(-damage);
-        if(playSound)
+        AnimationEventHitDamage();
+        if (doAttackAnim)
         {
-            ai.PlaySoundEffect(hitSound, hitSoundMaxVolume, useSecondaryAudioSourceAttackSound);
+            print("Doing melee attack anim");
+            ai.animator.SetInteger("State", 1);
         }
+
+    }
+
+    public void AnimationEventHitDamage()
+    {
+        player.ModifyHealth(-attackDamage);
+        ai.PlaySoundEffect(hitSound, hitSoundMaxVolume, useSecondaryAudioSourceAttackSound);
         ai.player.makeSoundEvent.Invoke(attackVolume);
     }
 }

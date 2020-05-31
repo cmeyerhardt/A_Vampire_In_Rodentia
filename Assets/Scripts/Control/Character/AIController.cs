@@ -24,7 +24,7 @@ public class AIController : Character
 {
     [Header("Audio")]
     [Header("NPC--")]
-    [SerializeField] [Range(0,50f)]float audioRange = 25f;
+    /*[SerializeField]*/ [Range(0,50f)]float audioRange = 30f;
     [SerializeField] AudioClip[] suspiciousSounds = null;
     [SerializeField] [Range(0f, 1f)] public float suspiciousSoundMaxVolume = 1f;
     [SerializeField] public bool useSecondaryAudioSourceSuspiciousSound = false;
@@ -510,7 +510,8 @@ public class AIController : Character
         if (/*currentState != NPCState.Alert &&*/ alerted && !canSeePlayer)
         {
             canSeePlayer = true;
-            textSpawner.SpawnText("A Vampire!", true, Color.red);
+            //textSpawner.SpawnText("A Vampire!", true, Color.red);
+            //print("player sighted Setting alert state");
             currentState = NPCState.Alert;
             DropObject(false);
         }

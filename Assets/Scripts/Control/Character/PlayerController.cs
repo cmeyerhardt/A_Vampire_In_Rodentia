@@ -245,11 +245,11 @@ public class PlayerController : Character
 
     }
 
-    public override void AnimationEventResetAttack()
-    {
-        animator.SetInteger("State", 0);
-        base.AnimationEventResetAttack();
-    }
+    //public override void AnimationEventResetAttack()
+    //{
+    //    animator.SetInteger("State", 0);
+    //    base.AnimationEventResetAttack();
+    //}
 
     public override void BecomeStunned()
     {
@@ -364,7 +364,7 @@ public class PlayerController : Character
 
     public void SetState(PlayerState newState)
     {
-        print("PlayerState: " + newState);
+        //print("PlayerState: " + newState);
         playerState = newState;
         switch(playerState)
         {

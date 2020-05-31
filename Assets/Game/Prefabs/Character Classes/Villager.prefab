@@ -110,12 +110,16 @@ MonoBehaviour:
   hand: {fileID: 3280425120394951479}
   hitBox: {fileID: 0}
   model: {fileID: 0}
+  audioRange: 35
   suspiciousSounds:
   - {fileID: 8300000, guid: de429f721380b8b44900ca3dce02637d, type: 3}
   - {fileID: 8300000, guid: 90f7531db1881a14ba544f6bc5526a66, type: 3}
   - {fileID: 8300000, guid: 6378d11f298022042a92944cbc5b20b6, type: 3}
   suspiciousSoundMaxVolume: 1
   useSecondaryAudioSourceSuspiciousSound: 0
+  alertSounds: []
+  alertSoundMaxVolume: 1
+  useSecondaryAudioSourceAlertSound: 0
   canSeePlayer: 0
   currentState: 1
   lastState: 0
@@ -145,13 +149,6 @@ MonoBehaviour:
   bed: {fileID: 0}
   sleepingBehavioursSet: 0
   baseDefault: []
-  skinnedMeshRend: {fileID: 3280425120400648803}
-  mouseFurColor: {r: 0.8584906, g: 0.7196758, b: 0.5790762, a: 1}
-  mouseShirtColor: {r: 1, g: 0.06132078, b: 0.64906865, a: 1}
-  randomizeMouseShirtColor: 0
-  randomizeRed: 0
-  randomizeGreen: 0
-  randomizeBlue: 1
   health: {fileID: 0}
 --- !u!114 &7029019338965501878
 MonoBehaviour:
@@ -244,6 +241,311 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Range
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251059871065652026, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251059871065652026, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251059871065652026, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColors.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: randomizeRed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColors.Array.data[0].r
+      value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColors.Array.data[0].g
+      value: 0.8650088
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColors.Array.data[0].b
+      value: 0.7797704
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColors.Array.data[0].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: skinnedMeshRend
+      value: 
+      objectReference: {fileID: 3280425120400648803}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key2.r
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key2.g
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key3.r
+      value: 0.8820755
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key3.b
+      value: 0.8537736
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key4.r
+      value: 0.8443396
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key4.g
+      value: 0.93445873
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key4.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key5.r
+      value: 0.052918315
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key5.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key5.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key6.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key6.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key7.r
+      value: 0.052918315
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key7.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.ctime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.ctime2
+      value: 29491
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.ctime3
+      value: 41441
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.ctime4
+      value: 53392
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.ctime5
+      value: 60331
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.ctime6
+      value: 60331
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.ctime7
+      value: 60331
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.m_NumColorKeys
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key2.b
+      value: 0.89320046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key3.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key6.r
+      value: 0.052918315
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: furColorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.key0.b
+      value: 0.83533955
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.key1.r
+      value: 0.63208926
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.key1.g
+      value: 0.16794233
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.key1.b
+      value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.key2.r
+      value: 0.25943398
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.key2.g
+      value: 0.32820734
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.key2.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.key3.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.key3.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.key4.r
+      value: 0.052918315
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.key4.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.ctime0
+      value: 386
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.ctime1
+      value: 14071
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.ctime2
+      value: 32575
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.ctime3
+      value: 48959
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.ctime4
+      value: 60331
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: shirtColorGradient.m_NumColorKeys
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666047090651466726, guid: d237c9cb145cff247b42b9b8eb6c28e5,
+        type: 3}
+      propertyPath: randomizeMouseShirtColor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5562277774350318428, guid: d237c9cb145cff247b42b9b8eb6c28e5,
         type: 3}

@@ -69,9 +69,13 @@ MonoBehaviour:
   hand: {fileID: 0}
   hitBox: {fileID: 0}
   model: {fileID: 0}
+  audioRange: 35
   suspiciousSounds: []
   suspiciousSoundMaxVolume: 1
   useSecondaryAudioSourceSuspiciousSound: 0
+  alertSounds: []
+  alertSoundMaxVolume: 1
+  useSecondaryAudioSourceAlertSound: 0
   canSeePlayer: 0
   currentState: 1
   lastState: 1
@@ -84,6 +88,25 @@ MonoBehaviour:
   player: {fileID: 0}
   playerHead: {fileID: 0}
   detector: {fileID: 0}
+--- !u!114 &4666047090651466726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926728164076872530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2da0c23ce2b004a93c369c8f402a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinnedMeshRend: {fileID: 0}
+  furColor: {r: 0, g: 0, b: 0, a: 0}
+  shirtColor: {r: 0, g: 0, b: 0, a: 0}
+  randomizeMouseShirtColor: 1
+  randomizeRed: 1
+  randomizeGreen: 1
+  randomizeBlue: 1
 --- !u!1 &5262992108995916048
 GameObject:
   m_ObjectHideFlags: 0

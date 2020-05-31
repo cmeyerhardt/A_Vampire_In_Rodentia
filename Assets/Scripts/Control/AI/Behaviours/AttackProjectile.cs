@@ -22,8 +22,9 @@ public class AttackProjectile : Attack
         base.Update();
     }
 
-    public override void PerformAttack(float damage, bool playSound)
+    public override void PerformAttack(bool playSound, bool doAttackAnim)
     {
+        ai.animator.SetInteger("State", 2);
         Projectile _projectile = Instantiate(projectile, ai.hand.position, Quaternion.identity, null);
         _projectile.Initialize(player, ai);
         _projectile.projectileHitEvent.AddListener(ProjectileHit);
@@ -31,7 +32,7 @@ public class AttackProjectile : Attack
 
     public void ProjectileHit(bool playSound)
     {
-        base.PerformAttack(attackDamage, playSound);
+        base.PerformAttack(playSound, false);
     }
 
 }

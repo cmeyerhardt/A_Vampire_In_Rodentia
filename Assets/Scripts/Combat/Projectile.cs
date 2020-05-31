@@ -52,46 +52,53 @@ public class Projectile : MonoBehaviour
         Health target = other.GetComponent<Health>();
         if(target == null) { return; }
         if(target.isDead) { return; }
-        if(!stopped)
+        if(!stopped && !other.isTrigger)
         {
-            if (!other.isTrigger && other.gameObject != originator)
-            {
-                rb.useGravity = false;
-                rb.isKinematic = true;
-                transform.parent = other.transform;
-                stopped = true;
-            }
+            //if (other.gameObject != originator)
+            //{
+            //    rb.useGravity = false;
+            //    rb.isKinematic = true;
+            //    transform.parent = other.transform;
+            //    stopped = true;
+            //}
 
-            if (target != null && target == player && !player.isDead)
+            if (target != null && target == player/* && !player.isDead*/)
             {
                 if (!playerDamaged)
                 {
                     playerDamaged = true;
+                    rb.useGravity = false;
+                    rb.isKinematic = true;
+                    stopped = true;
                     projectileHitEvent.Invoke(true);
                     transform.parent = player.GetComponent<Character>().model;
                 }
             }
-            else
+            else if (other.gameObject != originator)
             {
-                originator.PlaySoundEffect(hitSoundObject, hitSoundObjectMaxVolume, useSecondaryAudioSourceHitObjectSound);
+                rb.useGravity = false;
+                rb.isKinematic = true;
+                stopped = true;
                 projectileHitEvent.Invoke(false);
+                transform.parent = other.transform;
+                originator.PlaySoundEffect(hitSoundObject, hitSoundObjectMaxVolume, useSecondaryAudioSourceHitObjectSound);
             }
 
             if (hitFX)
             {
                 Vector3 closestPoint = other.ClosestPoint(transform.position);
-                GameObject impactObj = Instantiate(hitFX);
+                GameObject hitPFX = Instantiate(hitFX);
 
-                impactObj.transform.position = closestPoint;
-                impactObj.transform.rotation = transform.rotation;
+                hitPFX.transform.position = closestPoint;
+                hitPFX.transform.rotation = transform.rotation;
 
-                Destroy(impactObj, 1f);
+                Destroy(hitPFX, 1f);
             }
 
-            foreach (GameObject toDestroy in destroyOnHit)
-            {
-                Destroy(toDestroy);
-            }
+            //foreach (GameObject toDestroy in destroyOnHit)
+            //{
+            //    Destroy(toDestroy);
+            //}
         }
     }
 }

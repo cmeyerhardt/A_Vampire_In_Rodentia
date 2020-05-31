@@ -22,7 +22,7 @@ public class FeedingVictim : MonoBehaviour, IRaycast
     private void Start()
     {
         feedingOn.AddListener(villager.health.ModifyHealth);
-        feedingOn.AddListener(villager.ChangeFurColor);
+        feedingOn.AddListener(villager.GetComponent<MaterialColors>().ChangeFurColor);
     }
 
     private void Update()
@@ -53,7 +53,7 @@ public class FeedingVictim : MonoBehaviour, IRaycast
         }
         else
         {
-            print("successful");
+            //print("successful");
             beingFedOn = true;
             succeeded = true;
             fedOnEvent.Invoke(true);
@@ -62,7 +62,7 @@ public class FeedingVictim : MonoBehaviour, IRaycast
 
     public void CancelBeingFedOn()
     {
-        print(gameObject.name + "canceling feeding");
+        //print(gameObject.name + " canceling feeding");
         beingFedOn = false;
         GetComponent<AIController>().BecomeUnStunned();
         fedOnEvent.Invoke(false);

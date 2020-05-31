@@ -53,6 +53,7 @@ MonoBehaviour:
   - {fileID: 9033707198315744157}
   hitSoundObject: {fileID: 8300000, guid: c0296f6846325e34eb6eca26a5f401dc, type: 3}
   hitSoundObjectMaxVolume: 1
+  useSecondaryAudioSourceHitObjectSound: 0
   hitFX: {fileID: 6691039484242745229, guid: bf3fa2cb5856449488f9314b27435675, type: 3}
   projectileHitEvent:
     m_PersistentCalls:
@@ -76,7 +77,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7179586037114231365}
   serializedVersion: 2
-  m_Mass: 0.15
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1

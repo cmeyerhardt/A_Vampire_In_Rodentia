@@ -34,7 +34,7 @@ public class WindowManager : MonoBehaviour
 
     public void OpenWindow(Window toOpen)
     {
-        print(toOpen);
+        //print(toOpen);
         if (toOpen == null) { return; }
         if (toOpen == escapeKeyMenu)
         {

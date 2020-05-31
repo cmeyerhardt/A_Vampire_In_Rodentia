@@ -111,7 +111,7 @@ public class Character : MonoBehaviour
 
     public virtual void AnimationEventResetAttack()
     {
-
+        animator.SetInteger("State", 0);
     }
 
     public virtual void AnimationEventHit()
@@ -129,11 +129,11 @@ public class Character : MonoBehaviour
         PlaySoundEffect(clip, volume, secondary);
     }
 
-    public void PlaySoundEffect(AudioClip clip, float volumeScale, bool secondary)
+    public virtual void PlaySoundEffect(AudioClip clip, float volumeScale, bool secondary)
     {
         if(clip != null)
         {
-            print("Playing clip " + clip.name + " at volume " + volumeScale);
+            //print("Playing clip " + clip.name + " at volume " + volumeScale);
             if (secondary)
             {
                 secondaryAudioSource.Stop();
@@ -158,6 +158,7 @@ public class Character : MonoBehaviour
      */
     public virtual void StunTarget(Character target, bool secondary, float volume = 1f, AudioClip clip = null)
     {
+        animator.SetInteger("State", 1);
         if (clip == null)
         {
             PlaySoundEffect(stunSound, volume, secondary);
@@ -170,6 +171,7 @@ public class Character : MonoBehaviour
         if (Random.Range(0f, 1f) > target.myStunResistChance)
         {
             //print(gameObject.name + " stuns " + target.name);
+
             target.BecomeStunned(outgoingStunDuration);
         }
     }
@@ -235,6 +237,10 @@ public class Character : MonoBehaviour
     */
     public void MoveToDestination(Vector3 destination, float speedFraction)
     {
+        if(speedFraction <= 0)
+        {
+            return;
+        }
         if (navMeshAgent.isActiveAndEnabled && navMeshAgent.isOnNavMesh)
         {
             walking = true;
@@ -259,7 +265,7 @@ public class Character : MonoBehaviour
     {
         if(navMeshAgent.isOnNavMesh)
         {
-            MoveToDestination(transform.position, 0);
+            //MoveToDestination(transform.position, 0);
             navMeshAgent.isStopped = true;
             animator.SetInteger("State", 0);
             animator.SetFloat("Speed", 0);
