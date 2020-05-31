@@ -322,6 +322,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneWallC (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 650439682943078116, guid: ad17d3c1a0506224687de39c42a04ec4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 650439682943078116, guid: ad17d3c1a0506224687de39c42a04ec4,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 650439682943111876, guid: ad17d3c1a0506224687de39c42a04ec4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -458,6 +468,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneWallA (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3489665675166001192, guid: 9a3124879bf71a64189b154c80b46bc8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489665675166001192, guid: 9a3124879bf71a64189b154c80b46bc8,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a3124879bf71a64189b154c80b46bc8, type: 3}
 --- !u!4 &2786828640221499715 stripped
@@ -532,6 +552,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WoodFloor(Stairway)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197625834677977222, guid: 50920620613c3c446aa8eb6781bdb935,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50920620613c3c446aa8eb6781bdb935, type: 3}
@@ -608,6 +633,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneWallA (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 3489665675166001192, guid: 9a3124879bf71a64189b154c80b46bc8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489665675166001192, guid: 9a3124879bf71a64189b154c80b46bc8,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a3124879bf71a64189b154c80b46bc8, type: 3}
 --- !u!4 &3423045851795141222 stripped
@@ -677,6 +712,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337037172047690275, guid: 493dd7c792072fd44a054bca586c7a49,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5337037172047690279, guid: 493dd7c792072fd44a054bca586c7a49,
         type: 3}
@@ -758,6 +798,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneWallA (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3489665675166001192, guid: 9a3124879bf71a64189b154c80b46bc8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489665675166001192, guid: 9a3124879bf71a64189b154c80b46bc8,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a3124879bf71a64189b154c80b46bc8, type: 3}
 --- !u!4 &1404567644602447991 stripped
@@ -773,6 +823,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1374179495710385680}
     m_Modifications:
+    - target: {fileID: 5719975087337739811, guid: 00f38a06d0fdfbe4f81b9e5d0a7ee3f9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5719975087337739815, guid: 00f38a06d0fdfbe4f81b9e5d0a7ee3f9,
         type: 3}
       propertyPath: m_Name
@@ -852,6 +907,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WoodFloor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381497726876798272, guid: 44f3e03b75ec9c84f8239dbe283baacc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5381497726877290848, guid: 44f3e03b75ec9c84f8239dbe283baacc,
         type: 3}
@@ -977,6 +1037,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325901051223271961, guid: 9681e3b28cc25d941b078145d5ba6ef8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325901051223271961, guid: 9681e3b28cc25d941b078145d5ba6ef8,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2325901051223271967, guid: 9681e3b28cc25d941b078145d5ba6ef8,
         type: 3}
@@ -1139,6 +1209,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneWallA (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3489665675166001192, guid: 9a3124879bf71a64189b154c80b46bc8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489665675166001192, guid: 9a3124879bf71a64189b154c80b46bc8,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a3124879bf71a64189b154c80b46bc8, type: 3}
 --- !u!4 &128348554193255616 stripped
@@ -1158,6 +1238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WoodFloor (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381497726876798272, guid: 44f3e03b75ec9c84f8239dbe283baacc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5381497726877290848, guid: 44f3e03b75ec9c84f8239dbe283baacc,
         type: 3}
@@ -1233,6 +1318,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WoodWalkwayRails(M)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088115872965360645, guid: 78a03168601459f4d906f21660b66555,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088115872965360645, guid: 78a03168601459f4d906f21660b66555,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1088115872965845027, guid: 78a03168601459f4d906f21660b66555,
         type: 3}
@@ -1390,6 +1485,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1374179495710385680}
     m_Modifications:
+    - target: {fileID: 5719975087337739811, guid: 00f38a06d0fdfbe4f81b9e5d0a7ee3f9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5719975087337739815, guid: 00f38a06d0fdfbe4f81b9e5d0a7ee3f9,
         type: 3}
       propertyPath: m_Name
@@ -1595,6 +1695,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2325901051223271961, guid: 9681e3b28cc25d941b078145d5ba6ef8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325901051223271961, guid: 9681e3b28cc25d941b078145d5ba6ef8,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2325901051223271967, guid: 9681e3b28cc25d941b078145d5ba6ef8,
         type: 3}
       propertyPath: m_Name
@@ -1619,6 +1729,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WoodWalkwayRails(M) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088115872965360645, guid: 78a03168601459f4d906f21660b66555,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088115872965360645, guid: 78a03168601459f4d906f21660b66555,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1088115872965845027, guid: 78a03168601459f4d906f21660b66555,
         type: 3}
@@ -1913,6 +2033,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneWallA (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3489665675166001192, guid: 9a3124879bf71a64189b154c80b46bc8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489665675166001192, guid: 9a3124879bf71a64189b154c80b46bc8,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a3124879bf71a64189b154c80b46bc8, type: 3}
 --- !u!4 &4855737789221084408 stripped
@@ -1932,6 +2062,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StoneWallC (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 650439682943078116, guid: ad17d3c1a0506224687de39c42a04ec4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 650439682943078116, guid: ad17d3c1a0506224687de39c42a04ec4,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 650439682943111876, guid: ad17d3c1a0506224687de39c42a04ec4,
         type: 3}
