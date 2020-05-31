@@ -8,20 +8,12 @@ public class DelayedAction : MonoBehaviour
 
     private void Start()
     {
+        Invoke("InvokeEvent", delayInSeconds);
         Destroy(this, delayInSeconds + 2f);
     }
 
-    void Update()
+    private void InvokeEvent()
     {
-        if(delayInSeconds > 0f)
-        {
-            delayInSeconds -= Time.deltaTime;
-        }
-        else
-        {
-            timerFinished.Invoke();
-        }
+        timerFinished.Invoke();
     }
-
-
 }

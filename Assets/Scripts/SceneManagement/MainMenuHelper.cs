@@ -8,4 +8,9 @@ public class MainMenuHelper : MonoBehaviour
     {
         FindObjectOfType<SceneLoader>().Play();
     }
+
+    public void QuitGame()
+    {
+        FindObjectOfType<SceneLoader>().ExitGame();
+    }
 }

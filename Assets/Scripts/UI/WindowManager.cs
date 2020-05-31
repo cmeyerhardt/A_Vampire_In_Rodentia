@@ -34,8 +34,8 @@ public class WindowManager : MonoBehaviour
 
     public void OpenWindow(Window toOpen)
     {
-        //print(toOpen);
-        if(toOpen == null) { return; }
+        print(toOpen);
+        if (toOpen == null) { return; }
         if (toOpen == escapeKeyMenu)
         {
             CloseAllWindows();
@@ -44,6 +44,10 @@ public class WindowManager : MonoBehaviour
         if (!openWindows.Contains(toOpen))
         {
             openWindows.Add(toOpen);
+        }
+        else
+        {
+            CloseWindow(toOpen);
         }
 
         toOpen.gameObject.SetActive(true);
