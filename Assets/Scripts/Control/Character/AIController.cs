@@ -27,7 +27,9 @@ public class AIController : Character
     [SerializeField] AudioClip[] suspiciousSounds = null;
     [SerializeField] [Range(0f, 1f)] public float suspiciousSoundMaxVolume = 1f;
     [SerializeField] public bool useSecondaryAudioSourceSuspiciousSound = false;
-
+    [SerializeField] AudioClip[] alertSounds = null;
+    [SerializeField] [Range(0f, 1f)] public float alertSoundMaxVolume = 1f;
+    [SerializeField] public bool useSecondaryAudioSourceAlertSound = false;
 
     [Header("State")]
     public bool canSeePlayer = false;
@@ -122,7 +124,7 @@ public class AIController : Character
 
         if (currentState != lastState)
         {
-            SetState();
+            SetState(currentState);
         }
 
         if(currentState != NPCState.Alert && canSeePlayer)
@@ -349,7 +351,7 @@ public class AIController : Character
         }
     }
 
-    private void SetState()
+    private void SetState(NPCState newState)
     {
         StopMoving();
         if (aIBehaviour != null)
@@ -372,13 +374,24 @@ public class AIController : Character
                 }
             }
         }
-        else if (currentState == NPCState.Suspicious)
+        else if (newState == NPCState.Suspicious)
         {
             if(suspiciousSounds.Length > 0)
             {
                 PlaySoundEffect(suspiciousSounds[UnityEngine.Random.Range(0, suspiciousSounds.Length - 1)], suspiciousSoundMaxVolume, useSecondaryAudioSourceSuspiciousSound);
             }
+        }
+        if (newState == NPCState.Alert)
+        {
+            if (alertSounds.Length > 0)
+            {
 
+                PlaySoundEffect(alertSounds[UnityEngine.Random.Range(0, alertSounds.Length - 1)], alertSoundMaxVolume, useSecondaryAudioSourceAlertSound);
+            }
+            else
+            {
+                print("No Alert Sound Clips Present for " + gameObject.name);
+            }
         }
 
         if (behaviourMap.ContainsKey("GoToPlayer"))
@@ -389,10 +402,10 @@ public class AIController : Character
 
 
 
-        if (stateMap.ContainsKey(currentState))
+        if (stateMap.ContainsKey(newState))
         {
-            lastState = currentState;
-            SetBehaviourSequence(stateMap[currentState]);
+            lastState = newState;
+            SetBehaviourSequence(stateMap[newState]);
         }
     }
 
