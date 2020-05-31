@@ -12,16 +12,16 @@ public class MaterialDimmer : MonoBehaviour
     //float time = 3f;
     //float fadingTime = 3f;
     //Color originalColor = new Color();
-    List<Color> originalColors = new List<Color>();
+    Color originalColor = new Color();
     Color dimmedColor = new Color(.5f, .5f, .5f, .5f);
 
     void Awake()
     {
         skinnedMeshRend = GetComponentInChildren<SkinnedMeshRenderer>();
         materials = skinnedMeshRend.materials;
-        foreach(Material material in materials)
+        if(materials != null && materials[0] != null)
         {
-            originalColors.Add(material.color);
+            originalColor = materials[0].color;
         }
     }
 
@@ -82,7 +82,7 @@ public class MaterialDimmer : MonoBehaviour
             if (material != null)
             {
                 //print("Setting original material color");
-                material.SetColor("_Color", originalColors[i]);
+                material.SetColor("_Color", originalColor);
             }
         }
         //dimColor = true;

@@ -43,12 +43,16 @@ MonoBehaviour:
   rigidBody: {fileID: 0}
   stamina: {fileID: 0}
   head: {fileID: 0}
-  hand: {fileID: 6648718779712291948}
+  hand: {fileID: 0}
   hitBox: {fileID: 0}
   model: {fileID: 0}
+  rangeToHearAudio: 30
   suspiciousSounds: []
   suspiciousSoundMaxVolume: 1
   useSecondaryAudioSourceSuspiciousSound: 0
+  alertSounds: []
+  alertSoundMaxVolume: 1
+  useSecondaryAudioSourceAlertSound: 0
   canSeePlayer: 0
   currentState: 0
   lastState: 0
@@ -206,16 +210,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7044100763192929136, guid: d237c9cb145cff247b42b9b8eb6c28e5, type: 3}
     - {fileID: 775187057311114152, guid: d237c9cb145cff247b42b9b8eb6c28e5, type: 3}
+    - {fileID: 1617810675670563111, guid: d237c9cb145cff247b42b9b8eb6c28e5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d237c9cb145cff247b42b9b8eb6c28e5, type: 3}
 --- !u!1 &5238969804815366162 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 926728164076872530, guid: d237c9cb145cff247b42b9b8eb6c28e5,
-    type: 3}
-  m_PrefabInstance: {fileID: 4929446104298330944}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6648718779712291948 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1741793121749622572, guid: d237c9cb145cff247b42b9b8eb6c28e5,
     type: 3}
   m_PrefabInstance: {fileID: 4929446104298330944}
   m_PrefabAsset: {fileID: 0}

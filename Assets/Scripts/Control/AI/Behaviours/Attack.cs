@@ -102,6 +102,7 @@ public class Attack : AIBehaviour
         {
             if (ai.IsInRange(player.transform.position, ai.outgoingStunRange))
             {
+
                 if (stunCounter >= stunInterval)
                 {
                     if (ai.stamina.CheckCanAffordCost(stunStaminaCost))
@@ -127,9 +128,10 @@ public class Attack : AIBehaviour
 
             if (ai.IsInRange(player.transform.position, attackRange))
             {
+                ai.StopMoving();
                 if (attackCounter >= attackInterval)
                 {
-                    ai.StopMoving();
+
                     attackCounter = 0f;
                     globalCooldown = 1f;
 

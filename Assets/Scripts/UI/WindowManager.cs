@@ -81,4 +81,17 @@ public class WindowManager : MonoBehaviour
             i--;
         }
     }
+
+    public void OpenSplashScreen()
+    {
+        Transform story = transform.Find("StoryWindow");
+        if(story!= null)
+        {
+            Window storyWindow = story.GetComponent<Window>();
+            if(storyWindow != null)
+            {
+                OpenWindow(storyWindow);
+            }
+        }
+    }
 }

@@ -294,7 +294,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.7654859, g: 0.8192781, b: 0.8867924, a: 1}
-  m_Intensity: 0.13
+  m_Intensity: 0.4
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -827,7 +827,7 @@ PrefabInstance:
     - target: {fileID: 1207061864523188788, guid: 75ca17ed87cfeea4a8b9f2a714bf275c,
         type: 3}
       propertyPath: fadeTime
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1207061864808844714, guid: 75ca17ed87cfeea4a8b9f2a714bf275c,
         type: 3}
@@ -3338,7 +3338,22 @@ PrefabInstance:
     - target: {fileID: 3518254056629088241, guid: 3dbe01573cf89d74a9a1683c0effd15d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -58
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518254056629088241, guid: 3dbe01573cf89d74a9a1683c0effd15d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518254056629088241, guid: 3dbe01573cf89d74a9a1683c0effd15d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518254056629088241, guid: 3dbe01573cf89d74a9a1683c0effd15d,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 530.71533
       objectReference: {fileID: 0}
     - target: {fileID: 3518254056653814460, guid: 3dbe01573cf89d74a9a1683c0effd15d,
         type: 3}
@@ -3675,7 +3690,7 @@ PrefabInstance:
     - target: {fileID: 3518254058361216593, guid: 3dbe01573cf89d74a9a1683c0effd15d,
         type: 3}
       propertyPath: m_Alpha
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3518254058361216607, guid: 3dbe01573cf89d74a9a1683c0effd15d,
         type: 3}

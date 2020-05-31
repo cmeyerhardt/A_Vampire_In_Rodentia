@@ -71,8 +71,8 @@ public class LineOfSight : MonoBehaviour
         foreach (RaycastHit hit in hits)
         {
             bool added = false;
-            if (hit.transform.gameObject != null && !hit.collider.isTrigger && hit.transform.gameObject != gameObject)
-            {
+            if (hit.transform.gameObject != null && !hit.collider.isTrigger && hit.transform.gameObject != gameObject && hit.transform.GetComponent<AIController>() == null)
+            {       
                 if (outList.Count == 0)
                 {
                     outList.Add(hit);

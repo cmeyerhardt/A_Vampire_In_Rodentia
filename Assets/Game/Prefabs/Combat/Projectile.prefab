@@ -54,7 +54,7 @@ MonoBehaviour:
   hitSoundObject: {fileID: 8300000, guid: c0296f6846325e34eb6eca26a5f401dc, type: 3}
   hitSoundObjectMaxVolume: 1
   useSecondaryAudioSourceHitObjectSound: 0
-  hitFX: {fileID: 6691039484242745229, guid: bf3fa2cb5856449488f9314b27435675, type: 3}
+  hitFX: {fileID: 0}
   projectileHitEvent:
     m_PersistentCalls:
       m_Calls:

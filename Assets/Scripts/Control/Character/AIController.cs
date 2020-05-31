@@ -24,7 +24,7 @@ public class AIController : Character
 {
     [Header("Audio")]
     [Header("NPC--")]
-    /*[SerializeField]*/ [Range(0,50f)]float audioRange = 30f;
+    [SerializeField] [Range(0,50f)]float rangeToHearAudio = 30f;
     [SerializeField] AudioClip[] suspiciousSounds = null;
     [SerializeField] [Range(0f, 1f)] public float suspiciousSoundMaxVolume = 1f;
     [SerializeField] public bool useSecondaryAudioSourceSuspiciousSound = false;
@@ -432,7 +432,7 @@ public class AIController : Character
 
     public override void PlaySoundEffect(AudioClip clip, float volumeScale, bool secondary)
     {
-        if(IsInRange(player.transform.position, audioRange))
+        if(IsInRange(player.transform.position, rangeToHearAudio))
         {
             base.PlaySoundEffect(clip, volumeScale, secondary);
         }
@@ -603,4 +603,10 @@ public class AIController : Character
         return outList;
     }
 
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(transform.position, rangeToHearAudio);
+    }
 }

@@ -57,6 +57,7 @@ public class GoToLocation : AIBehaviour
         {
             if (ai.IsInRange((Vector3)nullableLocation, range))
             {
+                ai.StopMoving();
                 doneEvent.Invoke(this);
             }
         }

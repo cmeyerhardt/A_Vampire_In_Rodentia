@@ -80,7 +80,11 @@ public class Character : MonoBehaviour
 
     private void SetAnimatorSpeed(float speed)
     {
-        //print("Setting animator speed for " + gameObject.name + " to " + speed);
+        if(gameObject.tag == "Hunter")
+        {
+            print("Setting animator speed for " + gameObject.name + " to " + speed);
+        }
+
         animator.SetInteger("State", 0);
         animator.SetFloat("Speed", speed);
     }
@@ -263,12 +267,12 @@ public class Character : MonoBehaviour
 
     public void StopMoving()
     {
-        if(navMeshAgent.isOnNavMesh)
+        animator.SetInteger("State", 0);
+        animator.SetFloat("Speed", 0);
+        if (navMeshAgent.isOnNavMesh)
         {
             //MoveToDestination(transform.position, 0);
             navMeshAgent.isStopped = true;
-            animator.SetInteger("State", 0);
-            animator.SetFloat("Speed", 0);
         }
     }
 

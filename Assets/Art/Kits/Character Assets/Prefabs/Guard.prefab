@@ -204,6 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2531356265205440428}
   - component: {fileID: 2531356265197695038}
+  - component: {fileID: 3316314852970705839}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -237,7 +238,7 @@ Animator:
   m_GameObject: {fileID: 2531356265204941388}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3b121b7a61c18b64580d439f805f52b9, type: 3}
-  m_Controller: {fileID: 9100000, guid: 05d5b53738bcdfb4da48b8637a514f7f, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -246,6 +247,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3316314852970705839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531356265204941388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f708e40a9e424e9469ed1707e78e14dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2531356265204941390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,6 +1791,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1790,6 +1804,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
