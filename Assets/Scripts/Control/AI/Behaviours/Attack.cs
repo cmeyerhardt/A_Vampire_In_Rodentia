@@ -162,7 +162,7 @@ public class Attack : AIBehaviour
         AnimationEventHitDamage();
         if (doAttackAnim)
         {
-            print("Doing melee attack anim");
+            //print("Doing melee attack anim");
             ai.animator.SetInteger("State", 1);
         }
 

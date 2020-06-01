@@ -14,12 +14,11 @@ public class NightCycle : MonoBehaviour
     [SerializeField] float currentTime = 0f;
     public float currentHour = 0f;
 
-
     [Header("Current Time Settings")]
     public Material currentSky = null;
     public Light currentCelestialBodyLightSource = null;
     public Gradient currentGradient = null;
-    public float numGameSecPerRealSec = 0f;
+    public float numGameMinPerRealSec = 0f;
 
     [Header("Configure Values")]
     [SerializeField] float nightLengthRealSeconds = 100f;
@@ -79,7 +78,7 @@ public class NightCycle : MonoBehaviour
         sun.transform.rotation = sunSunsetRotation;
         //moon.transform.rotation = moonSunsetRotation;
 
-        numGameSecPerRealSec = (nightLengthGameHours * 60f) / nightLengthRealSeconds;
+        numGameMinPerRealSec = (nightLengthGameHours * 60f) / nightLengthRealSeconds;
         SetTimeToDay();
 
     }
@@ -96,7 +95,7 @@ public class NightCycle : MonoBehaviour
         if (time != currentTimeSegment)
         {
             // Initialize cycle settings
-            print("Time is now: " + time);
+            //print("Time is now: " + time);
             currentTimeSegment = time;
             timeEvent.Invoke(currentTimeSegment);
             switch (currentTimeSegment)
@@ -151,13 +150,14 @@ public class NightCycle : MonoBehaviour
         //{
         //    currentTime += numGameSecPerRealSec * Time.deltaTime;
         //}
-        currentTime += numGameSecPerRealSec * Time.deltaTime;
+        currentTime += numGameMinPerRealSec * Time.deltaTime;
         nightPercentage = currentTime / nightLengthRealSeconds;
-        if(nightPercentage > 2)
-        {
-            currentTime = startHour;
-            nightPercentage = 0f;
-        }
+
+        //if(nightPercentage > 2)
+        //{
+        //    currentTime = startHour;
+        //    nightPercentage = 0f;
+        //}
 
     }
 

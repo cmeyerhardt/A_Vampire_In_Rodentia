@@ -20,7 +20,7 @@ public class Stamina : MonoBehaviour
     
     private void Awake()
     {
-        //currentStamina = maxStamina;
+        currentStamina = maxStamina;
     }
 
     private void Start()

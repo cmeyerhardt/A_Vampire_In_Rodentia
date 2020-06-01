@@ -199,46 +199,71 @@ public class AIController : Character
                 return u;
             case "Wait":
                 Wait currentWait = GetComponent<Wait>();
+
                 if(currentWait == null)
                 {
-                    Wait bw = gameObject.AddComponent<Wait>();
-                    bw.ai = this;
-                    try
-                    {
-                        bw.duration = float.Parse(words[1]);
-                        bw.waitIndefinitly = false;
-                    }
-                    catch (Exception e)
-                    {
-                        //Debug.Log(e);
-                        Type t = e.GetType();
-                        if (t == typeof(ArgumentNullException) || t == typeof(FormatException) || t == typeof(IndexOutOfRangeException))
-                        {
-                            bw.duration = 0f;
-                            bw.waitIndefinitly = true;
-                        }
-                    }
-                    return bw;
+                    currentWait = gameObject.AddComponent<Wait>();
+                    currentWait.ai = this;
                 }
-                else
+
+                try
                 {
-                    try
-                    {
-                        currentWait.duration = float.Parse(words[1]);
-                        currentWait.waitIndefinitly = false;
-                    }
-                    catch (Exception e)
-                    {
-                        //Debug.Log(e);
-                        Type t = e.GetType();
-                        if (t == typeof(ArgumentNullException) || t == typeof(FormatException) || t == typeof(IndexOutOfRangeException))
-                        {
-                            currentWait.duration = 0f;
-                            currentWait.waitIndefinitly = true;
-                        }
-                    }
-                    return currentWait;
+                    currentWait.duration = float.Parse(words[1]);
+                    currentWait.waitIndefinitly = false;
                 }
+                catch (Exception e)
+                {
+                    //Debug.Log(e);
+                    Type t = e.GetType();
+                    if (t == typeof(ArgumentNullException) || t == typeof(FormatException) || t == typeof(IndexOutOfRangeException))
+                    {
+                        currentWait.duration = 0f;
+                        currentWait.waitIndefinitly = true;
+                    }
+                }
+                return currentWait;
+
+
+                //if (currentWait == null)
+                //{
+                //    Wait bw = gameObject.AddComponent<Wait>();
+                //    bw.ai = this;
+                //    try
+                //    {
+                //        bw.duration = float.Parse(words[1]);
+                //        bw.waitIndefinitly = false;
+                //    }
+                //    catch (Exception e)
+                //    {
+                //        //Debug.Log(e);
+                //        Type t = e.GetType();
+                //        if (t == typeof(ArgumentNullException) || t == typeof(FormatException) || t == typeof(IndexOutOfRangeException))
+                //        {
+                //            bw.duration = 0f;
+                //            bw.waitIndefinitly = true;
+                //        }
+                //    }
+                //    return bw;
+                //}
+                //else
+                //{
+                //    try
+                //    {
+                //        currentWait.duration = float.Parse(words[1]);
+                //        currentWait.waitIndefinitly = false;
+                //    }
+                //    catch (Exception e)
+                //    {
+                //        //Debug.Log(e);
+                //        Type t = e.GetType();
+                //        if (t == typeof(ArgumentNullException) || t == typeof(FormatException) || t == typeof(IndexOutOfRangeException))
+                //        {
+                //            currentWait.duration = 0f;
+                //            currentWait.waitIndefinitly = true;
+                //        }
+                //    }
+                //    return currentWait;
+                //}
 
             //case "Wander":
             //    Wander w = gameObject.AddComponent<Wander>();
@@ -371,15 +396,16 @@ public class AIController : Character
             //{
             //    currentState = NPCState.Suspicious;
             //}
-            lastState = NPCState.None;
             currentState = NPCState.Alert;
+            lastState = NPCState.None;
+
             base.BecomeUnStunned();
         }
     }
 
     private void SetState(NPCState newState)
     {
-        print(gameObject.name + " Setting State: " + newState);
+        //print(gameObject.name + " Setting State: " + newState);
         StopMoving();
         if (aIBehaviour != null)
         {
@@ -417,7 +443,7 @@ public class AIController : Character
             }
             else
             {
-                print("No Alert Sound Clips Present for " + gameObject.name);
+                //print("No Alert Sound Clips Present for " + gameObject.name);
             }
         }
 
@@ -472,14 +498,23 @@ public class AIController : Character
 
     private void StartCurrentBehaviour()
     {
+        //print(gameObject.name + " " +currentBehaviour);
         if (behaviourMap.ContainsKey(currentBehaviour) && behaviourMap[currentBehaviour] != null)
         {
             CancelInteract();
-            behaviourMap[currentBehaviour].doneEvent.AddListener(BehaviourDone);
-            behaviourMap[currentBehaviour].ai = this;
-            behaviourMap[currentBehaviour].enabled = true;
-            aIBehaviour = behaviourMap[currentBehaviour];
-            lastBehaviour = currentBehaviour;
+            try
+            {
+                lastBehaviour = currentBehaviour;
+                behaviourMap[currentBehaviour].doneEvent.AddListener(BehaviourDone);
+                behaviourMap[currentBehaviour].ai = this;
+                behaviourMap[currentBehaviour].enabled = true;
+                aIBehaviour = behaviourMap[currentBehaviour];
+                
+            }
+            catch (Exception e)
+            {
+                Debug.Log("Exception: " + e + ";trigger: " + currentBehaviour);
+            }
         }
         else
         {
@@ -533,11 +568,13 @@ public class AIController : Character
     ***********************/
     public void PlayerSighted(bool alerted)
     {
-        if (currentState != NPCState.Alert && alerted && !canSeePlayer)
+        if (currentState != NPCState.Alert && alerted && !canSeePlayer
+            //&& (currentBehaviour == null || !(currentBehaviour != null && currentState == NPCState.Suspicious && currentBehaviour.GetType() == typeof(Wait)))
+            )
         {
             canSeePlayer = true;
             //textSpawner.SpawnText("A Vampire!", true, Color.red);
-            print("player sighted Setting alert state");
+            print(gameObject.name + "player sighted Setting alert state");
             currentState = NPCState.Alert;
             DropObject(false);
         }
@@ -557,7 +594,7 @@ public class AIController : Character
             canSeePlayer = false;
             //DeEscalateState();
             //MoveToDestination(lastSeenPlayerLocation, 1f);
-            print("cannot see player");
+            print(gameObject.name + "cannot see player");
             //textSpawner.SpawnText("Where'd it go?", Color.yellow);
         }
     }
@@ -594,40 +631,40 @@ public class AIController : Character
         return t;
     }
 
-    private List<RaycastHit> SortHitList(RaycastHit[] hits)
-    {
-        List<RaycastHit> outList = new List<RaycastHit>();
+    //private List<RaycastHit> SortHitList(RaycastHit[] hits)
+    //{
+    //    List<RaycastHit> outList = new List<RaycastHit>();
 
-        foreach (RaycastHit hit in hits)
-        {
-            bool added = false;
-            if (hit.transform.gameObject != null && hit.collider.gameObject != gameObject)
-            {
-                if (outList.Count == 0)
-                {
-                    outList.Add(hit);
-                }
-                else
-                {
-                    // insert into list IN CORRECT POSITION
-                    for (int i = 0; i < outList.Count; i++)
-                    {
-                        if (outList[i].distance > hit.distance)
-                        {
-                            outList.Insert(i, hit);
-                            added = true;
-                            break;
-                        }
-                    }
-                    if (!added)
-                    {
-                        outList.Add(hit);
-                    }
-                }
-            }
-        }
-        return outList;
-    }
+    //    foreach (RaycastHit hit in hits)
+    //    {
+    //        bool added = false;
+    //        if (hit.transform.gameObject != null && hit.collider.gameObject != gameObject)
+    //        {
+    //            if (outList.Count == 0)
+    //            {
+    //                outList.Add(hit);
+    //            }
+    //            else
+    //            {
+    //                // insert into list IN CORRECT POSITION
+    //                for (int i = 0; i < outList.Count; i++)
+    //                {
+    //                    if (outList[i].distance > hit.distance)
+    //                    {
+    //                        outList.Insert(i, hit);
+    //                        added = true;
+    //                        break;
+    //                    }
+    //                }
+    //                if (!added)
+    //                {
+    //                    outList.Add(hit);
+    //                }
+    //            }
+    //        }
+    //    }
+    //    return outList;
+    //}
 
 
     private void OnDrawGizmosSelected()

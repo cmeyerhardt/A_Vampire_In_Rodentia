@@ -5,7 +5,7 @@ using UnityEngine;
 public class Siren : GoToObject
 {
     [Header("Siren--")]
-    [SerializeField] float maxSeekDistance = 40f;
+    //[SerializeField] float maxSeekDistance = 40f;
     Protector protector = null;
     Vector3 playerPosition = new Vector3();
     [SerializeField] float sirenNoiseLevel = 10f;
@@ -18,22 +18,28 @@ public class Siren : GoToObject
 
         if(protectors.Length > 0)
         {
-            foreach (Protector protector in protectors)
-            {
-                if ((transform.position - protector.transform.position).magnitude < maxSeekDistance)
-                {
-                    objectReference = protector.gameObject;
-                    this.protector = protector;
-                    tasks.Add("AlertGuard");
-                    break;
-                }
-            }
+            this.protector = protectors[0];
+
+            //foreach (Protector protector in protectors)
+            //{
+            //    if ((transform.position - protector.transform.position).magnitude < maxSeekDistance)
+            //    {
+            //        objectReference = protector.gameObject;
+            //        this.protector = protector;
+            //        tasks.Add("AlertGuard");
+            //        break;
+            //    }
+            //}
         }
 
         if (protector == null)
         {
             print("No guards!");
             doneEvent.Invoke(this);
+        }
+        else
+        {
+            ai.MoveToDestination(protector.transform.position, 2.2f);
         }
 
         base.OnEnable();

@@ -65,8 +65,8 @@ public class SceneLoader : MonoBehaviour
         LevelManager _lm = FindObjectOfType<LevelManager>();
         if (_lm != null)
         {
-            _lm.PauseGame();
             _lm.windowManager.OpenSplashScreen();
+            _lm.PauseGame();
         }
         else
         {

@@ -104,10 +104,10 @@ public class Detector : LineOfSight
                     }
                 }
             }
-            else
-            {
-                ai.PlayerSighted(false);
-            }
+            //else
+            //{
+            //    ai.PlayerSighted(false);
+            //}
         }
         //else
         //{

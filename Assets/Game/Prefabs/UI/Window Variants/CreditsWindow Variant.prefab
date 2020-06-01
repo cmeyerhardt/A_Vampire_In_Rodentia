@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 5004959041246610302}
   - component: {fileID: 5004959041246610301}
   m_Layer: 5
-  m_Name: GneissKitty
+  m_Name: CarlyMeyerhardt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -376,9 +376,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GneissKitty
-
-'
+  m_text: Carly Meyerhardt
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4d5bc1b0b750734484aad54e5f0b4a8, type: 2}
   m_sharedMaterial: {fileID: 569072997265045381, guid: d4d5bc1b0b750734484aad54e5f0b4a8,
@@ -448,10 +446,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5004959041246610301}
-    characterCount: 12
+    characterCount: 16
     spriteCount: 0
     spaceCount: 1
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -483,7 +481,7 @@ GameObject:
   - component: {fileID: 5004959041301312168}
   - component: {fileID: 5004959041301312175}
   m_Layer: 5
-  m_Name: BirdBrains13
+  m_Name: BenBird-Jones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -535,7 +533,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BirdBrains13
+  m_text: Ben Bird-Jones
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4d5bc1b0b750734484aad54e5f0b4a8, type: 2}
   m_sharedMaterial: {fileID: 569072997265045381, guid: d4d5bc1b0b750734484aad54e5f0b4a8,
@@ -605,10 +603,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5004959041301312175}
-    characterCount: 12
+    characterCount: 14
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1165,7 +1163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Software Developer, UI
+  m_text: Software Developer, User Interface
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ae616fe734a229845a754441fea08ae3, type: 2}
   m_sharedMaterial: {fileID: -6242663389772314449, guid: ae616fe734a229845a754441fea08ae3,
@@ -1235,10 +1233,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5004959042249394020}
-    characterCount: 22
+    characterCount: 34
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1429,7 +1427,7 @@ GameObject:
   - component: {fileID: 5004959042451914039}
   - component: {fileID: 5004959042451914038}
   m_Layer: 5
-  m_Name: Level Design
+  m_Name: LevelDesign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

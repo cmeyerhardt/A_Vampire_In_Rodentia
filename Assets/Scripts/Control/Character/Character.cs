@@ -26,8 +26,8 @@ public class Character : MonoBehaviour
     [SerializeField] [Range(0f, 10f)] public float outgoingStunRange = 3f;
     [SerializeField] [Range(0f, 50f)] public float outgoingStunDuration = 3f;
     [SerializeField] [Range(0f, 100f)] public float staminaDrainWhenImStunned = 10f;
-    [SerializeField] [Range(0f, 1f)] public float myStunResistChance = .1f;
-    [SerializeField] [Range(0f, 1f)] public float myStunDurationReduction = .1f;
+    [HideInInspector] public float myStunResistChance = 0f;
+    [HideInInspector] public float myStunDurationReduction = 0f;
 
     [Header("Audio")]
     [SerializeField] AudioClip dyingSound = null;
@@ -42,7 +42,7 @@ public class Character : MonoBehaviour
 
     //[SerializeField] [Range(0f, 2f)] public float footStepInterval = 1f;
     //[HideInInspector] public float footstepCounter = 0f;
-    //Vector3 currentDestination = new Vector3();
+    Vector3 currentDestination = new Vector3();
 
     [Header("References")]
     [HideInInspector] public Animator animator = null;
@@ -80,10 +80,7 @@ public class Character : MonoBehaviour
 
     private void SetAnimatorSpeed(float speed)
     {
-        if(gameObject.tag == "Hunter")
-        {
-            print("Setting animator speed for " + gameObject.name + " to " + speed);
-        }
+        //print("Setting animator speed for " + gameObject.name + " to " + speed);
 
         animator.SetInteger("State", 0);
         animator.SetFloat("Speed", speed);
@@ -92,16 +89,14 @@ public class Character : MonoBehaviour
     public virtual void Update()
     {
         if(isDead) { return; }
-        //if(walking)
-        //{
-        //    MakeMovementSounds(footsteps, footStepsVolume);
-        //}
-        //if (walking && IsInRange(currentDestination))
-        //{
-        //    walking = false;
-        //    //StopMoving();
-        //    SetAnimatorSpeed(0);
-        //}
+
+        if (walking && IsInRange(currentDestination))
+        {
+            //print(gameObject.name + "At destination");
+            walking = false;
+            //StopMoving();
+            SetAnimatorSpeed(0);
+        }
     }
 
 
@@ -184,6 +179,8 @@ public class Character : MonoBehaviour
     {
         //isStunned = true;
         BecomeStunned();
+        SetAnimatorSpeed(0);
+        StopMoving();
         //textSpawner.SpawnText("Stunned", Color.blue);
         stamina.ModifyStamina(-staminaDrainWhenImStunned);
 
@@ -249,9 +246,10 @@ public class Character : MonoBehaviour
         {
             walking = true;
             head.forward = transform.forward;
-            //currentDestination = destination;
+            currentDestination = destination;
             navMeshAgent.destination = destination;
-            float _speed = Mathf.Clamp(baseMovementSpeed * Mathf.Clamp01(speedFraction), baseMovementSpeed, maxMovementSpeed);
+            float _speed = Mathf.Clamp(baseMovementSpeed * speedFraction, baseMovementSpeed, maxMovementSpeed);
+            print(gameObject.name + " speed " + _speed);
             navMeshAgent.speed = _speed;
             navMeshAgent.isStopped = false;
 
