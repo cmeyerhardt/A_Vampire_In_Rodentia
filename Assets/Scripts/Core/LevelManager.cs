@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
 
     public void GameTimeDone()
     {
-        if ((player.isHidden || player.playerState == PlayerState.Hiding) && !player.isDead && player.stamina.GetStaminaValue() >= 15f)
+        if ((player.isHidden || player.playerState == PlayerState.Hiding) && !player.isDead/* && player.stamina.GetStaminaValue() >= 15f*/)
         {
             Win();
         }
