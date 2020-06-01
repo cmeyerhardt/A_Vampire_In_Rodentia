@@ -239,6 +239,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2434038879887779607, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -338,6 +343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7980715307737965028, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -3735,6 +3745,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 1348160925356167705, guid: d302784d1ae34564dae1d95c5cb4141f,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2246779828479034254, guid: d302784d1ae34564dae1d95c5cb4141f,
         type: 3}
       propertyPath: m_Name
@@ -4043,6 +4058,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2434038879887779607, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4167,6 +4187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7980715307737965028, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -4946,6 +4971,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf190a5bebafb04489ee7ad4fe2cff43, type: 3}
@@ -7956,6 +7986,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85483222f45cacc459c83f5b1151251e, type: 3}
 --- !u!4 &491824748 stripped
@@ -9428,6 +9463,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6469895586626617726, guid: 65299de56e3462441b16b1274a6b1694,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -10605,6 +10645,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7324202026262858002, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11567,6 +11612,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 516462621472839280, guid: 5a80b24ba764c2d4092129cddbc1af0f,
         type: 3}
@@ -13186,6 +13236,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358169731249611247, guid: dd803a8ce9ede85469e4aa28f3f285c8,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400569930697925978, guid: dd803a8ce9ede85469e4aa28f3f285c8,
         type: 3}
@@ -14871,6 +14926,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7417645779981872070, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -15477,6 +15537,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2476886029416997609, guid: 5a80b24ba764c2d4092129cddbc1af0f,
         type: 3}
@@ -19464,6 +19529,11 @@ PrefabInstance:
       propertyPath: baseMovementSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1588154006615921851, guid: f1506da7beff4634ab334da0ab52e871,
+        type: 3}
+      propertyPath: navMeshDistanceBuffer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2172110978398349902, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: m_Size.x
@@ -20430,6 +20500,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 681502684711952118, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 739983044983220300, guid: 29e63611943732a498f5fb709435f03d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20504,6 +20579,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740460954708920324, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6323731103849538193, guid: 29e63611943732a498f5fb709435f03d,
         type: 3}
@@ -21609,6 +21689,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85483222f45cacc459c83f5b1151251e, type: 3}
 --- !u!4 &1177608438 stripped
@@ -22583,6 +22668,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5542087710999605061, guid: df1f2515af3d5204ea11918c16101cc7,
         type: 3}
@@ -24142,6 +24232,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 066f026d176c6384a9d7002c51a945d2, type: 3}
 --- !u!4 &1279066456 stripped
@@ -24550,6 +24645,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf190a5bebafb04489ee7ad4fe2cff43, type: 3}
 --- !u!4 &1284843850 stripped
@@ -24910,6 +25010,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2828834210485065312, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: m_Name
@@ -24944,6 +25049,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7980715307737965028, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -25391,6 +25501,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2434038879887779607, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -25550,6 +25665,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7980715307737965028, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -26044,6 +26164,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85483222f45cacc459c83f5b1151251e, type: 3}
@@ -31151,6 +31276,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2434038879887779607, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31250,6 +31380,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7980715307737965028, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -34934,7 +35069,7 @@ PrefabInstance:
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 335.69257
+      value: 323.6
       objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
@@ -34944,7 +35079,7 @@ PrefabInstance:
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -464.7197
+      value: -467.3
       objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
@@ -34954,7 +35089,7 @@ PrefabInstance:
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.15117608
       objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
@@ -34964,7 +35099,7 @@ PrefabInstance:
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.98850685
       objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
@@ -34979,7 +35114,7 @@ PrefabInstance:
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -17.390001
       objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
@@ -35724,6 +35859,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2434038879887779607, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35823,6 +35963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7980715307737965028, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -36388,6 +36533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9129784384419724791, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
@@ -37736,6 +37886,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85483222f45cacc459c83f5b1151251e, type: 3}
@@ -39552,6 +39707,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 8171016057724307070, guid: 9b8e55b81db00c9409908dfb0c2c9e3a,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b8e55b81db00c9409908dfb0c2c9e3a, type: 3}
 --- !u!1 &1122725795828919338 stripped
@@ -39977,6 +40137,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 7327874683169832771, guid: 87eb27242fd2414458d8fdf10fab4703,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87eb27242fd2414458d8fdf10fab4703, type: 3}
 --- !u!1 &1967677350037761820 stripped
@@ -40335,6 +40500,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 996241339559222643, guid: 049b4c255fdf43f4caba5f27f4cfff17,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1180187595004796904, guid: 049b4c255fdf43f4caba5f27f4cfff17,
         type: 3}
@@ -40797,6 +40967,11 @@ PrefabInstance:
       propertyPath: behaviourPresets.Array.data[3].module
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6796606646084608738, guid: 35e004407616527489273fdf8d468d58,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35e004407616527489273fdf8d468d58, type: 3}
 --- !u!1 &2354584980486099549 stripped
@@ -41199,6 +41374,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 8771752537285716924, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8851438997438410705, guid: fd8a7789855af3e4d934059a59936b16,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
@@ -41213,6 +41393,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851438997438410705, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd8a7789855af3e4d934059a59936b16, type: 3}
@@ -43157,6 +43342,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 4766161216406748053, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5746387729067928066, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
         type: 3}
       propertyPath: m_Name
@@ -43438,6 +43628,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776410312332861524, guid: ac4e512c6a91c154ba82d64056dad0d2,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5608241225695461756, guid: ac4e512c6a91c154ba82d64056dad0d2,
         type: 3}
@@ -43752,6 +43947,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 4491702392126847293, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5081598341704140129, guid: 8c1e5c095ce53e643827ac6b1e515cec,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
@@ -43766,6 +43966,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081598341704140129, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8433606847891218243, guid: 8c1e5c095ce53e643827ac6b1e515cec,
         type: 3}
@@ -44213,6 +44418,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 5546293777277165042, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6486628871682026662, guid: 505be3aaf37f043418d8dc31d3aac78e,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
@@ -44227,6 +44437,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486628871682026662, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9005270120513266900, guid: 505be3aaf37f043418d8dc31d3aac78e,
         type: 3}
@@ -44530,6 +44745,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017643647580845505, guid: f1c4bcb9bc6c52048bb07fad025f486d,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1c4bcb9bc6c52048bb07fad025f486d, type: 3}
@@ -44940,6 +45160,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85483222f45cacc459c83f5b1151251e, type: 3}
 --- !u!1 &4236412295356326777 stripped
@@ -45249,6 +45474,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 3467124955382249160, guid: 10d090aaccf29074386335f081c8e5c2,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3930814245272687211, guid: 10d090aaccf29074386335f081c8e5c2,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -45550,6 +45780,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 1976622370121481263, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3812332365699366551, guid: a8c03a17159c3a84880bda97f3e47c2a,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
@@ -45580,6 +45815,11 @@ PrefabInstance:
       propertyPath: behaviourPresets.Array.data[3].module
       value: 
       objectReference: {fileID: 820928070}
+    - target: {fileID: 3812332365699366551, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4369516407299527665, guid: a8c03a17159c3a84880bda97f3e47c2a,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -46057,6 +46297,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6392622528167908662, guid: df1f2515af3d5204ea11918c16101cc7,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -46349,6 +46594,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 8418770923477155964, guid: f882343305268c943bafa821b8013f25,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f882343305268c943bafa821b8013f25, type: 3}
 --- !u!1 &5487654666898967252 stripped
@@ -46625,6 +46875,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 4002541707813164036, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4879085729083543219, guid: e89b18a102b7dd1468603b95d278b15c,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
@@ -46639,6 +46894,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879085729083543219, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6959903881955960879, guid: e89b18a102b7dd1468603b95d278b15c,
         type: 3}
@@ -47846,6 +48106,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 2255559038297720830, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2559494984257576368, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
         type: 3}
       propertyPath: m_Name
@@ -47935,6 +48200,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466290595534420898, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5da9f7b8aaca5f9468bb9a5becef5895, type: 3}
@@ -48411,6 +48681,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7820227800406400310, guid: 65299de56e3462441b16b1274a6b1694,
         type: 3}
       propertyPath: m_Name
@@ -48768,6 +49043,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136545588177606764, guid: 0562137591c2feb41bc4eb211c3c6ca2,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0562137591c2feb41bc4eb211c3c6ca2, type: 3}
@@ -49206,6 +49486,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 4521027891011148605, guid: 854cd73b5f9aa154da23ecc93a89f010,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6222938007586632573, guid: 854cd73b5f9aa154da23ecc93a89f010,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -49498,6 +49783,11 @@ PrefabInstance:
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
       objectReference: {fileID: 0}
+    - target: {fileID: 1220713244628766040, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2119879670191971534, guid: 6f05bcba5e2803141b084a87b185f826,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49582,6 +49872,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006637031979531853, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f05bcba5e2803141b084a87b185f826, type: 3}
@@ -49776,6 +50071,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
       value: Wait:5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402339107941798660, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
+        type: 3}
+      propertyPath: baseMovementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7021115011900283265, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
         type: 3}
