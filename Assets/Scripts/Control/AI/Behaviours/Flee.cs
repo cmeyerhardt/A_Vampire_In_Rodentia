@@ -11,7 +11,7 @@ public class Flee : AIBehaviour
     float maxFleeDuration = 40f;
     Vector3 fleeDestination = new Vector3();
     PlayerController player = null;
-    [SerializeField] [Range(0f, 10f)] float movementFraction = 1.2f;
+    [SerializeField] [Range(0f, 10f)] float movementFraction = 2.2f;
 
     new void Awake()
     {
@@ -23,6 +23,7 @@ public class Flee : AIBehaviour
         base.OnEnable();
         player = ai.player;
         fleeTime = 0f;
+        ai.MoveToDestination(FindNewRandomFleeDestination(), movementFraction);
     }
 
     new void Start()
@@ -33,16 +34,9 @@ public class Flee : AIBehaviour
     new void Update()
     {
         fleeTime += Time.deltaTime;
-        if ((player.transform.position - transform.position).magnitude > fleeDistance)
+        if ((player.transform.position - transform.position).magnitude > fleeDistance || ai.IsInRange(fleeDestination))
         {
             doneEvent.Invoke(this);
-        }
-        else
-        {
-            if (fleeTime >= maxFleeDuration || (fleeDestination - transform.position).magnitude < ai.navMeshAgent.stoppingDistance)
-            {
-                ai.MoveToDestination(FindNewRandomFleeDestination(), movementFraction);
-            }
         }
         base.Update();
     }

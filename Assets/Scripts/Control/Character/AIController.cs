@@ -190,6 +190,11 @@ public class AIController : Character
             ////    //    p.SetWaypoints(FindObjectOfType<SceneWaypoints>().GetWaypoints(words[1]));
             ////    //}
             //    return p;
+            case "Flee":
+                Flee flee = gameObject.AddComponent<Flee>();
+                flee.ai = this;
+                flee.enabled = false;
+                return flee;
             case "PickUp":
             case "PickUpObject":
                 PickUpObject u = gameObject.AddComponent<PickUpObject>();

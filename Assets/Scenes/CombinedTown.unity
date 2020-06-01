@@ -231,6 +231,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -243,6 +253,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2434038879887779607, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -273,6 +308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -7.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870505771038430366, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3883677248802679498, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -309,6 +349,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -7.9
       objectReference: {fileID: 0}
+    - target: {fileID: 4934404799837939595, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5485871036562865920, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: uniqueIdentifier
@@ -336,6 +381,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -348,6 +403,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7980715307737965028, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -2401,6 +2481,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44f3e03b75ec9c84f8239dbe283baacc, type: 3}
+--- !u!114 &136794784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6929540179770228469, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
+    type: 3}
+  m_PrefabInstance: {fileID: 8889783922718203639}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5484abd45ec6ca64c8a56915c13ee6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &136794788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8529956639083167341, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
+    type: 3}
+  m_PrefabInstance: {fileID: 8889783922718203639}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8ba87a7858da245ab45c70a123f9ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &136794789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8689191390037114961, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
+    type: 3}
+  m_PrefabInstance: {fileID: 8889783922718203639}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5169b428d9585469b3a62c746e5f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &151814626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3737,6 +3853,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1348160925356167705, guid: d302784d1ae34564dae1d95c5cb4141f,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348160925356167705, guid: d302784d1ae34564dae1d95c5cb4141f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348160925356167705, guid: d302784d1ae34564dae1d95c5cb4141f,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -3749,6 +3875,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348160925356167705, guid: d302784d1ae34564dae1d95c5cb4141f,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348160925356167705, guid: d302784d1ae34564dae1d95c5cb4141f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348160925356167705, guid: d302784d1ae34564dae1d95c5cb4141f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348160925356167705, guid: d302784d1ae34564dae1d95c5cb4141f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348160925356167705, guid: d302784d1ae34564dae1d95c5cb4141f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2246779828479034254, guid: d302784d1ae34564dae1d95c5cb4141f,
         type: 3}
@@ -3808,6 +3959,11 @@ PrefabInstance:
     - target: {fileID: 2246779828479034255, guid: d302784d1ae34564dae1d95c5cb4141f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861167172083336672, guid: d302784d1ae34564dae1d95c5cb4141f,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5477197161103617662, guid: d302784d1ae34564dae1d95c5cb4141f,
@@ -4050,6 +4206,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -4062,6 +4228,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2434038879887779607, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -4093,6 +4284,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -9.31
       objectReference: {fileID: 0}
+    - target: {fileID: 3870505771038430366, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4143404543747185421, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -4117,6 +4313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934404799837939595, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5485871036562865920, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -4180,6 +4381,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -4192,6 +4403,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7980715307737965028, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -4877,6 +5113,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 43.48
       objectReference: {fileID: 0}
+    - target: {fileID: 6476019097559836463, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8652622333106526826, guid: bf190a5bebafb04489ee7ad4fe2cff43,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4964,6 +5205,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -4976,6 +5227,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf190a5bebafb04489ee7ad4fe2cff43, type: 3}
@@ -5574,6 +5850,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1677032934}
     m_Modifications:
+    - target: {fileID: 2332612010324293050, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7300,6 +7581,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1677032934}
     m_Modifications:
+    - target: {fileID: 2332612010324293050, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7956,6 +8242,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.05
       objectReference: {fileID: 0}
+    - target: {fileID: 5398168156678948382, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6098987584728763949, guid: 85483222f45cacc459c83f5b1151251e,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -7978,6 +8269,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -7990,6 +8291,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85483222f45cacc459c83f5b1151251e, type: 3}
@@ -8297,6 +8623,254 @@ MonoBehaviour:
   gizmoType: 0
   gizmoColor: {r: 1, g: 1, b: 1, a: 1}
   radius: 0.5
+--- !u!1001 &511418330
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 647.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 489.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7453694
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6666518
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 96.382
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897321640484318117, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: currentStamina
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].sequence.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[2]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[1]
+      value: PickUp:Torch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].state
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].sequence.Array.data[0]
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[3]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466406264419188809, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: debugShowGizmos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759792092228257692, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_Name
+      value: Hunter (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143222162285518313, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 615df603-2e5b-4c5b-afaf-d45c45ea9002
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0838293017f52314daca08af79839794, type: 3}
+--- !u!1001 &524779804
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 580.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 460.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.95123166
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.3084774
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 215.935
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897321640484318117, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: currentStamina
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].sequence.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[2]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[1]
+      value: PickUp:Torch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].state
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].sequence.Array.data[0]
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[3]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466406264419188809, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: debugShowGizmos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759792092228257692, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_Name
+      value: Hunter (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143222162285518313, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 615df603-2e5b-4c5b-afaf-d45c45ea9002
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0838293017f52314daca08af79839794, type: 3}
 --- !u!1001 &532316251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9393,6 +9967,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 11.7
       objectReference: {fileID: 0}
+    - target: {fileID: 2070055131237239506, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2083209156937970822, guid: 65299de56e3462441b16b1274a6b1694,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9455,6 +10034,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -9467,6 +10056,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4851678180266300358, guid: 65299de56e3462441b16b1274a6b1694,
         type: 3}
@@ -10563,7 +11177,7 @@ PrefabInstance:
     - target: {fileID: 220962007873898767, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 342063752186450532, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
@@ -10573,12 +11187,12 @@ PrefabInstance:
     - target: {fileID: 1033326049953290201, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1805513785375030653, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1886684470941181061, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
@@ -10682,6 +11296,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -10694,6 +11318,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7324202026262858002, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
@@ -10909,6 +11558,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018519766493231610, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9041939898513541038, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
@@ -11650,6 +12304,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -11662,6 +12326,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 516462621472839280, guid: 5a80b24ba764c2d4092129cddbc1af0f,
         type: 3}
@@ -11692,6 +12381,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666851627752552908, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2689164586185312152, guid: 5a80b24ba764c2d4092129cddbc1af0f,
         type: 3}
@@ -12710,6 +13404,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1677032934}
     m_Modifications:
+    - target: {fileID: 2332612010324293050, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12985,6 +13684,130 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05e5e4dbbeab1b488f704deb921c3a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &799363647
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 541.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 422.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.99248135
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.12239646
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 165.93901
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897321640484318117, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: currentStamina
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].sequence.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[2]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[1]
+      value: PickUp:Torch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].state
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].sequence.Array.data[0]
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[3]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466406264419188809, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: debugShowGizmos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759792092228257692, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_Name
+      value: Hunter (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143222162285518313, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 615df603-2e5b-4c5b-afaf-d45c45ea9002
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0838293017f52314daca08af79839794, type: 3}
 --- !u!1 &800401548
 GameObject:
   m_ObjectHideFlags: 0
@@ -13168,6 +13991,11 @@ PrefabInstance:
       propertyPath: uniqueIdentifier
       value: dea038e2-26c1-4246-98dd-aa287096b64c
       objectReference: {fileID: 0}
+    - target: {fileID: 1783815801052491937, guid: dd803a8ce9ede85469e4aa28f3f285c8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1934314088543776833, guid: dd803a8ce9ede85469e4aa28f3f285c8,
         type: 3}
       propertyPath: m_RootOrder
@@ -13280,6 +14108,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5358169731249611247, guid: dd803a8ce9ede85469e4aa28f3f285c8,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358169731249611247, guid: dd803a8ce9ede85469e4aa28f3f285c8,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358169731249611247, guid: dd803a8ce9ede85469e4aa28f3f285c8,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -13293,6 +14131,26 @@ PrefabInstance:
       propertyPath: baseMovementSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5358169731249611247, guid: dd803a8ce9ede85469e4aa28f3f285c8,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358169731249611247, guid: dd803a8ce9ede85469e4aa28f3f285c8,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358169731249611247, guid: dd803a8ce9ede85469e4aa28f3f285c8,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358169731249611247, guid: dd803a8ce9ede85469e4aa28f3f285c8,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
     - target: {fileID: 5400569930697925978, guid: dd803a8ce9ede85469e4aa28f3f285c8,
         type: 3}
       propertyPath: m_RootOrder
@@ -13302,6 +14160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7889238755014735382, guid: dd803a8ce9ede85469e4aa28f3f285c8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8301793739090689573, guid: dd803a8ce9ede85469e4aa28f3f285c8,
         type: 3}
@@ -13603,29 +14466,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49e83747fdfb79d47ad314b2ee02ca9b, type: 3}
---- !u!1 &820928052 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8138163453509900421, guid: a8c03a17159c3a84880bda97f3e47c2a,
-    type: 3}
-  m_PrefabInstance: {fileID: 4712548904638474779}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &820928070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820928052}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0346cc2180284dd4fb72db8d7b5653aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ai: {fileID: 0}
-  tasks: []
-  duration: 5
-  waitIndefinitly: 0
-  timer: 0
 --- !u!1001 &825000465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14464,6 +15304,130 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.0050000004, y: 0, z: 0.040000003}
   m_TimeToStationary: 0.5
+--- !u!1001 &865336384
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 557.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 475.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9951329
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.09854171
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 168.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897321640484318117, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: currentStamina
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].sequence.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[2]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[1]
+      value: PickUp:Torch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].state
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].sequence.Array.data[0]
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[3]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466406264419188809, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: debugShowGizmos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759792092228257692, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_Name
+      value: Hunter (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143222162285518313, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 615df603-2e5b-4c5b-afaf-d45c45ea9002
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0838293017f52314daca08af79839794, type: 3}
 --- !u!1001 &867457285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14740,6 +15704,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1677032934}
     m_Modifications:
+    - target: {fileID: 2332612010324293050, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14979,6 +15948,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -14991,6 +15970,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7417645779981872070, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
@@ -15006,6 +16010,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 9.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018519766493231610, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9062916212905148893, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
@@ -15591,6 +16600,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -15604,10 +16623,40 @@ PrefabInstance:
       propertyPath: baseMovementSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 153880290502848053, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2476886029416997609, guid: 5a80b24ba764c2d4092129cddbc1af0f,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 11.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666851627752552908, guid: 5a80b24ba764c2d4092129cddbc1af0f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2689164586185312152, guid: 5a80b24ba764c2d4092129cddbc1af0f,
         type: 3}
@@ -17373,6 +18422,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1677032934}
     m_Modifications:
+    - target: {fileID: 2332612010324293050, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19568,7 +20622,7 @@ PrefabInstance:
     - target: {fileID: 1588154006615921851, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
       propertyPath: sprintSpeed
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1588154006615921851, guid: f1506da7beff4634ab334da0ab52e871,
         type: 3}
@@ -20566,10 +21620,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 596292733}
     m_Modifications:
+    - target: {fileID: 83365615590907901, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 681502684711952118, guid: 29e63611943732a498f5fb709435f03d,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 681502684711952118, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 681502684711952118, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 681502684711952118, guid: 29e63611943732a498f5fb709435f03d,
         type: 3}
@@ -20585,6 +21654,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 681502684711952118, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 681502684711952118, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 681502684711952118, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 681502684711952118, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 681502684711952118, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 739983044983220300, guid: 29e63611943732a498f5fb709435f03d,
         type: 3}
@@ -20653,6 +21747,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2740460954708920324, guid: 29e63611943732a498f5fb709435f03d,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740460954708920324, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740460954708920324, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -20665,6 +21769,36 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740460954708920324, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740460954708920324, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740460954708920324, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740460954708920324, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740460954708920324, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3338593625247107343, guid: 29e63611943732a498f5fb709435f03d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6323731103849538193, guid: 29e63611943732a498f5fb709435f03d,
         type: 3}
@@ -21705,6 +22839,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.01
       objectReference: {fileID: 0}
+    - target: {fileID: 5398168156678948382, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6098987584728763949, guid: 85483222f45cacc459c83f5b1151251e,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -21762,6 +22901,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -21774,6 +22923,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85483222f45cacc459c83f5b1151251e, type: 3}
@@ -22742,6 +23916,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -22754,6 +23938,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5542087710999605061, guid: df1f2515af3d5204ea11918c16101cc7,
         type: 3}
@@ -22859,6 +24068,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 179.912
+      objectReference: {fileID: 0}
+    - target: {fileID: 7133854746687888330, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df1f2515af3d5204ea11918c16101cc7, type: 3}
@@ -23301,6 +24515,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1677032934}
     m_Modifications:
+    - target: {fileID: 2332612010324293050, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24315,6 +25534,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -24327,6 +25556,36 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487446052590661123, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018519766493231610, guid: 066f026d176c6384a9d7002c51a945d2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 066f026d176c6384a9d7002c51a945d2, type: 3}
@@ -24721,10 +25980,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager14
       objectReference: {fileID: 0}
+    - target: {fileID: 6476019097559836463, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
         type: 3}
@@ -24740,6 +26014,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151120021948526806, guid: bf190a5bebafb04489ee7ad4fe2cff43,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf190a5bebafb04489ee7ad4fe2cff43, type: 3}
@@ -25093,6 +26392,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -25106,15 +26415,50 @@ PrefabInstance:
       propertyPath: baseMovementSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2828834210485065312, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: m_Name
       value: Villager13
       objectReference: {fileID: 0}
+    - target: {fileID: 3870505771038430366, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4462488733096348693, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: uniqueIdentifier
       value: c94d039e-3fd4-4aeb-81f3-402ff9677f70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934404799837939595, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5485871036562865920, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -25133,6 +26477,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -25145,6 +26499,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7980715307737965028, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -25584,6 +26963,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -25596,6 +26985,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2434038879887779607, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -25662,6 +27076,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 6.56
       objectReference: {fileID: 0}
+    - target: {fileID: 3870505771038430366, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3883677248802679498, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -25696,6 +27115,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934404799837939595, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5485871036562865920, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -25749,6 +27173,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -25761,6 +27195,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7980715307737965028, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -26071,6 +27530,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1677032934}
     m_Modifications:
+    - target: {fileID: 2332612010324293050, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26241,10 +27705,25 @@ PrefabInstance:
       propertyPath: uniqueIdentifier
       value: 8ccb2943-2944-43c3-bfee-3e2dbc12e045
       objectReference: {fileID: 0}
+    - target: {fileID: 5398168156678948382, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
         type: 3}
@@ -26260,6 +27739,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85483222f45cacc459c83f5b1151251e, type: 3}
@@ -27535,6 +29039,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1677032934}
     m_Modifications:
+    - target: {fileID: 2332612010324293050, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30856,6 +32365,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1677032934}
     m_Modifications:
+    - target: {fileID: 2332612010324293050, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31359,6 +32873,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -31371,6 +32895,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2434038879887779607, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -31402,6 +32951,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -12.77
       objectReference: {fileID: 0}
+    - target: {fileID: 3870505771038430366, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3883677248802679498, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -31431,6 +32985,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 7.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934404799837939595, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5485871036562865920, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -31464,6 +33023,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -31477,6 +33046,46 @@ PrefabInstance:
       propertyPath: baseMovementSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[0].module
+      value: 
+      objectReference: {fileID: 136794788}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[1].module
+      value: 
+      objectReference: {fileID: 136794789}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[2].module
+      value: 
+      objectReference: {fileID: 136794784}
     - target: {fileID: 7980715307737965028, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33087,6 +34696,130 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1751672911}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1763042597
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 626.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 471.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9951329
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.09854171
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 168.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897321640484318117, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: currentStamina
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].sequence.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[2]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[1]
+      value: PickUp:Torch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].state
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].sequence.Array.data[0]
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[3]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466406264419188809, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: debugShowGizmos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759792092228257692, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_Name
+      value: Hunter (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143222162285518313, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 615df603-2e5b-4c5b-afaf-d45c45ea9002
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0838293017f52314daca08af79839794, type: 3}
 --- !u!1 &1771525009
 GameObject:
   m_ObjectHideFlags: 0
@@ -33140,6 +34873,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1677032934}
     m_Modifications:
+    - target: {fileID: 2332612010324293050, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35652,6 +37390,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1677032934}
     m_Modifications:
+    - target: {fileID: 2332612010324293050, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35867,6 +37610,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -35879,6 +37632,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339524433292788583, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2434038879887779607, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -35905,6 +37683,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -25.78
       objectReference: {fileID: 0}
+    - target: {fileID: 3870505771038430366, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4143404543747185421, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35929,6 +37712,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934404799837939595, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5485871036562865920, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -35972,6 +37760,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -35984,6 +37782,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159238137126154354, guid: 40fe0dc05b3224c4ca5d2f47555df934,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7980715307737965028, guid: 40fe0dc05b3224c4ca5d2f47555df934,
         type: 3}
@@ -36497,6 +38320,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
+        type: 3}
       propertyPath: lastState
       value: 0
       objectReference: {fileID: 0}
@@ -36505,11 +38333,6 @@ PrefabInstance:
       propertyPath: behaviourPresets.Array.data[2].behaviour
       value: Patrol
       objectReference: {fileID: 0}
-    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
-        type: 3}
-      propertyPath: behaviourPresets.Array.data[2].module
-      value: 
-      objectReference: {fileID: 1069998599}
     - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
       propertyPath: bed
@@ -36555,6 +38378,36 @@ PrefabInstance:
       propertyPath: baseMovementSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467423296068981850, guid: f6966725dc3d68f4b8090711bae918a2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[2].module
+      value: 
+      objectReference: {fileID: 1069998599}
     - target: {fileID: 9129784384419724791, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36608,6 +38461,11 @@ PrefabInstance:
     - target: {fileID: 9129784384419724791, guid: f6966725dc3d68f4b8090711bae918a2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142545953008436131, guid: f6966725dc3d68f4b8090711bae918a2,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -37873,6 +39731,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -2.55
       objectReference: {fileID: 0}
+    - target: {fileID: 5398168156678948382, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6098987584728763949, guid: 85483222f45cacc459c83f5b1151251e,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -37895,6 +39758,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -37907,6 +39780,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85483222f45cacc459c83f5b1151251e, type: 3}
@@ -38457,6 +40355,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1677032934}
     m_Modifications:
+    - target: {fileID: 2332612010324293050, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2546523296066106868, guid: 62eff3477e2d5ba43a1bbb73eed200a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39437,6 +41340,130 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2132956360}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2134660488
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 388
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.36829033
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9297108
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 316.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208024493865650211, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897321640484318117, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: currentStamina
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].sequence.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[2]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[1]
+      value: PickUp:Torch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].state
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[3].sequence.Array.data[0]
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352631689748706306, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: stateSequences.Array.data[0].sequence.Array.data[3]
+      value: Wait
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466406264419188809, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: debugShowGizmos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759792092228257692, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: m_Name
+      value: Hunter (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143222162285518313, guid: 0838293017f52314daca08af79839794,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 615df603-2e5b-4c5b-afaf-d45c45ea9002
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0838293017f52314daca08af79839794, type: 3}
 --- !u!1 &2135857452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100006, guid: 49e83747fdfb79d47ad314b2ee02ca9b,
@@ -39737,10 +41764,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager19
       objectReference: {fileID: 0}
+    - target: {fileID: 6216508941332664711, guid: 9b8e55b81db00c9409908dfb0c2c9e3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8171016057724307070, guid: 9b8e55b81db00c9409908dfb0c2c9e3a,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171016057724307070, guid: 9b8e55b81db00c9409908dfb0c2c9e3a,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171016057724307070, guid: 9b8e55b81db00c9409908dfb0c2c9e3a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8171016057724307070, guid: 9b8e55b81db00c9409908dfb0c2c9e3a,
         type: 3}
@@ -39756,6 +41798,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171016057724307070, guid: 9b8e55b81db00c9409908dfb0c2c9e3a,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171016057724307070, guid: 9b8e55b81db00c9409908dfb0c2c9e3a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171016057724307070, guid: 9b8e55b81db00c9409908dfb0c2c9e3a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171016057724307070, guid: 9b8e55b81db00c9409908dfb0c2c9e3a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171016057724307070, guid: 9b8e55b81db00c9409908dfb0c2c9e3a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b8e55b81db00c9409908dfb0c2c9e3a, type: 3}
@@ -40167,10 +42234,25 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4796871337508186298, guid: 87eb27242fd2414458d8fdf10fab4703,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7327874683169832771, guid: 87eb27242fd2414458d8fdf10fab4703,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327874683169832771, guid: 87eb27242fd2414458d8fdf10fab4703,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327874683169832771, guid: 87eb27242fd2414458d8fdf10fab4703,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7327874683169832771, guid: 87eb27242fd2414458d8fdf10fab4703,
         type: 3}
@@ -40186,6 +42268,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327874683169832771, guid: 87eb27242fd2414458d8fdf10fab4703,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327874683169832771, guid: 87eb27242fd2414458d8fdf10fab4703,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327874683169832771, guid: 87eb27242fd2414458d8fdf10fab4703,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327874683169832771, guid: 87eb27242fd2414458d8fdf10fab4703,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327874683169832771, guid: 87eb27242fd2414458d8fdf10fab4703,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87eb27242fd2414458d8fdf10fab4703, type: 3}
@@ -40538,6 +42645,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996241339559222643, guid: 049b4c255fdf43f4caba5f27f4cfff17,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 996241339559222643, guid: 049b4c255fdf43f4caba5f27f4cfff17,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 996241339559222643, guid: 049b4c255fdf43f4caba5f27f4cfff17,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -40550,6 +42667,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 996241339559222643, guid: 049b4c255fdf43f4caba5f27f4cfff17,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 996241339559222643, guid: 049b4c255fdf43f4caba5f27f4cfff17,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 996241339559222643, guid: 049b4c255fdf43f4caba5f27f4cfff17,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 996241339559222643, guid: 049b4c255fdf43f4caba5f27f4cfff17,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 996241339559222643, guid: 049b4c255fdf43f4caba5f27f4cfff17,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1180187595004796904, guid: 049b4c255fdf43f4caba5f27f4cfff17,
         type: 3}
@@ -40580,6 +42722,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094925233874487946, guid: 049b4c255fdf43f4caba5f27f4cfff17,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5142873505504559583, guid: 049b4c255fdf43f4caba5f27f4cfff17,
         type: 3}
@@ -40994,6 +43141,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6796606646084608738, guid: 35e004407616527489273fdf8d468d58,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796606646084608738, guid: 35e004407616527489273fdf8d468d58,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -41005,7 +43157,7 @@ PrefabInstance:
     - target: {fileID: 6796606646084608738, guid: 35e004407616527489273fdf8d468d58,
         type: 3}
       propertyPath: behaviourPresets.Array.data[3].behaviour
-      value: Wait
+      value: Flee
       objectReference: {fileID: 0}
     - target: {fileID: 6796606646084608738, guid: 35e004407616527489273fdf8d468d58,
         type: 3}
@@ -41016,6 +43168,26 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796606646084608738, guid: 35e004407616527489273fdf8d468d58,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796606646084608738, guid: 35e004407616527489273fdf8d468d58,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796606646084608738, guid: 35e004407616527489273fdf8d468d58,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751157760104166683, guid: 35e004407616527489273fdf8d468d58,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35e004407616527489273fdf8d468d58, type: 3}
@@ -41399,15 +43571,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager8
       objectReference: {fileID: 0}
+    - target: {fileID: 6770773899679168552, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6806766296868439138, guid: fd8a7789855af3e4d934059a59936b16,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 12.44
       objectReference: {fileID: 0}
+    - target: {fileID: 6817245145479265349, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8771752537285716924, guid: fd8a7789855af3e4d934059a59936b16,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771752537285716924, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771752537285716924, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8771752537285716924, guid: fd8a7789855af3e4d934059a59936b16,
         type: 3}
@@ -41424,10 +43616,45 @@ PrefabInstance:
       propertyPath: baseMovementSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8771752537285716924, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771752537285716924, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771752537285716924, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771752537285716924, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771752537285716924, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8851438997438410705, guid: fd8a7789855af3e4d934059a59936b16,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851438997438410705, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851438997438410705, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8851438997438410705, guid: fd8a7789855af3e4d934059a59936b16,
         type: 3}
@@ -41443,6 +43670,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851438997438410705, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851438997438410705, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851438997438410705, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851438997438410705, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851438997438410705, guid: fd8a7789855af3e4d934059a59936b16,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd8a7789855af3e4d934059a59936b16, type: 3}
@@ -44204,6 +46456,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4766161216406748053, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766161216406748053, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766161216406748053, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -44216,6 +46478,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766161216406748053, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766161216406748053, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766161216406748053, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766161216406748053, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766161216406748053, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5746387729067928066, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
         type: 3}
@@ -44275,6 +46562,11 @@ PrefabInstance:
     - target: {fileID: 5746387729067928067, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7279207321017592940, guid: fcac64b6e081f7d4dba29b1d07f7fc6f,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -44484,10 +46776,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097107777}
     m_Modifications:
+    - target: {fileID: 1389570533258901421, guid: ac4e512c6a91c154ba82d64056dad0d2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3776410312332861524, guid: ac4e512c6a91c154ba82d64056dad0d2,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776410312332861524, guid: ac4e512c6a91c154ba82d64056dad0d2,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776410312332861524, guid: ac4e512c6a91c154ba82d64056dad0d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3776410312332861524, guid: ac4e512c6a91c154ba82d64056dad0d2,
         type: 3}
@@ -44503,6 +46810,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776410312332861524, guid: ac4e512c6a91c154ba82d64056dad0d2,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776410312332861524, guid: ac4e512c6a91c154ba82d64056dad0d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776410312332861524, guid: ac4e512c6a91c154ba82d64056dad0d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776410312332861524, guid: ac4e512c6a91c154ba82d64056dad0d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776410312332861524, guid: ac4e512c6a91c154ba82d64056dad0d2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5608241225695461756, guid: ac4e512c6a91c154ba82d64056dad0d2,
         type: 3}
@@ -44802,10 +47134,25 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1834519367459139268, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4491702392126847293, guid: 8c1e5c095ce53e643827ac6b1e515cec,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491702392126847293, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491702392126847293, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4491702392126847293, guid: 8c1e5c095ce53e643827ac6b1e515cec,
         type: 3}
@@ -44822,10 +47169,45 @@ PrefabInstance:
       propertyPath: baseMovementSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4491702392126847293, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491702392126847293, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491702392126847293, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491702392126847293, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491702392126847293, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5081598341704140129, guid: 8c1e5c095ce53e643827ac6b1e515cec,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081598341704140129, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081598341704140129, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5081598341704140129, guid: 8c1e5c095ce53e643827ac6b1e515cec,
         type: 3}
@@ -44841,6 +47223,36 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081598341704140129, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081598341704140129, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081598341704140129, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081598341704140129, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081598341704140129, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036110148233499288, guid: 8c1e5c095ce53e643827ac6b1e515cec,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8433606847891218243, guid: 8c1e5c095ce53e643827ac6b1e515cec,
         type: 3}
@@ -45280,6 +47692,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5546293777277165042, guid: 505be3aaf37f043418d8dc31d3aac78e,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546293777277165042, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546293777277165042, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -45292,6 +47714,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546293777277165042, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546293777277165042, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546293777277165042, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546293777277165042, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546293777277165042, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6486628871682026662, guid: 505be3aaf37f043418d8dc31d3aac78e,
         type: 3}
@@ -45300,6 +47747,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6486628871682026662, guid: 505be3aaf37f043418d8dc31d3aac78e,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486628871682026662, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486628871682026662, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -45312,6 +47769,36 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486628871682026662, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486628871682026662, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486628871682026662, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486628871682026662, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486628871682026662, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771061127208192523, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9005270120513266900, guid: 505be3aaf37f043418d8dc31d3aac78e,
         type: 3}
@@ -45372,6 +47859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 1x1_GroundFloor_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017645393799920479, guid: 505be3aaf37f043418d8dc31d3aac78e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 505be3aaf37f043418d8dc31d3aac78e, type: 3}
@@ -45601,10 +48093,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5216393538454872632, guid: f1c4bcb9bc6c52048bb07fad025f486d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8017643647580845505, guid: f1c4bcb9bc6c52048bb07fad025f486d,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017643647580845505, guid: f1c4bcb9bc6c52048bb07fad025f486d,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017643647580845505, guid: f1c4bcb9bc6c52048bb07fad025f486d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8017643647580845505, guid: f1c4bcb9bc6c52048bb07fad025f486d,
         type: 3}
@@ -45620,6 +48127,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017643647580845505, guid: f1c4bcb9bc6c52048bb07fad025f486d,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017643647580845505, guid: f1c4bcb9bc6c52048bb07fad025f486d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017643647580845505, guid: f1c4bcb9bc6c52048bb07fad025f486d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017643647580845505, guid: f1c4bcb9bc6c52048bb07fad025f486d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017643647580845505, guid: f1c4bcb9bc6c52048bb07fad025f486d,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1c4bcb9bc6c52048bb07fad025f486d, type: 3}
@@ -46015,10 +48547,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager39
       objectReference: {fileID: 0}
+    - target: {fileID: 5398168156678948382, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
         type: 3}
@@ -46034,6 +48581,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911165882224300519, guid: 85483222f45cacc459c83f5b1151251e,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85483222f45cacc459c83f5b1151251e, type: 3}
@@ -46324,6 +48896,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1x1_FirstFloor_02
       objectReference: {fileID: 0}
+    - target: {fileID: 1674650650819207473, guid: 10d090aaccf29074386335f081c8e5c2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1688522723712212837, guid: 10d090aaccf29074386335f081c8e5c2,
         type: 3}
       propertyPath: m_RootOrder
@@ -46333,6 +48910,16 @@ PrefabInstance:
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467124955382249160, guid: 10d090aaccf29074386335f081c8e5c2,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467124955382249160, guid: 10d090aaccf29074386335f081c8e5c2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3467124955382249160, guid: 10d090aaccf29074386335f081c8e5c2,
         type: 3}
@@ -46348,6 +48935,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467124955382249160, guid: 10d090aaccf29074386335f081c8e5c2,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467124955382249160, guid: 10d090aaccf29074386335f081c8e5c2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467124955382249160, guid: 10d090aaccf29074386335f081c8e5c2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467124955382249160, guid: 10d090aaccf29074386335f081c8e5c2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467124955382249160, guid: 10d090aaccf29074386335f081c8e5c2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3930814245272687211, guid: 10d090aaccf29074386335f081c8e5c2,
         type: 3}
@@ -46635,10 +49247,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 497894629}
     m_Modifications:
+    - target: {fileID: 1425422493278792046, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1976622370121481263, guid: a8c03a17159c3a84880bda97f3e47c2a,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976622370121481263, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976622370121481263, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1976622370121481263, guid: a8c03a17159c3a84880bda97f3e47c2a,
         type: 3}
@@ -46655,40 +49282,65 @@ PrefabInstance:
       propertyPath: baseMovementSpeed
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 3812332365699366551, guid: a8c03a17159c3a84880bda97f3e47c2a,
+    - target: {fileID: 1976622370121481263, guid: a8c03a17159c3a84880bda97f3e47c2a,
         type: 3}
-      propertyPath: stateSequences.Array.data[1].sequence.Array.size
-      value: 1
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976622370121481263, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976622370121481263, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976622370121481263, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976622370121481263, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3812332365699366551, guid: a8c03a17159c3a84880bda97f3e47c2a,
         type: 3}
       propertyPath: behaviourPresets.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3812332365699366551, guid: a8c03a17159c3a84880bda97f3e47c2a,
-        type: 3}
-      propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
-      value: Wait
-      objectReference: {fileID: 0}
-    - target: {fileID: 3812332365699366551, guid: a8c03a17159c3a84880bda97f3e47c2a,
-        type: 3}
-      propertyPath: stateSequences.Array.data[1].sequence.Array.data[0]
-      value: Wait:5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3812332365699366551, guid: a8c03a17159c3a84880bda97f3e47c2a,
-        type: 3}
-      propertyPath: behaviourPresets.Array.data[3].behaviour
-      value: Wait
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3812332365699366551, guid: a8c03a17159c3a84880bda97f3e47c2a,
         type: 3}
       propertyPath: behaviourPresets.Array.data[3].module
       value: 
-      objectReference: {fileID: 820928070}
+      objectReference: {fileID: 0}
     - target: {fileID: 3812332365699366551, guid: a8c03a17159c3a84880bda97f3e47c2a,
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812332365699366551, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812332365699366551, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812332365699366551, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345518101747051478, guid: a8c03a17159c3a84880bda97f3e47c2a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4369516407299527665, guid: a8c03a17159c3a84880bda97f3e47c2a,
         type: 3}
@@ -47159,6 +49811,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -47172,10 +49834,40 @@ PrefabInstance:
       propertyPath: baseMovementSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909122856527793203, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6392622528167908662, guid: df1f2515af3d5204ea11918c16101cc7,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 19.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 7133854746687888330, guid: df1f2515af3d5204ea11918c16101cc7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df1f2515af3d5204ea11918c16101cc7, type: 3}
@@ -47449,10 +50141,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager6
       objectReference: {fileID: 0}
+    - target: {fileID: 6049818292141004677, guid: f882343305268c943bafa821b8013f25,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8418770923477155964, guid: f882343305268c943bafa821b8013f25,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418770923477155964, guid: f882343305268c943bafa821b8013f25,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418770923477155964, guid: f882343305268c943bafa821b8013f25,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8418770923477155964, guid: f882343305268c943bafa821b8013f25,
         type: 3}
@@ -47468,6 +50175,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418770923477155964, guid: f882343305268c943bafa821b8013f25,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418770923477155964, guid: f882343305268c943bafa821b8013f25,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418770923477155964, guid: f882343305268c943bafa821b8013f25,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418770923477155964, guid: f882343305268c943bafa821b8013f25,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418770923477155964, guid: f882343305268c943bafa821b8013f25,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f882343305268c943bafa821b8013f25, type: 3}
@@ -47725,6 +50457,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager58
       objectReference: {fileID: 0}
+    - target: {fileID: 1201295996230059005, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2090433722783544020, guid: e89b18a102b7dd1468603b95d278b15c,
         type: 3}
       propertyPath: uniqueIdentifier
@@ -47737,6 +50474,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4002541707813164036, guid: e89b18a102b7dd1468603b95d278b15c,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002541707813164036, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002541707813164036, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -47749,6 +50496,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002541707813164036, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002541707813164036, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002541707813164036, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002541707813164036, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002541707813164036, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4879085729083543219, guid: e89b18a102b7dd1468603b95d278b15c,
         type: 3}
@@ -47757,6 +50529,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879085729083543219, guid: e89b18a102b7dd1468603b95d278b15c,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879085729083543219, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879085729083543219, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -47769,6 +50551,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879085729083543219, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879085729083543219, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879085729083543219, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879085729083543219, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879085729083543219, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6959903881955960879, guid: e89b18a102b7dd1468603b95d278b15c,
         type: 3}
@@ -47829,6 +50636,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 2x1_FirstFloor_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247911091948493130, guid: e89b18a102b7dd1468603b95d278b15c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8328091290601894422, guid: e89b18a102b7dd1468603b95d278b15c,
         type: 3}
@@ -48968,6 +51780,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2255559038297720830, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255559038297720830, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255559038297720830, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -48980,6 +51802,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255559038297720830, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255559038297720830, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255559038297720830, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255559038297720830, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255559038297720830, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2559494984257576368, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
         type: 3}
@@ -49046,6 +51893,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3x1_FirstFloor_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4066016937831796743, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665071289410317403, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4754132169865640857, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
         type: 3}
       propertyPath: uniqueIdentifier
@@ -49063,6 +51920,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7466290595534420898, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466290595534420898, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466290595534420898, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -49075,6 +51942,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466290595534420898, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466290595534420898, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466290595534420898, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466290595534420898, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466290595534420898, guid: 5da9f7b8aaca5f9468bb9a5becef5895,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5da9f7b8aaca5f9468bb9a5becef5895, type: 3}
@@ -49536,10 +52428,25 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2070055131237239506, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
         type: 3}
@@ -49555,6 +52462,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294866203397659947, guid: 65299de56e3462441b16b1274a6b1694,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7820227800406400310, guid: 65299de56e3462441b16b1274a6b1694,
         type: 3}
@@ -49906,6 +52838,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136545588177606764, guid: 0562137591c2feb41bc4eb211c3c6ca2,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136545588177606764, guid: 0562137591c2feb41bc4eb211c3c6ca2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136545588177606764, guid: 0562137591c2feb41bc4eb211c3c6ca2,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -49918,6 +52860,36 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136545588177606764, guid: 0562137591c2feb41bc4eb211c3c6ca2,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136545588177606764, guid: 0562137591c2feb41bc4eb211c3c6ca2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136545588177606764, guid: 0562137591c2feb41bc4eb211c3c6ca2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136545588177606764, guid: 0562137591c2feb41bc4eb211c3c6ca2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136545588177606764, guid: 0562137591c2feb41bc4eb211c3c6ca2,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946963904755584917, guid: 0562137591c2feb41bc4eb211c3c6ca2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8658960754137169051, guid: 0562137591c2feb41bc4eb211c3c6ca2,
         type: 3}
@@ -50346,10 +53318,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 551218027}
     m_Modifications:
+    - target: {fileID: 1845865393971629252, guid: 854cd73b5f9aa154da23ecc93a89f010,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4521027891011148605, guid: 854cd73b5f9aa154da23ecc93a89f010,
         type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521027891011148605, guid: 854cd73b5f9aa154da23ecc93a89f010,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521027891011148605, guid: 854cd73b5f9aa154da23ecc93a89f010,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4521027891011148605, guid: 854cd73b5f9aa154da23ecc93a89f010,
         type: 3}
@@ -50365,6 +53352,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521027891011148605, guid: 854cd73b5f9aa154da23ecc93a89f010,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521027891011148605, guid: 854cd73b5f9aa154da23ecc93a89f010,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521027891011148605, guid: 854cd73b5f9aa154da23ecc93a89f010,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521027891011148605, guid: 854cd73b5f9aa154da23ecc93a89f010,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521027891011148605, guid: 854cd73b5f9aa154da23ecc93a89f010,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6222938007586632573, guid: 854cd73b5f9aa154da23ecc93a89f010,
         type: 3}
@@ -50650,6 +53662,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1220713244628766040, guid: 6f05bcba5e2803141b084a87b185f826,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220713244628766040, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220713244628766040, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -50662,6 +53684,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220713244628766040, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220713244628766040, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220713244628766040, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220713244628766040, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220713244628766040, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2119879670191971534, guid: 6f05bcba5e2803141b084a87b185f826,
         type: 3}
@@ -50728,6 +53775,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager45
       objectReference: {fileID: 0}
+    - target: {fileID: 4021967459726760609, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052103510112037300, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5939421534955264573, guid: 6f05bcba5e2803141b084a87b185f826,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -50745,6 +53802,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7006637031979531853, guid: 6f05bcba5e2803141b084a87b185f826,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006637031979531853, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006637031979531853, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -50757,6 +53824,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006637031979531853, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006637031979531853, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006637031979531853, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006637031979531853, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006637031979531853, guid: 6f05bcba5e2803141b084a87b185f826,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f05bcba5e2803141b084a87b185f826, type: 3}
@@ -50927,6 +54019,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1654997076}
     m_Modifications:
+    - target: {fileID: 465819726902297853, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1501253002402084783, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -50944,6 +54041,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2402339107941798660, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
         type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402339107941798660, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
+        type: 3}
+      propertyPath: behaviourPresets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402339107941798660, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
+        type: 3}
       propertyPath: stateSequences.Array.data[1].sequence.Array.data[1]
       value: Wait:5
       objectReference: {fileID: 0}
@@ -50956,6 +54063,31 @@ PrefabInstance:
         type: 3}
       propertyPath: baseMovementSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402339107941798660, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
+        type: 3}
+      propertyPath: stateSequences.Array.data[2].sequence.Array.data[1]
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402339107941798660, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402339107941798660, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[3].module
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402339107941798660, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].behaviour
+      value: Flee
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402339107941798660, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
+        type: 3}
+      propertyPath: behaviourPresets.Array.data[4].module
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5845050637747565878, guid: 6477cc47e7d1a5242aa5d407fbe9de87,
         type: 3}
