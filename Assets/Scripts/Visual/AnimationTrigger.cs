@@ -18,7 +18,7 @@ public class AnimationTrigger : MonoBehaviour
     {
         if(timer >= timeToSwitchAnimation)
         {
-            print("Switching state");
+            //print("Switching state");
             animator.SetInteger("State", animationStates[currentAnim]);
             GetNextState();
             timer = 0f;

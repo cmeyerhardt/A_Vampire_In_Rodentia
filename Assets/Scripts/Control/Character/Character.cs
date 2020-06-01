@@ -18,7 +18,7 @@ public class Character : MonoBehaviour
     [SerializeField] [Tooltip("Override for max movement speed for this unit.\nThis will override any other movement speed modifiers")]
     [Range(0f, 40f)]  public float maxMovementSpeed = 20f;
     [SerializeField] [Tooltip("Add to navMeshAgent.stoppingDistance when checking range to destination. Helps agent reach destinations that are wider than stopping distance")]
-    [Range(2f, 5f)] float navMeshDistanceBuffer = 2.5f;
+    [Range(2f, 15f)] float navMeshDistanceBuffer = 2.5f;
 
     public bool walking = false;
 
@@ -249,7 +249,7 @@ public class Character : MonoBehaviour
             currentDestination = destination;
             navMeshAgent.destination = destination;
             float _speed = Mathf.Clamp(baseMovementSpeed * speedFraction, baseMovementSpeed, maxMovementSpeed);
-            print(gameObject.name + " speed " + _speed);
+            //print(gameObject.name + " speed " + _speed);
             navMeshAgent.speed = _speed;
             navMeshAgent.isStopped = false;
 

@@ -12,6 +12,7 @@ public class NightCycle : MonoBehaviour
     public TimeSegment lastTimeSegment = TimeSegment.Sunset;
     [SerializeField] [Range(0, 2f)] float nightPercentage = 0f;
     [SerializeField] float currentTime = 0f;
+    public float timer = 0f;
     public float currentHour = 0f;
 
     [Header("Current Time Settings")]
@@ -123,7 +124,7 @@ public class NightCycle : MonoBehaviour
             }
         }
 
-        if (nightPercentage > 1f)
+        if (timer > nightLengthRealSeconds)
         {
             if (triggerLose)
             {
@@ -145,13 +146,16 @@ public class NightCycle : MonoBehaviour
 
         if (!go) { return; }
 
+        timer += Time.deltaTime;
+        nightPercentage = timer / nightLengthRealSeconds;
+
         // Time progresses over time
-        //if (currentTime < nightLengthRealSeconds)
-        //{
-        //    currentTime += numGameSecPerRealSec * Time.deltaTime;
-        //}
-        currentTime += numGameMinPerRealSec * Time.deltaTime;
-        nightPercentage = currentTime / nightLengthRealSeconds;
+        if (currentTime < nightLengthRealSeconds)
+        {
+            currentTime += numGameMinPerRealSec * Time.deltaTime;
+        }
+
+        //nightPercentage = currentTime / nightLengthRealSeconds;
 
         //if(nightPercentage > 2)
         //{

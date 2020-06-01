@@ -149,7 +149,7 @@ public class PlayerController : Character
             {
                 //Dash forward
                 stamina.ModifyStamina(-dashCost);
-                StartCoroutine(Dash());
+                navMeshAgent.Warp(transform.position + DetermineDirectionOfMovement(dashDistance, 0f));
             }
             else
             {
@@ -220,7 +220,7 @@ public class PlayerController : Character
 
         navMeshAgent.Warp(transform.position + DetermineDirectionOfMovement(dashDistance, 0f));
 
-        yield return new WaitForSeconds(1f);
+        //yield return new WaitForSeconds(1f);
         SetState(PlayerState.Idle);
         yield return null;
     }
